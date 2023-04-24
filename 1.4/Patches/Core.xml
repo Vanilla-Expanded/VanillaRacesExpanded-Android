@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<!-- ================================ Patches in new stuff into the base game ====================== -->
+		<operations>
+			<!-- ================================ Add android setting ====================== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/HediffDef[@Name="MechanitesBase"]</xpath>
+				<value>
+					<li Class="VREAndroids.AndroidSettingsExtension">
+						<androidCanCatchIt>True</androidCanCatchIt>
+					</li>
+				</value>
+			</li>
+			<!-- ================================ Add android thinktree ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThinkTreeDef[defName="MainColonistBehaviorCore"]/thinkRoot/subNodes/li/subNodes</xpath>
+				<value>
+					<li Class="VREAndroids.JobGiver_FreeMemorySpace"/>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

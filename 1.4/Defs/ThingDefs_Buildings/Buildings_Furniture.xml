@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_AndroidStand</defName>
+    <label>android stand</label>
+    <description>text.todo</description>
+	<thingClass>VREAndroids.Building_AndroidStand</thingClass>
+    <graphicData>
+      <texPath>Things/Building/AndroidStand/AndroidStand</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1200</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<costList>
+		<Steel>50</Steel>
+	</costList>
+    <rotatable>false</rotatable>
+    <pathCost>42</pathCost>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+	<designationCategory>Misc</designationCategory>
+    <fillPercent>0.20</fillPercent>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>40</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>VREAndroids.CompAssignableToPawn_AndroidStand</compClass>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>VREA_AndroidCreation</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+</Defs>

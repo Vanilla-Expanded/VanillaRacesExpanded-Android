@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<WorkGiverDef>
+		<defName>VREA_CrafterTendAndroids</defName>
+		<label>tend to androids</label>
+		<giverClass>VREAndroids.WorkGiver_TendAndroid</giverClass>
+		<workType>Crafting</workType>
+		<verb>tend to</verb>
+		<gerund>tending to</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<priorityInType>110</priorityInType>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+</Defs>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<VREAndroids.AndroidSettings>
+		<defName>VREA_AndroidSettings</defName>
+		<label>this def will have various settings used for androids. Can be used for mod compatibility from outside via xml patches.</label>
+        <excludedNeedsForAndroids>
+			<li>Food</li>
+			<li>Rest</li>
+			<li>Joy</li>
+			<li>Indoors</li>
+			<li>Beauty</li>
+			<li>Comfort</li>
+			<li>Outdoors</li>
+			<li>DrugDesire</li>
+			<li>RoomSize</li>
+			<li>Suppression</li>
+			<li>Bladder</li>
+			<li>Hygiene</li>
+			<li>DBHThirst</li>
+			<li>FoodVariety</li>
+			<li>CultMindedness</li>
+		</excludedNeedsForAndroids>
+        <androidExclusiveNeeds>
+			<li>VREA_MemorySpace</li>
+			<li>VREA_ReactorPower</li>
+			<li>VREA_FoodSuppressed</li>
+		</androidExclusiveNeeds>
+		<androidSpecificMentalBreaks>
+			<li>VREA_Reformatting</li>
+			<li>VREA_SolarFlared</li>
+		</androidSpecificMentalBreaks>
+		<androidsShouldNotReceiveHediffs>
+			<li>Scaria</li>
+		</androidsShouldNotReceiveHediffs>
+	</VREAndroids.AndroidSettings>
+
+</Defs>
