@@ -40,7 +40,7 @@ namespace VREAndroids
             base.PostEnd();
             if (pawn.Spawned)
             {
-                pawn.Map.overlayDrawer.Disable(pawn, ref pawn.GetAndroidHediff().overlayPowerOff);
+                pawn.Map.overlayDrawer.Disable(pawn, ref pawn.genes.GetFirstGeneOfType<Gene_SolarFlareVulnerability>().overlayPowerOff);
                 pawn.stances.SetStance(new Stance_Mobile());
             }
         }

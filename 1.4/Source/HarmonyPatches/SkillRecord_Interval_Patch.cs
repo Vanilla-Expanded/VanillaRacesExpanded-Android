@@ -4,10 +4,10 @@ using Verse;
 
 namespace VREAndroids
 {
-    [HarmonyPatch(typeof(SkillRecord), "Learn")]
-    public static class SkillRecord_Learn_Patch
+    [HarmonyPatch(typeof(SkillRecord), "Interval")]
+    public static class SkillRecord_Interval_Patch
     {
-        public static bool Prefix(SkillRecord __instance, Pawn ___pawn, float xp, bool direct = false)
+        public static bool Prefix(SkillRecord __instance, Pawn ___pawn)
         {
             if (___pawn.HasActiveGene(VREA_DefOf.VREA_NoSkillGain))
             {

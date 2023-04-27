@@ -469,7 +469,18 @@ namespace VREAndroids
             if (met != 0)
             {
                 Rect iconRect2 = new Rect(curX, curY + margin + num2, num3, num3);
-                GeneUIUtility.DrawStat(iconRect2, AndroidStatsTable.PowerEfficiencyIconTex, met.ToStringWithSign(), num3);
+                if (met < 10) 
+                {
+                    GeneUIUtility.DrawStat(iconRect2, AndroidStatsTable.PowerEfficiencyIconTex, met.ToStringWithSign(), num3);
+                }
+                else
+                {
+                    GUI.DrawTexture(iconRect2, AndroidStatsTable.PowerEfficiencyIconTex.Texture);
+                    Text.Anchor = TextAnchor.MiddleRight;
+                    Widgets.Label(new Rect(iconRect2.xMax - 6, iconRect2.y, num3 + 6, num3), met.ToStringWithSign());
+                    Text.Anchor = TextAnchor.UpperLeft;
+                }
+
                 Rect rect2 = new Rect(curX, iconRect2.y, 38f, num3);
                 if (Mouse.IsOver(rect2))
                 {

@@ -8,17 +8,12 @@ namespace VREAndroids
     public static class VREA_DefOf
     {
         public static AndroidSettings VREA_AndroidSettings;
-
         public static NeedDef VREA_MemorySpace;
-        public static GeneDef VREA_MemoryProcessing;
-
         public static NeedDef VREA_ReactorPower;
-        public static GeneDef VREA_Power;
 
-        public static GeneDef VREA_MentalBreaksDisabled, VREA_Uninspired, VREA_NoSkillGain, VREA_SyntheticBody, VREA_ComponentOverheating, 
+        public static GeneDef VREA_Power, VREA_MemoryProcessing, VREA_MentalBreaksDisabled, VREA_Uninspired, VREA_NoSkillGain, VREA_SyntheticBody, VREA_ComponentOverheating, 
             VREA_ComponentFreezing, VREA_SyntheticImmunity, VREA_NeutroCirculation, VREA_JoyDisabled, VREA_PsychologyDisabled;
 
-        public static HediffDef VREA_Android;
         public static NeedDef VREA_FoodSuppressed;
         public static MentalStateDef VREA_Reformatting;
         public static JobDef VREA_FreeMemorySpace;

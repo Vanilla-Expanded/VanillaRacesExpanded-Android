@@ -49,11 +49,6 @@ namespace VREAndroids
             return pawn.genes.GetGene(geneDef)?.Active ?? false;
         }
 
-        public static Hediff_Android GetAndroidHediff(this Pawn pawn)
-        {
-            return pawn.health.hediffSet.hediffs.OfType<Hediff_Android>().FirstOrDefault();
-        }
-
         public static Dictionary<BodyPartDef, HediffDef> cachedCounterParts = new Dictionary<BodyPartDef, HediffDef>();
         public static HediffDef GetAndroidCounterPart(this BodyPartDef bodyPart)
         {

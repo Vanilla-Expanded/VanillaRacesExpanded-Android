@@ -2,27 +2,6 @@
 <Defs>
 
 	<HediffDef>
-		<defName>VREA_Android</defName>
-		<hediffClass>VREAndroids.Hediff_Android</hediffClass>
-		<label>Android</label>
-		<description>Text.todo</description>
-		<isBad>false</isBad>
-		<makesSickThought>false</makesSickThought>
-		<initialSeverity>0.001</initialSeverity>
-		<stages>
-			<li>
-				<label>Normal</label>
-				<painFactor>0</painFactor>
-			</li>
-			<li>
-				<label>Awakened</label>
-				<minSeverity>0.5</minSeverity>
-				<painFactor>0</painFactor>
-			</li>
-		</stages>
-	</HediffDef>
-
-	<HediffDef>
 		<defName>VREA_NeutroLoss</defName>
 		<label>neutro loss</label>
 		<description>A reduction in the normal neutroamine volume. Minor neutro loss has relatively mild effects, but when neutro loss becomes severe, all subsystems become badly impaired and the android loses the ability to move. Extreme neutro loss will never lead to death.
