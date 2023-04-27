@@ -17,12 +17,12 @@ namespace VREAndroids
         {
             get
             {
-                List<Thing> list = base.Map.thingGrid.ThingsListAt(this.Position);
+                List<Thing> list = Map.thingGrid.ThingsListAt(this.Position);
                 for (int i = 0; i < list.Count; i++)
                 {
                     Pawn pawn = list[i] as Pawn;
-                    if (pawn != null && pawn.IsAndroid() && pawn.CurJobDef == VREA_DefOf.VREA_FreeMemorySpace 
-                        && OwnersForReading.Contains(pawn))
+                    if (pawn != null && pawn.HasActiveGene(VREA_DefOf.VREA_MemoryProcessing) 
+                        && pawn.CurJobDef == VREA_DefOf.VREA_FreeMemorySpace && OwnersForReading.Contains(pawn))
                     {
                         return pawn;
                     }
@@ -50,7 +50,7 @@ namespace VREAndroids
             {
                 yield return opt;
             }
-            if (this.Faction == Faction.OfPlayer && selPawn.IsAndroid())
+            if (this.Faction == Faction.OfPlayer && selPawn.HasActiveGene(VREA_DefOf.VREA_MemoryProcessing))
             {
                 var cannotUseReason = CannotUseNowReason(selPawn);
                 if (cannotUseReason.NullOrEmpty())

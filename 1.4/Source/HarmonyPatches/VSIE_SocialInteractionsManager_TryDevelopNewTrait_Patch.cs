@@ -15,12 +15,13 @@ namespace VREAndroids
             methodInfo = AccessTools.Method("VanillaSocialInteractionsExpanded.SocialInteractionsManager:TryDevelopNewTrait");
             return methodInfo != null;
         }
+
         [HarmonyTargetMethod]
         public static MethodBase TargetMethod() => methodInfo;
 
         public static bool Prefix(Pawn pawn)
         {
-            if (pawn.IsAndroid(out var state) && state != AndroidState.Awakened)
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))
             {
                 return false;
             }

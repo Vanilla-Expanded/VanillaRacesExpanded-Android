@@ -13,7 +13,7 @@ namespace VREAndroids
     {
         public static bool Prefix(ref float __result, Rect leftRect, Pawn pawn, float curY)
         {
-            if (pawn.IsAndroid())
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
                 __result = DrawOverviewTabAndroid(leftRect, pawn, curY);
                 return false;

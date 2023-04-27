@@ -9,11 +9,11 @@ namespace VREAndroids
     {
         public static void Postfix(ref float __result, Pawn initiator, Pawn recipient)
         {
-            if (initiator.IsAndroid(out var state) && state != AndroidState.Awakened)
+            if (initiator.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))
             {
                 __result = 0f;
             }
-            else if (recipient.IsAndroid(out var state2) && state2 != AndroidState.Awakened)
+            else if (recipient.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))
             {
                 __result = 0f;
             }

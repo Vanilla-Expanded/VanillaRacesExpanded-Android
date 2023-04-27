@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn pawn, Hediff cause)
         {
-            if (pawn.IsAndroid())
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_NeutroCirculation))
             {
                 HediffSet hediffSet = pawn.health.hediffSet;
                 if (hediffSet.BleedRateTotal >= 0)

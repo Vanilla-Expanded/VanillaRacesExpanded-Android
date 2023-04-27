@@ -12,7 +12,7 @@ namespace VREAndroids
         {
             foreach (var p in __result)
             {
-                if (p.IsAndroid() && Utils.AndroidCanCatch(__instance.def.diseaseIncident) is false)
+                if (p.HasActiveGene(VREA_DefOf.VREA_SyntheticImmunity) && Utils.AndroidCanCatch(__instance.def.diseaseIncident) is false)
                 {
                     continue;
                 }

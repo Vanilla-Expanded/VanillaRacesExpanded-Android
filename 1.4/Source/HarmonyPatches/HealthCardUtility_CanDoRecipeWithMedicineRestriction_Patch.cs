@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(ref bool __result)
         {
-            if (HealthCardUtility_CreateSurgeryBill_Patch.curPawn.IsAndroid())
+            if (HealthCardUtility_CreateSurgeryBill_Patch.curPawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
                 __result = true;
             }

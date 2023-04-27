@@ -11,7 +11,7 @@ namespace VREAndroids
         public static bool shouldCheck;
         public static bool Prefix(Pawn pawn, BodyPartRecord part, IntVec3 pos, Map map)
         {
-            if (pawn.IsAndroid())
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
                 SpawnThingsFromHediffs(pawn, part, pos, map);
                 return false;

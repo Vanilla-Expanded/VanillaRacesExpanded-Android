@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public static bool Prefix(ref float __result, Hediff_Injury __instance)
         {
-            if (__instance.pawn.IsAndroid())
+            if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_NeutroCirculation))
             {
                 __result = BleedRate(__instance);
                 return false;

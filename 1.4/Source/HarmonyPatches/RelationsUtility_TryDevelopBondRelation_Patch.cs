@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn humanlike, Pawn animal, ref float baseChance)
         {
-            if (humanlike.IsAndroid(out var state) && state != AndroidState.Awakened)
+            if (humanlike.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))
             {
                 return false;
             }

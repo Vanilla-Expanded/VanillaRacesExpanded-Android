@@ -10,7 +10,7 @@ namespace VREAndroids
     {
         public static void Prefix(ref string text, LookTargets lookTargets, MessageTypeDef def, bool historical = true)
         {
-            if (lookTargets.targets.FirstOrDefault().Thing is Pawn pawn && pawn.IsAndroid())
+            if (lookTargets.targets.FirstOrDefault().Thing is Pawn pawn && pawn.HasActiveGene(VREA_DefOf.VREA_NeutroCirculation))
             {
                 if (text == "CannotRescue".Translate() + ": " + (string)"NoNonPrisonerBed".Translate())
                 {

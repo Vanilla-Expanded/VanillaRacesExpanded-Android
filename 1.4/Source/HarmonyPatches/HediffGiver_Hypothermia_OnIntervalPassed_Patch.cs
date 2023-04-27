@@ -10,7 +10,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn pawn, Hediff cause)
         {
-            if (pawn.IsAndroid())
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_ComponentFreezing))
             {
                 OnIntervalPassed(pawn, cause);
                 return false;

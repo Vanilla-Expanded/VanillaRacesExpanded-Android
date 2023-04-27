@@ -10,18 +10,6 @@ namespace VREAndroids
         public OverlayHandle? overlayPowerOff;
         public const int TicksToRecoverFromReformatting = 600;
         public override bool ShouldRemove => false;
-        public AndroidState AndroidState
-        {
-            get
-            {
-                if (this.CurStageIndex == 0)
-                {
-                    return AndroidState.Normal;
-                }
-                return AndroidState.Awakened;
-            }
-        }
-
         public override void Tick()
         {
             base.Tick();
@@ -55,7 +43,7 @@ namespace VREAndroids
             foreach (var bodyPart in this.pawn.def.race.body.AllParts.OrderByDescending(x => x.Index))
             {
                 var hediffDef = bodyPart.def.GetAndroidCounterPart();
-                if (hediffDef != null)
+                if (hediffDef != null && this.pawn.health.hediffSet.GetNotMissingParts().Contains(bodyPart))
                 {
                     var hediff = HediffMaker.MakeHediff(hediffDef, pawn, bodyPart);
                     pawn.health.AddHediff(hediff, bodyPart);

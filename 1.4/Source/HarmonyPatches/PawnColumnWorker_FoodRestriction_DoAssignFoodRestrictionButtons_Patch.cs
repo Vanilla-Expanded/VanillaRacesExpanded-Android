@@ -14,7 +14,7 @@ namespace VREAndroids
         }
         public static bool ButtonOverride(Rect rect, Pawn pawn)
         {
-            if (pawn.IsAndroid())
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
                 var oldAnchor = Text.Anchor;
                 Text.Anchor = TextAnchor.MiddleCenter;

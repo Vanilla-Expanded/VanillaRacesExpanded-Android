@@ -13,9 +13,8 @@ namespace VREAndroids
     {
         private static bool Prefix(Pawn_HealthTracker __instance, Pawn ___pawn, Hediff hediff, BodyPartRecord part = null, DamageInfo? dinfo = null, DamageWorker.DamageResult result = null)
         {
-            if (___pawn.IsAndroid() && Utils.AndroidCanCatch(hediff.def) is false)
+            if (___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticImmunity) && Utils.AndroidCanCatch(hediff.def) is false)
             {
-                Log.Message("Preventing " + ___pawn + " from getting " + hediff);
                 return false;
             }
             return true;

@@ -67,6 +67,13 @@
     <Compile Include="AI\MentalState_Reformatting.cs" />
     <Compile Include="AI\MentalState_SolarFlared.cs" />
     <Compile Include="AI\Stance_Stand.cs" />
+    <Compile Include="Genes\AndroidGeneDef.cs" />
+    <Compile Include="HarmonyPatches\GeneDef_GetDescriptionFull_Patch.cs" />
+    <Compile Include="HarmonyPatches\GeneUtility_GenesInOrder_Patch.cs" />
+    <Compile Include="UI\AndroidStatsTable.cs" />
+    <Compile Include="UI\Dialog_CreateAndroid.cs" />
+    <Compile Include="HarmonyPatches\Page_ConfigureStartingPawns_DrawXenotypeEditorButton_Patch.cs" />
+    <Compile Include="HarmonyPatches\GeneDefGenerator_ImpliedGeneDefs_Patch.cs" />
     <Compile Include="HarmonyPatches\HealthCardUtility_DrawHediffRow_Patch.cs" />
     <Compile Include="HotSwappableAttribute.cs" />
     <Compile Include="Utils.cs" />
@@ -114,7 +121,6 @@
     <Compile Include="HarmonyPatches\PawnCapacityUtility_CalculatePartEfficiency_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnColumnWorker_FoodRestriction_DoAssignFoodRestrictionButtons_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnComponentsUtility_AddAndRemoveDynamicComponents.cs" />
-    <Compile Include="HarmonyPatches\PawnGenerator_TryGenerateNewPawnInternal_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_AddHediff_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromLethalDamageThreshold_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromRequiredCapacity_Patch.cs" />
@@ -127,8 +133,6 @@
     <Compile Include="HarmonyPatches\RestUtility_CanUseBedEver_Patch.cs" />
     <Compile Include="HarmonyPatches\RestUtility_IsValidBedFor_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_Learn_Patch.cs" />
-    <Compile Include="HarmonyPatches\StatExtension_GetStatValue_Patch.cs" />
-    <Compile Include="HarmonyPatches\StatWorker_GetBaseValueFor_Patch.cs" />
     <Compile Include="HarmonyPatches\TraitSet_GainTrait_Patch.cs" />
     <Compile Include="HarmonyPatches\VSIE_SocialInteractionsManager_TryDevelopNewTrait_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_JobOnThing_Patch.cs" />
@@ -138,7 +142,6 @@
     <Compile Include="Hediffs\Hediff_AndroidReactor.cs" />
     <Compile Include="Hediffs\Recipe_InstallReactor.cs" />
     <Compile Include="AI\JobDriver_TendAndroid.cs" />
-    <Compile Include="Misc\AndroidState.cs" />
     <Compile Include="Needs\Need_FoodSuppressed.cs" />
     <Compile Include="Needs\Need_MemorySpace.cs" />
     <Compile Include="Needs\Need_ReactorPower.cs" />
@@ -146,6 +149,9 @@
     <Compile Include="VREAndroidsMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AI\WorkGiver_TendAndroid.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Misc\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

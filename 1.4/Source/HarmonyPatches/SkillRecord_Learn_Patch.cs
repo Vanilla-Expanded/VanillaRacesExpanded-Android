@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(SkillRecord __instance, Pawn ___pawn, float xp, bool direct = false)
         {
-            if (___pawn.IsAndroid(out var state) && state != AndroidState.Awakened)
+            if (___pawn.HasActiveGene(VREA_DefOf.VREA_NoSkillGain))
             {
                 return false;
             }

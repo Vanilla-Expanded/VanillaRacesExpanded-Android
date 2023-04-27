@@ -11,7 +11,7 @@ namespace VREAndroids
     {
         public static bool Prefix(HediffSet __instance)
         {
-            if (__instance.pawn.IsAndroid())
+            if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
                 CacheMissingPartsCommonAncestorsForAndroids(__instance);
                 return false;

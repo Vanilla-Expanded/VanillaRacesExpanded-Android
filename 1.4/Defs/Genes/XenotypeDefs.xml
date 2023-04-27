@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<XenotypeDef>
+		<defName>VREA_AndroidDrone</defName>
+		<label>android drone</label>
+		<description>text.todo</description>
+		<descriptionShort>text.todo</descriptionShort>
+		<iconPath>UI/XenotypeIcons/Androidtype_Drone</iconPath>
+		<genes>
+			<li>VREA_MemoryProcessing</li>
+			<li>VREA_Power</li>
+			<li>VREA_JoyDisabled</li>
+			<li>VREA_BeautyDisabled</li>
+			<li>VREA_ComfortDisabled</li>
+			<li>VREA_OutdoorsDisabled</li>
+			<li>VREA_DrugDesireDisabled</li>
+			<li>VREA_RoomSizeDisabled</li>
+			<li>VREA_PainDisabled</li>
+			<li>VREA_SyntheticBody</li>
+			<li>VREA_NeutroCirculation</li>
+			<li>VREA_SyntheticImmunity</li>
+			<li>VREA_ComponentFreezing</li>
+			<li>VREA_ComponentOverheating</li>
+			<li>VREA_ColdTolerant</li>
+			<li>VREA_HeatTolerant</li>
+			<li>VREA_NoSkillGain</li>
+			<li>VREA_Uninspired</li>
+			<li>VREA_PsychicallyDeaf</li>
+			<li>VREA_MentalBreaksDisabled</li>
+		</genes>
+	</XenotypeDef>
+
+</Defs>

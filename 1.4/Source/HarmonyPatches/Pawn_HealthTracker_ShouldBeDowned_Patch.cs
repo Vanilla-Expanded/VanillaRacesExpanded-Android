@@ -10,7 +10,7 @@ namespace VREAndroids
     {
         public static bool Prefix(ref bool __result, Pawn_HealthTracker __instance)
         {
-            if (__instance.pawn.IsAndroid())
+            if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
                 if (__instance.hediffSet.hediffs.OfType<Hediff_AndroidReactor>().Any() is false)
                 {

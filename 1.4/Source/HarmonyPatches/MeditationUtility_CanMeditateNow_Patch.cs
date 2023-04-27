@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(ref bool __result, Pawn pawn)
         {
-            if (pawn.IsAndroid())
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_JoyDisabled))
             {
                 __result = false;
             }

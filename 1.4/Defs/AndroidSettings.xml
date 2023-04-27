@@ -7,13 +7,6 @@
         <excludedNeedsForAndroids>
 			<li>Food</li>
 			<li>Rest</li>
-			<li>Joy</li>
-			<li>Indoors</li>
-			<li>Beauty</li>
-			<li>Comfort</li>
-			<li>Outdoors</li>
-			<li>DrugDesire</li>
-			<li>RoomSize</li>
 			<li>Suppression</li>
 			<li>Bladder</li>
 			<li>Hygiene</li>
@@ -22,8 +15,6 @@
 			<li>CultMindedness</li>
 		</excludedNeedsForAndroids>
         <androidExclusiveNeeds>
-			<li>VREA_MemorySpace</li>
-			<li>VREA_ReactorPower</li>
 			<li>VREA_FoodSuppressed</li>
 		</androidExclusiveNeeds>
 		<androidSpecificMentalBreaks>

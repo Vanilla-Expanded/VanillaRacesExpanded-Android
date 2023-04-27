@@ -7,10 +7,9 @@ namespace VREAndroids
     [HarmonyPatch(typeof(TraitSet), "GainTrait")]
     public static class TraitSet_GainTrait_Patch
     {
-        public static bool shouldAllowGaining;
         public static bool Prefix(Pawn ___pawn, Trait trait)
         {
-            if (!shouldAllowGaining && ___pawn.IsAndroid(out var state) && state != AndroidState.Awakened)
+            if (___pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))
             {
                 return false;
             }

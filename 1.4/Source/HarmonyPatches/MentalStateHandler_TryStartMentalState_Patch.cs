@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(MentalStateHandler __instance, MentalStateDef stateDef, Pawn ___pawn)
         {
-            if (___pawn.IsAndroid(out var state) && state != AndroidState.Awakened 
+            if (___pawn.HasActiveGene(VREA_DefOf.VREA_MentalBreaksDisabled) 
                 && VREA_DefOf.VREA_AndroidSettings.androidSpecificMentalBreaks.Contains(stateDef.defName) is false)
             {
                 return false;

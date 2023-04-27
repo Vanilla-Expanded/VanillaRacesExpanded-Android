@@ -11,13 +11,20 @@ namespace VREAndroids
         {
             if (__result)
             {
-                if (p.IsAndroid())
+                if (p.HasActiveGene(VREA_DefOf.VREA_NeutroCirculation))
                 {
-                    __result = bedDef == VREA_DefOf.VREA_NeutroCasket;
+                    if (bedDef != VREA_DefOf.VREA_NeutroCasket)
+                    {
+                        __result = false;
+                    }
                 }
-                else
+                else if (p.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
                 {
-                    __result = bedDef != VREA_DefOf.VREA_NeutroCasket;
+                    __result = false;
+                }
+                else if (bedDef == VREA_DefOf.VREA_NeutroCasket)
+                {
+                    __result = false;
                 }
             }
         }

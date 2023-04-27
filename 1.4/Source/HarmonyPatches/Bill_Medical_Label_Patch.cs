@@ -22,7 +22,7 @@ namespace VREAndroids
 
         public static string GetAndroidCounterPart(BodyPartRecord bodyPartRecord)
         {
-            if (curPawn.IsAndroid())
+            if (curPawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
                 var counterPart = bodyPartRecord.def.GetAndroidCounterPart();
                 if (counterPart != null)

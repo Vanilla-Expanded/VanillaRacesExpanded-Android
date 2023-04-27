@@ -24,7 +24,6 @@ namespace VREAndroids
                 return Deliveree.health.HasHediffsNeedingTend() ? JobCondition.Ongoing : JobCondition.Succeeded;
             });
             this.FailOnAggroMentalState(TargetIndex.A);
-            Toil reserveMedicine = null;
             PathEndMode interactionCell = PathEndMode.None;
             if (Deliveree == pawn)
             {

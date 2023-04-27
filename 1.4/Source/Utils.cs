@@ -8,24 +8,45 @@ namespace VREAndroids
     [StaticConstructorOnStartup]
     public static class Utils
     {
-        public static bool IsAndroid(this Pawn pawn)
+        public static HashSet<GeneDef> allAndroidGenes = new HashSet<GeneDef>();
+        private static List<GeneDef> cachedGeneDefsInOrder = null;
+        public static List<GeneDef> AndroidGenesGenesInOrder
         {
-            return pawn.IsAndroid(out _);
+            get
+            {
+                if (cachedGeneDefsInOrder == null)
+                {
+                    cachedGeneDefsInOrder = new List<GeneDef>();
+                    foreach (GeneDef allDef in allAndroidGenes)
+                    {
+                        if (allDef.endogeneCategory != EndogeneCategory.Melanin)
+                        {
+                            cachedGeneDefsInOrder.Add(allDef);
+                        }
+                    }
+                    cachedGeneDefsInOrder.SortBy((GeneDef x) => 0f - x.displayCategory.displayPriorityInXenotype, (GeneDef x) => x.displayCategory.label, (GeneDef x) => x.displayOrderInCategory);
+                }
+                return cachedGeneDefsInOrder;
+            }
         }
 
-        public static bool IsAndroid(this Pawn pawn, out AndroidState androidState)
+        public static bool IsAndroidGene(this GeneDef geneDef)
         {
-            var hediff = GetAndroidHediff(pawn);
-            bool isAndroid = hediff != null;
-            if (isAndroid)
+            return allAndroidGenes.Contains(geneDef);
+        }
+
+        public static bool CanBeRemovedFromAndroid(this GeneDef geneDef)
+        {
+            if (geneDef is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent)
             {
-                androidState = hediff.AndroidState;
+                return false;
             }
-            else
-            {
-                androidState = AndroidState.None;
-            }
-            return isAndroid;
+            return true;
+        }
+        public static bool HasActiveGene(this Pawn pawn, GeneDef geneDef)
+        {
+            if (pawn.genes is null) return false;
+            return pawn.genes.GetGene(geneDef)?.Active ?? false;
         }
 
         public static Hediff_Android GetAndroidHediff(this Pawn pawn)

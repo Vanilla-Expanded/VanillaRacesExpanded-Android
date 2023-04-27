@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public static bool Prefix(InspirationHandler __instance)
         {
-            if (__instance.pawn.IsAndroid(out var state) && state != AndroidState.Awakened)
+            if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_Uninspired))
             {
                 return false;
             }

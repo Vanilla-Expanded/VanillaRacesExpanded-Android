@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(ref bool __result, RecipeWorker __instance, Thing thing, BodyPartRecord part = null)
         {
-            if (thing is Pawn pawn && pawn.IsAndroid() && __instance is Recipe_AdministerIngestible)
+            if (thing is Pawn pawn && pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody) && __instance is Recipe_AdministerIngestible)
             {
                 __result = false;
             }

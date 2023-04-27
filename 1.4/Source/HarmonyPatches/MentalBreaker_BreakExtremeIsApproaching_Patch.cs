@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public static void Postfix(MentalBreaker __instance, ref bool __result)
         {
-            if (__instance.pawn.IsAndroid(out var state) && state != AndroidState.Awakened)
+            if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_MentalBreaksDisabled))
             {
                 __result = false;
             }

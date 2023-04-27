@@ -20,43 +20,10 @@ namespace VREAndroids
         [HarmonyPriority(int.MaxValue)]
         public static void Postfix(Pawn __0, ref bool __result)
         {
-            if (__0.IsAndroid())
+            if (__0.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
                 __result = false;
             }
         }
     }
-
-    //[HarmonyPatch]
-    //public static class FoodUtility_PrefixPatches
-    //{
-    //    [HarmonyTargetMethods]
-    //    public static IEnumerable<MethodBase> GetMethods()
-    //    {
-    //        yield return AccessTools.Method(typeof(FoodUtility), "WillIngestStackCountOf");
-    //    }
-    //
-    //    [HarmonyPriority(int.MaxValue)]
-    //    public static bool Prefix(Pawn __0)
-    //    {
-    //        if (__0.IsAndroid())
-    //        {
-    //            return false;
-    //        }
-    //        return true;
-    //    }
-    //}
-    //
-    //[HarmonyPatch(typeof(FoodUtility), "InappropriateForTitle")]
-    //public static class FoodUtility_InappropriateForTitle_Patch
-    //{
-    //    public static bool Prefix(ThingDef food, Pawn p, bool allowIfStarving)
-    //    {
-    //        if (p.IsAndroid())
-    //        {
-    //            return false;
-    //        }
-    //        return true;
-    //    }
-    //}
 }
