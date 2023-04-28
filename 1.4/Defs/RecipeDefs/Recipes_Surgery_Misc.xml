@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Abstract="True" Name="VREA_SurgeryAndroid">
+    <effectWorking>ButcherMechanoid</effectWorking>
+	<soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>16</workSkillLearnFactor>
+  </RecipeDef>
+
+  <RecipeDef ParentName="VREA_SurgeryAndroid">
+    <defName>VREA_RemoveArtificalPart</defName>
+    <label>remove component</label>
+    <description>Remove an artifical part.</description>
+    <workerClass>VREAndroids.Recipe_RemoveArtificalBodyPart</workerClass>
+    <jobString>Removing artifical body part.</jobString>
+    <workAmount>2000</workAmount>
+    <surgerySuccessChanceFactor>1.2</surgerySuccessChanceFactor>
+  </RecipeDef>
+  
+</Defs>

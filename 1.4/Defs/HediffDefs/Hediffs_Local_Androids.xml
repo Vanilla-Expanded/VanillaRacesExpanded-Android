@@ -6,6 +6,8 @@
 		<label>neutro loss</label>
 		<description>A reduction in the normal neutroamine volume. Minor neutro loss has relatively mild effects, but when neutro loss becomes severe, all subsystems become badly impaired and the android loses the ability to move. Extreme neutro loss will never lead to death.
 \nNeutro loss does not naturally recover over time. An android needs to be inserted into a neutrocasket and filled with neutroamine again.</description>
+		<maxSeverity>1</maxSeverity>
+		<hediffClass>VREAndroids.Hediff_Neutroloss</hediffClass>
 		<stages>
 			<li>
 				<label>minor</label>
@@ -48,11 +50,7 @@
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
-						<offset>-0.4</offset>
-					</li>
-					<li>
-						<capacity>Consciousness</capacity>
-						<setMax>0.1</setMax>
+						<setMax>0</setMax>
 					</li>
 				</capMods>
 			</li>

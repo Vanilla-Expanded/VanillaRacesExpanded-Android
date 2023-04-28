@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
+	<StatCategoryDef>
+		<defName>VREA_Android</defName>
+		<label>Android</label>
+		<displayOrder>200</displayOrder>
+	</StatCategoryDef>
+  
     <StatDef>
         <defName>VREA_MemorySpaceDrainMultiplier</defName>
         <label>memory space drain multiplier</label>

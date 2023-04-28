@@ -165,6 +165,7 @@
 		<geneClass>VREAndroids.Gene_SyntheticBody</geneClass>
 		<displayOrderInCategory>10</displayOrderInCategory>
 		<biostatCpx>3</biostatCpx>
+		<sterilize>true</sterilize>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef>
@@ -320,7 +321,17 @@
 		<description>During solar flare, all needs of an android become frozen, and the android is unable to move or do any other actions. When the solar flare ends, the android returns to work as normal.</description>
 		<geneClass>VREAndroids.Gene_SolarFlareVulnerability</geneClass>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_SolarFlareVulnerability</iconPath>
-		<displayOrderInCategory>1</displayOrderInCategory>
+		<displayOrderInCategory>2</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_EMPVulnerability</defName>
+		<label>EMP vulnerability</label>
+		<description>Androids are susceptible to EMP damage and will become incapacitated when hit by an electromagnetic pulse of any kind. It will also deal damage to random biocomponents of an android, depending on the size of the pulse.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_EMPVulnerability</iconPath>
+		<displayOrderInCategory>3</displayOrderInCategory>
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>4</biostatMet>
 	</VREAndroids.AndroidGeneDef>

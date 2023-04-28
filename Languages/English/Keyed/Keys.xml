@@ -28,8 +28,28 @@
 	<VREA.MessageConflictingComponentPresent>Cannot save android with multiple conflicting components.</VREA.MessageConflictingComponentPresent>
 	<VREA.MessageComponentMissingPrerequisite>{0} lacks a prerequisite component</VREA.MessageComponentMissingPrerequisite>
 	<VREA.AndroidName>Android name</VREA.AndroidName>
+	<VREA.ComplexityDesc>How much complexity this adds to the process android creation.</VREA.ComplexityDesc>
 	<VREA.PowerEfficiency>Power efficiency</VREA.PowerEfficiency>
-	<VREA.PowerEfficiencyDesc>Power efficiency</VREA.PowerEfficiencyDesc>
+	<VREA.PowerEfficiencyDesc>The power efficiency of this component. High efficiency means an android's reactor lasts a longer time. Low efficiency means the reactor will last less time.</VREA.PowerEfficiencyDesc>
+	
+	<VREA.ComplexityTotalDesc>The total complexity of all the hardware and subroutines in use.</VREA.ComplexityTotalDesc>
+	<VREA.PowerEfficiencyTotalDesc>The total power efficiency of all subroutines and hardware. High efficiency means an android's reactor lasts a longer time. Low efficiency means the reactor will last less time.	</VREA.PowerEfficiencyTotalDesc>
 	<VREA.PowerDrain>Power drain</VREA.PowerDrain>
 	<VREA.Android>Android</VREA.Android>
+	<VREA.CannotFeedOnAndroid>Cannot feed on android.</VREA.CannotFeedOnAndroid>
+	<VREA.CannotImplantGenesOnAndroid>Cannot implant genes on android.</VREA.CannotImplantGenesOnAndroid>
+	<VREA.CannotCoagulateOnAndroid>Cannot coagulate on android.</VREA.CannotCoagulateOnAndroid>
+	<VREA.IsAndroid>{PAWN_nameDef} is an android.</VREA.IsAndroid>
+	<VREA.NeutrolossRate>Neutroloss rate</VREA.NeutrolossRate>
+	<VREA.TotalNeutroLoss>Total neutro loss in {0}</VREA.TotalNeutroLoss>
+	<VREA.NeutroamineLeakedOutCompletely>Neutroamine leaked out completely</VREA.NeutroamineLeakedOutCompletely>
+	<VREA.MessageCannotSelfTendEver>{1_labelShort} is incapable of doing Crafting work, and so cannot ever self-tend.</VREA.MessageCannotSelfTendEver>
+	<VREA.MessageSelfTendUnsatisfied>To self-tend, {1_labelShort} must also be assigned to Crafting work.</VREA.MessageSelfTendUnsatisfied>
+	<VREA.ViewComponents>View components</VREA.ViewComponents>
+  <VREA.ViewComponentsDesc>Click to view {PAWN_nameDef}'s components.</VREA.ViewComponentsDesc>
+	<VREA.MoreInfoInInfoScreen>More information is available on this android's information screen.</VREA.MoreInfoInInfoScreen>
+	<VREA.HardwareComponents>Hardware components</VREA.HardwareComponents>
+	<VREA.Subroutines>Subroutines</VREA.Subroutines>
+	<VREA.HardwareComponentsDesc>Hardware are special components within the android that allow this particular unit to function. They normally cannot be removed, as they essentially are an android. In a rare situation when an android awakens, some hardware components might change or even be outright removed.</VREA.HardwareComponentsDesc>
+	<VREA.SubroutinesDesc>Subroutine components dictate how the android will behave and what knowledge it has. They can be changed via behaviorist station.</VREA.SubroutinesDesc>
 </LanguageData>

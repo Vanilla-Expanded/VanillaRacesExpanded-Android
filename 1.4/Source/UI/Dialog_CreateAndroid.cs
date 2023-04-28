@@ -92,7 +92,7 @@ namespace VREAndroids
             float num4 = rect4.yMax + 4f;
             Rect rect5 = new Rect(rect2.x + Margin + 10f, num4, rect.width * 0.75f - Margin * 3f - 10f, num3);
             rect5.yMax = rect4.yMax + num3 + 4f;
-            AndroidStatsTable.Draw(rect5, gcx, met, drawMax: true, ignoreRestrictions, maxGCX);
+            AndroidStatsTable.Draw(rect5, gcx, met);
             string text = "VREA.AndroidName".Translate().CapitalizeFirst() + ":";
             Rect rect6 = new Rect(rect5.xMax + Margin, num4, Text.CalcSize(text).x, Text.LineHeight);
             Widgets.Label(rect6, text);
@@ -463,7 +463,7 @@ namespace VREAndroids
             if (Mouse.IsOver(rect))
             {
                 Widgets.DrawHighlight(rect);
-                TooltipHandler.TipRegion(rect, "Complexity".Translate().Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + "ComplexityDesc".Translate());
+                TooltipHandler.TipRegion(rect, "Complexity".Translate().Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + "VREA.ComplexityTotalDesc".Translate());
             }
             num2 += num;
             if (met != 0)
@@ -486,7 +486,7 @@ namespace VREAndroids
                 {
                     Widgets.DrawHighlight(rect2);
                     TooltipHandler.TipRegion(rect2, "VREA.PowerEfficiency".Translate().Colorize(ColoredText.TipSectionTitleColor) + "\n\n" 
-                        + "VREA.PowerEfficiencyDesc".Translate());
+                        + "VREA.PowerEfficiencyTotalDesc".Translate());
                 }
                 num2 += num;
             }

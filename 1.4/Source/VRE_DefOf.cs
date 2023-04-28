@@ -46,5 +46,11 @@ namespace VREAndroids
 
         public static GeneCategoryDef VREA_Hardware;
         public static GeneCategoryDef VREA_Subroutine;
+
+        public static RecipeDef VREA_RemoveArtificalPart;
+        public static GeneDef VREA_EMPVulnerability;
+        public static DamageDef VREA_EMPBurn;
+        public static HediffDef VREA_ElectromagneticShock;
+        public static StatCategoryDef VREA_Android;
     }
 }

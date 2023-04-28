@@ -10,6 +10,13 @@ namespace VREAndroids
     {
         public static HashSet<GeneDef> allAndroidGenes = new HashSet<GeneDef>();
         private static List<GeneDef> cachedGeneDefsInOrder = null;
+        static Utils()
+        {
+            foreach (var race in DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.race != null && x.race.Humanlike))
+            {
+                race.recipes.Add(VREA_DefOf.VREA_RemoveArtificalPart);
+            }
+        }
         public static List<GeneDef> AndroidGenesGenesInOrder
         {
             get
@@ -47,6 +54,17 @@ namespace VREAndroids
         {
             if (pawn.genes is null) return false;
             return pawn.genes.GetGene(geneDef)?.Active ?? false;
+        }
+
+        public static bool IsHardware(this GeneDef geneDef)
+        {
+            if (geneDef.IsAndroidGene() is false)
+                return false;
+            return geneDef.IsSubroutine() is false;
+        }
+        public static bool IsSubroutine(this GeneDef geneDef)
+        {
+            return geneDef.displayCategory == VREA_DefOf.VREA_Subroutine;
         }
 
         public static Dictionary<BodyPartDef, HediffDef> cachedCounterParts = new Dictionary<BodyPartDef, HediffDef>();

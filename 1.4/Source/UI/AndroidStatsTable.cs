@@ -17,14 +17,11 @@ namespace VREAndroids
 
             public Texture2D icon;
 
-            public bool displayMaxGCXInfo;
-
-            public AndroidStatData(string labelKey, string descKey, Texture2D icon, bool displayMaxGCXInfo)
+            public AndroidStatData(string labelKey, string descKey, Texture2D icon)
             {
                 this.labelKey = labelKey;
                 this.descKey = descKey;
                 this.icon = icon;
-                this.displayMaxGCXInfo = displayMaxGCXInfo;
             }
         }
 
@@ -39,8 +36,8 @@ namespace VREAndroids
 
         private static readonly AndroidStatData[] AndroidStats = new AndroidStatData[2]
         {
-            new AndroidStatData("Complexity", "ComplexityDesc", GeneUtility.GCXTex.Texture, displayMaxGCXInfo: true),
-            new AndroidStatData("VREA.PowerEfficiency", "VREA.PowerEfficiencyDesc", PowerEfficiencyIcon, displayMaxGCXInfo: false),
+            new AndroidStatData("Complexity", "VREA.ComplexityTotalDesc", GeneUtility.GCXTex.Texture),
+            new AndroidStatData("VREA.PowerEfficiency", "VREA.PowerEfficiencyTotalDesc", PowerEfficiencyIcon),
         };
 
         private static Dictionary<string, string> truncateCache = new Dictionary<string, string>();
@@ -62,7 +59,7 @@ namespace VREAndroids
             return num;
         }
 
-        public static void Draw(Rect rect, int gcx, int met, bool drawMax, bool ignoreLimits, int maxGCX = -1)
+        public static void Draw(Rect rect, int gcx, int met)
         {
             int num = AndroidStats.Length;
             float num2 = MaxLabelWidth();
@@ -80,10 +77,6 @@ namespace VREAndroids
                 Widgets.DrawHighlightIfMouseover(rect3);
                 rect3.xMax = rect2.xMax + 4f + 90f;
                 TaggedString taggedString = AndroidStats[i].descKey.Translate();
-                if (maxGCX >= 0 && AndroidStats[i].displayMaxGCXInfo)
-                {
-                    taggedString += "\n\n" + "MaxComplexityDesc".Translate();
-                }
                 TooltipHandler.TipRegion(rect3, taggedString);
                 GUI.DrawTexture(position, AndroidStats[i].icon);
                 Text.Anchor = TextAnchor.MiddleLeft;
@@ -93,17 +86,6 @@ namespace VREAndroids
             float num4 = num2 + 4f + 22f + 4f;
             string text = gcx.ToString();
             string text2 = met.ToStringWithSign();
-            if (drawMax && !ignoreLimits)
-            {
-                if (maxGCX >= 0)
-                {
-                    if (gcx > maxGCX)
-                    {
-                        text = text.Colorize(ColorLibrary.RedReadable);
-                    }
-                    text = text + " / " + maxGCX;
-                }
-            }
             Text.Anchor = TextAnchor.MiddleCenter;
             Widgets.Label(new Rect(num4, 0f, 90f, num3), text);
             Widgets.Label(new Rect(num4, num3, 90f, num3), text2);
