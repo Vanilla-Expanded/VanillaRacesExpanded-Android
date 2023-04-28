@@ -151,7 +151,7 @@ namespace VREAndroids
                 countsAsAddedPartOrImplant = true,
                 addedPartProps = new AddedBodyPartProps
                 {
-                    solid = true,
+                    solid = bodyPartDef.solid,
                     partEfficiency = 1f,
                 }
             };

@@ -57,8 +57,8 @@
     <isBad>false</isBad>
     <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
     <addedPartProps>
-      <solid>true</solid>
       <partEfficiency>1</partEfficiency>
+	  <solid>false</solid>
     </addedPartProps>
   </HediffDef>
 
