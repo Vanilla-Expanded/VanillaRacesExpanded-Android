@@ -8,6 +8,9 @@
     <description>An installed neuropump.</description>
     <descriptionHyperlinks><ThingDef>VREA_NeuroPump</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_NeuroPump</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -61,6 +64,9 @@
     <description>An installed air filter.</description>
     <descriptionHyperlinks><ThingDef>VREA_AirFilter</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_AirFilter</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -114,6 +120,9 @@
     <description>An installed neutrofilter.</description>
     <descriptionHyperlinks><ThingDef>VREA_Neutrofilter</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_Neutrofilter</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -167,6 +176,9 @@
     <description>An installed metabolism regulator.</description>
     <descriptionHyperlinks><ThingDef>VREA_MetabolismRegulator</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_MetabolismRegulator</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -240,6 +252,9 @@
 			 </capMods>
 		</li>
 	</stages>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -293,6 +308,9 @@
     <description>An installed artifical brain.</description>
     <descriptionHyperlinks><ThingDef>VREA_ArtificalBrain</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_ArtificalBrain</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -344,6 +362,9 @@
     <description>An installed optical unit.</description>
     <descriptionHyperlinks><ThingDef>VREA_OpticalUnit</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_OpticalUnit</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -394,6 +415,9 @@
     <description>An installed audio processor.</description>
     <descriptionHyperlinks><ThingDef>VREA_AudioProcessor</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_AudioProcessor</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -542,6 +566,9 @@
     <description>An installed artifical ribcage.</description>
     <descriptionHyperlinks><ThingDef>VREA_ArtificalRibcage</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_ArtificalRibcage</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
@@ -591,6 +618,9 @@
     <description>An installed artifical spine.</description>
     <descriptionHyperlinks><ThingDef>VREA_ArtificalSpine</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_ArtificalSpine</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
