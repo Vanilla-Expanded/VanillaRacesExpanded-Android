@@ -183,4 +183,37 @@
       </li>
     </stages>
   </HediffDef>
+  
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>VREA_ScanningSickness</defName>
+    <label>Scanning sickness</label>
+    <description>text.todo.</description>
+    <initialSeverity>2</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+        <mechanitorFactor>2</mechanitorFactor>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <vomitMtbDays>1.5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
 </Defs>

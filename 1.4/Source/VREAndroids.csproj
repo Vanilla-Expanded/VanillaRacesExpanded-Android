@@ -47,6 +47,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="VFECore">
+      <HintPath>..\..\..\VanillaExpandedFramework\1.4\Assemblies\VFECore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer" Version="2.*">
@@ -68,6 +72,9 @@
     <Compile Include="AI\MentalState_SolarFlared.cs" />
     <Compile Include="AI\Recipe_RemoveArtificalBodyPart.cs" />
     <Compile Include="AI\Stance_Stand.cs" />
+    <Compile Include="Buildings\Building_SubcorePolyanalyzer.cs" />
+    <Compile Include="HarmonyPatches\Building_SubcoreScanner_CanAcceptPawn_Patch.cs" />
+    <Compile Include="UI\WorkGiver_HaulToSubcorePolyanalyzer.cs" />
     <Compile Include="Genes\AndroidGeneDef.cs" />
     <Compile Include="Genes\Gene_SyntheticBody.cs" />
     <Compile Include="HarmonyPatches\Bill_Medical_Label_Patch.cs" />

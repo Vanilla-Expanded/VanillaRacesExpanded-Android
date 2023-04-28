@@ -78,4 +78,85 @@
     </placeWorkers>
   </ThingDef>
 
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_SubcorePolyanalyzer</defName>
+    <label>subcore polyanalyzer</label>
+    <description>A sizable device that features a pod equipped with numerous tissue probes and advanced neural scanners. Designed to accommodate one person at a time, the system requires four separate individuals to undergo scanning in sequence. Upon insertion, the polyanalyzer engages the probes and scanners to analyze the neuro-psychic patterns of each individual.
+Utilizing a sophisticated algorithm, the device fuses these distinct patterns into a single, intricate persona after all four individuals have been scanned. This composite persona is then digitally transferred into a new composite-tier persona subcore. The process may cause temporary discomfort and disorientation for the participants but leaves them otherwise unharmed.
+Persona subcores created by this device can only be used to create complex, human-like androids.</description>
+    <thingClass>VREAndroids.Building_SubcorePolyanalyzer</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/SubcorePolyanalyzer/SubcorePolyanalyzer</texPath>
+      <drawSize>(3,2)</drawSize>
+      <shadowData>
+        <volume>(3, 2, 1.9)</volume>
+      </shadowData>
+    </graphicData>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2430</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3,2)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <Mass>25</Mass>
+      <WorkToBuild>8000</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+	  <Flammability>1</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <costList>
+      <Steel>200</Steel>
+      <Plasteel>150</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>VREA_AndroidCreation</li>
+    </researchPrerequisites>
+    <building>
+      <subcoreScannerOutputDef>VREA_PersonaSubcore</subcoreScannerOutputDef>
+      <subcoreScannerStartEffect>SubcoreSoftscanner_Start</subcoreScannerStartEffect>
+      <subcoreScannerWorking>SubcoreSoftscanner_Working</subcoreScannerWorking>
+      <subcoreScannerComplete>SubcoreSoftscanner_Complete</subcoreScannerComplete>
+      <subcoreScannerHediff>VREA_ScanningSickness</subcoreScannerHediff>
+      <ai_chillDestination>false</ai_chillDestination>
+	  <subcoreScannerTicks>3750</subcoreScannerTicks>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+      <subcoreScannerFixedIngredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>Plasteel</li>
+            </thingDefs>
+          </filter>
+          <count>10</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>ComponentSpacer</li>
+            </thingDefs>
+          </filter>
+          <count>1</count>
+        </li>
+      </subcoreScannerFixedIngredients>
+    </building>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
 </Defs>

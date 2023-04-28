@@ -54,5 +54,7 @@ namespace VREAndroids
         public static StatCategoryDef VREA_Android;
         public static GeneDef VREA_SlowRAM, VREA_FastRAM;
         public static AndroidGeneTemplateDef VREA_AptitudeIncapable;
+        public static ThingDef VREA_SubcorePolyanalyzer;
+        public static ThingDef VREA_SubcorePolyanalyzer_North, VREA_SubcorePolyanalyzer_South, VREA_SubcorePolyanalyzer_East, VREA_SubcorePolyanalyzer_West;
     }
 }

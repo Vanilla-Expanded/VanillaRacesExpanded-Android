@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using VanillaGenesExpanded;
 using Verse;
 
 namespace VREAndroids
@@ -36,6 +37,10 @@ namespace VREAndroids
                         var clonedGene = cloneMethod.Invoke(geneDef, null) as GeneDef;
                         clonedGene.defName = "VREA_" + geneDef.defName;
                         clonedGene.modExtensions ??= new List<DefModExtension>();
+                        clonedGene.modExtensions.Add(new GeneExtension
+                        {
+                            backgroundPathXenogenes = "UI/Icons/Genes/GeneBackground_Hardware"
+                        });
                         clonedGene.canGenerateInGeneSet = false;
                         Utils.allAndroidGenes.Add(clonedGene);
                         yield return clonedGene;
@@ -54,6 +59,11 @@ namespace VREAndroids
                     else
                     {
                         var def = GetFromTemplate(g, allDef, allDef.index * 1000);
+                        def.modExtensions??= new List<DefModExtension>();
+                        def.modExtensions.Add(new GeneExtension
+                        {
+                            backgroundPathXenogenes = "UI/Icons/Genes/GeneBackground_Subroutine"
+                        });
                         Utils.allAndroidGenes.Add(def);
                         yield return def;
                     }
@@ -135,8 +145,6 @@ namespace VREAndroids
                     {
                         geneDef.disabledWorkTags = WorkTags.Mining;
                     }
-
-                    Log.Message(geneDef + " got " + geneDef.disabledWorkTags);
                 }
             }
             return geneDef;

@@ -52,4 +52,12 @@
 	<VREA.Subroutines>Subroutines</VREA.Subroutines>
 	<VREA.HardwareComponentsDesc>Hardware are special components within the android that allow this particular unit to function. They normally cannot be removed, as they essentially are an android. In a rare situation when an android awakens, some hardware components might change or even be outright removed.</VREA.HardwareComponentsDesc>
 	<VREA.SubroutinesDesc>Subroutine components dictate how the android will behave and what knowledge it has. They can be changed via behaviorist station.</VREA.SubroutinesDesc>
+	<VREA.ScanProgress>Scan progress: {0}</VREA.ScanProgress>
+	<VREA.AndroidAreNotAllowed>Androids are not allowed</VREA.AndroidAreNotAllowed>
+	<VREA.MessageSubcorePolyanalyzerCompleted>Subcore polyanalyzer completed for {PAWN_nameDef}. Scan progres: {1}</VREA.MessageSubcorePolyanalyzerCompleted>
+	<VREA.AlreadyScanned>{PAWN_nameDef} has already been scanned.</VREA.AlreadyScanned>
+	<VREA.SubcorePolyanalyzerNotInit>Subcore polyanalyzer not initiated</VREA.SubcorePolyanalyzerNotInit>
+	<VREA.SubcorePolyanalyzerStart>Start subcore polyanalyzer</VREA.SubcorePolyanalyzerStart>
+  <VREA.SubcorePolyanalyzerStartDesc>Once the {0} is filled with the required ingredients, {1}, select a colonist and right-click on the {0} or on a downed person to start the subcore polyanalyzer.</VREA.SubcorePolyanalyzerStartDesc>
+
 </LanguageData>

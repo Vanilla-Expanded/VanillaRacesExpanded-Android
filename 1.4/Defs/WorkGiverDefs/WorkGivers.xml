@@ -14,5 +14,10 @@
 		<priorityInType>110</priorityInType>
 		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
-
+	
+  <WorkGiverDef ParentName="HaulToBase">
+    <defName>VREA_HaulToSubcorePolyanalyzer</defName>
+    <label>haul resources to subcore polyanalyzer</label>
+    <giverClass>VREAndroids.WorkGiver_HaulToSubcorePolyanalyzer</giverClass>
+  </WorkGiverDef>
 </Defs>
