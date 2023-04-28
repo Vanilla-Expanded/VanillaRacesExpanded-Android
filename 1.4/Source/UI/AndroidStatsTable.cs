@@ -118,7 +118,7 @@ namespace VREAndroids
 
         public static readonly SimpleCurve PowerEfficiencyToPowerDrainFactorCurve = new SimpleCurve
         {
-            new CurvePoint(-5f, 2.25f),
+            new CurvePoint(-20f, 6.0f),
             new CurvePoint(0f, 1f),
             new CurvePoint(5f, 0.5f)
         };

@@ -31,7 +31,8 @@ namespace VREAndroids
             {
                 toil.actor.Rotation = Rot4.South;
                 var memorySpace = this.pawn.needs.TryGetNeed<Need_MemorySpace>();
-                memorySpace.curLevelInt = Mathf.Min(1f, memorySpace.curLevelInt + (1f / (float)MentalState_Reformatting.TicksToRecoverFromReformatting));
+                memorySpace.curLevelInt = Mathf.Min(1f, memorySpace.curLevelInt + (1f / 
+                    (float)MentalState_Reformatting.TicksToRecoverFromReformatting(pawn)));
                 if (memorySpace.curLevelInt == 1f)
                 {
                     this.EndJobWith(JobCondition.Succeeded);

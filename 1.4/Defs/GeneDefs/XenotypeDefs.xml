@@ -32,6 +32,16 @@
 		<description>text.todo</description>
 		<descriptionShort>text.todo</descriptionShort>
 		<iconPath>UI/XenotypeIcons/Androidtype_Drone</iconPath>
+		<genes>
+			<li>VREA_CombatIncapability</li>
+			<li>VREA_LowPowerMode</li>
+			<li>VREA_AptitudeBasic_Animals</li>
+			<li>VREA_AptitudeBasic_Construction</li>
+			<li>VREA_AptitudeBasic_Cooking</li>
+			<li>VREA_AptitudeBasic_Crafting</li>
+			<li>VREA_AptitudeBasic_Plants</li>
+			<li>VREA_AptitudeIncapable_Social</li>
+		</genes>
 	</XenotypeDef>
 
 </Defs>

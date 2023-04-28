@@ -13,10 +13,26 @@ namespace VREAndroids
             base.PostAdd(dinfo);
             curEnergy = 1f;
         }
+
+        public float PowerEfficiencyDrainMultiplier
+        {
+            get
+            {
+                int efficiency = 0;
+                foreach (Gene item in pawn.genes.GenesListForReading)
+                {
+                    if (!item.Overridden)
+                    {
+                        efficiency += item.def.biostatMet;
+                    }
+                }
+                return efficiency * AndroidStatsTable.PowerEfficiencyToPowerDrainFactorCurve.Evaluate(efficiency);
+            }
+        }
         public override void Tick()
         {
             base.Tick();
-            curEnergy = Mathf.Max(0, curEnergy - (1f / GenDate.TicksPerYear * 2f));
+            curEnergy = Mathf.Max(0, curEnergy - ((1f / GenDate.TicksPerYear * 2f) * PowerEfficiencyDrainMultiplier));
             if (curEnergy <= 0 && this.Severity != 1f)
             {
                 this.Severity = 1f;

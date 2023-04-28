@@ -270,12 +270,12 @@
 		<description>Androids with this hardware are deaf to all psychic energy and influence outside their own minds. They cannot be affected by psychic influence, nor can they ever wield psychic power.</description>
 		<iconPath>UI/Icons/Genes/Hardware/Gene_PsychicallyDeaf</iconPath>
 		<displayOrderInCategory>19</displayOrderInCategory>
-        <statFactors>
-          <PsychicSensitivity>0</PsychicSensitivity>
-        </statFactors>
+		<statFactors>
+			<PsychicSensitivity>0</PsychicSensitivity>
+		</statFactors>
 		<biostatCpx>1</biostatCpx>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
 		<defName>VREA_MentalBreaksDisabled</defName>
 		<label>mental breaks disabled</label>
@@ -285,7 +285,7 @@
 		<biostatCpx>1</biostatCpx>
 		<removedWhenAwakened>true</removedWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
 		<defName>VREA_PsychologyDisabled</defName>
 		<label>psychology disabled</label>
@@ -314,7 +314,7 @@
 			<li>KillThirst</li>
 		</exclusionTags>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_SolarFlareVulnerability</defName>
 		<label>solar flare vulnerability</label>
@@ -325,7 +325,7 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_EMPVulnerability</defName>
 		<label>EMP vulnerability</label>
@@ -335,5 +335,107 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SlowRAM</defName>
+		<label>slow RAM</label>
+		<description>This android will take twice as long to reformat when it runs out of memory.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SlowRAM</iconPath>
+		<displayOrderInCategory>4</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>2</biostatMet>
+		<exclusionTags>
+			<li>AndroidRAM</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_FastRAM</defName>
+		<label>fast RAM</label>
+		<description>This android will take half the time to reformat when it runs out of memory.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_FastRAM</iconPath>
+		<displayOrderInCategory>5</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<exclusionTags>
+			<li>AndroidRAM</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_LowPowerMode</defName>
+		<label>low power mode</label>
+		<description>Androids with this subroutine will have significantly reduced work and movement speed in order to preserve power.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_LowPowerMode</iconPath>
+		<displayOrderInCategory>6</displayOrderInCategory>
+		<statFactors>
+			<MoveSpeed>0.6</MoveSpeed>
+			<WorkSpeedGlobal>0.6</WorkSpeedGlobal>
+		</statFactors>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>8</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneTemplateDef Name="VREA_GeneAptitudeBase" Abstract="True">
+		<geneClass>Gene</geneClass>
+		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+		<exclusionTagPrefix>AndroidSkill</exclusionTagPrefix>
+		<geneTemplateType>Skill</geneTemplateType>
+		<displayCategory>VREA_Subroutine</displayCategory>
+		<selectionWeight>0.2</selectionWeight>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeIncapable</defName>
+		<label>incapable of {0}</label>
+		<description>Androids with this subroutine are incapable of doing any tasks related to {0} skill.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Incapable</iconPath>
+		<displayOrderOffset>0</displayOrderOffset>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>2</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeBasic</defName>
+		<label>basic {0}</label>
+		<description>Android's aptitude in {0} is increased by 4. Aptitude acts like an offset on skill level.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Basic</iconPath>
+		<aptitudeOffset>4</aptitudeOffset>
+		<displayOrderOffset>20</displayOrderOffset>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeIntermediate</defName>
+		<label>intermediate {0}</label>
+		<description>Android's aptitude in {0} is increased by 8. Aptitude acts like an offset on skill level.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Intermediate</iconPath>
+		<aptitudeOffset>8</aptitudeOffset>
+		<displayOrderOffset>30</displayOrderOffset>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeAdvanced</defName>
+		<label>advanced {0}</label>
+		<description>Android's aptitude in {0} is increased by 12. Aptitude acts like an offset on skill level.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Advanced</iconPath>
+		<aptitudeOffset>12</aptitudeOffset>
+		<displayOrderOffset>40</displayOrderOffset>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-3</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
 	
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeExpert</defName>
+		<label>expert {0}</label>
+		<description>Android's aptitude in {0} is increased by 16. Aptitude acts like an offset on skill level.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Expert</iconPath>
+		<aptitudeOffset>16</aptitudeOffset>
+		<displayOrderOffset>50</displayOrderOffset>
+		<biostatCpx>4</biostatCpx>
+		<biostatMet>-4</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
 </Defs>

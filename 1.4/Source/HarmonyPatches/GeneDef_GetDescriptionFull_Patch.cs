@@ -18,7 +18,6 @@ namespace VREAndroids
                     var originalLine = "Metabolism".Translate().Colorize(GeneUtility.METColor) + ": " + __instance.biostatMet.ToStringWithSign();
                     var newLine = "VREA.PowerEfficiency".Translate().Colorize(SimpleColor.Yellow.ToUnityColor()) + ": " + __instance.biostatMet.ToStringWithSign();
                     __result = __result.Replace(originalLine, newLine);
-                    Log.Message("Replaced: " + originalLine + " - " + newLine + " - " + __result);
                 }
             }
         }

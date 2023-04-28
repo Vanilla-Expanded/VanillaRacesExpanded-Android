@@ -52,5 +52,7 @@ namespace VREAndroids
         public static DamageDef VREA_EMPBurn;
         public static HediffDef VREA_ElectromagneticShock;
         public static StatCategoryDef VREA_Android;
+        public static GeneDef VREA_SlowRAM, VREA_FastRAM;
+        public static AndroidGeneTemplateDef VREA_AptitudeIncapable;
     }
 }
