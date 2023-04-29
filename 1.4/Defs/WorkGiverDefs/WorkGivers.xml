@@ -20,4 +20,21 @@
     <label>haul resources to subcore polyanalyzer</label>
     <giverClass>VREAndroids.WorkGiver_HaulToSubcorePolyanalyzer</giverClass>
   </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>VREA_CreateAndroid</defName>
+    <label>creating android at station</label>
+    <giverClass>VREAndroids.WorkGiver_CreateAndroid</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>VFEP_AndroidCreationStation</li>
+    </fixedBillGiverDefs>
+    <verb>create an android at</verb>
+    <gerund>creating an android at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
 </Defs>

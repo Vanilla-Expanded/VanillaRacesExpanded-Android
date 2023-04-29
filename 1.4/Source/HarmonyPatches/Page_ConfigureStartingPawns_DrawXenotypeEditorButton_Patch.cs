@@ -36,7 +36,7 @@ namespace VREAndroids
             x -= Page.BottomButSize.x / 2f;
             if (Widgets.ButtonText(new Rect(x, y, Page.BottomButSize.x, Page.BottomButSize.y), "VREA.AndroidEditor".Translate()))
             {
-                Find.WindowStack.Add(new Dialog_CreateAndroid(StartingPawnUtility.PawnIndex(__instance.curPawn), delegate
+                Find.WindowStack.Add(new Window_CreateAndroidXenotype(StartingPawnUtility.PawnIndex(__instance.curPawn), delegate
                 {
                     CharacterCardUtility.cachedCustomXenotypes = null;
                     __instance.RandomizeCurPawn();

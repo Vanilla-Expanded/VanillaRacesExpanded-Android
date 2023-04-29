@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef Name="VREA_AndroidBase">
+	<defName>VREA_AndroidBasic</defName>
+    <label>android</label>
+    <race>Human</race>
+    <xenotypeSet>
+      <xenotypeChances>
+        <VREA_AndroidBasic>999</VREA_AndroidBasic>
+      </xenotypeChances>
+    </xenotypeSet>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <combatPower>0</combatPower>
+    <initialWillRange>0</initialWillRange>
+    <initialResistanceRange>0</initialResistanceRange>
+  </PawnKindDef>
+
+</Defs>

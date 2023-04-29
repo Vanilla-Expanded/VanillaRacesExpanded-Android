@@ -30,7 +30,7 @@ namespace VREAndroids
                 GeneUIUtility.DoDebugButton(new Rect(rect2.xMax - 18f - 125f, 5f, 115f, Text.LineHeight), target, pregnancyGenes);
             }
             GUI.BeginGroup(position);
-            float num = AndroidStatsTable.HeightForBiostats();
+            float num = AndroidStatsTable.HeightForBiostats(null);
             Rect rect3 = new Rect(0f, 0f, position.width, position.height - num - 12f);
             DrawGeneSections(rect3, target, pregnancyGenes, ref scrollPosition);
             Rect rect4 = new Rect(0f, rect3.yMax + 6f, position.width - 140f - 4f, num);
@@ -39,7 +39,7 @@ namespace VREAndroids
             {
                 rect4.width = position.width;
             }
-            AndroidStatsTable.Draw(rect4, GeneUIUtility.gcx, GeneUIUtility.met);
+            AndroidStatsTable.Draw(rect4, GeneUIUtility.gcx, GeneUIUtility.met, null);
             TryDrawXenotype(target, rect4.xMax + 4f, rect4.y + Text.LineHeight / 2f);
             if (Event.current.type == EventType.Layout)
             {

@@ -4,51 +4,34 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using Verse.Grammar;
 using Verse.Sound;
 
 namespace VREAndroids
 {
-    [HotSwappable]
-    public class Dialog_CreateAndroid : GeneCreationDialogBase
+    public abstract class Window_CreateAndroidBase : GeneCreationDialogBase
     {
-        private int generationRequestIndex;
+        protected Action callback;
 
-        private Action callback;
+        protected List<GeneDef> selectedGenes = new List<GeneDef>();
 
-        private List<GeneDef> selectedGenes = new List<GeneDef>();
+        protected bool? selectedCollapsed = false;
 
-        private bool inheritable;
+        protected HashSet<GeneCategoryDef> matchingCategories = new HashSet<GeneCategoryDef>();
 
-        private bool? selectedCollapsed = false;
+        protected Dictionary<GeneCategoryDef, bool> collapsedCategories = new Dictionary<GeneCategoryDef, bool>();
 
-        private HashSet<GeneCategoryDef> matchingCategories = new HashSet<GeneCategoryDef>();
+        protected bool hoveredAnyGene;
 
-        private Dictionary<GeneCategoryDef, bool> collapsedCategories = new Dictionary<GeneCategoryDef, bool>();
-
-        private bool hoveredAnyGene;
-
-        private GeneDef hoveredGene;
-
-        private static bool ignoreRestrictionsConfirmationSent;
-
-        private const int MaxCustomXenotypes = 200;
-
-        private static readonly Color OutlineColorSelected = new Color(1f, 1f, 0.7f, 1f);
-
+        protected GeneDef hoveredGene;
         public override Vector2 InitialSize => new Vector2(Mathf.Min(UI.screenWidth, 1036), UI.screenHeight - 4);
-
         public override List<GeneDef> SelectedGenes => selectedGenes;
 
-        public override string Header => "VREA.CreateAndroid".Translate().CapitalizeFirst();
-
-        public override string AcceptButtonLabel => "SaveAndApply".Translate().CapitalizeFirst();
-
-        public Dialog_CreateAndroid(int index, Action callback)
+        public List<ThingDefCount> requiredItems;
+        public Window_CreateAndroidBase(Action callback)
         {
-            generationRequestIndex = index;
             this.callback = callback;
             xenotypeName = string.Empty;
-            closeOnAccept = false;
             absorbInputAroundWindow = true;
             alwaysUseFullBiostatsTableHeight = true;
             searchWidgetOffsetX = ButSize.x * 2f + 4f;
@@ -60,19 +43,6 @@ namespace VREAndroids
             OnGenesChanged();
             ignoreRestrictions = true;
         }
-
-        public override void PostOpen()
-        {
-            if (!ModLister.CheckBiotech("xenotype creation"))
-            {
-                Close(doCloseSound: false);
-            }
-            else
-            {
-                base.PostOpen();
-            }
-        }
-
 
         public override void DoWindowContents(Rect rect)
         {
@@ -86,14 +56,14 @@ namespace VREAndroids
             rect2.yMin += 39f;
             float num = rect.width * 0.25f - Margin - 10f;
             float num2 = num - 24f - 10f;
-            float num3 = Mathf.Max(AndroidStatsTable.HeightForBiostats(), postXenotypeHeight);
+            float num3 = Mathf.Max(AndroidStatsTable.HeightForBiostats(requiredItems), postXenotypeHeight);
             Rect rect4 = new Rect(rect2.x + Margin, rect2.y, rect2.width - Margin * 2f, rect2.height - num3 - 8f);
             DrawGenes(rect4);
             float num4 = rect4.yMax + 4f;
             Rect rect5 = new Rect(rect2.x + Margin + 10f, num4, rect.width * 0.75f - Margin * 3f - 10f, num3);
             rect5.yMax = rect4.yMax + num3 + 4f;
-            AndroidStatsTable.Draw(rect5, gcx, met);
-            string text = "VREA.AndroidName".Translate().CapitalizeFirst() + ":";
+            AndroidStatsTable.Draw(rect5, gcx, met, requiredItems);
+            string text = AndroidName().CapitalizeFirst() + ":";
             Rect rect6 = new Rect(rect5.xMax + Margin, num4, Text.CalcSize(text).x, Text.LineHeight);
             Widgets.Label(rect6, text);
             Rect rect7 = new Rect(rect6.xMin, rect6.y + Text.LineHeight, num, Text.LineHeight);
@@ -118,7 +88,7 @@ namespace VREAndroids
             {
                 GUI.FocusControl(null);
                 SoundDefOf.Tick_High.PlayOneShotOnCamera();
-                xenotypeName = GeneUtility.GenerateXenotypeNameFromGenes(SelectedGenes);
+                xenotypeName = GetAndroidTypeName();
             }
             Rect rect10 = new Rect(rect9.xMax + 4f, rect9.y, num2 * 0.25f, 24f);
             if (Widgets.ButtonText(rect10, "..."))
@@ -127,7 +97,7 @@ namespace VREAndroids
                 int num5 = 0;
                 while (list.Count < 20)
                 {
-                    string text3 = GeneUtility.GenerateXenotypeNameFromGenes(SelectedGenes);
+                    string text3 = GetAndroidTypeName();
                     if (text3.NullOrEmpty())
                     {
                         break;
@@ -182,6 +152,40 @@ namespace VREAndroids
             Rect rect12 = rect;
             rect12.yMin = rect12.yMax - ButSize.y;
             DoBottomButtons(rect12);
+        }
+
+        private string GetAndroidTypeName()
+        {
+            var rootKeyword = VREA_DefOf.VREA_AndroidTypeNameMaker.RulesPlusIncludes
+                .Where(x => x.keyword == "r_name").RandomElement().keyword;
+            var request = default(GrammarRequest);
+            request.Rules.Add(new Rule_String("TotalComplexityNumber", gcx.ToString()));
+            request.Includes.Add(VREA_DefOf.VREA_AndroidTypeNameMaker);
+            return GrammarResolver.Resolve(rootKeyword, request);
+        }
+
+        protected virtual TaggedString AndroidName()
+        {
+            return "VREA.AndroidName".Translate();
+        }
+
+        public override void Accept()
+        {
+            AcceptInner();
+            callback?.Invoke();
+            Close();
+        }
+
+        public override void PostOpen()
+        {
+            if (!ModLister.CheckBiotech("xenotype creation"))
+            {
+                Close(doCloseSound: false);
+            }
+            else
+            {
+                base.PostOpen();
+            }
         }
 
         public override void DrawGenes(Rect rect)
@@ -320,7 +324,7 @@ namespace VREAndroids
                         curY += GeneSize.y + 8f + 4f;
                         flag2 = true;
                     }
-                    bool flag3 = quickSearchWidget.filter.Active && (matchingGenes.Contains(geneDef) 
+                    bool flag3 = quickSearchWidget.filter.Active && (matchingGenes.Contains(geneDef)
                         || matchingCategories.Contains(geneDef.displayCategory));
                     bool flag4 = collapsedCategories[geneDef.displayCategory] && !flag3;
                     if (adding && geneCategoryDef != geneDef.displayCategory)
@@ -397,7 +401,7 @@ namespace VREAndroids
                         }
                         if (!xenotypeNameLocked)
                         {
-                            xenotypeName = GeneUtility.GenerateXenotypeNameFromGenes(SelectedGenes);
+                            xenotypeName = GetAndroidTypeName();
                         }
                         OnGenesChanged();
                         break;
@@ -469,7 +473,7 @@ namespace VREAndroids
             if (met != 0)
             {
                 Rect iconRect2 = new Rect(curX, curY + margin + num2, num3, num3);
-                if (met < 10) 
+                if (met < 10)
                 {
                     GeneUIUtility.DrawStat(iconRect2, AndroidStatsTable.PowerEfficiencyIconTex, met.ToStringWithSign(), num3);
                 }
@@ -485,7 +489,7 @@ namespace VREAndroids
                 if (Mouse.IsOver(rect2))
                 {
                     Widgets.DrawHighlight(rect2);
-                    TooltipHandler.TipRegion(rect2, "VREA.PowerEfficiency".Translate().Colorize(ColoredText.TipSectionTitleColor) + "\n\n" 
+                    TooltipHandler.TipRegion(rect2, "VREA.PowerEfficiency".Translate().Colorize(ColoredText.TipSectionTitleColor) + "\n\n"
                         + "VREA.PowerEfficiencyTotalDesc".Translate());
                 }
                 num2 += num;
@@ -527,7 +531,7 @@ namespace VREAndroids
             {
                 return text + (selectedGenes.Contains(geneDef) ? "ClickToRemove" : "ClickToAdd").Translate().Colorize(ColoredText.SubtleGrayColor);
             }
-            return text; 
+            return text;
             static string GroupInfo(GeneLeftChosenGroup group)
             {
                 if (group == null)
@@ -549,48 +553,6 @@ namespace VREAndroids
             base.OnGenesChanged();
         }
 
-        public override void DrawSearchRect(Rect rect)
-        {
-            base.DrawSearchRect(rect);
-            if (Widgets.ButtonText(new Rect(rect.xMax - ButSize.x, rect.y, ButSize.x, ButSize.y), "LoadCustom".Translate()))
-            {
-                Find.WindowStack.Add(new Dialog_XenotypeList_Load(delegate (CustomXenotype xenotype)
-                {
-                    xenotypeName = xenotype.name;
-                    xenotypeNameLocked = true;
-                    selectedGenes.Clear();
-                    selectedGenes = Utils.AndroidGenesGenesInOrder.Where(x => x.CanBeRemovedFromAndroid() is false).ToList();
-                    selectedGenes.AddRange(xenotype.genes);
-                    selectedGenes = selectedGenes.Distinct().ToList();
-                    inheritable = false;
-                    iconDef = xenotype.IconDef;
-                    OnGenesChanged();
-                }));
-            }
-            if (!Widgets.ButtonText(new Rect(rect.xMax - ButSize.x * 2f - 4f, rect.y, ButSize.x, ButSize.y), "LoadPremade".Translate()))
-            {
-                return;
-            }
-            List<FloatMenuOption> list = new List<FloatMenuOption>();
-            foreach (XenotypeDef item in DefDatabase<XenotypeDef>.AllDefs.OrderBy((XenotypeDef c) => 0f - c.displayPriority))
-            {
-                XenotypeDef xenotype2 = item;
-                list.Add(new FloatMenuOption(xenotype2.LabelCap, delegate
-                {
-                    xenotypeName = xenotype2.label;
-                    selectedGenes.Clear();
-                    selectedGenes = Utils.AndroidGenesGenesInOrder.Where(x => x.CanBeRemovedFromAndroid() is false).ToList();
-                    selectedGenes.AddRange(xenotype2.genes);
-                    selectedGenes = selectedGenes.Distinct().ToList();
-                    inheritable = false;
-                    OnGenesChanged();
-                }, xenotype2.Icon, XenotypeDef.IconColor, MenuOptionPriority.Default, delegate (Rect r)
-                {
-                    TooltipHandler.TipRegion(r, xenotype2.descriptionShort ?? xenotype2.description);
-                }));
-            }
-            Find.WindowStack.Add(new FloatMenu(list));
-        }
         public override void DoBottomButtons(Rect rect)
         {
             base.DoBottomButtons(rect);
@@ -610,51 +572,14 @@ namespace VREAndroids
 
         public override bool CanAccept()
         {
-            if (!base.CanAccept())
-            {
-                return false;
-            }
-            if (GenFilePaths.AllCustomXenotypeFiles.EnumerableCount() >= 200)
-            {
-                Messages.Message("MessageTooManyCustomXenotypes", null, MessageTypeDefOf.RejectInput, historical: false);
-                return false;
-            }
-            if (!ignoreRestrictions && leftChosenGroups.Any())
+            if (leftChosenGroups.Any())
             {
                 Messages.Message("VREA.MessageConflictingComponentPresent".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
                 return false;
             }
-            return true;
+            return base.CanAccept();
         }
-
-        public override void Accept()
-        {
-            AcceptInner();
-        }
-
-        private void AcceptInner()
-        {
-            CustomXenotype customXenotype = new CustomXenotype();
-            customXenotype.name = xenotypeName?.Trim();
-            customXenotype.genes.AddRange(selectedGenes);
-            customXenotype.inheritable = false;
-            customXenotype.iconDef = iconDef;
-            string text = GenFile.SanitizedFileName(customXenotype.name);
-            string absPath = GenFilePaths.AbsFilePathForXenotype(text);
-            LongEventHandler.QueueLongEvent(delegate
-            {
-                GameDataSaveLoader.SaveXenotype(customXenotype, absPath);
-            }, "SavingLongEvent", doAsynchronously: false, null);
-            if (generationRequestIndex >= 0)
-            {
-                PawnGenerationRequest generationRequest = StartingPawnUtility.GetGenerationRequest(generationRequestIndex);
-                generationRequest.ForcedXenotype = null;
-                generationRequest.ForcedCustomXenotype = customXenotype;
-                StartingPawnUtility.SetGenerationRequest(generationRequestIndex, generationRequest);
-            }
-            callback?.Invoke();
-            Close();
-        }
+        protected abstract void AcceptInner();
 
         public override void UpdateSearchResults()
         {

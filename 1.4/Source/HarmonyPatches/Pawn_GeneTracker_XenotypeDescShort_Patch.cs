@@ -13,7 +13,7 @@ namespace VREAndroids
             {
                 if (__instance.UniqueXenotype)
                 {
-                    __result = "UniqueXenotypeDesc".Translate();
+                    __result = "VREA.UniqueAndroidDesc".Translate();
                 }
                 else if (!__instance.Xenotype.descriptionShort.NullOrEmpty())
                 {

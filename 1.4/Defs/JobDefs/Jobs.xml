@@ -15,4 +15,11 @@
 		<reportString>tending to TargetA.</reportString>
 		<casualInterruptible>false</casualInterruptible>
 	</JobDef>
+	
+  <JobDef>
+    <defName>VREA_CreateAndroid</defName>
+    <driverClass>VREAndroids.JobDriver_CreateAndroid</driverClass>
+    <reportString>Creating android at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

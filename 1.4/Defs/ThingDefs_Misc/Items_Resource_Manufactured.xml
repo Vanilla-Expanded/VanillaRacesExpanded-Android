@@ -14,5 +14,22 @@ To create such a sophisticated subcore, the composite patterns from multiple min
       <MarketValue>2000</MarketValue>
     </statBases>
   </ThingDef>
-
+  
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>VREA_UnfinishedAndroid</defName>
+    <label>unfinished android</label>
+    <description>An unfinished android.</description>
+	<thingClass>VREAndroids.UnfinishedAndroid</thingClass>
+    <statBases>
+      <Flammability>0.6</Flammability>
+	  <Mass>30</Mass>
+	  <DeteriorationRate>2</DeteriorationRate>
+	  <MarketValue>2000</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Items/UnfinishedAndroid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
 </Defs>

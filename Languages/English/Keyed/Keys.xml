@@ -59,5 +59,16 @@
 	<VREA.SubcorePolyanalyzerNotInit>Subcore polyanalyzer not initiated</VREA.SubcorePolyanalyzerNotInit>
 	<VREA.SubcorePolyanalyzerStart>Start subcore polyanalyzer</VREA.SubcorePolyanalyzerStart>
   <VREA.SubcorePolyanalyzerStartDesc>Once the {0} is filled with the required ingredients, {1}, select a colonist and right-click on the {0} or on a downed person to start the subcore polyanalyzer.</VREA.SubcorePolyanalyzerStartDesc>
-
+	<VREA.CancelAndroid>Cancel an android</VREA.CancelAndroid>
+	<VREA.CancelAndroidDesc>Cancel the creation of this android and refund resources.</VREA.CancelAndroidDesc>
+	<VREA.MissingMaterials>Missing materials: {0}</VREA.MissingMaterials>
+	<VREA.CreateAndroid>Create android</VREA.CreateAndroid>
+	<VREA.CreateAndroidDesc>text.todo</VREA.CreateAndroidDesc>
+	<VREA.CreateAndroidAlreadyAssembling>Create android: already assembling an android</VREA.CreateAndroidAlreadyAssembling>
+	<VREA.AndroidtypeName>Androidtype name</VREA.AndroidtypeName>
+	<VREA.LoadAndroidtype>Load androidtype</VREA.LoadAndroidtype>
+	<VREA.SaveAndroidtype>Save androidtype</VREA.SaveAndroidtype>
+	<VREA.ResourceCost>Resource cost</VREA.ResourceCost>
+	<VREA.ResourceCostDesc>The resource cost to create this android. Androids require a persona subcore, which can be created in a subcore polyanalyzer.</VREA.ResourceCostDesc>
+	<VREA.UniqueAndroidDesc>A unique android variant with a set of hardware and subroutines that do not fall into any known androidtype.</VREA.UniqueAndroidDesc>
 </LanguageData>

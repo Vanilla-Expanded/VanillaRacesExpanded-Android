@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -32,20 +33,25 @@ namespace VREAndroids
         private const float IconSize = 22f;
 
         public static readonly Texture2D PowerEfficiencyIcon = ContentFinder<Texture2D>.Get("UI/BiostatIcon/BiostatEfficiency");
+        public static readonly Texture2D ResourceCostIcon = ContentFinder<Texture2D>.Get("UI/BiostatIcon/BiostatResourceCost");
         public static readonly CachedTexture PowerEfficiencyIconTex = new CachedTexture("UI/BiostatIcon/BiostatEfficiency");
 
-        private static readonly AndroidStatData[] AndroidStats = new AndroidStatData[2]
+        private static readonly AndroidStatData[] AndroidStats = new AndroidStatData[3]
         {
             new AndroidStatData("Complexity", "VREA.ComplexityTotalDesc", GeneUtility.GCXTex.Texture),
             new AndroidStatData("VREA.PowerEfficiency", "VREA.PowerEfficiencyTotalDesc", PowerEfficiencyIcon),
+            new AndroidStatData("VREA.ResourceCost", "VREA.ResourceCostDesc", ResourceCostIcon),
         };
 
         private static Dictionary<string, string> truncateCache = new Dictionary<string, string>();
-
-        private static float MaxLabelWidth()
+        private static float MaxLabelWidth(List<ThingDefCount> resources)
         {
             float num = 0f;
             int num2 = AndroidStats.Length;
+            if (resources is null)
+            {
+                num2--;
+            }
             for (int i = 0; i < num2; i++)
             {
                 num = Mathf.Max(num, Text.CalcSize(AndroidStats[i].labelKey.Translate()).x);
@@ -53,16 +59,24 @@ namespace VREAndroids
             return num;
         }
 
-        public static float HeightForBiostats()
+        public static float HeightForBiostats(List<ThingDefCount> resources)
         {
             float num = Text.LineHeight * 3f;
+            if (resources != null)
+            {
+                num += Text.LineHeight * 1.5f;
+            }
             return num;
         }
 
-        public static void Draw(Rect rect, int gcx, int met)
+        public static void Draw(Rect rect, int gcx, int met, List<ThingDefCount> resources)
         {
             int num = AndroidStats.Length;
-            float num2 = MaxLabelWidth();
+            if (resources is null)
+            {
+                num--;
+            }
+            float num2 = MaxLabelWidth(resources);
             float num3 = rect.height / (float)num;
             GUI.BeginGroup(rect);
             for (int i = 0; i < num; i++)
@@ -89,6 +103,10 @@ namespace VREAndroids
             Text.Anchor = TextAnchor.MiddleCenter;
             Widgets.Label(new Rect(num4, 0f, 90f, num3), text);
             Widgets.Label(new Rect(num4, num3, 90f, num3), text2);
+            if (resources != null)
+            {
+                Widgets.Label(new Rect(num4, num3 * 2f, 500, num3), string.Join(", ", resources.Select(x => x.count + " " + x.thingDef.label)));
+            }
             Text.Anchor = TextAnchor.MiddleLeft;
             float width = rect.width - num2 - 90f - 22f - 4f;
             Rect rect4 = new Rect(num4 + 90f + 4f, num3, width, num3);

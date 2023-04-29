@@ -15,7 +15,7 @@ namespace VREAndroids
             var window = Find.WindowStack.WindowOfType<GeneCreationDialogBase>();
             if (window != null)
             {
-                if (window is Dialog_CreateAndroid)
+                if (window is Window_CreateAndroidBase)
                 {
                     __result = Utils.AndroidGenesGenesInOrder;
                 }

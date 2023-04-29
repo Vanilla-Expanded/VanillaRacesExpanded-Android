@@ -35,7 +35,7 @@ namespace VREAndroids
         {
             list.Add(new FloatMenuOption("VREA.AndroidEditor".Translate() + "...", delegate
             {
-                Find.WindowStack.Add(new Dialog_CreateAndroid(StartingPawnUtility.PawnIndex(pawn), delegate
+                Find.WindowStack.Add(new Window_CreateAndroidXenotype(StartingPawnUtility.PawnIndex(pawn), delegate
                 {
                     CharacterCardUtility.cachedCustomXenotypes = null;
                     randomizeCallback();

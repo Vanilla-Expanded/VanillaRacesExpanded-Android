@@ -25,7 +25,15 @@
 			<li>VREA_PsychologyDisabled</li>
 		</genes>
 	</XenotypeDef>
-
+	
+	<XenotypeDef ParentName="VREA_AndroidXenotypeBase">
+		<defName>VREA_AndroidBasic</defName>
+		<label>android basic</label>
+		<description>text.todo</description>
+		<descriptionShort>text.todo</descriptionShort>
+		<iconPath>UI/XenotypeIcons/Androidtype_Drone</iconPath>
+	</XenotypeDef>
+	
 	<XenotypeDef ParentName="VREA_AndroidXenotypeBase">
 		<defName>VREA_AndroidDrone</defName>
 		<label>android drone</label>

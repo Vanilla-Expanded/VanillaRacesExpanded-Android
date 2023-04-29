@@ -72,9 +72,18 @@
     <Compile Include="AI\MentalState_SolarFlared.cs" />
     <Compile Include="AI\Recipe_RemoveArtificalBodyPart.cs" />
     <Compile Include="AI\Stance_Stand.cs" />
+    <Compile Include="Utilities\AndroidCreationUtility.cs" />
+    <Compile Include="Buildings\Building_AndroidCreationStation.cs" />
     <Compile Include="Buildings\Building_SubcorePolyanalyzer.cs" />
+    <Compile Include="AI\JobDriver_CreateAndroid.cs" />
+    <Compile Include="Things\UnfinishedAndroid.cs" />
+    <Compile Include="UI\Dialog_AndroidProjectList.cs" />
+    <Compile Include="UI\Dialog_AndroidProjectList_Load.cs" />
+    <Compile Include="UI\Dialog_AndroidProjectList_Save.cs" />
+    <Compile Include="UI\Window_AndroidCreation.cs" />
+    <Compile Include="AI\WorkGiver_CreateAndroid.cs" />
     <Compile Include="HarmonyPatches\Building_SubcoreScanner_CanAcceptPawn_Patch.cs" />
-    <Compile Include="UI\WorkGiver_HaulToSubcorePolyanalyzer.cs" />
+    <Compile Include="AI\WorkGiver_HaulToSubcorePolyanalyzer.cs" />
     <Compile Include="Genes\AndroidGeneDef.cs" />
     <Compile Include="Genes\Gene_SyntheticBody.cs" />
     <Compile Include="HarmonyPatches\Bill_Medical_Label_Patch.cs" />
@@ -162,12 +171,13 @@
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_JobOnThing_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_TryFindBestIngredientsHelper_Patch.cs" />
     <Compile Include="UI\AndroidStatsTable.cs" />
-    <Compile Include="UI\Dialog_CreateAndroid.cs" />
+    <Compile Include="UI\Window_CreateAndroidXenotype.cs" />
     <Compile Include="HotSwappableAttribute.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="UI\Window_CreateAndroidBase.cs" />
+    <Compile Include="Utilities\Utils.cs" />
     <Compile Include="VRE_DefOf.cs" />
-    <Compile Include="Alert_Freezing.cs" />
-    <Compile Include="Alert_Overheating.cs" />
+    <Compile Include="Misc\Alert_Freezing.cs" />
+    <Compile Include="Misc\Alert_Overheating.cs" />
     <Compile Include="AndroidSettings.cs" />
     <Compile Include="AndroidSettingsExtension.cs" />
     <Compile Include="Buildings\Building_AndroidStand.cs" />
@@ -186,8 +196,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AI\WorkGiver_TendAndroid.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Misc\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

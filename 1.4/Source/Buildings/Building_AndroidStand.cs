@@ -6,6 +6,7 @@ using Verse.AI;
 
 namespace VREAndroids
 {
+
     public class Building_AndroidStand : Building
     {
         public static HashSet<Building_AndroidStand> stands = new HashSet<Building_AndroidStand>();

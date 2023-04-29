@@ -56,5 +56,11 @@ namespace VREAndroids
         public static AndroidGeneTemplateDef VREA_AptitudeIncapable;
         public static ThingDef VREA_SubcorePolyanalyzer;
         public static ThingDef VREA_SubcorePolyanalyzer_North, VREA_SubcorePolyanalyzer_South, VREA_SubcorePolyanalyzer_East, VREA_SubcorePolyanalyzer_West;
+        public static JobDef VREA_CreateAndroid;
+        public static ThingDef VFEP_AndroidCreationStation;
+        public static ThingDef VREA_UnfinishedAndroid;
+        public static PawnKindDef VREA_AndroidBasic;
+        public static ThingDef VREA_PersonaSubcore;
+        public static RulePackDef VREA_AndroidTypeNameMaker;
     }
 }

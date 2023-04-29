@@ -158,5 +158,77 @@ Persona subcores created by this device can only be used to create complex, huma
     </building>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
-  
+
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEP_AndroidCreationStation</defName>
+    <label>android creation station</label>
+    <description>A manufacturing station capable of assembling an android from a variety of materials and advanced components. The android’s appearance is almost completely customizable, however it is limited to imitations of baseline humans.\n\nDepending on the hardware and subroutine composition of an android, the work to create one and the resources required to do it might vary.</description>
+	<tickerType>Normal</tickerType>
+    <thingClass>VREAndroids.Building_AndroidCreationStation</thingClass>
+    <canOverlapZones>true</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Building/AndroidCreationStation/AndroidCreationStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <shadowData>
+        <volume>(2.8, 0.35, 3.59)</volume>
+        <offset>(0, 0, 0.08)</offset>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <costList>
+      <Steel>360</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <constructEffect>ConstructMetal</constructEffect>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <WorkToBuild>10000</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <Mass>40</Mass>
+    </statBases>
+    <size>(3,3)</size>
+    <designationCategory>Biotech</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <rotatable>False</rotatable>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <hasInteractionCell>True</hasInteractionCell>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>VREA_AndroidCreation</li>
+    </researchPrerequisites>
+  </ThingDef>
 </Defs>
