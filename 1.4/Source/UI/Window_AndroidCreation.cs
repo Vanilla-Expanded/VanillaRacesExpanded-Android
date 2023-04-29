@@ -31,6 +31,7 @@ namespace VREAndroids
             customXenotype.iconDef = iconDef;
             station.curAndroidProject = customXenotype;
             station.totalWorkAmount = selectedGenes.Sum(x => x.biostatCpx * 2000);
+            station.currentWorkAmountDone = 0;
             station.requiredItems = requiredItems;
             if (creator != null)
             {

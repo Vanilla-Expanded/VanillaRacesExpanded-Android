@@ -159,9 +159,8 @@ Persona subcores created by this device can only be used to create complex, huma
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
 
-
   <ThingDef ParentName="BuildingBase">
-    <defName>VFEP_AndroidCreationStation</defName>
+    <defName>VREA_AndroidCreationStation</defName>
     <label>android creation station</label>
     <description>A manufacturing station capable of assembling an android from a variety of materials and advanced components. The android’s appearance is almost completely customizable, however it is limited to imitations of baseline humans.\n\nDepending on the hardware and subroutine composition of an android, the work to create one and the resources required to do it might vary.</description>
 	<tickerType>Normal</tickerType>
@@ -227,6 +226,71 @@ Persona subcores created by this device can only be used to create complex, huma
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
+    <researchPrerequisites>
+      <li>VREA_AndroidCreation</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_AndroidBehavioristStation</defName>
+    <label>android behaviorist station</label>
+    <description>A reprogramming station used to imbue desirable traits and skills onto an android. Onboard software allows even complete beginners to modify an android’s personality, however a more intellectually talented user will spend less time needing to follow tutorials.\n\nIn-built safety systems prevent overriding the non-violence parameters inherent to androids, as well as prevent androids from improving other androids.</description>
+	<tickerType>Normal</tickerType>
+    <thingClass>VREAndroids.Building_AndroidBehavioristStation</thingClass>
+    <canOverlapZones>true</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/TableAndroidBehaviorist/TableAndroidBehaviorist</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(2.8, 0.35, 3.59)</volume>
+        <offset>(0, 0, 0.08)</offset>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <costList>
+      <Steel>160</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Gold>20</Gold>
+    </costList>
+    <constructEffect>ConstructMetal</constructEffect>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <Mass>40</Mass>
+    </statBases>
+    <size>(2,2)</size>
+    <designationCategory>Biotech</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <rotatable>True</rotatable>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>True</hasInteractionCell>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
     <researchPrerequisites>
       <li>VREA_AndroidCreation</li>
     </researchPrerequisites>

@@ -22,4 +22,11 @@
     <reportString>Creating android at TargetA.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+  
+  <JobDef>
+    <defName>VREA_ModifyAndroid</defName>
+    <driverClass>VREAndroids.JobDriver_ModifyAndroid</driverClass>
+    <reportString>Modifying android at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

@@ -9,7 +9,7 @@ namespace VREAndroids
     public class WorkGiver_CreateAndroid : WorkGiver_Scanner
     {
         public override PathEndMode PathEndMode => PathEndMode.InteractionCell;
-        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(VREA_DefOf.VFEP_AndroidCreationStation);
+        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(VREA_DefOf.VREA_AndroidCreationStation);
         public override Danger MaxPathDanger(Pawn pawn) => Danger.Some;
         public override Job JobOnThing(Pawn pawn, Thing thing, bool forced = false)
         {

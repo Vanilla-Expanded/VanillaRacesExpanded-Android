@@ -547,9 +547,9 @@ namespace VREAndroids
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref initScanner, "initScanner", defaultValue: false);
-            Scribe_Values.Look(ref fabricationTicksLeft, "fabricationTicksLeft", 0);
-            Scribe_Values.Look(ref scanProgress, "scanProgress", 0);
+            Scribe_Values.Look(ref initScanner, "initModification", defaultValue: false);
+            Scribe_Values.Look(ref fabricationTicksLeft, "workTicksLeft", 0);
+            Scribe_Values.Look(ref scanProgress, "modificationProgress", 0);
             Scribe_Collections.Look(ref scannedPawns, "scannedPawns", LookMode.Reference);
         }
     }

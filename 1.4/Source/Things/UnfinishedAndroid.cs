@@ -44,7 +44,10 @@ namespace VREAndroids
             {
                 GenPlace.TryPlaceThing(resource, Position, Map, ThingPlaceMode.Near);
             }
-            station.curAndroidProject = null;
+            if (station != null) 
+            {
+                station.curAndroidProject = null;
+            }
             this.Destroy();
         }
 

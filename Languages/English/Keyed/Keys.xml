@@ -71,4 +71,10 @@
 	<VREA.ResourceCost>Resource cost</VREA.ResourceCost>
 	<VREA.ResourceCostDesc>The resource cost to create this android. Androids require a persona subcore, which can be created in a subcore polyanalyzer.</VREA.ResourceCostDesc>
 	<VREA.UniqueAndroidDesc>A unique android variant with a set of hardware and subroutines that do not fall into any known androidtype.</VREA.UniqueAndroidDesc>
+	<VREA.ModifyAndroid>Modify android</VREA.ModifyAndroid>
+	<VREA.ModifyAndroidDesc>Select an android to modify.</VREA.ModifyAndroidDesc>
+	<VREA.NoAndroidsPresent>No androids present</VREA.NoAndroidsPresent>
+	<VREA.CancelModifyingAndroid>Cancel modifying android</VREA.CancelModifyingAndroid>
+	<VREA.CancelModifyingAndroidDesc>text.todo</VREA.CancelModifyingAndroidDesc>
+	<VREA.ModificationProgress>Modification progress: {0}</VREA.ModificationProgress>
 </LanguageData>

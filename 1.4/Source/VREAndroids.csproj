@@ -66,12 +66,16 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\JobDriver_ModifyAndroid.cs" />
     <Compile Include="AI\JobDriver_FreeMemorySpace.cs" />
     <Compile Include="AI\JobGiver_FreeMemorySpace.cs" />
     <Compile Include="AI\MentalState_Reformatting.cs" />
     <Compile Include="AI\MentalState_SolarFlared.cs" />
     <Compile Include="AI\Recipe_RemoveArtificalBodyPart.cs" />
     <Compile Include="AI\Stance_Stand.cs" />
+    <Compile Include="AI\WorkGiver_ModifyAndroid.cs" />
+    <Compile Include="Buildings\Building_AndroidBehavioristStation.cs" />
+    <Compile Include="UI\Window_AndroidModification.cs" />
     <Compile Include="Utilities\AndroidCreationUtility.cs" />
     <Compile Include="Buildings\Building_AndroidCreationStation.cs" />
     <Compile Include="Buildings\Building_SubcorePolyanalyzer.cs" />

@@ -32,7 +32,7 @@ namespace VREAndroids
             {
                 float bleedRateTotal = pawn.health.hediffSet.BleedRateTotal;
                 var neutroloss = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss);
-                if (neutroloss.Severity >= 1)
+                if (neutroloss != null && neutroloss.Severity >= 1)
                 {
                     text = "VREA.NeutroamineLeakedOutCompletely".Translate();
                 }
