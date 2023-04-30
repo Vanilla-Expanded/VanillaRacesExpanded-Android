@@ -78,7 +78,7 @@
 			<li>BuildingsMisc</li>
 		</thingCategories>
 		<researchPrerequisites>
-			<li>VREA_AndroidCreation</li>
+			<li>VREA_AndroidTech</li>
 		</researchPrerequisites>
 	</ThingDef>
 </Defs>

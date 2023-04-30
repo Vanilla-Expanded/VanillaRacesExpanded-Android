@@ -27,7 +27,7 @@ namespace VREAndroids
                 var counterPart = bodyPartRecord.def.GetAndroidCounterPart();
                 if (counterPart != null)
                 {
-                    return counterPart.label;
+                    return bodyPartRecord.AndroidPartLabel(counterPart);
                 }
             }
             return bodyPartRecord.Label;

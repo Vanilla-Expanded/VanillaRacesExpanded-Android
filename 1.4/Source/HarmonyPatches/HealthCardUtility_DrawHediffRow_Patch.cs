@@ -33,7 +33,7 @@ namespace VREAndroids
                 var counterPart = bodyPartRecord.def.GetAndroidCounterPart();
                 if (counterPart != null)
                 {
-                    return counterPart.LabelCap;
+                    return bodyPartRecord.AndroidPartLabel(counterPart).CapitalizeFirst();
                 }
             }
             return bodyPartRecord.LabelCap;

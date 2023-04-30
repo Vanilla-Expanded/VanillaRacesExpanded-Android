@@ -6,6 +6,7 @@ namespace VREAndroids
 {
     public class Gene_SyntheticBody : Gene
     {
+        public bool isAwakened;
         public override void PostAdd()
         {
             base.PostAdd();
@@ -19,6 +20,55 @@ namespace VREAndroids
                 }
             }
             MeditationFocusTypeAvailabilityCache.ClearFor(pawn);
+        }
+
+        public override void Tick()
+        {
+            base.Tick();
+            if (!isAwakened && pawn.IsHashIntervalTick(GenDate.TicksPerHour))
+            {
+                if (pawn.needs.mood.CurLevel <= 0.05f && Rand.Chance(0.01f))
+                {
+                    Awaken();
+                    Find.LetterStack.ReceiveLetter("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")),
+                        "VREA.AndroidAwakeningLowMood".Translate(pawn.Named("PAWN")), LetterDefOf.ThreatBig, pawn);
+                    var gene = pawn.genes.GetGene(VREA_DefOf.VREA_CombatIncapability);
+                    if (gene != null)
+                    {
+                        pawn.genes.RemoveGene(gene);
+                    }
+                    pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk);
+                }
+                if (pawn.needs.mood.CurLevel >= 0.95f && Rand.Chance(0.01f))
+                {
+                    Awaken();
+                    Find.LetterStack.ReceiveLetter("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")),
+    "VREA.AndroidAwakeningHighMood".Translate(pawn.Named("PAWN")), LetterDefOf.PositiveEvent, pawn);
+                    InspirationDef randomAvailableInspirationDef = pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
+                    if (randomAvailableInspirationDef != null)
+                    {
+                        pawn.mindState.inspirationHandler.TryStartInspiration(randomAvailableInspirationDef, "LetterInspirationBeginThanksToHighMoodPart".Translate());
+                    }
+                }
+            }
+        }
+
+        public void Awaken()
+        {
+            isAwakened = true;
+            foreach (var gene in pawn.genes.GenesListForReading.ToList())
+            {
+                if (gene.def is AndroidGeneDef geneDef && geneDef.removeWhenAwakened)
+                {
+                    pawn.genes.RemoveGene(gene);
+                }
+            }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref isAwakened, "isAwakened");
         }
     }
 }

@@ -80,7 +80,7 @@
 		<disablesNeeds>
 			<li>Joy</li>
 		</disablesNeeds>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -93,7 +93,7 @@
 		<disablesNeeds>
 			<li>Beauty</li>
 		</disablesNeeds>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -106,7 +106,7 @@
 		<disablesNeeds>
 			<li>Comfort</li>
 		</disablesNeeds>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -119,7 +119,7 @@
 		<disablesNeeds>
 			<li>Outdoors</li>
 		</disablesNeeds>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -132,7 +132,7 @@
 		<disablesNeeds>
 			<li>DrugDesire</li>
 		</disablesNeeds>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -145,7 +145,7 @@
 		<disablesNeeds>
 			<li>RoomSize</li>
 		</disablesNeeds>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -155,7 +155,7 @@
 		<iconPath>UI/Icons/Genes/Hardware/Gene_PainDisabled</iconPath>
 		<displayOrderInCategory>9</displayOrderInCategory>
 		<biostatCpx>3</biostatCpx>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 		<painFactor>0</painFactor>
 	</VREAndroids.AndroidGeneDef>
 
@@ -253,7 +253,7 @@
 		<iconPath>UI/Icons/Genes/Hardware/Gene_NoSkillGain</iconPath>
 		<displayOrderInCategory>17</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -263,7 +263,7 @@
 		<iconPath>UI/Icons/Genes/Hardware/Gene_Uninspired</iconPath>
 		<displayOrderInCategory>18</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -285,7 +285,7 @@
 		<iconPath>UI/Icons/Genes/Hardware/Gene_MentalBreaksDisabled</iconPath>
 		<displayOrderInCategory>20</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -295,7 +295,7 @@
 		<iconPath>UI/Icons/Genes/Hardware/Gene_PsychologyDisabled</iconPath>
 		<displayOrderInCategory>21</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
-		<removedWhenAwakened>true</removedWhenAwakened>
+		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">

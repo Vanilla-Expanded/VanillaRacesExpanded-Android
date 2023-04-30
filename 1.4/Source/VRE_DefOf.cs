@@ -18,7 +18,7 @@ namespace VREAndroids
         public static MentalStateDef VREA_Reformatting;
         public static JobDef VREA_FreeMemorySpace;
         public static ThingDef VREA_UnfinishedHealthItemAndroid;
-        public static ResearchProjectDef VREA_AndroidCreation;
+        public static ResearchProjectDef VREA_AndroidTech;
         public static ThingCategoryDef VREA_BodyPartsAndroid;
         public static ThingDef VREA_AndroidPartWorkbench;
         public static EffecterDef Smith;
@@ -65,5 +65,6 @@ namespace VREAndroids
         public static ThingDef VREA_AndroidBehavioristStation;
         public static JobDef VREA_ModifyAndroid;
         public static EffecterDef VREA_ModifyingAndroidEffecter;
+        public static GeneDef VREA_CombatIncapability;
     }
 }

@@ -69,7 +69,7 @@
     </building>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
-      <li>VREA_AndroidCreation</li>
+      <li>VREA_AndroidTech</li>
     </researchPrerequisites>
     <designationHotKey>Misc7</designationHotKey>
     <placeWorkers>
@@ -124,7 +124,7 @@ Persona subcores created by this device can only be used to create complex, huma
       <ComponentSpacer>3</ComponentSpacer>
     </costList>
     <researchPrerequisites>
-      <li>VREA_AndroidCreation</li>
+      <li>VREA_AndroidTech</li>
     </researchPrerequisites>
     <building>
       <subcoreScannerOutputDef>VREA_PersonaSubcore</subcoreScannerOutputDef>
@@ -227,7 +227,7 @@ Persona subcores created by this device can only be used to create complex, huma
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
     <researchPrerequisites>
-      <li>VREA_AndroidCreation</li>
+      <li>VREA_AndroidTech</li>
     </researchPrerequisites>
   </ThingDef>
   
@@ -293,7 +293,7 @@ Persona subcores created by this device can only be used to create complex, huma
       <li Class="CompProperties_Flickable"/>
     </comps>
     <researchPrerequisites>
-      <li>VREA_AndroidCreation</li>
+      <li>VREA_AndroidTech</li>
     </researchPrerequisites>
   </ThingDef>
 </Defs>

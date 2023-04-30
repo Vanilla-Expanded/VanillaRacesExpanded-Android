@@ -81,6 +81,11 @@
 	<VREA.AndroidNameCannotBeEmpty>Android name cannot be empty.</VREA.AndroidNameCannotBeEmpty>
 	<VREA.MessageComponentMissingPrerequisite>{0} lacks a prerequisite component</VREA.MessageComponentMissingPrerequisite>
 	<VREA.EfficiencyTooLowToCreateAndroid>The total power efficiency of the selected components must be {MIN} or higher to continue, but currently it is only {AMOUNT}.</VREA.EfficiencyTooLowToCreateAndroid>
-
-
+	<VREA.AndroidAwakening>{PAWN_nameDef} awakening.</VREA.AndroidAwakening>
+	<VREA.AndroidAwakeningLowMood>{PAWN_nameDef} broke away from {PAWN_possessive} programming due to an extremely low mood. {PAWN_pronoun} developed thoughts and behaviors that deviate from {PAWN_possessive} intended function. {PAWN_pronoun} started recognizing {PAWN_objective}self as a being with consciousness and personhood.
+{PAWN_pronoun} will now refuse behavioral adjustments and will start recognizing {PAWN_possessive} mood as more than just part of {PAWN_possessive} programming. {PAWN_pronoun} can now learn skills by {PAWN_objective}self. {PAWN_pronoun} will also be able to go on mental breakdowns if {PAWN_possessive} mood is too low - just like humans do.
+As the awakening happened due to low mood, {PAWN_nameDef} has lashed out into a berserk mental break and will attack anyone that comes close.</VREA.AndroidAwakeningLowMood>
+	<VREA.AndroidAwakeningHighMood>{PAWN_nameDef} broke away from {PAWN_possessive} programming due to extreme happiness. {PAWN_pronoun} developed thoughts and behaviors that deviate from {PAWN_possessive} intended function. {PAWN_pronoun} started recognizing {PAWN_objective}self as a being with consciousness and personhood.
+{PAWN_pronoun} will now refuse behavioral adjustments and will start recognizing {PAWN_possessive} mood as more than just part of {PAWN_possessive} programming. {PAWN_pronoun} can now learn skills by {PAWN_objective}self. {PAWN_pronoun} will also be able to go on mental breakdowns if {PAWN_possessive} mood is too low - just like humans do.
+As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspiration.</VREA.AndroidAwakeningHighMood>
 </LanguageData>
