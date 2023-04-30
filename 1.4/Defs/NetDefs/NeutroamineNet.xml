@@ -14,11 +14,17 @@
     </pipeDefs>
     <designator>
       <deconstructIconPath>UI/NeutroPipes_Deconstruct</deconstructIconPath>
-      <designationCategoryDef>Misc</designationCategoryDef>
+      <designationCategoryDef>VCHE_PipeNetworks</designationCategoryDef>
     </designator>
     <overlayOptions>
       <overlayColor>(94, 159, 166)</overlayColor>
     </overlayOptions>
+    <linkToRefuelables>
+      <li>
+        <thing>Neutroamine</thing>
+        <ratio>1</ratio>
+      </li>
+    </linkToRefuelables>
   </PipeSystem.PipeNetDef>
 
   <ThingDef ParentName="BuildingBase">
@@ -84,7 +90,7 @@
     <neverMultiSelect>true</neverMultiSelect>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
     <constructEffect>ConstructMetal</constructEffect>
     <clearBuildingArea>false</clearBuildingArea>
     <researchPrerequisites>
@@ -143,7 +149,7 @@
       </li>
     </comps>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
     <staticSunShadowHeight>0.2</staticSunShadowHeight>
     <constructEffect>ConstructMetal</constructEffect>
     <canOverlapZones>false</canOverlapZones>
@@ -210,7 +216,7 @@
     <inspectorTabs>
       <li>ITab_Storage</li>
     </inspectorTabs>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
     <staticSunShadowHeight>0.5</staticSunShadowHeight>
     <surfaceType>Item</surfaceType>
     <canOverlapZones>false</canOverlapZones>
@@ -283,7 +289,7 @@
     <inspectorTabs>
       <li>ITab_Storage</li>
     </inspectorTabs>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
     <staticSunShadowHeight>0.5</staticSunShadowHeight>
     <surfaceType>Item</surfaceType>
     <canOverlapZones>false</canOverlapZones>

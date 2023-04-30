@@ -7,7 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Pawn_NeedsTracker), "ShouldHaveNeed")]
     public static class Pawn_NeedsTracker_ShouldHaveNeed_Patch
     {
-        public static bool Prefix(Pawn ___pawn, ref NeedDef nd, ref bool __result)
+        public static bool Prefix(Pawn ___pawn, NeedDef nd, ref bool __result)
         {
             if (___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
             {
@@ -21,9 +21,16 @@ namespace VREAndroids
                     return false;
                 }
             }
-            else if (VREA_DefOf.VREA_AndroidSettings.androidExclusiveNeeds.Contains(nd.defName))
+            else
             {
-                return false;
+                if (VREA_DefOf.VREA_AndroidSettings.androidExclusiveNeeds.Contains(nd.defName))
+                {
+                    return false;
+                }
+                if (nd == VREA_DefOf.VREA_MemorySpace || nd == VREA_DefOf.VREA_ReactorPower)
+                {
+                    return false;
+                }
             }
             return true;
         }

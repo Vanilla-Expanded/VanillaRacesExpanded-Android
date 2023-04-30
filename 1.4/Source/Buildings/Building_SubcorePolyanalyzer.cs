@@ -27,8 +27,6 @@ namespace VREAndroids
 
         private Sustainer sustainerWorking;
 
-        private Effecter progressBarEffecter;
-
         public static readonly Texture2D CancelLoadingIcon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel");
 
         public static readonly CachedTexture InsertPersonIcon = new CachedTexture("UI/Icons/InsertPersonSubcoreScanner");
@@ -115,8 +113,6 @@ namespace VREAndroids
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            progressBarEffecter?.Cleanup();
-            progressBarEffecter = null;
             effectStart?.Cleanup();
             effectStart = null;
             base.DeSpawn(mode);
@@ -290,11 +286,90 @@ namespace VREAndroids
             }
             return false;
         }
+        private static readonly Material UnfilledMat = SolidColorMaterials.NewSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f, 0.65f), ShaderDatabase.MetaOverlay);
 
+        private static readonly Material FilledMat = SolidColorMaterials.NewSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f, 0.65f), ShaderDatabase.MetaOverlay);
+
+        public static float vertSize1 = 0.55f;
+        public static float vertSize2 = 0.125f;
+        public static float horSize1 = 0.578f;
+        public static float horSize2 = 0.125f;
+        public static float northLeftBarOffsetX = -0.778f;
+        public static float northRightBarOffsetX = 0.781f;
+        public static float southLeftBarOffsetX = -0.778f;
+        public static float southRightBarOffsetX = 0.771f;
+        public static float westLeftBarOffsetX = -0.643f;
+        public static float westRightBarOffsetX = 0.7f;
+        public static float eastLeftBarOffsetX = -0.7f;
+        public static float eastRightBarOffsetX = 0.643f;
+        public static float vertBarOffsetZ = -0.26f;
+        public static float horBarOffsetZ = -0.23f;
         public override void Draw()
         {
             base.Draw();
             Occupant?.Drawer.renderer.RenderPawnAt(DrawPos, null, neverAimWeapon: true);
+            if (scanProgress > 0)
+            {
+                if (Rotation.IsHorizontal)
+                {
+                    if (Rotation == Rot4.West)
+                    {
+                        DrawProgressBar(westLeftBarOffsetX);
+                        DrawProgressBar(westRightBarOffsetX);
+                    }
+                    else
+                    {
+                        DrawProgressBar(eastLeftBarOffsetX);
+                        DrawProgressBar(eastRightBarOffsetX);
+                    }
+                }
+                else
+                {
+                    if (Rotation == Rot4.South)
+                    {
+                        DrawProgressBar(southLeftBarOffsetX);
+                        DrawProgressBar(southRightBarOffsetX);
+                    }
+                    else
+                    {
+                        DrawProgressBar(northLeftBarOffsetX);
+                        DrawProgressBar(northRightBarOffsetX);
+                    }
+                }
+            }
+        }
+
+        private void DrawProgressBar(float xOffset)
+        {
+            Rot4 rotation = base.Rotation;
+            GenDraw.FillableBarRequest r = default(GenDraw.FillableBarRequest);
+            r.center = DrawPos + new Vector3(xOffset, 0, rotation.IsHorizontal ? horBarOffsetZ : vertBarOffsetZ).RotatedBy(Rotation);
+            r.size = new Vector2(rotation.IsHorizontal ? horSize1: vertSize1, rotation.IsHorizontal ? horSize2 : vertSize2);
+            r.fillPercent = scanProgress;
+            r.filledMat = FilledMat;
+            r.unfilledMat = UnfilledMat;
+            r.margin = 0f;
+            rotation.Rotate(RotationDirection.Clockwise);
+            r.rotation = rotation;
+            if (base.Rotation == Rot4.South)
+            {
+                r.center.z -= 0.08f;
+            }
+            var s = new Vector3(r.size.x * r.fillPercent, 1f, r.size.y);
+            var matrix = default(Matrix4x4);
+            Vector3 pos = r.center + Vector3.up * 0.01f;
+            if (!r.rotation.IsHorizontal)
+            {
+                pos.x -= r.size.x * 0.5f;
+                pos.x += 0.5f * r.size.x * r.fillPercent;
+            }
+            else
+            {
+                pos.z -= r.size.x * 0.5f;
+                pos.z += 0.5f * r.size.x * r.fillPercent;
+            }
+            matrix.SetTRS(pos, r.rotation.AsQuat, s);
+            Graphics.DrawMesh(MeshPool.plane10, matrix, r.filledMat, 0);
         }
 
         public override void Tick()
@@ -335,14 +410,13 @@ namespace VREAndroids
                     EjectContents();
                     if (scanProgress >= 1)
                     {
-                        innerContainer.ClearAndDestroyContents();
                         GenPlace.TryPlaceThing(ThingMaker.MakeThing(def.building.subcoreScannerOutputDef), InteractionCell, base.Map, ThingPlaceMode.Near);
                         if (def.building.subcoreScannerComplete != null)
                         {
                             def.building.subcoreScannerComplete.PlayOneShot(this);
                         }
-                        initScanner = false;
-                        scannedPawns.Clear();
+                        Reset();
+                        innerContainer.ClearAndDestroyContents();
                     }
                 }
 
@@ -351,14 +425,8 @@ namespace VREAndroids
                     workingMote = MoteMaker.MakeAttachedOverlay(this, MotePerRotation[base.Rotation], Vector3.zero);
                 }
                 workingMote.Maintain();
-                if (progressBarEffecter == null)
-                {
-                    progressBarEffecter = EffecterDefOf.ProgressBar.Spawn();
-                }
-                progressBarEffecter.EffectTick(this, TargetInfo.Invalid);
-                MoteProgressBar mote = ((SubEffecter_ProgressBar)progressBarEffecter.children[0]).mote;
-                mote.progress = scanProgress;
-                mote.offsetZ = -0.8f;
+
+
                 if (def.building.subcoreScannerWorking != null)
                 {
                     if (sustainerWorking == null || sustainerWorking.Ended)
@@ -371,11 +439,7 @@ namespace VREAndroids
                     }
                 }
             }
-            else
-            {
-                progressBarEffecter?.Cleanup();
-                progressBarEffecter = null;
-            }
+
             if (state == SubcoreScannerState.Occupied)
             {
                 if (def.building.subcoreScannerStartEffect != null)
@@ -393,6 +457,13 @@ namespace VREAndroids
                 effectStart?.Cleanup();
                 effectStart = null;
             }
+        }
+
+        private void Reset()
+        {
+            initScanner = false;
+            scanProgress = 0f;
+            scannedPawns.Clear();
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -471,13 +542,14 @@ namespace VREAndroids
             if (initScanner)
             {
                 Command_Action command_Action3 = new Command_Action();
-                command_Action3.defaultLabel = ((State == SubcoreScannerState.Occupied) ? "CommandCancelSubcoreScan".Translate() : "CommandCancelLoad".Translate());
-                command_Action3.defaultDesc = ((State == SubcoreScannerState.Occupied) ? "CommandCancelSubcoreScanDesc".Translate() : "CommandCancelLoadDesc".Translate());
+                command_Action3.defaultLabel = "CommandCancelSubcoreScan".Translate();
+                command_Action3.defaultDesc = "CommandCancelSubcoreScanDesc".Translate();
                 command_Action3.icon = CancelLoadingIcon;
                 command_Action3.action = delegate
                 {
                     EjectContents();
-                    innerContainer.ClearAndDestroyContents();
+                    innerContainer.TryDropAll(Position, Map, ThingPlaceMode.Near);
+                    Reset();
                 };
                 command_Action3.activateSound = SoundDefOf.Designate_Cancel;
                 yield return command_Action3;

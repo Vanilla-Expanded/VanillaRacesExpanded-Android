@@ -69,6 +69,9 @@ namespace VREAndroids
         public void FinishAndroidProject()
         {
             var android = PawnGenerator.GeneratePawn(VREA_DefOf.VREA_AndroidBasic, Faction.OfPlayer);
+            var neutroloss = HediffMaker.MakeHediff(VREA_DefOf.VREA_NeutroLoss, android);
+            neutroloss.Severity = 1;
+            android.health.AddHediff(neutroloss);
             android.genes.xenotypeName = curAndroidProject.name;
             android.genes.iconDef = curAndroidProject.IconDef;
             foreach (var gene in Utils.allAndroidGenes)

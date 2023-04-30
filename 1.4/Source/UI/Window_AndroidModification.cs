@@ -25,6 +25,17 @@ namespace VREAndroids
 
         public override string Header => "VREA.ModifyAndroid".Translate();
         public override string AcceptButtonLabel => "VREA.ModifyAndroid".Translate();
+
+
+
+        public override void Close(bool doCloseSound = true)
+        {
+            base.Close(doCloseSound);
+            if (station.curAndroidProject is null)
+            {
+                station.CancelModification();
+            }
+        }
         protected override void AcceptInner()
         {
             CustomXenotype customXenotype = new CustomXenotype();

@@ -9,6 +9,8 @@
 		<listPriority>700</listPriority>
 		<major>true</major>
 		<showForCaravanMembers>true</showForCaravanMembers>
+		<minIntelligence>Humanlike</minIntelligence>
+		<onlyIfCausedByGene>true</onlyIfCausedByGene>
 	</NeedDef>
 
 	<NeedDef>
@@ -19,6 +21,8 @@
 		<listPriority>800</listPriority>
 		<major>true</major>
 		<showForCaravanMembers>true</showForCaravanMembers>
+		<minIntelligence>Humanlike</minIntelligence>
+		<onlyIfCausedByGene>true</onlyIfCausedByGene>
 	</NeedDef>
 
 	<NeedDef>

@@ -238,6 +238,7 @@ Persona subcores created by this device can only be used to create complex, huma
 	<tickerType>Normal</tickerType>
     <thingClass>VREAndroids.Building_AndroidBehavioristStation</thingClass>
     <canOverlapZones>true</canOverlapZones>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <thingCategories>
       <li>BuildingsProduction</li>

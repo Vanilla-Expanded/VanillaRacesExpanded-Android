@@ -41,6 +41,7 @@
 		<iconPath>UI/Icons/Genes/Hardware/Gene_MemoryProcessing</iconPath>
 		<displayOrderInCategory>1</displayOrderInCategory>
 		<biostatCpx>3</biostatCpx>
+		<causesNeed>VREA_MemorySpace</causesNeed>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
@@ -53,6 +54,7 @@
 		<displayCategory>VREA_Hardware</displayCategory>
 		<canGenerateInGeneSet>false</canGenerateInGeneSet>
 		<isCoreComponent>true</isCoreComponent>
+		<causesNeed>VREA_ReactorPower</causesNeed>
 		<modExtensions>
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>

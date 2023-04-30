@@ -41,7 +41,6 @@ namespace VREAndroids
             }
             selectedGenes = Utils.AndroidGenesGenesInOrder.Where(x => x.CanBeRemovedFromAndroid() is false).ToList();
             OnGenesChanged();
-            ignoreRestrictions = true;
         }
 
         public override void DoWindowContents(Rect rect)
@@ -313,7 +312,7 @@ namespace VREAndroids
                 for (int i = 0; i < genes.Count; i++)
                 {
                     GeneDef geneDef = genes[i];
-                    if ((adding && quickSearchWidget.filter.Active && (!matchingGenes.Contains(geneDef) || selectedGenes.Contains(geneDef)) && !matchingCategories.Contains(geneDef.displayCategory)) || (!ignoreRestrictions && geneDef.biostatArc > 0))
+                    if ((adding && quickSearchWidget.filter.Active && (!matchingGenes.Contains(geneDef) || selectedGenes.Contains(geneDef)) && !matchingCategories.Contains(geneDef.displayCategory)))
                     {
                         continue;
                     }
@@ -568,6 +567,29 @@ namespace VREAndroids
                 Text.Anchor = TextAnchor.UpperLeft;
                 GUI.color = Color.white;
             }
+            else if (met < -20)
+            {
+                string text = "VREA.TooLowEfficiency".Translate();
+                float x2 = Text.CalcSize(text).x;
+                GUI.color = ColorLibrary.RedReadable;
+                Text.Anchor = TextAnchor.MiddleLeft;
+                Widgets.Label(new Rect(rect.xMax - ButSize.x - x2 - 4f, rect.y, x2, rect.height), text);
+                Text.Anchor = TextAnchor.UpperLeft;
+                GUI.color = Color.white;
+            }
+        }
+
+        public override bool WithinAcceptableBiostatLimits(bool showMessage)
+        {
+            if (met < AndroidStatsTable.AndroidStatRange.TrueMin)
+            {
+                if (showMessage)
+                {
+                    Messages.Message("VREA.EfficiencyTooLowToCreateAndroid".Translate(met.Named("AMOUNT"), AndroidStatsTable.AndroidStatRange.TrueMin.Named("MIN")), null, MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
+            }
+            return true;
         }
 
         public override bool CanAccept()
@@ -577,7 +599,26 @@ namespace VREAndroids
                 Messages.Message("VREA.MessageConflictingComponentPresent".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
                 return false;
             }
-            return base.CanAccept();
+            string text = xenotypeName;
+            if (text != null && text.Trim().Length == 0)
+            {
+                Messages.Message("VREA.AndroidNameCannotBeEmpty".Translate(), MessageTypeDefOf.RejectInput, historical: false);
+                return false;
+            }
+            if (!WithinAcceptableBiostatLimits(showMessage: true))
+            {
+                return false;
+            }
+            List<GeneDef> selectedGenes = SelectedGenes;
+            foreach (GeneDef selectedGene in SelectedGenes)
+            {
+                if (selectedGene.prerequisite != null && !selectedGenes.Contains(selectedGene.prerequisite))
+                {
+                    Messages.Message("VREA.MessageComponentMissingPrerequisite".Translate(selectedGene.label).CapitalizeFirst() + ": " + selectedGene.prerequisite.LabelCap, null, MessageTypeDefOf.RejectInput, historical: false);
+                    return false;
+                }
+            }
+            return true;
         }
         protected abstract void AcceptInner();
 

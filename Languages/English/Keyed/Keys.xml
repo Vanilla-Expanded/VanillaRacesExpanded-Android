@@ -77,4 +77,10 @@
 	<VREA.CancelModifyingAndroid>Cancel modifying android</VREA.CancelModifyingAndroid>
 	<VREA.CancelModifyingAndroidDesc>text.todo</VREA.CancelModifyingAndroidDesc>
 	<VREA.ModificationProgress>Modification progress: {0}</VREA.ModificationProgress>
+	<VREA.TooLowEfficiency>Too low efficiency, mininum is -20.</VREA.TooLowEfficiency>
+	<VREA.AndroidNameCannotBeEmpty>Android name cannot be empty.</VREA.AndroidNameCannotBeEmpty>
+	<VREA.MessageComponentMissingPrerequisite>{0} lacks a prerequisite component</VREA.MessageComponentMissingPrerequisite>
+	<VREA.EfficiencyTooLowToCreateAndroid>The total power efficiency of the selected components must be {MIN} or higher to continue, but currently it is only {AMOUNT}.</VREA.EfficiencyTooLowToCreateAndroid>
+
+
 </LanguageData>

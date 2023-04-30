@@ -284,13 +284,19 @@ namespace VREAndroids
                 command_Action3.icon = CancelLoadingIcon;
                 command_Action3.action = delegate
                 {
-                    EjectContents();
-                    innerContainer.ClearAndDestroyContents();
-                    initModification = false;
+                    CancelModification();
                 };
                 command_Action3.activateSound = SoundDefOf.Designate_Cancel;
                 yield return command_Action3;
             }
+        }
+
+        public void CancelModification()
+        {
+            EjectContents();
+            innerContainer.ClearAndDestroyContents();
+            initModification = false;
+            curAndroidProject = null;
         }
 
         public override string GetInspectString()

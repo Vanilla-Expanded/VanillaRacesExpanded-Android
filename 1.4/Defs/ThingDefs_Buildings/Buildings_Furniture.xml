@@ -23,7 +23,7 @@
     <rotatable>false</rotatable>
     <pathCost>42</pathCost>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-	<designationCategory>Misc</designationCategory>
+	<designationCategory>Biotech</designationCategory>
     <fillPercent>0.20</fillPercent>
     <comps>
       <li Class="CompProperties_Power">

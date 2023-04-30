@@ -26,13 +26,15 @@ namespace VREAndroids
                         efficiency += item.def.biostatMet;
                     }
                 }
-                return efficiency * AndroidStatsTable.PowerEfficiencyToPowerDrainFactorCurve.Evaluate(efficiency);
+                return AndroidStatsTable.PowerEfficiencyToPowerDrainFactorCurve.Evaluate(efficiency);
             }
         }
         public override void Tick()
         {
             base.Tick();
-            curEnergy = Mathf.Max(0, curEnergy - ((1f / GenDate.TicksPerYear * 2f) * PowerEfficiencyDrainMultiplier));
+            var baseDrainSpeed = (1f / GenDate.TicksPerYear * 2f) * PowerEfficiencyDrainMultiplier;
+            curEnergy = Mathf.Max(0,  curEnergy - baseDrainSpeed);
+
             if (curEnergy <= 0 && this.Severity != 1f)
             {
                 this.Severity = 1f;

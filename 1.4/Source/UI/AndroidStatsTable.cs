@@ -10,6 +10,7 @@ namespace VREAndroids
     [StaticConstructorOnStartup]
     public static class AndroidStatsTable
     {
+        public static readonly IntRange AndroidStatRange = new IntRange(-20, 5);
         private struct AndroidStatData
         {
             public string labelKey;
