@@ -230,7 +230,7 @@
 		<displayOrderInCategory>15</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
 		<statOffsets>
-			<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+			<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 		</statOffsets>
 	</VREAndroids.AndroidGeneDef>
 
