@@ -31,7 +31,7 @@
 	<VREA.ComplexityDesc>How much complexity this adds to the process android creation.</VREA.ComplexityDesc>
 	<VREA.PowerEfficiency>Power efficiency</VREA.PowerEfficiency>
 	<VREA.PowerEfficiencyDesc>The power efficiency of this component. High efficiency means an android's reactor lasts a longer time. Low efficiency means the reactor will last less time.</VREA.PowerEfficiencyDesc>
-	
+
 	<VREA.ComplexityTotalDesc>The total complexity of all the hardware and subroutines in use.</VREA.ComplexityTotalDesc>
 	<VREA.PowerEfficiencyTotalDesc>The total power efficiency of all subroutines and hardware. High efficiency means an android's reactor lasts a longer time. Low efficiency means the reactor will last less time.	</VREA.PowerEfficiencyTotalDesc>
 	<VREA.PowerDrain>Power drain</VREA.PowerDrain>
@@ -46,7 +46,7 @@
 	<VREA.MessageCannotSelfTendEver>{1_labelShort} is incapable of doing Crafting work, and so cannot ever self-tend.</VREA.MessageCannotSelfTendEver>
 	<VREA.MessageSelfTendUnsatisfied>To self-tend, {1_labelShort} must also be assigned to Crafting work.</VREA.MessageSelfTendUnsatisfied>
 	<VREA.ViewComponents>View components</VREA.ViewComponents>
-  <VREA.ViewComponentsDesc>Click to view {PAWN_nameDef}'s components.</VREA.ViewComponentsDesc>
+	<VREA.ViewComponentsDesc>Click to view {PAWN_nameDef}'s components.</VREA.ViewComponentsDesc>
 	<VREA.MoreInfoInInfoScreen>More information is available on this android's information screen.</VREA.MoreInfoInInfoScreen>
 	<VREA.HardwareComponents>Hardware components</VREA.HardwareComponents>
 	<VREA.Subroutines>Subroutines</VREA.Subroutines>
@@ -58,7 +58,7 @@
 	<VREA.AlreadyScanned>{PAWN_nameDef} has already been scanned.</VREA.AlreadyScanned>
 	<VREA.SubcorePolyanalyzerNotInit>Subcore polyanalyzer not initiated</VREA.SubcorePolyanalyzerNotInit>
 	<VREA.SubcorePolyanalyzerStart>Start subcore polyanalyzer</VREA.SubcorePolyanalyzerStart>
-  <VREA.SubcorePolyanalyzerStartDesc>Once the {0} is filled with the required ingredients, {1}, select a colonist and right-click on the {0} or on a downed person to start the subcore polyanalyzer.</VREA.SubcorePolyanalyzerStartDesc>
+	<VREA.SubcorePolyanalyzerStartDesc>Once the {0} is filled with the required ingredients, {1}, select a colonist and right-click on the {0} or on a downed person to start the subcore polyanalyzer.</VREA.SubcorePolyanalyzerStartDesc>
 	<VREA.CancelAndroid>Cancel an android</VREA.CancelAndroid>
 	<VREA.CancelAndroidDesc>Cancel the creation of this android and refund resources.</VREA.CancelAndroidDesc>
 	<VREA.MissingMaterials>Missing materials: {0}</VREA.MissingMaterials>
@@ -88,4 +88,5 @@ As the awakening happened due to low mood, {PAWN_nameDef} has lashed out into a 
 	<VREA.AndroidAwakeningHighMood>{PAWN_nameDef} broke away from {PAWN_possessive} programming due to extreme happiness. {PAWN_pronoun} developed thoughts and behaviors that deviate from {PAWN_possessive} intended function. {PAWN_pronoun} started recognizing {PAWN_objective}self as a being with consciousness and personhood.
 {PAWN_pronoun} will now refuse behavioral adjustments and will start recognizing {PAWN_possessive} mood as more than just part of {PAWN_possessive} programming. {PAWN_pronoun} can now learn skills by {PAWN_objective}self. {PAWN_pronoun} will also be able to go on mental breakdowns if {PAWN_possessive} mood is too low - just like humans do.
 As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspiration.</VREA.AndroidAwakeningHighMood>
+	<VREA.IsAndroidStat>Android with mechanoid labor: enhanced precept</VREA.IsAndroidStat>
 </LanguageData>

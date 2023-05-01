@@ -104,5 +104,11 @@ namespace VREAndroids
                 || hediffDef.chronic || hediffDef.CompProps<HediffCompProperties_Immunizable>() != null
                 || hediffDef.makesSickThought) is false;
         }
+
+        public static bool IsAndroid(Pawn pawn)
+        {
+            return HasActiveGene(pawn,VREA_DefOf.VREA_SyntheticBody);
+        }
+
     }
 }

@@ -103,14 +103,10 @@
       "Lib.Harmony/2.2.2": {
         "type": "package",
         "compile": {
-          "lib/net48/0Harmony.dll": {
-            "related": ".xml"
-          }
+          "lib/net48/0Harmony.dll": {}
         },
         "runtime": {
-          "lib/net48/_._": {
-            "related": ".xml"
-          }
+          "lib/net48/_._": {}
         }
       }
     },
@@ -216,14 +212,10 @@
       "Lib.Harmony/2.2.2": {
         "type": "package",
         "compile": {
-          "lib/net48/0Harmony.dll": {
-            "related": ".xml"
-          }
+          "lib/net48/0Harmony.dll": {}
         },
         "runtime": {
-          "lib/net48/_._": {
-            "related": ".xml"
-          }
+          "lib/net48/_._": {}
         }
       }
     },
@@ -329,14 +321,10 @@
       "Lib.Harmony/2.2.2": {
         "type": "package",
         "compile": {
-          "lib/net48/0Harmony.dll": {
-            "related": ".xml"
-          }
+          "lib/net48/0Harmony.dll": {}
         },
         "runtime": {
-          "lib/net48/_._": {
-            "related": ".xml"
-          }
+          "lib/net48/_._": {}
         }
       }
     },
@@ -442,14 +430,10 @@
       "Lib.Harmony/2.2.2": {
         "type": "package",
         "compile": {
-          "lib/net48/0Harmony.dll": {
-            "related": ".xml"
-          }
+          "lib/net48/0Harmony.dll": {}
         },
         "runtime": {
-          "lib/net48/_._": {
-            "related": ".xml"
-          }
+          "lib/net48/_._": {}
         }
       }
     }
@@ -599,12 +583,12 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
       "Krafs.Publicizer >= 2.*",
-      "Krafs.Rimworld.Ref >= 1.4.*",
+      "Krafs.Rimworld.Ref >= 1.4.3704",
       "Lib.Harmony >= 2.*"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Vova\\.nuget\\packages\\": {}
+    "C:\\Users\\Sarg\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -612,12 +596,12 @@
       "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Android\\1.4\\Source\\VREAndroids.csproj",
       "projectName": "VREAndroids",
       "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Android\\1.4\\Source\\VREAndroids.csproj",
-      "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Sarg\\.nuget\\packages\\",
       "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Android\\1.4\\Source\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Vova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sarg\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -644,7 +628,7 @@
           },
           "Krafs.Rimworld.Ref": {
             "target": "Package",
-            "version": "[1.4.*, )"
+            "version": "[1.4.3704, )"
           },
           "Lib.Harmony": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",

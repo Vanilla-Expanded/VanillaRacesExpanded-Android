@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationAdd"> 
+		<xpath>/Defs/MemeDef[defName="Transhumanist"]/requireOne</xpath>
+		<value>
+			<li>
+				<li>VRE_Androids_Respected</li>
+			</li>
+		</value>
+	</Operation>
+
+
+
+
+</Patch>

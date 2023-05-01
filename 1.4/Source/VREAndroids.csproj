@@ -57,7 +57,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.*">
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.4.3704</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony" Version="2.*">
       <ExcludeAssets>runtime</ExcludeAssets>
@@ -75,6 +76,12 @@
     <Compile Include="AI\Stance_Stand.cs" />
     <Compile Include="AI\WorkGiver_ModifyAndroid.cs" />
     <Compile Include="Buildings\Building_AndroidBehavioristStation.cs" />
+    <Compile Include="HarmonyPatches\TaleUtility_Notify_PawnDied_Patch.cs" />
+    <Compile Include="StatParts\StatPart_Android.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidPresent.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidsInColony.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android_Social.cs" />
     <Compile Include="UI\Window_AndroidModification.cs" />
     <Compile Include="Utilities\AndroidCreationUtility.cs" />
     <Compile Include="Buildings\Building_AndroidCreationStation.cs" />
