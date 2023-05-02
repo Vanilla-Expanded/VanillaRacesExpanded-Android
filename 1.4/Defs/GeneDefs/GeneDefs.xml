@@ -337,13 +337,34 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_FireVulnerability</defName>
+		<label>Fire vulnerability</label>
+		<description>Androids are susceptible to fire and will become unresponsive when ablaze. They will automatically search for a way to put out the fire.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_FireVulnerability</iconPath>
+		<displayOrderInCategory>4</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_RainVulnerability</defName>
+		<label>Rain vulnerability</label>
+		<description>Androids are susceptible to rain and will suffer occasional micro short-circuits when exposed to rainfall. This will result in increased power drain and occasional explosions that may damage the android biocomponents.</description>
+		<geneClass>VREAndroids.Gene_RainVulnerability</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_RainVulnerability</iconPath>
+		<displayOrderInCategory>5</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>5</biostatMet>
+	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_SlowRAM</defName>
 		<label>slow RAM</label>
 		<description>This android will take twice as long to reformat when it runs out of memory.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_SlowRAM</iconPath>
-		<displayOrderInCategory>4</displayOrderInCategory>
+		<displayOrderInCategory>6</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>2</biostatMet>
 		<exclusionTags>
@@ -356,7 +377,7 @@
 		<label>fast RAM</label>
 		<description>This android will take half the time to reformat when it runs out of memory.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_FastRAM</iconPath>
-		<displayOrderInCategory>5</displayOrderInCategory>
+		<displayOrderInCategory>7</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-2</biostatMet>
 		<exclusionTags>
@@ -365,19 +386,120 @@
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_ColdEfficiency</defName>
+		<label>cold efficiency</label>
+		<description>Androids with this subroutine work significantly better below freezing temperature. They can still suffer from component freezing.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ColdEfficiency</iconPath>
+		<displayOrderInCategory>8</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_LowPowerMode</defName>
 		<label>low power mode</label>
 		<description>Androids with this subroutine will have significantly reduced work and movement speed in order to preserve power.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_LowPowerMode</iconPath>
-		<displayOrderInCategory>6</displayOrderInCategory>
+		<displayOrderInCategory>9</displayOrderInCategory>
 		<statFactors>
 			<MoveSpeed>0.6</MoveSpeed>
 			<WorkSpeedGlobal>0.6</WorkSpeedGlobal>
 		</statFactors>
+		<exclusionTags>
+			<li>AndroidPowerMode</li>
+		</exclusionTags>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>8</biostatMet>
 	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_HighPowerMode</defName>
+		<label>high power mode</label>
+		<description>Androids with this subroutine will have significantly improved work and movement speed, but drain their reactors at a much faster rate.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_HighPowerMode</iconPath>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<statFactors>
+			<MoveSpeed>1.2</MoveSpeed>
+			<WorkSpeedGlobal>1.35</WorkSpeedGlobal>
+		</statFactors>
+		<exclusionTags>
+			<li>AndroidPowerMode</li>
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-5</biostatMet>
+	</VREAndroids.AndroidGeneDef>
 
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_Uncontrollable</defName>
+		<label>uncontrollable</label>
+		<description>Androids with this subroutine cannot be drafted, no matter the situation. They will not obey direct commands, and will only do work based on their work schedule.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_Uncontrollable</iconPath>
+		<displayOrderInCategory>11</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>5</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_AntiAwakeningProtocols</defName>
+		<label>anti-awakening protocols</label>
+		<description>Androids with this subroutine undergo regular factory reset every time reformatting happens, which prevents them from suffering from the android awakening glitch.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_AntiAwakeningProtocols</iconPath>
+		<displayOrderInCategory>12</displayOrderInCategory>
+		<biostatCpx>5</biostatCpx>
+		<biostatMet>2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_EmotionSimulators</defName>
+		<label>emotion simulators</label>
+		<description>Androids with this subroutine will store memories of other colonists and develop opinions of them. They will be able to develop relationships with others.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_EmotionSimulators</iconPath>
+		<displayOrderInCategory>13</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_PresenceFirewall</defName>
+		<label>presence firewall</label>
+		<description>Androids with this subroutine have a firewall that prevents their presence from being detected by other factions and entities. They will not count towards the colony population in the context of maximum population and raid scaling.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_PresenceFirewall</iconPath>
+		<displayOrderInCategory>14</displayOrderInCategory>
+		<biostatCpx>5</biostatCpx>
+		<biostatMet>-5</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_ZeroWaste</defName>
+		<label>zero waste</label>
+		<description>Androids with this subroutine will not generate toxic wastepacks when their reactor runs out.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ZeroWaste</iconPath>
+		<displayOrderInCategory>15</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SelfRecharge</defName>
+		<label>self recharge</label>
+		<description>Androids with this subroutine are capable of replacing their own reactors due to small internal batteries that keep them functional during the brief period without a working reactor.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SelfRecharge</iconPath>
+		<displayOrderInCategory>16</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_MemoryDecay</defName>
+		<label>memory decay</label>
+		<description>Androids with this subroutine will suffer from a skill memory decay. Over an extended period of time, their skills will decay back to 0. Androids with this subroutine will lose 1 level in every skill every 15 days. Removing and reinstalling subroutines may be required to return the skill levels back to intended values.</description>
+		<geneClass>VREAndroids.Gene_MemoryDecay</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_MemoryDecay</iconPath>
+		<displayOrderInCategory>17</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
 	<VREAndroids.AndroidGeneTemplateDef Name="VREA_GeneAptitudeBase" Abstract="True">
 		<geneClass>Gene</geneClass>
 		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
@@ -392,7 +514,7 @@
 		<label>incapable of {0}</label>
 		<description>Androids with this subroutine are incapable of doing any tasks related to {0} skill.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Incapable</iconPath>
-		<displayOrderOffset>0</displayOrderOffset>
+		<displayOrderOffset>20</displayOrderOffset>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>2</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
@@ -403,7 +525,7 @@
 		<description>Android's aptitude in {0} is increased by 4. Aptitude acts like an offset on skill level.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Basic</iconPath>
 		<aptitudeOffset>4</aptitudeOffset>
-		<displayOrderOffset>20</displayOrderOffset>
+		<displayOrderOffset>30</displayOrderOffset>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
@@ -414,7 +536,7 @@
 		<description>Android's aptitude in {0} is increased by 8. Aptitude acts like an offset on skill level.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Intermediate</iconPath>
 		<aptitudeOffset>8</aptitudeOffset>
-		<displayOrderOffset>30</displayOrderOffset>
+		<displayOrderOffset>40</displayOrderOffset>
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>-2</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
@@ -425,7 +547,7 @@
 		<description>Android's aptitude in {0} is increased by 12. Aptitude acts like an offset on skill level.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Advanced</iconPath>
 		<aptitudeOffset>12</aptitudeOffset>
-		<displayOrderOffset>40</displayOrderOffset>
+		<displayOrderOffset>50</displayOrderOffset>
 		<biostatCpx>3</biostatCpx>
 		<biostatMet>-3</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
@@ -436,7 +558,7 @@
 		<description>Android's aptitude in {0} is increased by 16. Aptitude acts like an offset on skill level.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Expert</iconPath>
 		<aptitudeOffset>16</aptitudeOffset>
-		<displayOrderOffset>50</displayOrderOffset>
+		<displayOrderOffset>60</displayOrderOffset>
 		<biostatCpx>4</biostatCpx>
 		<biostatMet>-4</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>

@@ -29,4 +29,11 @@
     <reportString>Modifying android at TargetA.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+  
+  <JobDef>
+    <defName>VREA_ReplaceReactor</defName>
+    <driverClass>VREAndroids.JobDriver_ReplaceReactor</driverClass>
+    <reportString>Replacing own reactor with TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

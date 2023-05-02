@@ -9,11 +9,11 @@ namespace VREAndroids
     {
         public static void Postfix(ref float __result, Pawn initiator, Pawn recipient)
         {
-            if (initiator.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))
+            if (initiator.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !initiator.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators))
             {
                 __result = 0f;
             }
-            else if (recipient.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))
+            else if (recipient.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !recipient.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators))
             {
                 __result = 0f;
             }

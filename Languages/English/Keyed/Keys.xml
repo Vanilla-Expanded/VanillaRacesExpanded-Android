@@ -89,4 +89,11 @@ As the awakening happened due to low mood, {PAWN_nameDef} has lashed out into a 
 {PAWN_pronoun} will now refuse behavioral adjustments and will start recognizing {PAWN_possessive} mood as more than just part of {PAWN_possessive} programming. {PAWN_pronoun} can now learn skills by {PAWN_objective}self. {PAWN_pronoun} will also be able to go on mental breakdowns if {PAWN_possessive} mood is too low - just like humans do.
 As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspiration.</VREA.AndroidAwakeningHighMood>
 	<VREA.IsAndroidStat>Android with mechanoid labor: enhanced precept</VREA.IsAndroidStat>
+	<VREA.AndroidShortCircuitRain>{PAWN_nameDef} has short-circuited due to precipitation.</VREA.AndroidShortCircuitRain>
+	<VREA.ColdEfficiencyBonusStatExplanation>Cold efficiency subroutine:
+	multiplier for temperature {0}</VREA.ColdEfficiencyBonusStatExplanation>
+	<VREA.StatsReport_AndroidDescription>An android of the {0} type.\n\nAbout {0}s:</VREA.StatsReport_AndroidDescription>
+	<VREA.ComponentsDesc>The components associated with this androidtype.</VREA.ComponentsDesc>
+	<VREA.ReplaceReactor>Replace reactor</VREA.ReplaceReactor>
+	
 </LanguageData>

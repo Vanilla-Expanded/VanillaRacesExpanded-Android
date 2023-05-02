@@ -27,13 +27,18 @@ namespace VREAndroids
             }
             foreach (Hediff item in pawn.health.hediffSet.hediffs.Where((Hediff x) => x.Part == part))
             {
-                if (item.def.spawnThingOnRemoved != null)
+                if (item is Hediff_AndroidReactor reactor)
                 {
-                    var thing = GenSpawn.Spawn(item.def.spawnThingOnRemoved, pos, map);
-                    if (item is Hediff_AndroidReactor reactor && thing is Reactor reactorThing)
+                    if (pawn.HasActiveGene(VREA_DefOf.VREA_ZeroWaste) is false)
                     {
-                        reactorThing.curEnergy = reactor.curEnergy;
+                        var wastepack = ThingMaker.MakeThing(ThingDefOf.Wastepack);
+                        wastepack.stackCount = 5;
+                        GenSpawn.Spawn(wastepack, pos, map);
                     }
+                }
+                else if (item.def.spawnThingOnRemoved != null)
+                {
+                    GenSpawn.Spawn(item.def.spawnThingOnRemoved, pos, map);
                 }
             }
             for (int i = 0; i < part.parts.Count; i++)

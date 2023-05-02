@@ -3,7 +3,8 @@ using RimWorld;
 using Verse;
 namespace VREAndroids
 {
-	public class StatPart_Android : StatPart
+
+    public class StatPart_Android : StatPart
 	{
 		private float factor = 1.2f;
 

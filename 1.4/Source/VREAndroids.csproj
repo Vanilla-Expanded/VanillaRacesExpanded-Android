@@ -67,6 +67,7 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\JobDriver_ReplaceReactor.cs" />
     <Compile Include="AI\JobDriver_ModifyAndroid.cs" />
     <Compile Include="AI\JobDriver_FreeMemorySpace.cs" />
     <Compile Include="AI\JobGiver_FreeMemorySpace.cs" />
@@ -76,8 +77,23 @@
     <Compile Include="AI\Stance_Stand.cs" />
     <Compile Include="AI\WorkGiver_ModifyAndroid.cs" />
     <Compile Include="Buildings\Building_AndroidBehavioristStation.cs" />
+    <Compile Include="Genes\Gene_MemoryDecay.cs" />
+    <Compile Include="Genes\Gene_RainVulnerability.cs" />
+    <Compile Include="HarmonyPatches\FloatMenuMakerMap_CanTakeOrder_Patch.cs" />
+    <Compile Include="HarmonyPatches\JobGiver_ExtinguishSelf_TryGiveJob_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnRelationWorker_BaseGenerationChanceFactor_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_DescriptionFlavor_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_DraftController_Drafted_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_DraftController_ShowDraftGizmo_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_JobTracker_IsCurrentJobPlayerInterruptible_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="HarmonyPatches\SkillRecord_Aptitude_Patch.cs" />
+    <Compile Include="HarmonyPatches\SkillUI_GetSkillDescription_Patch.cs" />
     <Compile Include="HarmonyPatches\TaleUtility_Notify_PawnDied_Patch.cs" />
+    <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
+    <Compile Include="HarmonyPatches\XenotypeDef_SpecialDisplayStats_Patch.cs" />
     <Compile Include="StatParts\StatPart_Android.cs" />
+    <Compile Include="StatParts\StatPart_AndroidColdEfficiency.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidPresent.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidsInColony.cs" />

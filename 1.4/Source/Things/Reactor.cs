@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 using Verse;
 
 namespace VREAndroids
@@ -21,6 +22,23 @@ namespace VREAndroids
         {
             base.PostMake();
             curEnergy = 1f;
+        }
+
+        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
+        {
+            foreach (var opt in base.GetFloatMenuOptions(selPawn))
+            {
+                yield return opt;
+            }
+            if (selPawn.HasActiveGene(VREA_DefOf.VREA_SelfRecharge))
+            {
+                yield return new FloatMenuOption("VREA.ReplaceReactor".Translate(), delegate
+                {
+                    var job = JobMaker.MakeJob(VREA_DefOf.VREA_ReplaceReactor, this);
+                    job.count = 1;
+                    selPawn.jobs.TryTakeOrderedJob(job);
+                });
+            }
         }
         public override void ExposeData()
         {

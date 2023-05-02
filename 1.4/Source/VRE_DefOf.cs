@@ -70,6 +70,9 @@ namespace VREAndroids
         [MayRequireIdeology]
         public static HistoryEventDef VRE_AndroidDied;
 
+        public static GeneDef VREA_FireVulnerability, VREA_RainVulnerability, VREA_ColdEfficiency, VREA_Uncontrollable, 
+            VREA_AntiAwakeningProtocols, VREA_EmotionSimulators, VREA_PresenceFirewall, VREA_ZeroWaste, VREA_SelfRecharge, VREA_MemoryDecay;
         public static PreceptDef MechanoidLabor_Enhanced;
+        public static JobDef VREA_ReplaceReactor;
     }
 }

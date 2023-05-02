@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "AvVW5LYc/M93rYt4aF/9TfCZPE0uwdTzAkruT8m0QsJZ/nh0GlPT/f32BSAUbOyfOEHH3OeTOmJXeSYoLk5lSg==",
+  "dgSpecHash": "gmLWBrAML5sEx/dtBT/LWsasi5vI2F8EA6GwrGyNuP1wlpWON8rJfcv1XRAzkPrytq0u0+lGdS7a6b59q5h5TQ==",
   "success": true,
   "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Android\\1.4\\Source\\VREAndroids.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Sarg\\.nuget\\packages\\krafs.publicizer\\2.2.1\\krafs.publicizer.2.2.1.nupkg.sha512",
-    "C:\\Users\\Sarg\\.nuget\\packages\\krafs.rimworld.ref\\1.4.3704\\krafs.rimworld.ref.1.4.3704.nupkg.sha512",
-    "C:\\Users\\Sarg\\.nuget\\packages\\lib.harmony\\2.2.2\\lib.harmony.2.2.2.nupkg.sha512"
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.publicizer\\2.2.1\\krafs.publicizer.2.2.1.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.4.3704\\krafs.rimworld.ref.1.4.3704.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.2.2\\lib.harmony.2.2.2.nupkg.sha512"
   ],
   "logs": []
 }

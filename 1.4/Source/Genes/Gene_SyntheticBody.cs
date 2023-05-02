@@ -25,7 +25,8 @@ namespace VREAndroids
         public override void Tick()
         {
             base.Tick();
-            if (!isAwakened && pawn.IsHashIntervalTick(GenDate.TicksPerHour))
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_AntiAwakeningProtocols) is false 
+                && !isAwakened && pawn.IsHashIntervalTick(GenDate.TicksPerHour))
             {
                 if (pawn.needs.mood.CurLevel <= 0.05f && Rand.Chance(0.01f))
                 {
