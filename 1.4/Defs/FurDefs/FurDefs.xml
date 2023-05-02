@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FurDef>
+    <defName>VRE_SyntheticSkin</defName>
+    <noGraphic>true</noGraphic>
+    <bodyTypeGraphicPaths>
+      <Male>Pawn/SyntheticSkin/SyntheticSkin_Male</Male>
+      <Female>Pawn/SyntheticSkin/SyntheticSkin_Female</Female>
+      <Hulk>Pawn/SyntheticSkin/SyntheticSkin_Hulk</Hulk>
+      <Fat>Pawn/SyntheticSkin/SyntheticSkin_Fat</Fat>
+      <Thin>Pawn/SyntheticSkin/SyntheticSkin_Thin</Thin>
+      <Child>Pawn/SyntheticSkin/SyntheticSkin_Thin</Child>
+      <Baby>Pawn/SyntheticSkin/SyntheticSkin_Thin</Baby><!-- Always covered by swaddled graphic -->
+    </bodyTypeGraphicPaths>
+  </FurDef>
+  
+  
+
+</Defs>

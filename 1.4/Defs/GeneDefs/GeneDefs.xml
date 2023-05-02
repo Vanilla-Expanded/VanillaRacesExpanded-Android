@@ -55,7 +55,7 @@
 		<canGenerateInGeneSet>false</canGenerateInGeneSet>
 		<isCoreComponent>true</isCoreComponent>
 		<causesNeed>VREA_ReactorPower</causesNeed>
-		<modExtensions>
+		<modExtensions Inherit="False">
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
 				<hediffsToBodyParts>
@@ -180,7 +180,7 @@
 		<displayCategory>VREA_Hardware</displayCategory>
 		<canGenerateInGeneSet>false</canGenerateInGeneSet>
 		<isCoreComponent>true</isCoreComponent>
-		<modExtensions>
+		<modExtensions Inherit="False">
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
 				<customBloodThingDef>VREA_Filth_Neutroamine</customBloodThingDef>
@@ -298,6 +298,35 @@
 		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VRE_SyntheticSkin</defName>
+		<label>synthetic skin</label>
+		<description>Androids with this hardware have a visible, synthetic skin that makes them stand out from their organic counterparts, clearly showing that they are indeed androids.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_SyntheticSkin</iconPath>
+		<displayOrderInCategory>22</displayOrderInCategory>
+		<biostatCpx>0</biostatCpx>
+		<labelShortAdj>syntheticskinned</labelShortAdj>
+		<isCoreComponent>false</isCoreComponent>
+		<graphicData>
+			<fur>VRE_SyntheticSkin</fur>
+			<tattoosVisible>false</tattoosVisible>
+		</graphicData>
+		<forcedHeadTypes>
+			<li>VRE_SyntheticAverage</li>
+			<li>VRE_SyntheticNarrow</li>
+			<li>VRE_SyntheticGaunt</li>
+			<li>VRE_SyntheticHeavy</li>
+		</forcedHeadTypes>
+		<modExtensions Inherit="False">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<useSkinColorForFur>true</useSkinColorForFur>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_CombatIncapability</defName>
 		<label>combat incapability</label>
@@ -337,7 +366,7 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_FireVulnerability</defName>
 		<label>Fire vulnerability</label>
@@ -347,7 +376,7 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>2</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_RainVulnerability</defName>
 		<label>Rain vulnerability</label>
@@ -394,7 +423,7 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>-4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_LowPowerMode</defName>
 		<label>low power mode</label>
@@ -411,7 +440,7 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>8</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_HighPowerMode</defName>
 		<label>high power mode</label>
@@ -448,7 +477,7 @@
 		<biostatCpx>5</biostatCpx>
 		<biostatMet>2</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_EmotionSimulators</defName>
 		<label>emotion simulators</label>
@@ -458,7 +487,7 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>-2</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_PresenceFirewall</defName>
 		<label>presence firewall</label>
@@ -478,7 +507,7 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-2</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_SelfRecharge</defName>
 		<label>self recharge</label>
@@ -488,7 +517,7 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_MemoryDecay</defName>
 		<label>memory decay</label>
@@ -499,7 +528,7 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
-	
+
 	<VREAndroids.AndroidGeneTemplateDef Name="VREA_GeneAptitudeBase" Abstract="True">
 		<geneClass>Gene</geneClass>
 		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
@@ -551,7 +580,7 @@
 		<biostatCpx>3</biostatCpx>
 		<biostatMet>-3</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
-	
+
 	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
 		<defName>VREA_AptitudeExpert</defName>
 		<label>expert {0}</label>
