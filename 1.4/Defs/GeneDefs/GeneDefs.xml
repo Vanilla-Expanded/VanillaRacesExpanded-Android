@@ -300,7 +300,7 @@
 
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
-		<defName>VRE_SyntheticSkin</defName>
+		<defName>VREA_SyntheticSkin</defName>
 		<label>synthetic skin</label>
 		<description>Androids with this hardware have a visible, synthetic skin that makes them stand out from their organic counterparts, clearly showing that they are indeed androids.</description>
 		<iconPath>UI/Icons/Genes/Hardware/Gene_SyntheticSkin</iconPath>

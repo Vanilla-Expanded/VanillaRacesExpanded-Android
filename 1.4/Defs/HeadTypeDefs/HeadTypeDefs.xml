@@ -9,7 +9,7 @@
 		<randomChosen>false</randomChosen>
 		<gender>None</gender>
 		<requiredGenes>
-			<li>VRE_SyntheticSkin</li>
+			<li>VREA_SyntheticSkin</li>
 		</requiredGenes>
 	</HeadTypeDef>
 	
@@ -21,7 +21,7 @@
 		<randomChosen>false</randomChosen>
 		<gender>None</gender>
 		<requiredGenes>
-			<li>VRE_SyntheticSkin</li>
+			<li>VREA_SyntheticSkin</li>
 		</requiredGenes>
 	</HeadTypeDef>
 	
@@ -34,7 +34,7 @@
 		<gender>None</gender>
 		<selectionWeight>99999</selectionWeight>
 		<requiredGenes>
-			<li>VRE_SyntheticSkin</li>
+			<li>VREA_SyntheticSkin</li>
 			<li>Head_Gaunt</li>
 		</requiredGenes>
 	</HeadTypeDef>
@@ -49,7 +49,7 @@
 		<gender>None</gender>
 		<selectionWeight>99999</selectionWeight>
 		<requiredGenes>
-			<li>VRE_SyntheticSkin</li>
+			<li>VREA_SyntheticSkin</li>
 			<li>Jaw_Heavy</li>
 		</requiredGenes>
 	</HeadTypeDef>
