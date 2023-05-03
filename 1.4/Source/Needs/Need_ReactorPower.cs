@@ -18,7 +18,7 @@ namespace VREAndroids
                 var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_Reactor) as Hediff_AndroidReactor;
                 if (hediff != null)
                 {
-                    return hediff.curEnergy;
+                    return hediff.Energy;
                 }
                 return 0f;
             }

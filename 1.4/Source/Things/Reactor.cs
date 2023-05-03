@@ -43,7 +43,7 @@ namespace VREAndroids
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref curEnergy, "curEnergy");
+            Scribe_Values.Look(ref curEnergy, "Energy");
         }
     }
 }

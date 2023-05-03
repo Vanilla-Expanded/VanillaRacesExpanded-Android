@@ -55,19 +55,6 @@
 		<canGenerateInGeneSet>false</canGenerateInGeneSet>
 		<isCoreComponent>true</isCoreComponent>
 		<causesNeed>VREA_ReactorPower</causesNeed>
-		<modExtensions Inherit="False">
-			<li Class="VanillaGenesExpanded.GeneExtension">
-				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
-				<hediffsToBodyParts>
-					<li>
-						<hediff>VREA_Reactor</hediff>
-						<bodyparts>
-							<li>Stomach</li>
-						</bodyparts>
-					</li>
-				</hediffsToBodyParts>
-			</li>
-		</modExtensions>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">

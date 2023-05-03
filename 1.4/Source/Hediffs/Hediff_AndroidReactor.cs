@@ -7,11 +7,23 @@ namespace VREAndroids
     [HotSwappable]
     public class Hediff_AndroidReactor : Hediff_AndroidPart
     {
-        public float curEnergy;
+        private float curEnergy;
+        public float Energy 
+        { 
+            get
+            {
+                return curEnergy;
+            }
+            set
+            {
+                curEnergy = value;
+                UpdateSeverity();
+            }
+        }
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            curEnergy = 1f;
+            Energy = 1f;
         }
 
         public float PowerEfficiencyDrainMultiplier
@@ -38,17 +50,21 @@ namespace VREAndroids
             {
                 baseDrainSpeed *= 2f;
             }
-            curEnergy = Mathf.Max(0,  curEnergy - baseDrainSpeed);
+            Energy = Mathf.Max(0, Energy - baseDrainSpeed);
+        }
 
-            if (curEnergy <= 0 && this.Severity != 1f)
+        private void UpdateSeverity()
+        {
+            if (Energy <= 0 && this.Severity != 1f)
             {
                 this.Severity = 1f;
             }
-            else if (curEnergy > 0 && this.Severity != 0f)
+            else if (Energy > 0 && this.Severity != 0f)
             {
                 this.Severity = 0f;
             }
         }
+
         public override void ExposeData()
         {
             base.ExposeData();

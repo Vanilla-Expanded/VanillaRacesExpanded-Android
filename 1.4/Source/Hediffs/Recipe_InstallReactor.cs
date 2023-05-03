@@ -12,7 +12,7 @@ namespace VREAndroids
             var reactor = ingredients.OfType<Reactor>().FirstOrDefault();
             base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
             var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_Reactor) as Hediff_AndroidReactor;
-            hediff.curEnergy = reactor.curEnergy;
+            hediff.Energy = reactor.curEnergy;
         }
     }
 }

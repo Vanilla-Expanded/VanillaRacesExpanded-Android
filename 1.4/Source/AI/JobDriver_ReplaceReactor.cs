@@ -26,7 +26,7 @@ namespace VREAndroids
                 initAction = delegate
                 {
                     var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_Reactor) as Hediff_AndroidReactor;
-                    hediff.curEnergy = Reactor.curEnergy;
+                    hediff.Energy = Reactor.curEnergy;
                     if (pawn.HasActiveGene(VREA_DefOf.VREA_ZeroWaste) is false)
                     {
                         var wastepack = ThingMaker.MakeThing(ThingDefOf.Wastepack);

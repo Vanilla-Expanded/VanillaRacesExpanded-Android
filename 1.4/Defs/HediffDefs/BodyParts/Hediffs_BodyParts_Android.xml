@@ -234,6 +234,7 @@
     <descriptionHyperlinks><ThingDef>VREA_Reactor</ThingDef></descriptionHyperlinks>
 	<hediffClass>VREAndroids.Hediff_AndroidReactor</hediffClass>
     <spawnThingOnRemoved>VREA_Reactor</spawnThingOnRemoved>
+	<initialSeverity>0</initialSeverity>
 	<stages>
 		<li>
 			<!-- a stub -->
