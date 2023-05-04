@@ -63,7 +63,7 @@
 	<VREA.CancelAndroidDesc>Cancel the creation of this android and refund resources.</VREA.CancelAndroidDesc>
 	<VREA.MissingMaterials>Missing materials: {0}</VREA.MissingMaterials>
 	<VREA.CreateAndroid>Create android</VREA.CreateAndroid>
-	<VREA.CreateAndroidDesc>text.todo</VREA.CreateAndroidDesc>
+	<VREA.CreateAndroidDesc>Create a new android by selecting hardware and subroutines.</VREA.CreateAndroidDesc>
 	<VREA.CreateAndroidAlreadyAssembling>Create android: already assembling an android</VREA.CreateAndroidAlreadyAssembling>
 	<VREA.AndroidtypeName>Androidtype name</VREA.AndroidtypeName>
 	<VREA.LoadAndroidtype>Load androidtype</VREA.LoadAndroidtype>
@@ -75,7 +75,7 @@
 	<VREA.ModifyAndroidDesc>Select an android to modify.</VREA.ModifyAndroidDesc>
 	<VREA.NoAndroidsPresent>No androids present</VREA.NoAndroidsPresent>
 	<VREA.CancelModifyingAndroid>Cancel modifying android</VREA.CancelModifyingAndroid>
-	<VREA.CancelModifyingAndroidDesc>text.todo</VREA.CancelModifyingAndroidDesc>
+	<VREA.CancelModifyingAndroidDesc>Cancel the process of modifying an android.</VREA.CancelModifyingAndroidDesc>
 	<VREA.ModificationProgress>Modification progress: {0}</VREA.ModificationProgress>
 	<VREA.TooLowEfficiency>Too low efficiency, mininum is -20.</VREA.TooLowEfficiency>
 	<VREA.AndroidNameCannotBeEmpty>Android name cannot be empty.</VREA.AndroidNameCannotBeEmpty>

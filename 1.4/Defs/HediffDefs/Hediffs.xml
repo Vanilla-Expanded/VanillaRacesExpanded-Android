@@ -188,7 +188,7 @@
   <HediffDef ParentName="DiseaseBase">
     <defName>VREA_ScanningSickness</defName>
     <label>Scanning sickness</label>
-    <description>text.todo.</description>
+    <description>This person was scanned by a softscanner to produce an android persona subcore. The high-energy scanning device has caused disturbances in their brain chemistry which will take time to resolve themselves. There won't be any long-term damage.</description>
     <initialSeverity>2</initialSeverity>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">

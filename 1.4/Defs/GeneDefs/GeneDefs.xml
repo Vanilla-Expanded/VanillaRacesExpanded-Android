@@ -278,7 +278,7 @@
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
 		<defName>VREA_PsychologyDisabled</defName>
 		<label>psychology disabled</label>
-		<description>text.todo</description>
+		<description>Androids with this hardware will not be able to form bonds, have traits or develop romantic relationships of any kind.</description>
 		<iconPath>UI/Icons/Genes/Hardware/Gene_PsychologyDisabled</iconPath>
 		<displayOrderInCategory>21</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>

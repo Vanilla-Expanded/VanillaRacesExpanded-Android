@@ -4,7 +4,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VREA_AndroidStand</defName>
     <label>android stand</label>
-    <description>text.todo</description>
+    <description>A wireless interface that allows an android to rapidly free up consumed memory space. Considerably more efficient than running in sleep mode, as the stand executes the conversion externally.</description>
 	<thingClass>VREAndroids.Building_AndroidStand</thingClass>
     <graphicData>
       <texPath>Things/Building/AndroidStand/AndroidStand</texPath>

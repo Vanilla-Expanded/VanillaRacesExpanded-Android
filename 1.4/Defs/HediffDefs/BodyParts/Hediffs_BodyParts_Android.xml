@@ -16,7 +16,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_NeuroPump</defName>
     <label>neuropump</label>
-    <description>text.todo</description>
+    <description>A synthetic, android neuropump. Distributes neutroamine across all android subsystems.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallNeuroPump</RecipeDef></descriptionHyperlinks>
 	<statBases>
       <WorkToMake>26000</WorkToMake>
@@ -72,7 +72,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_AirFilter</defName>
     <label>air filter</label>
-    <description>text.todo</description>
+    <description>A synthetic, android air filter. A pair of these creates an android respiratory system.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAirFilter</RecipeDef></descriptionHyperlinks>
 	<statBases>
       <WorkToMake>20000</WorkToMake>
@@ -128,7 +128,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_Neutrofilter</defName>
     <label>neutrofilter</label>
-    <description>text.todo</description>
+    <description>A synthetic, android neutrofilter. Cleans up and recycles spent neutroamine.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallNeutrofilter</RecipeDef></descriptionHyperlinks>
 	<statBases>
       <WorkToMake>20000</WorkToMake>
@@ -184,7 +184,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_MetabolismRegulator</defName>
     <label>metabolism regulator</label>
-    <description>text.todo</description>
+    <description>A synthetic, android metabolism regulator. Helps maintain maximum energy efficiency.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallMetabolismRegulator</RecipeDef></descriptionHyperlinks>
 	<statBases>
       <WorkToMake>20000</WorkToMake>
@@ -261,7 +261,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_Reactor</defName>
     <label>reactor</label>
-    <description>text.todo</description>
+    <description>A synthetic, android reactor. Once reactor is spent, it needs to be extracted and replaced.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallReactor</RecipeDef></descriptionHyperlinks>
 	<thingClass>VREAndroids.Reactor</thingClass>
     <costList>
@@ -317,7 +317,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_ArtificalBrain</defName>
     <label>artifical brain</label>
-    <description>text.todo</description>
+    <description>A synthetic, android brain. Extremely complex, this unit servers as the very being of an android.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalBrain</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
@@ -371,7 +371,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_OpticalUnit</defName>
     <label>optical unit</label>
-    <description>text.todo</description>
+    <description>A synthetic, android optical unit. Allows the android to see.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallOpticalUnit</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>15</Plasteel>
@@ -424,7 +424,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_AudioProcessor</defName>
     <label>audio processor</label>
-    <description>text.todo</description>
+    <description>A synthetic, android audio processor. Allows the android to hear.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAudioProcessor</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>15</Plasteel>
@@ -474,7 +474,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_ArtificalNose</defName>
     <label>artifical nose</label>
-    <description>text.todo</description>
+    <description>A synthetic, android nose. Allows the android to detect smells.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalNose</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
@@ -523,7 +523,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_ArtificalJaw</defName>
     <label>artifical jaw</label>
-    <description>text.todo</description>
+    <description>A synthetic, android jaw.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalJaw</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
@@ -575,7 +575,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_ArtificalRibcage</defName>
     <label>artifical ribcage</label>
-    <description>text.todo</description>
+    <description>A synthetic, android ribcage.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalRibcage</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>20</Plasteel>
@@ -627,7 +627,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_ArtificalSpine</defName>
     <label>artifical spine</label>
-    <description>text.todo</description>
+    <description>A synthetic, android spine.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalSpine</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>25</Plasteel>
@@ -677,7 +677,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_AndroidLeg</defName>
     <label>android leg</label>
-    <description>text.todo</description>
+    <description>A synthetic, android leg.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidLeg</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>20</Plasteel>
@@ -726,7 +726,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_AndroidFoot</defName>
     <label>android foot</label>
-    <description>text.todo</description>
+    <description>A synthetic, android foot.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidFoot</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
@@ -775,7 +775,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_AndroidArm</defName>
     <label>android arm</label>
-    <description>text.todo</description>
+    <description>A synthetic, android arm.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidArm</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>20</Plasteel>
@@ -824,7 +824,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_AndroidHand</defName>
     <label>android hand</label>
-    <description>text.todo</description>
+    <description>A synthetic, android arm.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidHand</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
