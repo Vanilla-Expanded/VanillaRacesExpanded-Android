@@ -14,7 +14,6 @@ namespace VREAndroids
                 if (__instance.def.familyByBloodRelation)
                 {
                     __result = 0;
-                    Log.Message("Preventing: " + __instance.def);
                 }
             }
         }

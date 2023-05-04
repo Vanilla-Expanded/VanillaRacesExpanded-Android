@@ -8,6 +8,16 @@ namespace VREAndroids
     [StaticConstructorOnStartup]
     public static class Utils
     {
+        [DebugAction("Pawns", null, false, false, false, 0, false, actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 1000)]
+        private static void AwakenAndroid(Pawn p)
+        {
+            var gene = p.genes?.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
+            if (gene != null && gene.Awakened is false) 
+            {
+                gene.Awaken();
+            }
+        }
+
         public static HashSet<GeneDef> allAndroidGenes = new HashSet<GeneDef>();
         private static List<GeneDef> cachedGeneDefsInOrder = null;
         static Utils()

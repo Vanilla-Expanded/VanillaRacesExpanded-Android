@@ -76,7 +76,6 @@ namespace VREAndroids
         {
             if (part != null)
             {
-                Log.Message(part.def.spawnThingOnRemoved + " - " + __state);
                 part.def.spawnThingOnRemoved = __state;
             }
             curPawn = null;

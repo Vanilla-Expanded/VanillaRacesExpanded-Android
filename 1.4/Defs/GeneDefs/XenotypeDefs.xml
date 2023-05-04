@@ -26,6 +26,29 @@
 		</genes>
 	</XenotypeDef>
 	
+	<XenotypeDef Name="VREA_AndroidXenotypeAwakenedBase" Abstract="True">
+		<genes>
+			<li>VREA_MemoryProcessing</li>
+			<li>VREA_Power</li>
+			<li>VREA_SyntheticBody</li>
+			<li>VREA_NeutroCirculation</li>
+			<li>VREA_SyntheticImmunity</li>
+			<li>VREA_ComponentFreezing</li>
+			<li>VREA_ComponentOverheating</li>
+			<li>VREA_ColdTolerant</li>
+			<li>VREA_HeatTolerant</li>
+			<li>VREA_PsychicallyDeaf</li>
+		</genes>
+	</XenotypeDef>
+	
+	<XenotypeDef ParentName="VREA_AndroidXenotypeAwakenedBase">
+		<defName>VREA_AndroidAwakened</defName>
+		<label>android awakened</label>
+		<description>text.todo</description>
+		<descriptionShort>text.todo</descriptionShort>
+		<iconPath>UI/XenotypeIcons/Androidtype_Drone</iconPath>
+	</XenotypeDef>
+	
 	<XenotypeDef ParentName="VREA_AndroidXenotypeBase">
 		<defName>VREA_AndroidBasic</defName>
 		<label>android basic</label>

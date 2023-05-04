@@ -6,7 +6,8 @@ namespace VREAndroids
 {
     public class Gene_SyntheticBody : Gene
     {
-        public bool isAwakened;
+        public bool Awakened => pawn.genes.GenesListForReading.Select(x => x.def).OfType<AndroidGeneDef>()
+            .Any(x => x.removeWhenAwakened) is false;
         public override void PostAdd()
         {
             base.PostAdd();
@@ -25,8 +26,8 @@ namespace VREAndroids
         public override void Tick()
         {
             base.Tick();
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_AntiAwakeningProtocols) is false 
-                && !isAwakened && pawn.IsHashIntervalTick(GenDate.TicksPerHour))
+            if (pawn.IsHashIntervalTick(GenDate.TicksPerHour) && Awakened is false 
+                && pawn.HasActiveGene(VREA_DefOf.VREA_AntiAwakeningProtocols) is false)
             {
                 if (pawn.needs.mood.CurLevel <= 0.05f && Rand.Chance(0.01f))
                 {
@@ -44,7 +45,7 @@ namespace VREAndroids
                 {
                     Awaken();
                     Find.LetterStack.ReceiveLetter("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")),
-    "VREA.AndroidAwakeningHighMood".Translate(pawn.Named("PAWN")), LetterDefOf.PositiveEvent, pawn);
+                        "VREA.AndroidAwakeningHighMood".Translate(pawn.Named("PAWN")), LetterDefOf.PositiveEvent, pawn);
                     InspirationDef randomAvailableInspirationDef = pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
                     if (randomAvailableInspirationDef != null)
                     {
@@ -56,7 +57,6 @@ namespace VREAndroids
 
         public void Awaken()
         {
-            isAwakened = true;
             foreach (var gene in pawn.genes.GenesListForReading.ToList())
             {
                 if (gene.def is AndroidGeneDef geneDef && geneDef.removeWhenAwakened)
@@ -64,12 +64,6 @@ namespace VREAndroids
                     pawn.genes.RemoveGene(gene);
                 }
             }
-        }
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look(ref isAwakened, "isAwakened");
         }
     }
 }

@@ -69,6 +69,7 @@ namespace VREAndroids
         public void FinishAndroidProject()
         {
             var android = PawnGenerator.GeneratePawn(VREA_DefOf.VREA_AndroidBasic, Faction.OfPlayer);
+            android.story.childhood = VREA_DefOf.ColonyAndroidA01;
             var neutroloss = HediffMaker.MakeHediff(VREA_DefOf.VREA_NeutroLoss, android);
             neutroloss.Severity = 1;
             android.health.AddHediff(neutroloss);

@@ -9,7 +9,7 @@
     <titleShort>colony android</titleShort>
     <titleFemale>colony android</titleFemale>
     <titleShortFemale>colony android</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was created in the colony in the recent past. The future may hold many things for [PAWN_objective].</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>

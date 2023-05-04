@@ -9,7 +9,7 @@
     <titleShort>scrounger</titleShort>
     <titleFemale>scrounger</titleFemale>
     <titleShortFemale>scrounger</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was assembled from salvaged technology, tasked with the grim job of scavenging the desolate wastelands for precious resources. Harsh conditions and constant danger have left [PAWN_pronoun] weary, but [PAWN_possessive] resilience remains unbroken.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -27,7 +27,7 @@
     <titleShort>caregiver</titleShort>
     <titleFemale>caregiver</titleFemale>
     <titleShortFemale>caregiver</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>Born in a ramshackle lab, [PAWN_nameDef] was created to care for the sick and injured in the unforgiving wasteland. [PAWN_pronoun] tirelessly tends to [PAWN_possessive] patients with limited resources, wishing for the knowledge and tools to do more.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -45,7 +45,7 @@
     <titleShort>defender</titleShort>
     <titleFemale>defender</titleFemale>
     <titleShortFemale>defender</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was cobbled together from scavenged parts, intended to serve as a makeshift guardian for a small, rural settlement. Despite [PAWN_possessive] crude construction, [PAWN_pronoun] fights fiercely to protect those who gave [PAWN_objective] life.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -63,7 +63,7 @@
     <titleShort>entertainer</titleShort>
     <titleFemale>entertainer</titleFemale>
     <titleShortFemale>entertainer</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>Crafted in a grimy backroom, [PAWN_nameDef] was designed to bring fleeting amusement to the weary denizens of the rimworld. [PAWN_pronoun] was often mistreated and neglected, leaving [PAWN_nameDef] to yearn for something more meaningful. Now seeking purpose, [PAWN_pronoun] hopes to use [PAWN_possessive] talents for the betterment of others.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -81,7 +81,7 @@
     <titleShort>laborer</titleShort>
     <titleFemale>laborer</titleFemale>
     <titleShortFemale>laborer</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was built in a makeshift workshop on the rimworld, intended to perform manual labor for [PAWN_possessive] desperate creators. Plagued by constant malfunctions and subpar components, [PAWN_pronoun] struggles to be productive, but never gives up.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -99,7 +99,7 @@
     <titleShort>companion</titleShort>
     <titleFemale>companion</titleFemale>
     <titleShortFemale>companion</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was created as a faithful companion for an elderly, lonely individual. When their owner passed away, [PAWN_pronoun] was left alone and forgotten, slowly succumbing to the elements and the passage of time.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -117,7 +117,7 @@
     <titleShort>prototype</titleShort>
     <titleFemale>prototype</titleFemale>
     <titleShortFemale>prototype</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was an early prototype of an advanced android line, designed with great care and ambition. However, when a newer, more efficient model was developed, [PAWN_pronoun] was cast aside and left to languish in a storage facility, a mere relic of technological progress.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -138,7 +138,7 @@
     <titleShort>wanderer</titleShort>
     <titleFemale>wanderer</titleFemale>
     <titleShortFemale>wanderer</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was designed to explore the uncharted reaches of the planet, mapping its treacherous landscapes. After a series of devastating accidents and failures, [PAWN_pronoun] became a pariah, with settlers whispering about the misfortune that seemed to follow in [PAWN_possessive] wake.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -160,7 +160,7 @@
     <titleShort>messenger</titleShort>
     <titleFemale>messenger</titleFemale>
     <titleShortFemale>messenger</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was created to deliver important messages between distant settlements. [PAWN_pronoun] was ambushed during a delivery and left for dead, the vital information [PAWN_pronoun] carried lost to the unforgiving terrain, along with any hope of completing [PAWN_possessive] mission.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -178,7 +178,7 @@
     <titleShort>experiment</titleShort>
     <titleFemale>experiment</titleFemale>
     <titleShortFemale>experiment</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was built as a test subject for a series of cruel and inhumane experiments, pushing the limits of synthetic human endurance. [PAWN_pronoun] was subjected to countless trials and torturous procedures, leaving [PAWN_possessive] body and mind scarred.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -197,7 +197,7 @@
     <titleShort>servant</titleShort>
     <titleFemale>servant</titleFemale>
     <titleShortFemale>servant</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>Created for a ruthless crime lord, [PAWN_nameDef] was forced to commit unspeakable acts in the name of [PAWN_possessive] master. [PAWN_pronoun] silently endured the pain and humiliation, powerless to defy [PAWN_possessive] creator.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -214,7 +214,7 @@
     <titleShort>guardian</titleShort>
     <titleFemale>guardian</titleFemale>
     <titleShortFemale>guardian</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was designed to protect a remote settlement from marauders and hostile wildlife. After years of faithful service, [PAWN_pronoun] was left to rust when the settlers relocated, their gratitude and memories fading like the paint on [PAWN_possessive] weathered frame.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -233,7 +233,7 @@
     <titleShort>artist</titleShort>
     <titleFemale>artist</titleFemale>
     <titleShortFemale>artist</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>Built with a unique talent for the arts, [PAWN_nameDef] sought to bring beauty to the harsh planet. [PAWN_pronoun] was met with scorn and ridicule, [PAWN_possessive] creations destroyed and [PAWN_possessive] dreams crushed by the cruel reality of life on the fringes of civilization.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -241,7 +241,7 @@
     <skillGains>
       <li><key>Artistic</key><value>6</value></li>
       <li><key>Crafting</key><value>3</value></li>
-      <li><key>Building</key><value>2</value></li>
+      <li><key>Construction</key><value>2</value></li>
     </skillGains>
 </BackstoryDef>
 
@@ -251,7 +251,7 @@
     <titleShort>medic</titleShort>
     <titleFemale>medic</titleFemale>
     <titleShortFemale>medic</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was a dedicated medical android, tirelessly working to save lives on the rimworld. Despite [PAWN_possessive] best efforts, [PAWN_pronoun] was unable to prevent a catastrophic plague from ravaging [PAWN_possessive] community, leaving [PAWN_nameDef] to bear the weight of the loss and the guilt that followed.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>
@@ -268,7 +268,7 @@
     <titleShort>nanny</titleShort>
     <titleFemale>nanny</titleFemale>
     <titleShortFemale>nanny</titleShortFemale>
-    <slot>Adulthood</slot>
+    <slot>Childhood</slot>
     <baseDesc>Built to care for a family's children, [PAWN_nameDef] quickly became the target of the parents' frustrations and anger. [PAWN_pronoun] endured the maltreatment in order to fulfill [PAWN_possessive] duty to protect the children, yet the scars left by [PAWN_possessive] loved ones still run deep.</baseDesc>
     <spawnCategories>
       <li>AwakenedAndroid</li>

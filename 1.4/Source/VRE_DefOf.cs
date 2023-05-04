@@ -74,5 +74,6 @@ namespace VREAndroids
             VREA_AntiAwakeningProtocols, VREA_EmotionSimulators, VREA_PresenceFirewall, VREA_ZeroWaste, VREA_SelfRecharge, VREA_MemoryDecay;
         public static PreceptDef MechanoidLabor_Enhanced;
         public static JobDef VREA_ReplaceReactor;
+        public static BackstoryDef ColonyAndroidA01;
     }
 }
