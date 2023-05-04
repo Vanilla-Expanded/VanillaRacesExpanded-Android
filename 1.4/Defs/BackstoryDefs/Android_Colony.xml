@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--============================== Colony android ============================-->
+
+<BackstoryDef>
+    <defName>ColonyAndroidA01</defName>
+    <title>colony android</title>
+    <titleShort>colony android</titleShort>
+    <titleFemale>colony android</titleFemale>
+    <titleShortFemale>colony android</titleShortFemale>
+    <slot>Adulthood</slot>
+    <baseDesc>[PAWN_nameDef] was created in the colony in the recent past. The future may hold many things for [PAWN_objective].</baseDesc>
+    <spawnCategories>
+      <li>AwakenedAndroid</li>
+    </spawnCategories>
+</BackstoryDef>
+
+</Defs>
