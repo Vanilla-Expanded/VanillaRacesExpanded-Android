@@ -4,7 +4,7 @@
   <ThingDef ParentName="BenchBase">
     <defName>VREA_AndroidPartWorkbench</defName>
     <label>android part workbench</label>
-    <description>text.todo.</description>
+    <description>A workbench equipped with molecular printing technology to produce singular replacement parts for synthetic lifeforms.</description>
     <thingClass>Building_WorkTable</thingClass>
     <graphicData>
       <texPath>Things/TableAndroidParts/TableAndroidParts</texPath>
@@ -234,7 +234,7 @@ Persona subcores created by this device can only be used to create complex, huma
   <ThingDef ParentName="BuildingBase">
     <defName>VREA_AndroidBehavioristStation</defName>
     <label>android behaviorist station</label>
-    <description>A reprogramming station used to imbue desirable traits and skills onto an android. Onboard software allows even complete beginners to modify an android’s personality, however a more intellectually talented user will spend less time needing to follow tutorials.\n\nIn-built safety systems prevent overriding the non-violence parameters inherent to androids, as well as prevent androids from improving other androids.</description>
+    <description>A reprogramming station used to imbue desirable traits and skills onto an android. Onboard software allows even complete beginners to modify an android’s personality, however a more intellectually talented user will spend less time needing to follow tutorials.</description>
 	<tickerType>Normal</tickerType>
     <thingClass>VREAndroids.Building_AndroidBehavioristStation</thingClass>
     <canOverlapZones>true</canOverlapZones>

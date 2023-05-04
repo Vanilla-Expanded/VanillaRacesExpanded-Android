@@ -3,7 +3,7 @@
 	<ThingDef ParentName="FurnitureBase">
 		<defName>VREA_NeutroCasket</defName>
 		<label>neutro casket</label>
-		<description>Text.todo</description>
+		<description>A casket specially designed for use by androids undergoing operations, or suffering from neutroloss as it can cycle and replace any missing neutroamine. There must be neutroamine available, either stored locally or sourced with a pipe network.\n\nThe maximum amount of neutroamine an android can hold is 100 units, but they can operate with minimal functions at 50 units.</description>
 		<thingClass>VREAndroids.Building_NeutroCasket</thingClass>
 		<tickerType>Normal</tickerType>
 		<drawerType>RealtimeOnly</drawerType>
