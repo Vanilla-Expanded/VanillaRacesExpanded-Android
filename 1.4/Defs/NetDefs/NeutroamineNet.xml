@@ -30,7 +30,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VREA_NeutroPipe</defName>
     <label>neutro pipe</label>
-    <description>text.todo</description>
+    <description>Light, sterile pipes for transporting the liquid neutroamine in bulk to and from tanks.</description>
     <thingClass>PipeSystem.Building_Pipe</thingClass>
     <category>Building</category>
     <tickerType>Rare</tickerType>
@@ -94,14 +94,14 @@
     <constructEffect>ConstructMetal</constructEffect>
     <clearBuildingArea>false</clearBuildingArea>
     <researchPrerequisites>
-      <li>BiofuelRefining</li>
+      <li>VREA_AndroidTech</li>
     </researchPrerequisites>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">
     <defName>VREA_NeutroTank</defName>
     <label>neutro tank</label>
-    <description>text.todo</description>
+    <description>A light, sterile liquid storage tank meant for storing neutroamine delivered via neutro pipe network. Usually needed for machinery capable of synthesizing lifeforms, which otherwise consume far too much neutroamine to be reasonably refilled manually.</description>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>Things/Neutro/NeutroTank</texPath>
@@ -154,7 +154,7 @@
     <constructEffect>ConstructMetal</constructEffect>
     <canOverlapZones>false</canOverlapZones>
     <researchPrerequisites>
-      <li>BiofuelRefining</li>
+      <li>VREA_AndroidTech</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -227,7 +227,7 @@
       </li>
     </comps>
     <researchPrerequisites>
-      <li>BiofuelRefining</li>
+      <li>VREA_AndroidTech</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -300,7 +300,7 @@
       </li>
     </comps>
     <researchPrerequisites>
-      <li>BiofuelRefining</li>
+      <li>VREA_AndroidTech</li>
     </researchPrerequisites>
   </ThingDef>
 
