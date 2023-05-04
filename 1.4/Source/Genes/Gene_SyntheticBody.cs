@@ -6,6 +6,7 @@ namespace VREAndroids
 {
     public class Gene_SyntheticBody : Gene
     {
+        public NameTriple storedTripleName;
         public bool Awakened => pawn.genes.GenesListForReading.Select(x => x.def).OfType<AndroidGeneDef>()
             .Any(x => x.removeWhenAwakened) is false;
         public override void PostAdd()
@@ -64,6 +65,16 @@ namespace VREAndroids
                     pawn.genes.RemoveGene(gene);
                 }
             }
+            if (storedTripleName != null)
+            {
+                pawn.Name = storedTripleName;
+            }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Deep.Look(ref storedTripleName, "storedTripleName");
         }
     }
 }

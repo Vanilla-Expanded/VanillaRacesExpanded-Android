@@ -21,6 +21,7 @@ namespace VREAndroids
 
         public static void SpawnThingsFromHediffs(Pawn pawn, BodyPartRecord part, IntVec3 pos, Map map)
         {
+            Log.Message("Spawning " + part.def);
             if (!pawn.health.hediffSet.GetNotMissingParts().Contains(part))
             {
                 return;
@@ -40,6 +41,11 @@ namespace VREAndroids
                 {
                     GenSpawn.Spawn(item.def.spawnThingOnRemoved, pos, map);
                 }
+            }
+
+            if (part.IsCorePart)
+            {
+                return;
             }
             for (int i = 0; i < part.parts.Count; i++)
             {

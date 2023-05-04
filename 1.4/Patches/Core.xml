@@ -19,6 +19,13 @@
 					<li Class="VREAndroids.JobGiver_FreeMemorySpace"/>
 				</value>
 			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="TableMachining"]/recipes</xpath>
+				<value>
+					<li>VREA_ButcherCorpseAndroid</li>
+				</value>
+			</li>
 			
 			<li Class="PatchOperationAdd"> 
 				<xpath>/Defs/StatDef[defName="WorkSpeedGlobal"]/parts</xpath>

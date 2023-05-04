@@ -154,6 +154,9 @@
 		<geneClass>VREAndroids.Gene_SyntheticBody</geneClass>
 		<displayOrderInCategory>10</displayOrderInCategory>
 		<biostatCpx>3</biostatCpx>
+		<statFactors>
+			<Fertility>0</Fertility>
+		</statFactors>
 		<sterilize>true</sterilize>
 	</VREAndroids.AndroidGeneDef>
 

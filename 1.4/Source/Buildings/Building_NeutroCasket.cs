@@ -36,7 +36,7 @@ namespace VREAndroids
                 foreach (var occupant in CurOccupants)
                 {
                     var hediff = occupant.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss);
-                    if (hediff != null)
+                    if (hediff != null && occupant.health.hediffSet.BleedRateTotal <= 0)
                     {
                         if (compRefuelable.fuel >= 1)
                         {

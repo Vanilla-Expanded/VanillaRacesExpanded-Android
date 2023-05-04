@@ -20,6 +20,9 @@ namespace VREAndroids
             IEnumerable<BodyPartRecord> notMissingParts = pawn.health.hediffSet.GetNotMissingParts();
             foreach (BodyPartRecord part in notMissingParts)
             {
+                if (part == pawn.RaceProps.body.corePart)
+                    continue;
+
                 if (pawn.health.hediffSet.HasDirectlyAddedPartFor(part))
                 {
                     yield return part;
@@ -82,6 +85,7 @@ namespace VREAndroids
 
         public override void ApplyThoughts(Pawn pawn, Pawn billDoer)
         {
+
         }
 
         public override string GetLabelWhenUsedOn(Pawn pawn, BodyPartRecord part)

@@ -75,5 +75,9 @@ namespace VREAndroids
         public static PreceptDef MechanoidLabor_Enhanced;
         public static JobDef VREA_ReplaceReactor;
         public static BackstoryDef ColonyAndroidA01;
+        public static ThingDef Neutroamine;
+        public static RecipeDef VREA_ButcherCorpseAndroid;
+        public static RecipeDef ButcherCorpseFlesh;
+        public static GeneDef VREA_PainDisabled;
     }
 }
