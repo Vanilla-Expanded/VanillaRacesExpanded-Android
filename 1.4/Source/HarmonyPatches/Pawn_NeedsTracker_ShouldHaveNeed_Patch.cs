@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn ___pawn, NeedDef nd, ref bool __result)
         {
-            if (___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (___pawn.IsAndroid())
             {
                 if (VREA_DefOf.VREA_AndroidSettings.excludedNeedsForAndroids.Contains(nd.defName))
                 {

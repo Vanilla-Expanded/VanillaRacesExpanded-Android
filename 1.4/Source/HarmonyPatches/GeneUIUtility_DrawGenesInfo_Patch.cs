@@ -13,7 +13,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Rect rect, Thing target, float initialHeight, ref Vector2 size, ref Vector2 scrollPosition, GeneSet pregnancyGenes = null)
         {
-            if (target is Pawn pawn && pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (target is Pawn pawn && pawn.IsAndroid())
             {
                 DrawComponentsInfo(rect, target, initialHeight, ref size, ref scrollPosition, pregnancyGenes);
                 return false;

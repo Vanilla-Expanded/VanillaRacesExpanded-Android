@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(CompRottable __instance)
         {
-            if (__instance.parent is Pawn pawn && pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__instance.parent is Pawn pawn && pawn.IsAndroid())
             {
                 return false;
             }

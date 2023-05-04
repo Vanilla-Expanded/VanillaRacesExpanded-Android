@@ -11,7 +11,7 @@ namespace VREAndroids
     {
         public static bool Prefix(ref float __result, HediffSet diffSet, BodyPartRecord part, bool ignoreAddedParts = false, List<CapacityImpactor> impactors = null)
         {
-            if (diffSet.pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (diffSet.pawn.IsAndroid())
             {
                 __result = CalculatePartEfficiency(diffSet, part, ignoreAddedParts, impactors);
                 return false;

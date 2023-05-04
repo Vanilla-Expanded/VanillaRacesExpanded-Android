@@ -24,7 +24,7 @@ namespace VREAndroids
         }
         public static void Postfix(ref bool __result, RecipeWorker __instance, Thing __0)
         {
-            if (__0 is Pawn pawn && pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__0 is Pawn pawn && pawn.IsAndroid())
             {
                 if (__instance is Recipe_AdministerIngestible)
                 {

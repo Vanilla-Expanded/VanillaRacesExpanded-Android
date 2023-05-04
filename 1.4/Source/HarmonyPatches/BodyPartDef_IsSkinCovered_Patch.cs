@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public static bool Prefix(BodyPartDef __instance, ref bool __result, BodyPartRecord part, HediffSet body)
         {
-            if (body.pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (body.pawn.IsAndroid())
             {
                 __result = __instance.skinCovered;
                 return false;

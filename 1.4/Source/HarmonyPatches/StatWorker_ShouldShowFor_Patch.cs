@@ -10,7 +10,7 @@ namespace VREAndroids
     {
         public static void Postfix(StatWorker __instance, StatRequest req, ref bool __result)
         {
-            if (__result && req.Thing is Pawn pawn && pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__result && req.Thing is Pawn pawn && pawn.IsAndroid())
             {
                 if (__instance.stat == StatDefOf.MeatAmount
                     || __instance.stat == StatDefOf.MeditationFocusGain

@@ -46,7 +46,6 @@ namespace VREAndroids
                     SkillDef skillDef = allDefsListForReading[i];
                     var skillRecord = pawn.skills.GetSkill(skillDef);
                     skillRecord.Level = FinalLevelOfSkill(pawn, skillDef, request);
-                    Log.Message(skillRecord.def + " - " + skillRecord.Level);
                     skillRecord.passion = Passion.None;
                 }
                 return false;
@@ -64,7 +63,6 @@ namespace VREAndroids
                     if (skillGain.Key == sk)
                     {
                         num += (float)skillGain.Value;
-                        Log.Message("skillGain.Value: " + skillGain.Value + " - " + item);
                     }
                 }
             }
@@ -75,15 +73,12 @@ namespace VREAndroids
                     && pawn.story.traits.allTraits[i].CurrentData.skillGains.TryGetValue(sk, out value))
                 {
                     num += (float)value;
-                    Log.Message("pawn.story.traits.allTraits[i]: " + value + " - " + pawn.story.traits.allTraits[i]);
 
                 }
             }
             if (num > 0f)
             {
                 num += (float)pawn.kindDef.extraSkillLevels;
-                Log.Message("pawn.kindDef.extraSkillLevels: " + pawn.kindDef.extraSkillLevels + " - " + pawn.kindDef);
-
             }
             if (pawn.kindDef.skills != null)
             {
@@ -94,7 +89,6 @@ namespace VREAndroids
                         if (num < (float)skill.Range.min || num > (float)skill.Range.max)
                         {
                             num = skill.Range.RandomInRange;
-                            Log.Message("pawn.kindDef.RandomInRange: " + num + " - " + pawn.kindDef);
                         }
                         break;
                     }

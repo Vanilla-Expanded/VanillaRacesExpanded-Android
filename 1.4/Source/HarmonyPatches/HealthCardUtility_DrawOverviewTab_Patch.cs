@@ -13,7 +13,7 @@ namespace VREAndroids
     {
         public static bool Prefix(ref float __result, Rect leftRect, Pawn pawn, float curY)
         {
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (pawn.IsAndroid())
             {
                 __result = DrawOverviewTabAndroid(leftRect, pawn, curY);
                 return false;
@@ -27,14 +27,9 @@ namespace VREAndroids
             Text.Font = GameFont.Tiny;
             Text.Anchor = TextAnchor.UpperLeft;
             GUI.color = new Color(0.9f, 0.9f, 0.9f);
-            string str = ((pawn.gender == Gender.None) ? ((string)"PawnSummary".Translate(pawn.Named("PAWN"))) : ((string)"PawnSummaryWithGender".Translate(pawn.Named("PAWN"))));
+            string str = (string)"VREA.AndroidSummaryWithGender".Translate(pawn.Named("PAWN"));
             Rect rect = new Rect(0f, curY, leftRect.width, 34f);
             Widgets.Label(rect, str.CapitalizeFirst());
-            if (Mouse.IsOver(rect))
-            {
-                TooltipHandler.TipRegion(rect, () => pawn.ageTracker.AgeTooltipString, 73412);
-                Widgets.DrawHighlight(rect);
-            }
             GUI.color = Color.white;
             curY += 34f;
             if (pawn.IsColonist && !pawn.Dead)

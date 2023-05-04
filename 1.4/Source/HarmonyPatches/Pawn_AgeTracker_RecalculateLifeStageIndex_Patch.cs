@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn_AgeTracker __instance)
         {
-            if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__instance.pawn.IsAndroid())
             {
                 var lifestage = __instance.pawn.RaceProps.lifeStageAges
                     .FirstOrDefault(x => x.def == LifeStageDefOf.HumanlikeAdult || x.minAge >= 18 && x.minAge < float.MaxValue);

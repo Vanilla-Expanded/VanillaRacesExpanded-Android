@@ -10,7 +10,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Dialog_ViewGenes __instance, Rect inRect)
         {
-            if (__instance.target.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__instance.target.IsAndroid())
             {
                 inRect.yMax -= Window.CloseButSize.y;
                 Rect rect = inRect;

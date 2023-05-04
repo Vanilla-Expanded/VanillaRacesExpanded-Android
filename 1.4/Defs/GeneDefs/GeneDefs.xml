@@ -288,7 +288,6 @@
 		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>
 
-
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
 		<defName>VREA_SyntheticSkin</defName>
 		<label>synthetic skin</label>
@@ -315,7 +314,6 @@
 			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>
-
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_CombatIncapability</defName>

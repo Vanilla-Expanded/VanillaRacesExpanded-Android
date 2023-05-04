@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(Pawn bloodfeeder, Pawn prisoner, ref AcceptanceReport __result)
         {
-            if (prisoner.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (prisoner.IsAndroid())
             {
                 __result = "VREA.CannotFeedOnAndroid".Translate(prisoner.Named("PAWN"));
             }

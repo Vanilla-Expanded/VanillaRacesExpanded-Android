@@ -115,9 +115,9 @@ namespace VREAndroids
                 || hediffDef.makesSickThought) is false;
         }
 
-        public static bool IsAndroid(Pawn pawn)
+        public static bool IsAndroid(this Pawn pawn)
         {
-            return HasActiveGene(pawn,VREA_DefOf.VREA_SyntheticBody);
+            return HasActiveGene(pawn, VREA_DefOf.VREA_SyntheticBody);
         }
 
     }

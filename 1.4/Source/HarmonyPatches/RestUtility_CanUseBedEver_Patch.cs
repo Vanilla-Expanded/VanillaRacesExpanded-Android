@@ -18,7 +18,7 @@ namespace VREAndroids
                         __result = false;
                     }
                 }
-                else if (p.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+                else if (p.IsAndroid())
                 {
                     __result = false;
                 }

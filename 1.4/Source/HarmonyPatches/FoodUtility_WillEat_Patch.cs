@@ -10,7 +10,7 @@ namespace VREAndroids
     {
         public static void Postfix(ref bool __result, Thing food)
         {
-            if (food is Corpse corpse && corpse.InnerPawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (food is Corpse corpse && corpse.InnerPawn.IsAndroid())
             {
                 __result = false;
             }

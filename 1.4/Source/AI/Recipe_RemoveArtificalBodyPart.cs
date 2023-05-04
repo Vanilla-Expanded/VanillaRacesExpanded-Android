@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
         {
-            if (thing is Pawn pawn && pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody) is false)
+            if (thing is Pawn pawn && pawn.IsAndroid() is false)
             {
                 return false;
             }

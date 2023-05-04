@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn pawn)
         {
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (pawn.IsAndroid())
             {
                 return false;
             }

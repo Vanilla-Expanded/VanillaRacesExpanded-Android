@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(ref float __result, PawnRelationWorker __instance, Pawn generated, Pawn other, PawnGenerationRequest request)
         {
-            if (generated.HasActiveGene(VREA_DefOf.VREA_SyntheticBody) || other.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (generated.IsAndroid() || other.IsAndroid())
             {
                 if (__instance.def.familyByBloodRelation)
                 {

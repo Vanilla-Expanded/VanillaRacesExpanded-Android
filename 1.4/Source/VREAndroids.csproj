@@ -86,6 +86,7 @@
     <Compile Include="HarmonyPatches\FloatMenuMakerMap_CanTakeOrder_Patch.cs" />
     <Compile Include="HarmonyPatches\FoodUtility_WillEat_Patch.cs" />
     <Compile Include="HarmonyPatches\HealthAIUtility_ShouldSeekMedicalRestUrgent_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffSet_GetPartHealth_Patch.cs" />
     <Compile Include="HarmonyPatches\JobGiver_ExtinguishSelf_TryGiveJob_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnRelationWorker_BaseGenerationChanceFactor_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_ButcherProducts_Patch.cs" />

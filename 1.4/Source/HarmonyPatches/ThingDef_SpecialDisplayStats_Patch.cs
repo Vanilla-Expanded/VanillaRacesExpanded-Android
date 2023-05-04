@@ -10,7 +10,7 @@ namespace VREAndroids
     {
         public static IEnumerable<StatDrawEntry> Postfix(IEnumerable<StatDrawEntry> __result, StatRequest req)
         {
-            if (req.Thing is Pawn pawn && pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (req.Thing is Pawn pawn && pawn.IsAndroid())
             {
                 foreach (var entry in __result)
                 {

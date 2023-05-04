@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(ref string __result, Pawn __instance)
         {
-            if (__instance.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__instance.IsAndroid())
             {
                 string text = ((__instance.genes.Xenotype != XenotypeDefOf.Baseliner) ? __instance.genes.Xenotype.description : 
                     ((__instance.genes.CustomXenotype == null) ? __instance.genes.Xenotype.description : ((string)"VREA.UniqueAndroidDesc".Translate())));

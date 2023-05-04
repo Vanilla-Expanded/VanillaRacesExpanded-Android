@@ -98,7 +98,7 @@ namespace VREAndroids
             {
                 return false;
             }
-            if (selPawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody) is false)
+            if (selPawn.IsAndroid() is false)
             {
                 return false;
             }

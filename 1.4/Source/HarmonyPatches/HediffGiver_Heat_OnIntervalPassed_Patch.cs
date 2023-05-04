@@ -11,7 +11,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn pawn, Hediff cause)
         {
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (pawn.IsAndroid())
             {
                 OnIntervalPassed(pawn, cause);
                 return false;

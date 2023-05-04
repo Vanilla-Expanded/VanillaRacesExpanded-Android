@@ -10,7 +10,7 @@ namespace VREAndroids
     {
         public static IEnumerable<Thing> Postfix(IEnumerable<Thing> __result, Pawn __instance)
         {
-            if (__instance.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__instance.IsAndroid())
             {
                 var thing = ThingMaker.MakeThing(ThingDefOf.Plasteel);
                 thing.stackCount = 15;

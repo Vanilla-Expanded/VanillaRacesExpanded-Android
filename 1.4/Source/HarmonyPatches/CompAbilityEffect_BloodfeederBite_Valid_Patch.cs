@@ -12,7 +12,7 @@ namespace VREAndroids
             if (__result)
             {
                 Pawn pawn = target.Pawn;
-                if (pawn != null && pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+                if (pawn != null && pawn.IsAndroid())
                 {
                     if (throwMessages)
                     {

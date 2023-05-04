@@ -182,7 +182,7 @@ namespace VREAndroids
                 {
                     return "VREA.AlreadyScanned".Translate(selPawn.Named("PAWN"));
                 }
-                if (selPawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+                if (selPawn.IsAndroid())
                 {
                     return "VREA.AndroidAreNotAllowed".Translate();
                 }

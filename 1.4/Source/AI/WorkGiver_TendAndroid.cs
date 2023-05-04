@@ -22,7 +22,7 @@ namespace VREAndroids
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Pawn pawn2 = t as Pawn;
-            if (pawn2 == null ||pawn2.HasActiveGene(VREA_DefOf.VREA_SyntheticBody) is false 
+            if (pawn2 == null ||pawn2.IsAndroid() is false 
                 || pawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting) || pawn == pawn2 && pawn.playerSettings.selfTend is false
                 || !GoodLayingStatusForTend(pawn2, pawn) 
                 || !pawn2.health.HasHediffsNeedingTendByPlayer()

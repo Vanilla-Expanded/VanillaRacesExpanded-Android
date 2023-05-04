@@ -11,7 +11,7 @@ namespace VREAndroids
     {
         public static IEnumerable<HediffGiver_Birthday> Postfix(IEnumerable<HediffGiver_Birthday> __result, Pawn pawn, float age)
         {
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (pawn.IsAndroid())
             {
                 yield break;
             }

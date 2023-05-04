@@ -19,7 +19,7 @@ namespace VREAndroids
         {
             foreach (var entry in __result)
             {
-                if (__instance.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+                if (__instance.IsAndroid())
                 {
                     if (entry.labelInt == "Race".Translate())
                     {

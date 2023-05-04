@@ -26,7 +26,7 @@ namespace VREAndroids
         }
         public static bool Prefix(Pawn ___pawn, Rect ___leftRect, Rect sectionRect)
         {
-            if (___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (___pawn.IsAndroid())
             {
                 float num8 = sectionRect.y;
                 Text.Font = GameFont.Small;

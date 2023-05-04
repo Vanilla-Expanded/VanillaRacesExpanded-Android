@@ -16,7 +16,7 @@ namespace VREAndroids
         {
             curPawn = pawn;
             __state = part?.def.spawnThingOnRemoved;
-            if (curPawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody) && part?.def != null)
+            if (curPawn.IsAndroid() && part?.def != null)
             {
                 var counterPart = part.def.GetAndroidCounterPart();
                 if (counterPart != null)
@@ -33,7 +33,7 @@ namespace VREAndroids
 
         public static string GetAndroidCounterPart(BodyPartRecord bodyPartRecord)
         {
-            if (curPawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (curPawn.IsAndroid())
             {
                 var counterPart = bodyPartRecord.def.GetAndroidCounterPart();
                 if (counterPart != null)

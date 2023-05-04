@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn_GeneTracker __instance, ref string __result, Pawn ___pawn)
         {
-            if (___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (___pawn.IsAndroid())
             {
                 if (__instance.UniqueXenotype)
                 {

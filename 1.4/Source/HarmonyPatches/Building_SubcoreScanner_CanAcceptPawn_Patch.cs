@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(Pawn selPawn, ref AcceptanceReport __result)
         {
-            if (selPawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (selPawn.IsAndroid())
             {
                 __result = "VREA.AndroidAreNotAllowed".Translate();
             }

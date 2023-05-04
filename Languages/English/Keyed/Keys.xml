@@ -95,5 +95,6 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.StatsReport_AndroidDescription>An android of the {0} type.\n\nAbout {0}s:</VREA.StatsReport_AndroidDescription>
 	<VREA.ComponentsDesc>The components associated with this androidtype.</VREA.ComponentsDesc>
 	<VREA.ReplaceReactor>Replace reactor</VREA.ReplaceReactor>
-	
+	<VREA.AndroidSummaryWithGender>{PAWN_gender} android, age {PAWN_ageFull}</VREA.AndroidSummaryWithGender>
+
 </LanguageData>

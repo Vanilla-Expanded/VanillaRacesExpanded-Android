@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Prefix(Pawn pawn, Thing thing, bool forced = false)
         {
-            if (thing is Pawn pawn2 && pawn2.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (thing is Pawn pawn2 && pawn2.IsAndroid())
             {
                 if (pawn2.playerSettings is not null)
                 {

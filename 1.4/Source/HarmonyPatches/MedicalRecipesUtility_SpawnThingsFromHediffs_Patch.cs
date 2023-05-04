@@ -11,7 +11,7 @@ namespace VREAndroids
         public static bool shouldCheck;
         public static bool Prefix(Pawn pawn, BodyPartRecord part, IntVec3 pos, Map map)
         {
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (pawn.IsAndroid())
             {
                 SpawnThingsFromHediffs(pawn, part, pos, map);
                 return false;
@@ -21,7 +21,6 @@ namespace VREAndroids
 
         public static void SpawnThingsFromHediffs(Pawn pawn, BodyPartRecord part, IntVec3 pos, Map map)
         {
-            Log.Message("Spawning " + part.def);
             if (!pawn.health.hediffSet.GetNotMissingParts().Contains(part))
             {
                 return;

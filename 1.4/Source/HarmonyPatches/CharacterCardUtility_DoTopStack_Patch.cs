@@ -25,7 +25,7 @@ namespace VREAndroids
         }
         public static bool Prefix(Pawn ___pawn, Rect r)
         {
-            if (___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (___pawn.IsAndroid())
             {
                 Rect rect11 = new Rect(r.x, r.y, r.width, r.height);
                 GUI.color = CharacterCardUtility.StackElementBackground;

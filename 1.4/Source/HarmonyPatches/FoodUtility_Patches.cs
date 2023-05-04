@@ -20,7 +20,7 @@ namespace VREAndroids
         [HarmonyPriority(int.MaxValue)]
         public static void Postfix(Pawn __0, ref bool __result)
         {
-            if (__0.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__0.IsAndroid())
             {
                 __result = false;
             }

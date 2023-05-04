@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public static void Postfix(ref bool __result, Pawn ___pawn)
         {
-            if (__result && ___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticBody))
+            if (__result && ___pawn.IsAndroid())
             {
                 if (___pawn.health.hediffSet.GetBrain() != null)
                 {
