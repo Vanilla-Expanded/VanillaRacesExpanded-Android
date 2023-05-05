@@ -120,5 +120,13 @@ namespace VREAndroids
             return HasActiveGene(pawn, VREA_DefOf.VREA_SyntheticBody);
         }
 
+        public static bool IsAndroidType(this XenotypeDef def)
+        {
+            return def.genes.Count > 0 && def.genes.All(x => x.IsAndroidGene());
+        }
+        public static bool IsAndroidType(this CustomXenotype def)
+        {
+            return def.genes.Count > 0 && def.genes.All(x => x.IsAndroidGene());
+        }
     }
 }

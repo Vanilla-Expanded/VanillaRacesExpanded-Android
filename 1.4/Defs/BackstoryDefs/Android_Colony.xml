@@ -12,7 +12,7 @@
     <slot>Childhood</slot>
     <baseDesc>[PAWN_nameDef] was created in the colony in the recent past. The future may hold many things for [PAWN_objective].</baseDesc>
     <spawnCategories>
-      <li>AwakenedAndroid</li>
+      <li>ColonyAndroid</li>
     </spawnCategories>
 </BackstoryDef>
 

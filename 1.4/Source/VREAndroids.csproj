@@ -82,7 +82,9 @@
     <Compile Include="HarmonyPatches\AgeInjuryUtility_GenerateRandomOldAgeInjuries_Patch.cs" />
     <Compile Include="HarmonyPatches\AgeInjuryUtility_RandomHediffsToGainOnBirthday_Patch.cs" />
     <Compile Include="HarmonyPatches\Bill_IsFixedOrAllowedIngredient_Patch.cs" />
+    <Compile Include="HarmonyPatches\CharacterCardUtility_CustomXenotypes_Patch.cs" />
     <Compile Include="HarmonyPatches\CompRottable_RotProgress_Patch.cs" />
+    <Compile Include="HarmonyPatches\Dialog_CreateXenotype_DrawSearchRect_Patch.cs" />
     <Compile Include="HarmonyPatches\FloatMenuMakerMap_CanTakeOrder_Patch.cs" />
     <Compile Include="HarmonyPatches\FoodUtility_WillEat_Patch.cs" />
     <Compile Include="HarmonyPatches\HealthAIUtility_ShouldSeekMedicalRestUrgent_Patch.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="HarmonyPatches\Pawn_DescriptionFlavor_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_DraftController_Drafted_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_DraftController_ShowDraftGizmo_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_HealthTracker_RestorePartRecursiveInt_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_JobTracker_IsCurrentJobPlayerInterruptible_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_SpecialDisplayStats_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_Aptitude_Patch.cs" />
@@ -108,6 +111,7 @@
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidPresent.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidsInColony.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android_Social.cs" />
+    <Compile Include="Utilities\AndroidProjectUtils.cs" />
     <Compile Include="UI\Window_AndroidModification.cs" />
     <Compile Include="Utilities\AndroidCreationUtility.cs" />
     <Compile Include="Buildings\Building_AndroidCreationStation.cs" />
@@ -207,7 +211,7 @@
     <Compile Include="HarmonyPatches\VSIE_SocialInteractionsManager_TryDevelopNewTrait_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_JobOnThing_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_TryFindBestIngredientsHelper_Patch.cs" />
-    <Compile Include="UI\AndroidStatsTable.cs" />
+    <Compile Include="Utilities\AndroidStatsTable.cs" />
     <Compile Include="UI\Window_CreateAndroidXenotype.cs" />
     <Compile Include="HotSwappableAttribute.cs" />
     <Compile Include="UI\Window_CreateAndroidBase.cs" />

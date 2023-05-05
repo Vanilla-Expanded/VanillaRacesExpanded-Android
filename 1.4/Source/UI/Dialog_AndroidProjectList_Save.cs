@@ -17,10 +17,10 @@ namespace VREAndroids
         public override void DoFileInteraction(string fileName)
         {
             fileName = GenFile.SanitizedFileName(fileName);
-            string absPath = Window_AndroidCreation.AbsFilePathForAndroidProject(fileName);
+            string absPath = AndroidProjectUtils.AbsFilePathForAndroidProject(fileName);
             LongEventHandler.QueueLongEvent(delegate
             {
-                Window_AndroidCreation.SaveAndroidProject(project, absPath);
+                AndroidProjectUtils.SaveAndroidProject(project, absPath);
             }, "SavingLongEvent", doAsynchronously: false, null);
             Messages.Message("SavedAs".Translate(fileName), MessageTypeDefOf.SilentInput, historical: false);
             Close();

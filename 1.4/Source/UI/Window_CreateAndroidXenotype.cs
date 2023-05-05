@@ -62,7 +62,7 @@ namespace VREAndroids
             base.DrawSearchRect(rect);
             if (Widgets.ButtonText(new Rect(rect.xMax - ButSize.x, rect.y, ButSize.x, ButSize.y), "LoadCustom".Translate()))
             {
-                Find.WindowStack.Add(new Dialog_XenotypeList_Load(delegate (CustomXenotype xenotype)
+                Find.WindowStack.Add(new Dialog_AndroidProjectList_Load(delegate (CustomXenotype xenotype)
                 {
                     xenotypeName = xenotype.name;
                     xenotypeNameLocked = true;
@@ -82,18 +82,21 @@ namespace VREAndroids
             foreach (XenotypeDef item in DefDatabase<XenotypeDef>.AllDefs.OrderBy((XenotypeDef c) => 0f - c.displayPriority))
             {
                 XenotypeDef xenotype2 = item;
-                list.Add(new FloatMenuOption(xenotype2.LabelCap, delegate
+                if (xenotype2.IsAndroidType()) 
                 {
-                    xenotypeName = xenotype2.label;
-                    selectedGenes.Clear();
-                    selectedGenes = Utils.AndroidGenesGenesInOrder.Where(x => x.CanBeRemovedFromAndroid() is false).ToList();
-                    selectedGenes.AddRange(xenotype2.genes);
-                    selectedGenes = selectedGenes.Distinct().ToList();
-                    OnGenesChanged();
-                }, xenotype2.Icon, XenotypeDef.IconColor, MenuOptionPriority.Default, delegate (Rect r)
-                {
-                    TooltipHandler.TipRegion(r, xenotype2.descriptionShort ?? xenotype2.description);
-                }));
+                    list.Add(new FloatMenuOption(xenotype2.LabelCap, delegate
+                    {
+                        xenotypeName = xenotype2.label;
+                        selectedGenes.Clear();
+                        selectedGenes = Utils.AndroidGenesGenesInOrder.Where(x => x.CanBeRemovedFromAndroid() is false).ToList();
+                        selectedGenes.AddRange(xenotype2.genes);
+                        selectedGenes = selectedGenes.Distinct().ToList();
+                        OnGenesChanged();
+                    }, xenotype2.Icon, XenotypeDef.IconColor, MenuOptionPriority.Default, delegate (Rect r)
+                    {
+                        TooltipHandler.TipRegion(r, xenotype2.descriptionShort ?? xenotype2.description);
+                    }));
+                }
             }
             Find.WindowStack.Add(new FloatMenu(list));
         }

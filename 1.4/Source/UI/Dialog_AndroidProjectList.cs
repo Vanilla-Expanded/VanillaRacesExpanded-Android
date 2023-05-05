@@ -10,7 +10,7 @@ namespace VREAndroids
         public override void ReloadFiles()
         {
             files.Clear();
-            foreach (FileInfo allCustomXenotypeFile in Window_AndroidCreation.AllAndroidProjectFiles)
+            foreach (FileInfo allCustomXenotypeFile in AndroidProjectUtils.AllAndroidProjectFiles)
             {
                 try
                 {
