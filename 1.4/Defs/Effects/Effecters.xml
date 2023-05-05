@@ -65,4 +65,29 @@
 			<shaderType>MoteGlow</shaderType>
 		</graphicData>
 	</ThingDef>
+	
+  <EffecterDef>
+    <defName>VREA_AndroidAwakened</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>VREA_AndroidAwakenedGlow</moteDef>
+        <rotation>0~0</rotation>
+        <absoluteAngle>true</absoluteAngle>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.3</positionRadius>
+        <fleckDef>VREA_AndroidAwakenedGlimmer</fleckDef>
+        <burstCount>1~3</burstCount>
+        <chancePerTick>0.5</chancePerTick>
+        <speed>0.2~0.4</speed>
+        <rotation>-45</rotation>
+        <angle>0</angle>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
 </Defs>

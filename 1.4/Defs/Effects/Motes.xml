@@ -56,4 +56,49 @@
       </shaderParameters>
     </graphicData>
   </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>VREA_AndroidAwakenedMote</defName>
+    <graphicData>
+      <texPath>Motes/Mote_Awakening</texPath>
+    </graphicData>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>0.25</fadeInTime>
+      <solidTime>1</solidTime>
+      <fadeOutTime>1.4</fadeOutTime>
+      <attachedDrawOffset>(0.45, 0, 0.45)</attachedDrawOffset>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>VREA_AndroidAwakenedGlow</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>0.2</solidTime>
+      <fadeOutTime>1</fadeOutTime>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_PawnBodySilhouette</graphicClass>
+      <color>(1, 0.9, 0.6, 1)</color>
+      <shaderType>MotePawnBodyGlow</shaderType>
+      <texPath>Things/Mote/Transparent</texPath>
+    </graphicData>
+  </ThingDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VREA_AndroidAwakenedGlimmer</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.15</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Mote/Glimmer</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(0.25, 0.25)</drawSize>
+    </graphicData>
+  </FleckDef>
 </Defs>

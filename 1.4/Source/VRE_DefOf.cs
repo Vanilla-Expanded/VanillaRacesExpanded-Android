@@ -77,5 +77,7 @@ namespace VREAndroids
         public static RecipeDef VREA_ButcherCorpseAndroid;
         public static RecipeDef ButcherCorpseFlesh;
         public static GeneDef VREA_PainDisabled;
+        public static EffecterDef VREA_AndroidAwakened;
+        public static ThingDef VREA_AndroidAwakenedMote;
     }
 }
