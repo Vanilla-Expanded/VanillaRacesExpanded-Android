@@ -89,6 +89,7 @@
     <Compile Include="HarmonyPatches\FoodUtility_WillEat_Patch.cs" />
     <Compile Include="HarmonyPatches\HealthAIUtility_ShouldSeekMedicalRestUrgent_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_GetPartHealth_Patch.cs" />
+    <Compile Include="HarmonyPatches\Hediff_Injury_PainOffset_Patch.cs" />
     <Compile Include="HarmonyPatches\JobGiver_ExtinguishSelf_TryGiveJob_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnRelationWorker_BaseGenerationChanceFactor_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_ButcherProducts_Patch.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="HarmonyPatches\StatWorker_ShouldShowFor_Patch.cs" />
     <Compile Include="HarmonyPatches\TaleUtility_Notify_PawnDied_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingDef_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThoughtWorker_Pain_CurrentThoughtState_Patch.cs" />
     <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
     <Compile Include="HarmonyPatches\XenotypeDef_SpecialDisplayStats_Patch.cs" />
     <Compile Include="StatParts\StatPart_Android.cs" />
