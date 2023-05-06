@@ -35,7 +35,7 @@
     </statBases>
     <minifiedDef>MinifiedThing</minifiedDef>
     <size>(3,1)</size>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>Biotech</designationCategory>
     <passability>PassThroughOnly</passability>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <pathCost>50</pathCost>

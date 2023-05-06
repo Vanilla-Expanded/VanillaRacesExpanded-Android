@@ -10,6 +10,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(PawnGenerator), "GenerateSkills")]
     public static class PawnGenerator_GenerateSkills_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn, PawnGenerationRequest request)
         {
             var geneSyntheticBody = pawn.genes.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
@@ -25,7 +26,6 @@ namespace VREAndroids
                     TryAssignBackstory(pawn, "ColonyAndroid");
                 }
             }
-
 
             if (pawn.HasActiveGene(VREA_DefOf.VREA_NoSkillGain))
             {

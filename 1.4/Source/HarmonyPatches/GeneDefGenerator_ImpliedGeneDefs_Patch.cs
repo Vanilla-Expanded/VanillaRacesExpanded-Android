@@ -18,6 +18,7 @@ namespace VREAndroids
             VREA_DefOf.Cosmetic, VREA_DefOf.Cosmetic_Body, VREA_DefOf.Cosmetic_Hair, VREA_DefOf.Cosmetic_Skin, VREA_DefOf.Beauty
         };
 
+        public static Dictionary<GeneDef, GeneDef> originalGenesWithAndroidCounterparts = new Dictionary<GeneDef, GeneDef>();
         public static IEnumerable<GeneDef> Postfix(IEnumerable<GeneDef> __result)
         {
             foreach (var r in __result)
@@ -43,6 +44,7 @@ namespace VREAndroids
                         });
                         clonedGene.canGenerateInGeneSet = false;
                         Utils.allAndroidGenes.Add(clonedGene);
+                        originalGenesWithAndroidCounterparts[geneDef] = clonedGene;
                         yield return clonedGene;
                     }
                 }

@@ -99,6 +99,7 @@
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_RestorePartRecursiveInt_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_JobTracker_IsCurrentJobPlayerInterruptible_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_StoryTracker_TryGetRandomHeadFromSet_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_Aptitude_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillUI_GetSkillDescription_Patch.cs" />
     <Compile Include="HarmonyPatches\StatWorker_ShouldShowFor_Patch.cs" />

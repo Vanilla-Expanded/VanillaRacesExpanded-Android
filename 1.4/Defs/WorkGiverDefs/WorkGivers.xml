@@ -2,6 +2,23 @@
 <Defs>
 
 	<WorkGiverDef>
+		<defName>VREA_DoBillsUseAndroidPartWorkbench</defName>
+		<label>make android parts at android part workbench</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>100</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VREA_AndroidPartWorkbench</li>
+		</fixedBillGiverDefs>
+		<verb>craft</verb>
+		<gerund>crafting at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
 		<defName>VREA_CrafterTendAndroids</defName>
 		<label>tend to androids</label>
 		<giverClass>VREAndroids.WorkGiver_TendAndroid</giverClass>
@@ -14,38 +31,38 @@
 		<priorityInType>110</priorityInType>
 		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
-	
-  <WorkGiverDef ParentName="HaulToBase">
-    <defName>VREA_HaulToSubcorePolyanalyzer</defName>
-    <label>haul resources to subcore polyanalyzer</label>
-    <giverClass>VREAndroids.WorkGiver_HaulToSubcorePolyanalyzer</giverClass>
-  </WorkGiverDef>
-  
-  <WorkGiverDef>
-    <defName>VREA_CreateAndroid</defName>
-    <label>creating android at station</label>
-    <giverClass>VREAndroids.WorkGiver_CreateAndroid</giverClass>
-    <workType>Crafting</workType>
-    <priorityInType>100</priorityInType>
-    <verb>create an android at</verb>
-    <gerund>creating an android at</gerund>
-    <requiredCapacities>
-      <li>Manipulation</li>
-    </requiredCapacities>
-    <prioritizeSustains>true</prioritizeSustains>
-  </WorkGiverDef>
-  
-  <WorkGiverDef>
-    <defName>VREA_ModifyAndroid</defName>
-    <label>modifying android at station</label>
-    <giverClass>VREAndroids.WorkGiver_ModifyAndroid</giverClass>
-    <workType>Research</workType>
-    <priorityInType>100</priorityInType>
-    <verb>modify an android at</verb>
-    <gerund>modifying an android at</gerund>
-    <requiredCapacities>
-      <li>Manipulation</li>
-    </requiredCapacities>
-    <prioritizeSustains>true</prioritizeSustains>
-  </WorkGiverDef>
+
+	<WorkGiverDef ParentName="HaulToBase">
+		<defName>VREA_HaulToSubcorePolyanalyzer</defName>
+		<label>haul resources to subcore polyanalyzer</label>
+		<giverClass>VREAndroids.WorkGiver_HaulToSubcorePolyanalyzer</giverClass>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VREA_CreateAndroid</defName>
+		<label>creating android at station</label>
+		<giverClass>VREAndroids.WorkGiver_CreateAndroid</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>100</priorityInType>
+		<verb>create an android at</verb>
+		<gerund>creating an android at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VREA_ModifyAndroid</defName>
+		<label>modifying android at station</label>
+		<giverClass>VREAndroids.WorkGiver_ModifyAndroid</giverClass>
+		<workType>Research</workType>
+		<priorityInType>100</priorityInType>
+		<verb>modify an android at</verb>
+		<gerund>modifying an android at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
 </Defs>
