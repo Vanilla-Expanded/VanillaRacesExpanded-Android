@@ -297,15 +297,26 @@
 		<biostatCpx>0</biostatCpx>
 		<labelShortAdj>syntheticskinned</labelShortAdj>
 		<isCoreComponent>false</isCoreComponent>
+		<exclusionTags>
+			<li>AG_Bodies</li>
+			<li>Bodies</li>
+			<li>Body</li>
+			<li>Fur</li>
+		</exclusionTags>
 		<graphicData>
 			<fur>VRE_SyntheticSkin</fur>
 			<tattoosVisible>false</tattoosVisible>
 		</graphicData>
 		<forcedHeadTypes>
-			<li>VRE_SyntheticAverage</li>
-			<li>VRE_SyntheticNarrow</li>
-			<li>VRE_SyntheticGaunt</li>
-			<li>VRE_SyntheticHeavy</li>
+			<li>VRE_SyntheticAverageMale</li>
+			<li>VRE_SyntheticNarrowMale</li>
+			<li>VRE_SyntheticAverageFemale</li>
+			<li>VRE_SyntheticNarrowFemale</li>
+			<li>VRE_SyntheticGauntMale</li>
+			<li>VRE_SyntheticHeavyMale</li>
+			<li>VRE_SyntheticGauntFemale</li>
+			<li>VRE_SyntheticHeavyFemale</li>
+		
 		</forcedHeadTypes>
 		<modExtensions Inherit="False">
 			<li Class="VanillaGenesExpanded.GeneExtension">
