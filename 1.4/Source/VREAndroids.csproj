@@ -60,9 +60,8 @@
     <PackageReference Include="Krafs.Rimworld.Ref">
       <Version>1.4.3704</Version>
     </PackageReference>
-    <PackageReference Include="Lib.Harmony" Version="2.*">
-      <ExcludeAssets>runtime</ExcludeAssets>
-      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.2.2</Version>
     </PackageReference>
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
@@ -100,11 +99,15 @@
     <Compile Include="HarmonyPatches\Pawn_JobTracker_IsCurrentJobPlayerInterruptible_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_SpecialDisplayStats_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StoryTracker_TryGetRandomHeadFromSet_Patch.cs" />
+    <Compile Include="HarmonyPatches\Precepts\FactionUtility_GetSlavesInFactionCount.cs" />
+    <Compile Include="HarmonyPatches\Precepts\GenGuest_EnslavePrisoner.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_Aptitude_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillUI_GetSkillDescription_Patch.cs" />
     <Compile Include="HarmonyPatches\StatWorker_ShouldShowFor_Patch.cs" />
-    <Compile Include="HarmonyPatches\TaleUtility_Notify_PawnDied_Patch.cs" />
+    <Compile Include="HarmonyPatches\Precepts\TaleUtility_Notify_PawnDied.cs" />
     <Compile Include="HarmonyPatches\ThingDef_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="HarmonyPatches\Precepts\PawnDiedOrDownedThoughtsUtility_AppendThoughts_ForHumanlike.cs" />
+    <Compile Include="HarmonyPatches\Precepts\ThoughtHandler_GetSocialThoughts.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_Pain_CurrentThoughtState_Patch.cs" />
     <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
     <Compile Include="HarmonyPatches\XenotypeDef_SpecialDisplayStats_Patch.cs" />

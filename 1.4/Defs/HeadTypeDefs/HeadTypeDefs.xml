@@ -53,7 +53,7 @@
 		<selectionWeight>99999</selectionWeight>
 		<requiredGenes>
 			<li>VREA_SyntheticSkin</li>
-			<li>VREA_Head_Gaunt</li>
+			<li>Head_Gaunt</li>
 		</requiredGenes>
 	</HeadTypeDef>
 	
@@ -65,7 +65,7 @@
 		<selectionWeight>99999</selectionWeight>
 		<requiredGenes>
 			<li>VREA_SyntheticSkin</li>
-			<li>VREA_Head_Gaunt</li>
+			<li>Head_Gaunt</li>
 		</requiredGenes>
 	</HeadTypeDef>
 	
@@ -80,7 +80,7 @@
 		<selectionWeight>99999</selectionWeight>
 		<requiredGenes>
 			<li>VREA_SyntheticSkin</li>
-			<li>VREA_Jaw_Heavy</li>
+			<li>Jaw_Heavy</li>
 		</requiredGenes>
 	</HeadTypeDef>
 	
@@ -92,7 +92,7 @@
 		<selectionWeight>99999</selectionWeight>
 		<requiredGenes>
 			<li>VREA_SyntheticSkin</li>
-			<li>VREA_Jaw_Heavy</li>
+			<li>Jaw_Heavy</li>
 		</requiredGenes>
 	</HeadTypeDef>
 	
