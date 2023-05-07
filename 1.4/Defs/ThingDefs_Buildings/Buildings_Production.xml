@@ -185,6 +185,7 @@ Persona subcores created by this device can only be used to create complex, huma
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
+	<uiIconScale>0.9</uiIconScale>
     <costList>
       <Steel>360</Steel>
       <ComponentIndustrial>6</ComponentIndustrial>
@@ -258,6 +259,7 @@ Persona subcores created by this device can only be used to create complex, huma
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
+	<uiIconScale>0.8</uiIconScale>
     <costList>
       <Steel>160</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
