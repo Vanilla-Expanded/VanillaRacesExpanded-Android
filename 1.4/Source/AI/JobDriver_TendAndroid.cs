@@ -1,7 +1,9 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
+using Verse.AI.Group;
 
 namespace VREAndroids
 {
@@ -61,7 +63,7 @@ namespace VREAndroids
                 .PlaySustainerOrSound(VREA_DefOf.Interact_ConstructMetal);
             waitToil.activeSkill = () => SkillDefOf.Crafting;
             waitToil.handlingFacing = true;
-            waitToil.WithEffect(EffecterDefOf.ConstructMetal, TargetIndex.A);
+            waitToil.WithEffect(VREA_DefOf.ButcherMechanoid, TargetIndex.A);
             waitToil.tickAction = delegate
             {
                 if (pawn == Deliveree && pawn.Faction != Faction.OfPlayer 
@@ -75,8 +77,28 @@ namespace VREAndroids
                 }
             };
             yield return waitToil;
-            yield return Toils_Tend.FinalizeTend(Deliveree);
+            yield return FinalizeTend(Deliveree);
             yield return Toils_Jump.Jump(gotoToil);
+        }
+
+        public static Toil FinalizeTend(Pawn patient)
+        {
+            Toil toil = ToilMaker.MakeToil("FinalizeTend");
+            toil.initAction = delegate
+            {
+                Pawn actor = toil.actor;
+                if (actor.skills != null)
+                {
+                    actor.skills.Learn(SkillDefOf.Crafting, 250);
+                }
+                TendUtility.DoTend(actor, patient, null);
+                if (toil.actor.CurJob.endAfterTendedOnce)
+                {
+                    actor.jobs.EndCurrentJob(JobCondition.Succeeded);
+                }
+            };
+            toil.defaultCompleteMode = ToilCompleteMode.Instant;
+            return toil;
         }
 
         public override void Notify_DamageTaken(DamageInfo dinfo)

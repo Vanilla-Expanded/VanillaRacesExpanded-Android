@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+  <ThingDef ParentName="SleepingSpotBase">
+    <defName>VREA_AndroidStandSpot</defName>
+    <label>android stand spot</label>
+    <description>Designates a spot on the ground where androids should stand to free up consumed memory space.</description>
+	<thingClass>VREAndroids.Building_AndroidStand</thingClass>
+	<tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/AndroidStandingSpot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+	<building>
+		<bed_showSleeperBody>True</bed_showSleeperBody>
+	</building>
+	<designationCategory>Biotech</designationCategory>
+    <size>(1,1)</size>
+    <designationHotKey>Misc1</designationHotKey>
+  </ThingDef>
   
   <ThingDef ParentName="BuildingBase">
     <defName>VREA_AndroidStand</defName>
     <label>android stand</label>
     <description>A wireless interface that allows an android to rapidly free up consumed memory space. Considerably more efficient than running in sleep mode, as the stand executes the conversion externally.</description>
 	<thingClass>VREAndroids.Building_AndroidStand</thingClass>
+	<tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Building/AndroidStand/AndroidStand</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
@@ -25,6 +47,9 @@
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 	<designationCategory>Biotech</designationCategory>
     <fillPercent>0.20</fillPercent>
+	<building>
+		<bed_showSleeperBody>True</bed_showSleeperBody>
+	</building>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>

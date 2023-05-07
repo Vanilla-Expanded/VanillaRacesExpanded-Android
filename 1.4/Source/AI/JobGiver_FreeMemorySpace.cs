@@ -82,7 +82,7 @@ namespace VREAndroids
         {
             foreach (var stand in Building_AndroidStand.stands)
             {
-                if (stand.CompAssignableToPawn.AssignedPawns.Contains(pawn) && stand.compPower.PowerOn
+                if (stand.CompAssignableToPawn.AssignedPawns.Contains(pawn) && (stand.compPower is null || stand.compPower.PowerOn)
                     && pawn.CanReserveAndReach(stand, PathEndMode.OnCell, Danger.Deadly))
                 {
                     return stand;

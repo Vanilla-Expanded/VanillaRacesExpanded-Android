@@ -6,12 +6,9 @@ using Verse.AI;
 
 namespace VREAndroids
 {
-
-    public class Building_AndroidStand : Building
+    public class Building_AndroidStand : Building_Bed
     {
         public static HashSet<Building_AndroidStand> stands = new HashSet<Building_AndroidStand>();
-        public List<Pawn> OwnersForReading => CompAssignableToPawn.AssignedPawnsForReading;
-        public CompAssignableToPawn CompAssignableToPawn => GetComp<CompAssignableToPawn>();
 
         public CompPowerTrader compPower;
         public Pawn CurOccupant
@@ -22,8 +19,7 @@ namespace VREAndroids
                 for (int i = 0; i < list.Count; i++)
                 {
                     Pawn pawn = list[i] as Pawn;
-                    if (pawn != null && pawn.HasActiveGene(VREA_DefOf.VREA_MemoryProcessing) 
-                        && pawn.CurJobDef == VREA_DefOf.VREA_FreeMemorySpace && OwnersForReading.Contains(pawn))
+                    if (pawn != null && pawn.IsAndroid())
                     {
                         return pawn;
                     }
@@ -31,7 +27,6 @@ namespace VREAndroids
                 return null;
             }
         }
-
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -45,6 +40,19 @@ namespace VREAndroids
             stands.Remove(this);
         }
 
+        public override void Tick()
+        {
+            base.Tick();
+            var occupant = CurOccupant;
+            if (occupant != null)
+            {
+                occupant.Rotation = Rot4.South;
+                if (occupant.jobs.curDriver is JobDriver_LayDown)
+                {
+                    occupant.jobs.curDriver.rotateToFace = TargetIndex.C;
+                }
+            }
+        }
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
         {
             foreach (var opt in base.GetFloatMenuOptions(selPawn))
@@ -74,7 +82,7 @@ namespace VREAndroids
 
         public string CannotUseNowReason(Pawn selPawn)
         {
-            if (!compPower.PowerOn)
+            if (compPower != null && !compPower.PowerOn)
             {
                 return "NoPower".Translate().CapitalizeFirst();
             }

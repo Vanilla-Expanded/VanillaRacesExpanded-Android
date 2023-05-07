@@ -8,6 +8,11 @@ namespace VREAndroids
     [StaticConstructorOnStartup]
     public static class Utils
     {
+        private static HashSet<ThingDef> androidBeds = new HashSet<ThingDef>
+        {
+            VREA_DefOf.VREA_NeutroCasket, VREA_DefOf.VREA_AndroidStand, VREA_DefOf.VREA_AndroidStandSpot
+        };
+        public static bool IsAndroidBed(this ThingDef thingDef) => androidBeds.Contains(thingDef);
         [DebugAction("Pawns", null, false, false, false, 0, false, actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 1000)]
         private static void AwakenAndroid(Pawn p)
         {

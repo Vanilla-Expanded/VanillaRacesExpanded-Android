@@ -39,6 +39,19 @@
 	</WorkGiverDef>
 
 	<WorkGiverDef>
+		<defName>VREA_CarryToSubcorePolyanalyzer</defName>
+		<label>carry to subcore polyanalyzer</label>
+		<giverClass>VREAndroids.WorkGiver_CarryToSubcorePolyanalyzer</giverClass>
+		<workType>Hauling</workType>
+		<verb>carry</verb>
+		<gerund>carrying</gerund>
+		<priorityInType>90</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
 		<defName>VREA_CreateAndroid</defName>
 		<label>creating android at station</label>
 		<giverClass>VREAndroids.WorkGiver_CreateAndroid</giverClass>

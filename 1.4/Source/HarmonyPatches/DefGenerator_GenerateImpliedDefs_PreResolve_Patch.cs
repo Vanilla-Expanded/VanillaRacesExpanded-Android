@@ -191,7 +191,7 @@ namespace VREAndroids
                     bodyPart
                 },
                 addsHediff = hediffDef,
-                workerClass = typeof(Recipe_InstallArtificialBodyPart),
+                workerClass = typeof(Recipe_InstallAndroidPart),
                 workAmount = 2500,
                 recipeUsers = recipeUsers,
                 effectWorking = VREA_DefOf.ButcherMechanoid,

@@ -41,15 +41,6 @@ namespace VREAndroids
                     GenSpawn.Spawn(item.def.spawnThingOnRemoved, pos, map);
                 }
             }
-
-            if (part.IsCorePart)
-            {
-                return;
-            }
-            for (int i = 0; i < part.parts.Count; i++)
-            {
-                SpawnThingsFromHediffs(pawn, part.parts[i], pos, map);
-            }
         }
     }
 }

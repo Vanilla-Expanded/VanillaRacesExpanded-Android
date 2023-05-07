@@ -13,7 +13,9 @@ namespace VREAndroids
         public override Danger MaxPathDanger(Pawn pawn) => Danger.Some;
         public override Job JobOnThing(Pawn pawn, Thing thing, bool forced = false)
         {
-            if (pawn.CurJob?.def != VREA_DefOf.VREA_CreateAndroid &&  thing is Building_AndroidCreationStation station && pawn.CanReserveAndReach(thing, PathEndMode.Touch, MaxPathDanger(pawn)))
+            if (pawn.CurJob?.def != VREA_DefOf.VREA_CreateAndroid && thing is Building_AndroidCreationStation station 
+                && pawn.CanReserveAndReach(thing, PathEndMode.Touch, MaxPathDanger(pawn)) && (station.unfinishedAndroid is null 
+                || pawn.CanReserveAndReach(station.unfinishedAndroid, PathEndMode.Touch, MaxPathDanger(pawn))))
             {
                 if (!station.ReadyForAssembling(pawn, out var failReason))
                     JobFailReason.Is(failReason);

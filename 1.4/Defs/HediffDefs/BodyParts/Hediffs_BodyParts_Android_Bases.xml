@@ -62,7 +62,7 @@
   </HediffDef>
 
   <RecipeDef Name="VREA_SurgeryInstallBodyPartAndroidBase" Abstract="True">
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <workerClass>VREAndroids.Recipe_InstallAndroidPart</workerClass>
     <effectWorking>ButcherMechanoid</effectWorking>
     <soundWorking>Recipe_ButcherCorpseMechanoid</soundWorking>
     <workSkill>Crafting</workSkill>

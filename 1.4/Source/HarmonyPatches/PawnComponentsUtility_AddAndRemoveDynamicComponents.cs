@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(Pawn pawn)
         {
-            if (pawn.playerSettings is not null)
+            if (pawn.IsAndroid() && pawn.playerSettings is not null)
             {
                 pawn.playerSettings.medCare = MedicalCareCategory.NoMeds;
             }

@@ -17,7 +17,7 @@ namespace VREAndroids
         {
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.FailOnBurningImmobile(TargetIndex.A);
-            this.FailOn(() => AndroidStand.compPower.PowerOn is false
+            this.FailOn(() => AndroidStand.compPower != null && AndroidStand.compPower.PowerOn is false
                 || AndroidStand.CompAssignableToPawn.AssignedPawns.Contains(pawn) is false);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.OnCell);
             Toil toil = new Toil();
@@ -31,8 +31,9 @@ namespace VREAndroids
             {
                 toil.actor.Rotation = Rot4.South;
                 var memorySpace = this.pawn.needs.TryGetNeed<Need_MemorySpace>();
-                memorySpace.curLevelInt = Mathf.Min(1f, memorySpace.curLevelInt + (1f / 
-                    (float)MentalState_Reformatting.TicksToRecoverFromReformatting(pawn)));
+                var memorySpaceGain = memorySpace.curLevelInt + (1f /
+                    (float)MentalState_Reformatting.TicksToRecoverFromReformatting(pawn, AndroidStand));
+                memorySpace.curLevelInt = Mathf.Min(1f, memorySpaceGain);
                 if (memorySpace.curLevelInt == 1f)
                 {
                     this.EndJobWith(JobCondition.Succeeded);

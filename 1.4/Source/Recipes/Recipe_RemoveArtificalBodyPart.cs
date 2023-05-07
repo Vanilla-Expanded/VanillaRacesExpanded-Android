@@ -22,16 +22,7 @@ namespace VREAndroids
             {
                 if (part == pawn.RaceProps.body.corePart)
                     continue;
-
-                if (pawn.health.hediffSet.HasDirectlyAddedPartFor(part))
-                {
-                    yield return part;
-                }
-                else if (MedicalRecipesUtility.IsCleanAndDroppable(pawn, part))
-                {
-                    yield return part;
-                }
-                else if (part != pawn.RaceProps.body.corePart && part.def.canSuggestAmputation && pawn.health.hediffSet.hediffs.Any((Hediff d) => (!(d is Hediff_Injury) || d.IsPermanent()) && d.def.isBad && d.Visible && d.Part == part))
+                if (pawn.health.hediffSet.hediffs.Any((Hediff d) => (d is Hediff_Injury || d.IsPermanent()) && d.Part == part) is false)
                 {
                     yield return part;
                 }
@@ -61,10 +52,6 @@ namespace VREAndroids
             bool flag2 = IsViolationOnPawn(pawn, part, Faction.OfPlayer);
             if (billDoer != null)
             {
-                if (CheckSurgeryFail(billDoer, pawn, ingredients, part, bill))
-                {
-                    return;
-                }
                 TaleRecorder.RecordTale(TaleDefOf.DidSurgery, billDoer, pawn);
                 if (SpawnPartsWhenRemoved)
                 {

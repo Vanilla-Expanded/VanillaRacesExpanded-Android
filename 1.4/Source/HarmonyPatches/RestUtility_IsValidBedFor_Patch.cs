@@ -11,20 +11,9 @@ namespace VREAndroids
         {
             if (__result && bedThing != null && sleeper != null)
             {
-                if (sleeper.HasActiveGene(VREA_DefOf.VREA_NeutroCirculation))
-                {
-                    if (bedThing?.def != VREA_DefOf.VREA_NeutroCasket)
-                    {
-                        __result = false;
-                    }
-                }
-                else if (sleeper.IsAndroid())
+                if (sleeper.IsAndroid() && bedThing?.def.IsAndroidBed() is true)
                 {
                     __result = false;
-                }
-                else if (bedThing?.def == VREA_DefOf.VREA_NeutroCasket)
-                {
-                    __result =  false;
                 }
             }
         }

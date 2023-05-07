@@ -5,7 +5,7 @@ using Verse;
 
 namespace VREAndroids
 {
-    public class Recipe_InstallReactor : Recipe_InstallArtificialBodyPart
+    public class Recipe_InstallReactor : Recipe_InstallAndroidPart
     {
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {

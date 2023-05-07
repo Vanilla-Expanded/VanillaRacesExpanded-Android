@@ -9,23 +9,9 @@ namespace VREAndroids
     {
         public static void Postfix(ref bool __result, Pawn p, ThingDef bedDef)
         {
-            if (__result)
+            if (__result && p.IsAndroid() is false && bedDef.IsAndroidBed())
             {
-                if (p.HasActiveGene(VREA_DefOf.VREA_NeutroCirculation))
-                {
-                    if (bedDef != VREA_DefOf.VREA_NeutroCasket)
-                    {
-                        __result = false;
-                    }
-                }
-                else if (p.IsAndroid())
-                {
-                    __result = false;
-                }
-                else if (bedDef == VREA_DefOf.VREA_NeutroCasket)
-                {
-                    __result = false;
-                }
+                __result = false;
             }
         }
     }

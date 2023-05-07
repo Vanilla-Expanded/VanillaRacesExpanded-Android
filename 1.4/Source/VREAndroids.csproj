@@ -73,10 +73,19 @@
     <Compile Include="AI\JobGiver_FreeMemorySpace.cs" />
     <Compile Include="AI\MentalState_Reformatting.cs" />
     <Compile Include="AI\MentalState_SolarFlared.cs" />
-    <Compile Include="AI\Recipe_RemoveArtificalBodyPart.cs" />
+    <Compile Include="AI\WorkGiver_CarryToSubcorePolyanalyzer.cs" />
+    <Compile Include="HarmonyPatches\CompAbilityEffect_Resurrect_Valid_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompTargetable_BaseTargetValidator_Patch.cs" />
+    <Compile Include="HarmonyPatches\JobDriver_Resurrect_Resurrect_Patch.cs" />
+    <Compile Include="HarmonyPatches\ResurrectionUtility_ResurrectWithSideEffects_Patch.cs" />
+    <Compile Include="HarmonyPatches\ResurrectionUtility_Resurrect_Patch.cs" />
+    <Compile Include="Recipes\Recipe_RemoveArtificalBodyPart.cs" />
     <Compile Include="AI\Stance_Stand.cs" />
     <Compile Include="AI\WorkGiver_ModifyAndroid.cs" />
     <Compile Include="Buildings\Building_AndroidBehavioristStation.cs" />
+    <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_JobTracker_Notify_TuckedIntoBed_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnUtility_GetPosture_Patch.cs" />
     <Compile Include="Genes\Gene_MemoryDecay.cs" />
     <Compile Include="Genes\Gene_RainVulnerability.cs" />
     <Compile Include="HarmonyPatches\AgeInjuryUtility_GenerateRandomOldAgeInjuries_Patch.cs" />
@@ -108,6 +117,7 @@
     <Compile Include="HarmonyPatches\ThoughtWorker_Pain_CurrentThoughtState_Patch.cs" />
     <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
     <Compile Include="HarmonyPatches\XenotypeDef_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="Recipes\Recipe_InstallAndroidPart.cs" />
     <Compile Include="StatParts\StatPart_Android.cs" />
     <Compile Include="StatParts\StatPart_AndroidColdEfficiency.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android.cs" />
@@ -230,7 +240,7 @@
     <Compile Include="Genes\Gene_SolarFlareVulnerability.cs" />
     <Compile Include="Hediffs\Hediff_AndroidPart.cs" />
     <Compile Include="Hediffs\Hediff_AndroidReactor.cs" />
-    <Compile Include="Hediffs\Recipe_InstallReactor.cs" />
+    <Compile Include="Recipes\Recipe_InstallReactor.cs" />
     <Compile Include="AI\JobDriver_TendAndroid.cs" />
     <Compile Include="Needs\Need_FoodSuppressed.cs" />
     <Compile Include="Needs\Need_MemorySpace.cs" />

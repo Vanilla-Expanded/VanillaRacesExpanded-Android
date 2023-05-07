@@ -27,6 +27,10 @@ namespace VREAndroids
                 }
             }
 
+            var years = Rand.Range(0f, 25f);
+            pawn.ageTracker.AgeBiologicalTicks = (long)(years * 3600000f);
+            pawn.ageTracker.AgeChronologicalTicks = pawn.ageTracker.AgeBiologicalTicks;
+
             if (pawn.HasActiveGene(VREA_DefOf.VREA_NoSkillGain))
             {
                 List<SkillDef> allDefsListForReading = DefDatabase<SkillDef>.AllDefsListForReading;

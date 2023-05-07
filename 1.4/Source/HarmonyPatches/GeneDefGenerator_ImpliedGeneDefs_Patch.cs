@@ -75,7 +75,7 @@ namespace VREAndroids
 
         private static GeneDef GetFromTemplate(AndroidGeneTemplateDef template, Def def, int displayOrderBase)
         {
-            GeneDef geneDef = new GeneDef
+            var geneDef = new AndroidGeneDef
             {
                 defName = template.defName + "_" + def.defName,
                 geneClass = template.geneClass,
@@ -89,7 +89,8 @@ namespace VREAndroids
                 displayCategory = template.displayCategory,
                 displayOrderInCategory = displayOrderBase + template.displayOrderOffset,
                 minAgeActive = template.minAgeActive,
-                modContentPack = template.modContentPack
+                modContentPack = template.modContentPack,
+                canGenerateInGeneSet = false,
             };
             if (!template.exclusionTagPrefix.NullOrEmpty())
             {

@@ -24,6 +24,10 @@ namespace VREAndroids
                     pawn.Map.physicalInteractionReservationManager.Reserve(pawn, job, target.Thing);
                 }
             }
+            if (Station.unfinishedAndroid != null && !pawn.Reserve(Station.unfinishedAndroid, job, 1, -1, null, errorOnFailed))
+            {
+                return false;
+            }
             return true;
         }
 
@@ -44,6 +48,15 @@ namespace VREAndroids
                 {
                     yield return item;
                 }
+            }
+            else if (Station.unfinishedAndroid.Position != Station.Position)
+            {
+                job.SetTarget(TargetIndex.C, Station.unfinishedAndroid);
+                yield return Toils_Goto.GotoThing(TargetIndex.C, PathEndMode.Touch);
+                job.count = 1;
+                yield return Toils_Haul.StartCarryThing(TargetIndex.C);
+                yield return Toils_Goto.GotoCell(Station.Position, PathEndMode.OnCell);
+                yield return Toils_Haul.PlaceHauledThingInCell(TargetIndex.A, null, storageMode: false);
             }
             yield return gotoStation;
             yield return new Toil

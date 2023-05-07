@@ -4,13 +4,13 @@
 	<GeneCategoryDef>
 		<defName>VREA_Hardware</defName>
 		<label>hardware</label>
-		<displayPriorityInXenotype>9999</displayPriorityInXenotype>
+		<displayPriorityInXenotype>1</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>VREA_Subroutine</defName>
 		<label>subroutine</label>
-		<displayPriorityInXenotype>9998</displayPriorityInXenotype>
+		<displayPriorityInXenotype>9999</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<VREAndroids.AndroidGeneDef Name="VREA_HardwareBase" Abstract="True">
@@ -475,6 +475,9 @@
 		<displayOrderInCategory>12</displayOrderInCategory>
 		<biostatCpx>5</biostatCpx>
 		<biostatMet>2</biostatMet>
+		<exclusionTags>
+			<li>AndroidAwakeningProtocols</li>
+		</exclusionTags>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
@@ -485,6 +488,9 @@
 		<displayOrderInCategory>13</displayOrderInCategory>
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>-2</biostatMet>
+		<exclusionTags>
+			<li>AndroidAwakeningProtocols</li>
+		</exclusionTags>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
