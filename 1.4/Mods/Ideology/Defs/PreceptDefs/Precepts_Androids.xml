@@ -80,6 +80,18 @@
       </li>
     </comps>
   </PreceptDef>
+  
+  <PreceptDef>
+    <defName>VRE_Androids_Tools</defName>
+    <issue>VRE_AndroidsIssue</issue>
+    <label>tools</label>
+    <description>We view androids as mere tools, designed to serve and assist humans in various tasks, asserting that they exist solely for our convenience and should not be attributed with any rights or moral consideration.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - No opinion generation of Androids.\n - No thoughts related to androids dying (works for all colonists as long as precept is part of primary ideology).\n - No thoughts related to androids being enslaved (works for all colonists as long as precept is part of primary ideology).</description>
+    <impact>Medium</impact>
+    <comps>
+     
+     
+    </comps>
+  </PreceptDef>
 
   <!-- Thoughts -->
 
