@@ -20,8 +20,9 @@ namespace VREAndroids
             IEnumerable<BodyPartRecord> notMissingParts = pawn.health.hediffSet.GetNotMissingParts();
             foreach (BodyPartRecord part in notMissingParts)
             {
-                if (part == pawn.RaceProps.body.corePart)
+                if (part.def.HasAndroidPartThingVariant() is false)
                     continue;
+
                 if (pawn.health.hediffSet.hediffs.Any((Hediff d) => (d is Hediff_Injury || d.IsPermanent()) && d.Part == part) is false)
                 {
                     yield return part;

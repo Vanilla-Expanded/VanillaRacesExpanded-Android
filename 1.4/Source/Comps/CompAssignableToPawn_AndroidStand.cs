@@ -21,7 +21,7 @@ namespace VREAndroids
 
         public override string GetAssignmentGizmoDesc()
         {
-            return "CommandBedSetOwnerDesc".Translate(parent.def.building.bed_humanlike ? FactionDefOf.PlayerColony.pawnSingular : "Animal".Translate().ToString());
+            return "VREA.CommandAndroidStandSetOwnerDesc".Translate();
         }
 
         public override bool AssignedAnything(Pawn pawn)

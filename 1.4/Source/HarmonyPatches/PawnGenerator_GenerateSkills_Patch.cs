@@ -25,11 +25,11 @@ namespace VREAndroids
                 {
                     TryAssignBackstory(pawn, "ColonyAndroid");
                 }
+                var years = Rand.Range(0f, 25f);
+                pawn.ageTracker.AgeBiologicalTicks = (long)(years * 3600000f);
+                pawn.ageTracker.AgeChronologicalTicks = pawn.ageTracker.AgeBiologicalTicks;
+                pawn.Notify_DisabledWorkTypesChanged();
             }
-
-            var years = Rand.Range(0f, 25f);
-            pawn.ageTracker.AgeBiologicalTicks = (long)(years * 3600000f);
-            pawn.ageTracker.AgeChronologicalTicks = pawn.ageTracker.AgeBiologicalTicks;
 
             if (pawn.HasActiveGene(VREA_DefOf.VREA_NoSkillGain))
             {

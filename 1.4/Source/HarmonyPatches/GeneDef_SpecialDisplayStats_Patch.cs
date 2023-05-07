@@ -6,6 +6,7 @@ using Verse;
 
 namespace VREAndroids
 {
+
     [HarmonyPatch(typeof(GeneDef), "SpecialDisplayStats")]
     public static class GeneDef_SpecialDisplayStats_Patch
     {

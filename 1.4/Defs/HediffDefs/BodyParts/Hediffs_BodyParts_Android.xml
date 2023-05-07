@@ -307,54 +307,10 @@
     <label>artifical brain</label>
     <labelNoun>an artifical brain</labelNoun>
     <description>An installed artifical brain.</description>
-    <descriptionHyperlinks><ThingDef>VREA_ArtificalBrain</ThingDef></descriptionHyperlinks>
-    <spawnThingOnRemoved>VREA_ArtificalBrain</spawnThingOnRemoved>
 	<addedPartProps>
 		<solid>true</solid>
 	</addedPartProps>
   </HediffDef>
-
-  <ThingDef ParentName="VREA_BodyPartAndroidBase">
-    <defName>VREA_ArtificalBrain</defName>
-    <label>artifical brain</label>
-    <description>A synthetic, android brain. Extremely complex, this unit servers as the very being of an android.</description>
-    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalBrain</RecipeDef></descriptionHyperlinks>
-    <costList>
-      <Plasteel>10</Plasteel>
-	  <Gold>2</Gold>
-      <ComponentSpacer>6</ComponentSpacer>
-    </costList>
-  </ThingDef>
-
-  <RecipeDef ParentName="VREA_SurgeryInstallBodyPartAndroidBase">
-    <defName>VREA_InstallArtificalBrain</defName>
-    <label>install artifical brain</label>
-    <description>Install an artifical brain.</description>
-    <descriptionHyperlinks>
-      <ThingDef>VREA_ArtificalBrain</ThingDef>
-      <HediffDef>VREA_ArtificalBrain</HediffDef>
-    </descriptionHyperlinks>
-    <jobString>Installing an artifical brain.</jobString>
-    <ingredients>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>VREA_ArtificalBrain</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
-    </ingredients>
-    <fixedIngredientFilter>
-      <thingDefs>
-        <li>VREA_ArtificalBrain</li>
-      </thingDefs>
-    </fixedIngredientFilter>
-    <appliedOnFixedBodyParts>
-      <li>Brain</li>
-    </appliedOnFixedBodyParts>
-    <addsHediff>VREA_ArtificalBrain</addsHediff>
-  </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
     <defName>VREA_OpticalUnit</defName>

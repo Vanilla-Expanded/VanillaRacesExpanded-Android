@@ -36,6 +36,7 @@
 	<VREA.PowerEfficiencyTotalDesc>The total power efficiency of all subroutines and hardware. High efficiency means an android's reactor lasts a longer time. Low efficiency means the reactor will last less time.	</VREA.PowerEfficiencyTotalDesc>
 	<VREA.PowerDrain>Power drain</VREA.PowerDrain>
 	<VREA.Android>Android</VREA.Android>
+	<VREA.CannotInstallOnAndroid>Cannot install on android</VREA.CannotInstallOnAndroid>
 	<VREA.CannotFeedOnAndroid>Cannot feed on android.</VREA.CannotFeedOnAndroid>
 	<VREA.CannotImplantGenesOnAndroid>Cannot implant genes on android.</VREA.CannotImplantGenesOnAndroid>
 	<VREA.CannotCoagulateOnAndroid>Cannot coagulate on android.</VREA.CannotCoagulateOnAndroid>
@@ -96,5 +97,5 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.ComponentsDesc>The components associated with this androidtype.</VREA.ComponentsDesc>
 	<VREA.ReplaceReactor>Replace reactor</VREA.ReplaceReactor>
 	<VREA.AndroidSummaryWithGender>{PAWN_gender} android, age {PAWN_ageFull}</VREA.AndroidSummaryWithGender>
-
+	<VREA.CommandAndroidStandSetOwnerDesc>Assign this stand to be owned by a specific android</VREA.CommandAndroidStandSetOwnerDesc>
 </LanguageData>

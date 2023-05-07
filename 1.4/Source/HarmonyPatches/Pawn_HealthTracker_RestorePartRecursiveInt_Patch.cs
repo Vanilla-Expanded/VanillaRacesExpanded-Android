@@ -11,7 +11,7 @@ namespace VREAndroids
     {
         private static bool Prefix(Pawn_HealthTracker __instance, BodyPartRecord part, Hediff diffException = null)
         {
-            if (__instance.pawn.IsAndroid() && part.IsCorePart)
+            if (__instance.pawn.IsAndroid())
             {
                 List<Hediff> hediffs = __instance.hediffSet.hediffs;
                 for (int num = hediffs.Count - 1; num >= 0; num--)

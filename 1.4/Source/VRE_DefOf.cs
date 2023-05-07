@@ -82,5 +82,6 @@ namespace VREAndroids
         public static EffecterDef VREA_AndroidAwakened;
         public static ThingDef VREA_AndroidAwakenedMote;
         public static ThingDef VREA_AndroidStand, VREA_AndroidStandSpot;
+        public static BodyPartDef Skull;
     }
 }

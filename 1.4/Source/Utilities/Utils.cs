@@ -8,6 +8,12 @@ namespace VREAndroids
     [StaticConstructorOnStartup]
     public static class Utils
     {
+        public static bool HasAndroidPartThingVariant(this BodyPartDef part)
+        {
+            return part != BodyPartDefOf.Torso && part != BodyPartDefOf.Brain
+                && part != BodyPartDefOf.Head && part != VREA_DefOf.Skull;
+        }
+
         private static HashSet<ThingDef> androidBeds = new HashSet<ThingDef>
         {
             VREA_DefOf.VREA_NeutroCasket, VREA_DefOf.VREA_AndroidStand, VREA_DefOf.VREA_AndroidStandSpot
@@ -113,6 +119,7 @@ namespace VREAndroids
             }
             return VREA_DefOf.VREA_AndroidSettings.androidsShouldNotReceiveHediffs.Contains(hediffDef.defName) is false
                 && (typeof(Hediff_Addiction).IsAssignableFrom(hediffDef.hediffClass)
+                || DefDatabase<ChemicalDef>.AllDefs.Any(x => x.toleranceHediff == hediffDef)
                 || typeof(Hediff_Psylink).IsAssignableFrom(hediffDef.hediffClass)
                 || typeof(Hediff_High).IsAssignableFrom(hediffDef.hediffClass)
                 || typeof(Hediff_Hangover).IsAssignableFrom(hediffDef.hediffClass)
