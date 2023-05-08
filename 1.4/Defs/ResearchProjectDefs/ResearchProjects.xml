@@ -7,6 +7,7 @@
 		<requiredResearchFacilities>
 			<li>MultiAnalyzer</li>
 		</requiredResearchFacilities>
+		<tab>VanillaExpanded</tab>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="VREA_ResearchBase">
@@ -17,8 +18,8 @@
 		<prerequisites>
 			<li>HighMechtech</li>
 		</prerequisites>
-		<researchViewX>0.00</researchViewX>
-		<researchViewY>1.40</researchViewY>
+		<researchViewX>9.00</researchViewX>
+		<researchViewY>0.20</researchViewY>
 	</ResearchProjectDef>
 
 </Defs>

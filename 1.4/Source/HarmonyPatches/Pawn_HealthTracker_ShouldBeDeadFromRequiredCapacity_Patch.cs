@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(ref PawnCapacityDef __result, Pawn ___pawn)
         {
-            if (___pawn.IsAndroid() || ___pawn.HasActiveGene(VREA_DefOf.VREA_Power))
+            if (___pawn.IsAndroid() && ___pawn.health.hediffSet.GetBrain() != null)
             {
                 __result = null;
             }

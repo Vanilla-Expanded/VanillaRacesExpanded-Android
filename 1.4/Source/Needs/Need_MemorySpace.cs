@@ -22,11 +22,18 @@ namespace VREAndroids
             curLevelInt = Mathf.Max(0, curLevelInt - ((1f / GenDate.TicksPerDay) * 150f * pawn.GetStatValue(VREA_DefOf.VREA_MemorySpaceDrainMultiplier)));
             if (curLevelInt == 0f && pawn.MentalStateDef != VREA_DefOf.VREA_Reformatting)
             {
-                if (pawn.InMentalState)
+                if (pawn.Spawned)
                 {
-                    pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+                    if (pawn.InMentalState)
+                    {
+                        pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+                    }
+                    pawn.mindState.mentalStateHandler.TryStartMentalState(VREA_DefOf.VREA_Reformatting);
                 }
-                pawn.mindState.mentalStateHandler.TryStartMentalState(VREA_DefOf.VREA_Reformatting);
+                else
+                {
+                    curLevelInt = 1f;
+                }
             }
         }
     }

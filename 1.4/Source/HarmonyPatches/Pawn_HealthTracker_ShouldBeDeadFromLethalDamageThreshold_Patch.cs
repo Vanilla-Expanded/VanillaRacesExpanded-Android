@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
+using System;
 using Verse;
+using static Verse.DamageWorker;
 
 namespace VREAndroids
 {

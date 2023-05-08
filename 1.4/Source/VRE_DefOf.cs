@@ -83,5 +83,7 @@ namespace VREAndroids
         public static ThingDef VREA_AndroidAwakenedMote;
         public static ThingDef VREA_AndroidStand, VREA_AndroidStandSpot;
         public static BodyPartDef Skull;
+        public static SoundDef Recipe_Machining;
+        public static StatDef ButcheryMechanoidSpeed;
     }
 }

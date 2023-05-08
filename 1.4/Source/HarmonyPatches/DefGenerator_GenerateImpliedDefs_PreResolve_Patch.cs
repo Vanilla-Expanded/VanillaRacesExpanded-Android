@@ -189,6 +189,7 @@ namespace VREAndroids
                         count = 1
                     }
                 },
+                uiIconThing = ingredient,
                 fixedIngredientFilter = new ThingFilter
                 {
                     thingDefs = new List<ThingDef>

@@ -105,6 +105,7 @@
 		<biostatCpx>1</biostatCpx>
 		<disablesNeeds>
 			<li>Outdoors</li>
+			<li>Indoors</li>
 		</disablesNeeds>
 		<removeWhenAwakened>true</removeWhenAwakened>
 	</VREAndroids.AndroidGeneDef>

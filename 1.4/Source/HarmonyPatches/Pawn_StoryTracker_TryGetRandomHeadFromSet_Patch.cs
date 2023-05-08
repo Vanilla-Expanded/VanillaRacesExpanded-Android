@@ -47,7 +47,6 @@ namespace VREAndroids
                         }
                         if (androidRequiredGene is null || !__instance.pawn.genes.HasGene(androidRequiredGene))
                         {
-                            Log.Message("Cannot use head: " + head + " - " + requiredGene + " - " + androidRequiredGene);
                             return false;
                         }
                     }

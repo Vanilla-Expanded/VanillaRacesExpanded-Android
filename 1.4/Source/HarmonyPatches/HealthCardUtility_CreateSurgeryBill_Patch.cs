@@ -13,9 +13,13 @@ namespace VREAndroids
             curPawn = medPawn;
         }
 
-        public static void Postfix()
+        public static void Postfix(Bill_Medical __result)
         {
             curPawn = null;
+            if (__result.GiverPawn.IsAndroid())
+            {
+                __result.ChangeRecipeForAndroid();
+            }
         }
     }
 }

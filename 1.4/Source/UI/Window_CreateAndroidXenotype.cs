@@ -8,6 +8,7 @@ using Verse.Sound;
 
 namespace VREAndroids
 {
+
     [HotSwappable]
     public class Window_CreateAndroidXenotype : Window_CreateAndroidBase
     {
@@ -43,10 +44,10 @@ namespace VREAndroids
             customXenotype.inheritable = false;
             customXenotype.iconDef = iconDef;
             string text = GenFile.SanitizedFileName(customXenotype.name);
-            string absPath = GenFilePaths.AbsFilePathForXenotype(text);
+            string absPath = AndroidProjectUtils.AbsFilePathForAndroidProject(text);
             LongEventHandler.QueueLongEvent(delegate
             {
-                GameDataSaveLoader.SaveXenotype(customXenotype, absPath);
+                AndroidProjectUtils.SaveAndroidProject(customXenotype, absPath);
             }, "SavingLongEvent", doAsynchronously: false, null);
             if (generationRequestIndex >= 0)
             {

@@ -12,7 +12,7 @@ namespace VREAndroids
     public static class GeneDefGenerator_ImpliedGeneDefs_Patch
     {
         public static List<GeneDef> allGenes = DefDatabase<GeneDef>.AllDefsListForReading.ListFullCopy();
-        public static MethodInfo cloneMethod = typeof(GeneDef).GetMethod("MemberwiseClone", BindingFlags.Instance | BindingFlags.NonPublic);
+
         public static HashSet<GeneCategoryDef> allCosmeticCategories = new()
         {
             VREA_DefOf.Cosmetic, VREA_DefOf.Cosmetic_Body, VREA_DefOf.Cosmetic_Hair, VREA_DefOf.Cosmetic_Skin, VREA_DefOf.Beauty
@@ -35,7 +35,7 @@ namespace VREAndroids
                 {
                     if (allCosmeticCategories.Contains(geneDef.displayCategory) && geneDef.biostatArc <= 0)
                     {
-                        var clonedGene = cloneMethod.Invoke(geneDef, null) as GeneDef;
+                        GeneDef clonedGene = geneDef.Clone() as GeneDef;
                         clonedGene.defName = "VREA_" + geneDef.defName;
                         clonedGene.modExtensions ??= new List<DefModExtension>();
                         clonedGene.modExtensions.Add(new GeneExtension

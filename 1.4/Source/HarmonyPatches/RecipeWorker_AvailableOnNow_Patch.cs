@@ -26,23 +26,30 @@ namespace VREAndroids
         {
             if (__0 is Pawn pawn && pawn.IsAndroid())
             {
-                if (__instance is Recipe_AdministerIngestible)
-                {
-                    __result = false;
-                }
-                if (__instance is Recipe_RemoveBodyPart && __instance is not Recipe_RemoveArtificalBodyPart)
-                {
-                    __result = false;
-                }
-                if (pawn.def.recipes.Contains(__instance.recipe) && __instance.recipe != VREA_DefOf.VREA_RemoveArtificalPart)
-                {
-                    __result = false;
-                }
-                if (__instance.recipe.addsHediff == HediffDefOf.Sterilized)
-                {
-                    __result = false;
-                }
+                __result = RecipeIsAvailableOnAndroid(__instance, pawn);
             }
+        }
+
+        public static bool RecipeIsAvailableOnAndroid(RecipeWorker recipeWorker, Pawn pawn)
+        {
+            if (recipeWorker is Recipe_AdministerIngestible)
+            {
+                return false;
+            }
+            if (recipeWorker is Recipe_RemoveBodyPart && recipeWorker is not Recipe_RemoveArtificalBodyPart)
+            {
+                return false;
+            }
+            if (pawn.def.recipes.Contains(recipeWorker.recipe) && recipeWorker.recipe != VREA_DefOf.VREA_RemoveArtificalPart)
+            {
+                return false;
+            }
+            if (recipeWorker.recipe.addsHediff == HediffDefOf.Sterilized)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

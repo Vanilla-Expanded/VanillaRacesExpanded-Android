@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Verse;
 
 namespace VREAndroids
@@ -35,6 +36,7 @@ namespace VREAndroids
         {
             foreach (var race in DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.race != null && x.race.Humanlike))
             {
+                race.recipes ??= new List<RecipeDef>();
                 race.recipes.Add(VREA_DefOf.VREA_RemoveArtificalPart);
             }
         }
@@ -129,6 +131,11 @@ namespace VREAndroids
 
         public static bool IsAndroid(this Pawn pawn)
         {
+            if (pawn is null)
+            {
+                Log.Error("Checking for null pawn. It shouldn't happen.");
+                return false;
+            }
             return HasActiveGene(pawn, VREA_DefOf.VREA_SyntheticBody);
         }
 
@@ -139,6 +146,36 @@ namespace VREAndroids
         public static bool IsAndroidType(this CustomXenotype def)
         {
             return def.genes.Count > 0 && def.genes.All(x => x.IsAndroidGene());
+        }
+        public static void ChangeRecipeForAndroid(this Bill_Medical __instance)
+        {
+            var recipe = __instance.recipe.Clone() as RecipeDef;
+            recipe.effectWorking = VREA_DefOf.ButcherMechanoid;
+            recipe.soundWorking = VREA_DefOf.Recipe_Machining;
+            recipe.workSpeedStat = VREA_DefOf.ButcheryMechanoidSpeed;
+            recipe.workSkill = SkillDefOf.Crafting;
+            recipe.skillRequirements = new List<SkillRequirement>();
+            foreach (var skillReq in __instance.recipe.skillRequirements)
+            {
+                if (skillReq.skill == SkillDefOf.Medicine)
+                {
+                    recipe.skillRequirements.Add(new SkillRequirement { minLevel= skillReq.minLevel, skill = SkillDefOf.Crafting });
+                }
+                else
+                {
+                    recipe.skillRequirements.Add(new SkillRequirement { minLevel = skillReq.minLevel, skill = skillReq.skill });
+                }
+            }
+
+            recipe.ingredients = recipe.ingredients.Where(x => (x.filter?.categories != null
+                && x.filter.categories.Contains("Medicine")) is false).ToList();
+            __instance.recipe = recipe;
+        }
+
+        public static object Clone(this object obj)
+        {
+            var cloneMethod = obj.GetType().GetMethod("MemberwiseClone", BindingFlags.Instance | BindingFlags.NonPublic);
+            return cloneMethod.Invoke(obj, null);
         }
     }
 }

@@ -44,7 +44,7 @@ namespace VREAndroids
         public override void Tick()
         {
             base.Tick();
-            var baseDrainSpeed = (1f / GenDate.TicksPerYear * 2f) * PowerEfficiencyDrainMultiplier;
+            var baseDrainSpeed = (1f / (GenDate.TicksPerYear * 2f)) * PowerEfficiencyDrainMultiplier;
             if (pawn.HasActiveGene(VREA_DefOf.VREA_RainVulnerability) && pawn.Spawned && pawn.Position.Roofed(pawn.Map) is false
                 && pawn.Map.weatherManager.RainRate >= 0.01f)
             {

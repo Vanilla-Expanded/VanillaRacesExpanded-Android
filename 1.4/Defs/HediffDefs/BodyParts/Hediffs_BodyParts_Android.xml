@@ -55,6 +55,7 @@
       <li>Heart</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_NeuroPump</addsHediff>
+	<uiIconThing>VREA_NeuroPump</uiIconThing>
   </RecipeDef>
 
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -111,6 +112,7 @@
       <li>Lung</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_AirFilter</addsHediff>
+	<uiIconThing>VREA_AirFilter</uiIconThing>
   </RecipeDef>
 
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -167,6 +169,7 @@
       <li>Kidney</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_Neutrofilter</addsHediff>
+	<uiIconThing>VREA_Neutrofilter</uiIconThing>
   </RecipeDef>
 
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -224,6 +227,7 @@
       <li>Liver</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_MetabolismRegulator</addsHediff>
+	<uiIconThing>VREA_MetabolismRegulator</uiIconThing>
   </RecipeDef>
 
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -300,6 +304,7 @@
       <li>Stomach</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_Reactor</addsHediff>
+	<uiIconThing>VREA_Reactor</uiIconThing>
   </RecipeDef>
 
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -363,6 +368,7 @@
       <li>Eye</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_OpticalUnit</addsHediff>
+	<uiIconThing>VREA_OpticalUnit</uiIconThing>
   </RecipeDef>
 
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -416,6 +422,7 @@
       <li>Ear</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_AudioProcessor</addsHediff>
+	<uiIconThing>VREA_AudioProcessor</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -465,6 +472,7 @@
       <li>Nose</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_ArtificalNose</addsHediff>
+	<uiIconThing>VREA_ArtificalNose</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -514,6 +522,7 @@
       <li>Jaw</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_ArtificalJaw</addsHediff>
+	<uiIconThing>VREA_ArtificalJaw</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -566,6 +575,7 @@
       <li>Ribcage</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_ArtificalRibcage</addsHediff>
+	<uiIconThing>VREA_ArtificalRibcage</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -619,6 +629,7 @@
       <li>Spine</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_ArtificalSpine</addsHediff>
+	<uiIconThing>VREA_ArtificalSpine</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -668,6 +679,7 @@
       <li>Leg</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_AndroidLeg</addsHediff>
+	<uiIconThing>VREA_AndroidLeg</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -717,6 +729,7 @@
       <li>Foot</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_AndroidFoot</addsHediff>
+	<uiIconThing>VREA_AndroidFoot</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -766,6 +779,7 @@
       <li>Arm</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_AndroidArm</addsHediff>
+	<uiIconThing>VREA_AndroidArm</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
@@ -815,5 +829,6 @@
       <li>Hand</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VREA_AndroidHand</addsHediff>
+	<uiIconThing>VREA_AndroidHand</uiIconThing>
   </RecipeDef>
 </Defs>

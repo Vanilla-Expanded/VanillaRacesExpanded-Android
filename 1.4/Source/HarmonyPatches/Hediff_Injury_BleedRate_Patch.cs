@@ -17,6 +17,10 @@ namespace VREAndroids
         }
         public static float BleedRate(Hediff_Injury __instance)
         {
+            if (__instance.pawn.Dead)
+            {
+                return 0f;
+            }
             if (__instance.IsTended() || __instance.IsPermanent())
             {
                 return 0f;
