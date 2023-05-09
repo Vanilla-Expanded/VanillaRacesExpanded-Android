@@ -22,8 +22,8 @@
       <WorkToMake>26000</WorkToMake>
     </statBases>
     <costList>
-      <Plasteel>20</Plasteel>
-      <ComponentSpacer>4</ComponentSpacer>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
   </ThingDef>
 
@@ -79,8 +79,8 @@
       <WorkToMake>20000</WorkToMake>
     </statBases>
     <costList>
-      <Plasteel>15</Plasteel>
-      <ComponentSpacer>2</ComponentSpacer>
+      <Plasteel>5</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
   </ThingDef>
 
@@ -136,8 +136,8 @@
       <WorkToMake>20000</WorkToMake>
     </statBases>
     <costList>
-      <Plasteel>15</Plasteel>
-      <ComponentSpacer>2</ComponentSpacer>
+      <Plasteel>5</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
   </ThingDef>
 
@@ -193,9 +193,9 @@
       <WorkToMake>20000</WorkToMake>
     </statBases>
     <costList>
-      <Plasteel>10</Plasteel>
+      <Plasteel>5</Plasteel>
 	  <Gold>1</Gold>
-      <ComponentSpacer>2</ComponentSpacer>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
   </ThingDef>
 
@@ -335,8 +335,8 @@
     <description>A synthetic, android optical unit. Allows the android to see.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallOpticalUnit</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>15</Plasteel>
-      <ComponentSpacer>3</ComponentSpacer>
+      <Plasteel>5</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
   </ThingDef>
 
@@ -389,8 +389,7 @@
     <description>A synthetic, android audio processor. Allows the android to hear.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAudioProcessor</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>15</Plasteel>
-      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
   </ThingDef>
 
@@ -440,7 +439,7 @@
     <description>A synthetic, android nose. Allows the android to detect smells.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalNose</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>10</Plasteel>
+      <Plasteel>5</Plasteel>
     </costList>
   </ThingDef>
 
@@ -543,7 +542,7 @@
     <description>A synthetic, android ribcage.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalRibcage</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>20</Plasteel>
+      <Plasteel>10</Plasteel>
     </costList>
   </ThingDef>
 
@@ -596,7 +595,7 @@
     <description>A synthetic, android spine.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalSpine</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>25</Plasteel>
+      <Plasteel>10</Plasteel>
       <Gold>1</Gold>
     </costList>
   </ThingDef>
@@ -647,7 +646,7 @@
     <description>A synthetic, android leg.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidLeg</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>20</Plasteel>
+      <Plasteel>15</Plasteel>
     </costList>
   </ThingDef>
 
@@ -697,7 +696,7 @@
     <description>A synthetic, android foot.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidFoot</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>10</Plasteel>
+      <Plasteel>5</Plasteel>
     </costList>
   </ThingDef>
 
@@ -747,7 +746,7 @@
     <description>A synthetic, android arm.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidArm</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>20</Plasteel>
+      <Plasteel>15</Plasteel>
     </costList>
   </ThingDef>
 
@@ -797,7 +796,7 @@
     <description>A synthetic, android arm.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidHand</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>10</Plasteel>
+      <Plasteel>5</Plasteel>
     </costList>
   </ThingDef>
 

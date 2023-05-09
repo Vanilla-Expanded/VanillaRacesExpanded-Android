@@ -21,5 +21,18 @@
 		<researchViewX>9.00</researchViewX>
 		<researchViewY>0.20</researchViewY>
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="VREA_ResearchBase">
+		<defName>VREA_NeutroamineLogistics</defName>
+		<label>neutroamine logistics</label>
+		<description>Construct specialized tanks, capable of storing large quantities of neutroamine, as well as pipes, taps and drain to move neutroamine through the system.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>BiofuelRefining</li>
+		</prerequisites>
+		<researchViewX>8.00</researchViewX>
+		<researchViewY>0.20</researchViewY>
+	</ResearchProjectDef>
 
 </Defs>

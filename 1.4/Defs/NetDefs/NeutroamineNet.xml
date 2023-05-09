@@ -94,7 +94,7 @@
     <constructEffect>ConstructMetal</constructEffect>
     <clearBuildingArea>false</clearBuildingArea>
     <researchPrerequisites>
-      <li>VREA_AndroidTech</li>
+      <li>VREA_NeutroamineLogistics</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -154,7 +154,7 @@
     <constructEffect>ConstructMetal</constructEffect>
     <canOverlapZones>false</canOverlapZones>
     <researchPrerequisites>
-      <li>VREA_AndroidTech</li>
+      <li>VREA_NeutroamineLogistics</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -227,7 +227,7 @@
       </li>
     </comps>
     <researchPrerequisites>
-      <li>VREA_AndroidTech</li>
+      <li>VREA_NeutroamineLogistics</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -300,7 +300,7 @@
       </li>
     </comps>
     <researchPrerequisites>
-      <li>VREA_AndroidTech</li>
+      <li>VREA_NeutroamineLogistics</li>
     </researchPrerequisites>
   </ThingDef>
 
