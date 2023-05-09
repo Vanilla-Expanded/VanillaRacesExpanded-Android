@@ -12,54 +12,11 @@ namespace VREAndroids
         public override float GetPriority(Pawn pawn)
         {
             var memorySpace = pawn.needs.TryGetNeed<Need_MemorySpace>();
-            if (memorySpace == null)
+            if (memorySpace == null || memorySpace.CurLevelPercentage > 0.1f)
             {
                 return 0f;
             }
-            if (memorySpace.CurLevelPercentage > 0.2f)
-            {
-                return 0f;
-            }
-            Lord lord = pawn.GetLord();
-            if (lord != null && !lord.CurLordToil.AllowSatisfyLongNeeds)
-            {
-                return 0f;
-            }
-            TimeAssignmentDef timeAssignmentDef = pawn.timetable.CurrentAssignment;
-            float curLevel = memorySpace.CurLevel;
-            if (timeAssignmentDef == TimeAssignmentDefOf.Anything)
-            {
-                if (curLevel < 0.3f)
-                {
-                    return 8f;
-                }
-                return 0f;
-            }
-            if (timeAssignmentDef == TimeAssignmentDefOf.Work)
-            {
-                return 0f;
-            }
-            if (timeAssignmentDef == TimeAssignmentDefOf.Meditate)
-            {
-                if (curLevel < 0.16f)
-                {
-                    return 8f;
-                }
-                return 0f;
-            }
-            if (timeAssignmentDef == TimeAssignmentDefOf.Joy)
-            {
-                if (curLevel < 0.3f)
-                {
-                    return 8f;
-                }
-                return 0f;
-            }
-            if (timeAssignmentDef == TimeAssignmentDefOf.Sleep)
-            {
-                return 8f;
-            }
-            throw new NotImplementedException();
+            return 8f;
         }
         public override Job TryGiveJob(Pawn pawn)
         {
@@ -68,9 +25,7 @@ namespace VREAndroids
             {
                 return null;
             }
-            Lord lord = pawn.GetLord();
-            Building_AndroidStand stand = ((lord == null || lord.CurLordToil == null || lord.CurLordToil.AllowRestingInBed) 
-                && !pawn.IsWildMan() && (!pawn.InMentalState || pawn.MentalState.AllowRestingInBed) ? FindStandFor(pawn) : null);
+            Building_AndroidStand stand = FindStandFor(pawn);
             if (stand != null)
             {
                 return JobMaker.MakeJob(VREA_DefOf.VREA_FreeMemorySpace, stand);
@@ -82,9 +37,18 @@ namespace VREAndroids
         {
             foreach (var stand in Building_AndroidStand.stands)
             {
-                if (stand.CompAssignableToPawn.AssignedPawns.Contains(pawn) && (stand.compPower is null || stand.compPower.PowerOn)
+                if (stand.CompAssignableToPawn.AssignedPawns.Contains(pawn) && stand.CannotUseNowReason(pawn) is null
                     && pawn.CanReserveAndReach(stand, PathEndMode.OnCell, Danger.Deadly))
                 {
+                    return stand;
+                }
+            }
+            foreach (var stand in Building_AndroidStand.stands)
+            {
+                if (stand.CompAssignableToPawn.AssignedPawns.Any() is false && stand.CannotUseNowReason(pawn) is null
+                    && pawn.CanReserveAndReach(stand, PathEndMode.OnCell, Danger.Deadly))
+                {
+                    stand.CompAssignableToPawn.TryAssignPawn(pawn);
                     return stand;
                 }
             }

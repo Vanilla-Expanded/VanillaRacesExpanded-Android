@@ -24,6 +24,7 @@ namespace VREAndroids
             MeditationFocusTypeAvailabilityCache.ClearFor(pawn);
         }
 
+
         public override void Tick()
         {
             base.Tick();

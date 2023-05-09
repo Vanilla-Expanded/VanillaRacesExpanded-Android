@@ -6,7 +6,7 @@ using Verse.AI;
 
 namespace VREAndroids
 {
-    public class Building_AndroidStand : Building_Bed
+    public class Building_AndroidStand : Building_AndroidBed
     {
         public static HashSet<Building_AndroidStand> stands = new HashSet<Building_AndroidStand>();
 
@@ -109,6 +109,10 @@ namespace VREAndroids
             if (CurOccupant != null)
             {
                 return "VREA.AndroidStandIsOccupied".Translate();
+            }
+            if (!RestUtility.CanUseBedNow(this, selPawn, checkSocialProperness: false))
+            {
+                return "CannotUse".Translate();
             }
             return null;
         }

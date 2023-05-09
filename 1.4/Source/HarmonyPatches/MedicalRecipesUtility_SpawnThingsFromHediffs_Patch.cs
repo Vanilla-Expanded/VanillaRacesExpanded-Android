@@ -29,12 +29,7 @@ namespace VREAndroids
             {
                 if (item is Hediff_AndroidReactor reactor)
                 {
-                    if (pawn.HasActiveGene(VREA_DefOf.VREA_ZeroWaste) is false)
-                    {
-                        var wastepack = ThingMaker.MakeThing(ThingDefOf.Wastepack);
-                        wastepack.stackCount = 5;
-                        GenSpawn.Spawn(wastepack, pos, map);
-                    }
+                    pawn.TrySpawnWaste(pos, map);
                 }
                 else if (item.def.spawnThingOnRemoved != null)
                 {

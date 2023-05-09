@@ -85,5 +85,11 @@ namespace VREAndroids
         public static BodyPartDef Skull;
         public static SoundDef Recipe_Machining;
         public static StatDef ButcheryMechanoidSpeed;
+        public static ThingDef VREA_AndroidSleepMode;
+        public static GeneDef VREA_MechlinkSupport;
+        public static GeneDef VREA_SolarPowered;
+        public static GeneDef VREA_ExtraWaste;
+        public static GeneDef VREA_ClearInstructions;
+        public static JobDef VREA_RepairAndroid;
     }
 }

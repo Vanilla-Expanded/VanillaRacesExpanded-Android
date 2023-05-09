@@ -355,6 +355,9 @@
 		<displayOrderInCategory>2</displayOrderInCategory>
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>4</biostatMet>
+		<exclusionTags>
+			<li>SolarPower</li>
+		</exclusionTags>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
@@ -512,14 +515,30 @@
 		<displayOrderInCategory>15</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-2</biostatMet>
+		<exclusionTags>
+			<li>Waste</li>
+		</exclusionTags>
 	</VREAndroids.AndroidGeneDef>
 
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_ExtraWaste</defName>
+		<label>extra waste</label>
+		<description>Androids with this subroutine will generate a lot more toxic wastepacks when their reactor runs out.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ExtraWaste</iconPath>
+		<displayOrderInCategory>16</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>2</biostatMet>
+		<exclusionTags>
+			<li>Waste</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+	
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>VREA_SelfRecharge</defName>
 		<label>self recharge</label>
 		<description>Androids with this subroutine are capable of replacing their own reactors due to small internal batteries that keep them functional during the brief period without a working reactor.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_SelfRecharge</iconPath>
-		<displayOrderInCategory>16</displayOrderInCategory>
+		<displayOrderInCategory>17</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
@@ -530,11 +549,88 @@
 		<description>Androids with this subroutine will suffer from a skill memory decay. Over an extended period of time, their skills will decay back to 0. Androids with this subroutine will lose 1 level in every skill every 15 days. Removing and reinstalling subroutines may be required to return the skill levels back to intended values.</description>
 		<geneClass>VREAndroids.Gene_MemoryDecay</geneClass>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_MemoryDecay</iconPath>
-		<displayOrderInCategory>17</displayOrderInCategory>
+		<displayOrderInCategory>18</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>4</biostatMet>
 	</VREAndroids.AndroidGeneDef>
 
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SleepMode</defName>
+		<label>sleep mode</label>
+		<description>Androids with this subroutine can be ordered to fall into a deep and dreamless slumber. This will result in complete stop of all motor functions, turning androids into essentially pieces of furniture until they are ordered to awaken again.</description>
+		<geneClass>VREAndroids.Gene_SleepMode</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SleepMode</iconPath>
+		<displayOrderInCategory>19</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_MechlinkSupport</defName>
+		<label>mechlink support</label>
+		<description>Androids with this subroutine have a very mild psychic presence, allowing them to equip and operate mechlinks.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_MechlinkSupport</iconPath>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_NeutroSynthesis</defName>
+		<label>neutro synthesis</label>
+		<description>Androids with this subroutine are capable of synthesising low quantities of neutroamine by themselves. This allows them to regenerate neutro loss, but the process is extremely time consuming and energy inefficient.</description>
+		<geneClass>VREAndroids.Gene_NeutroSynthesis</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_NeutroSynthesis</iconPath>
+		<displayOrderInCategory>21</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-8</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SolarPowered</defName>
+		<label>solar powered</label>
+		<description>Androids with this subroutine are capable of regenerating reactor energy when under direct sunlight. They will also receive an energy boost during solar flares.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SolarPowered</iconPath>
+		<displayOrderInCategory>22</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-8</biostatMet>
+		<exclusionTags>
+			<li>SolarPower</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_ClearInstructions</defName>
+		<label>clear instructions</label>
+		<description>Androids with this subroutine will never fail construction and harvest tasks and will never create meals that may result in food poisoning.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ClearInstructions</iconPath>
+		<displayOrderInCategory>23</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<statOffsets>
+			<ConstructSuccessChance>1</ConstructSuccessChance>
+			<ArrestSuccessChance>1</ArrestSuccessChance>
+			<MedicalSurgerySuccessChance>1</MedicalSurgerySuccessChance>
+			<FixBrokenDownBuildingSuccessChance>1</FixBrokenDownBuildingSuccessChance>
+			<PlantHarvestYield>1</PlantHarvestYield>
+			<DrugHarvestYield>1</DrugHarvestYield>
+		</statOffsets>
+		<statFactors>
+			<FoodPoisonChance>0</FoodPoisonChance>
+		</statFactors>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SelfDestructProtocols</defName>
+		<label>self-destruct protocols</label>
+		<description>Androids with this subroutine will be able to overload their reactor, which drains the remaining power at an extreme rate, and then triggers a detonation based on how much power has been drained.</description>
+		<geneClass>VREAndroids.Gene_SelfDestructProtocols</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SelfDestructionProtocol</iconPath>
+		<displayOrderInCategory>24</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+	
 	<VREAndroids.AndroidGeneTemplateDef Name="VREA_GeneAptitudeBase" Abstract="True">
 		<geneClass>Gene</geneClass>
 		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
@@ -549,7 +645,7 @@
 		<label>incapable of {0}</label>
 		<description>Androids with this subroutine are incapable of doing any tasks related to {0} skill.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Incapable</iconPath>
-		<displayOrderOffset>20</displayOrderOffset>
+		<displayOrderOffset>30</displayOrderOffset>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>2</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
@@ -560,7 +656,7 @@
 		<description>Android's aptitude in {0} is increased by 4. Aptitude acts like an offset on skill level.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Basic</iconPath>
 		<aptitudeOffset>4</aptitudeOffset>
-		<displayOrderOffset>30</displayOrderOffset>
+		<displayOrderOffset>40</displayOrderOffset>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
@@ -571,7 +667,7 @@
 		<description>Android's aptitude in {0} is increased by 8. Aptitude acts like an offset on skill level.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Intermediate</iconPath>
 		<aptitudeOffset>8</aptitudeOffset>
-		<displayOrderOffset>40</displayOrderOffset>
+		<displayOrderOffset>50</displayOrderOffset>
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>-2</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
@@ -582,7 +678,7 @@
 		<description>Android's aptitude in {0} is increased by 12. Aptitude acts like an offset on skill level.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Advanced</iconPath>
 		<aptitudeOffset>12</aptitudeOffset>
-		<displayOrderOffset>50</displayOrderOffset>
+		<displayOrderOffset>60</displayOrderOffset>
 		<biostatCpx>3</biostatCpx>
 		<biostatMet>-3</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>
@@ -593,7 +689,7 @@
 		<description>Android's aptitude in {0} is increased by 16. Aptitude acts like an offset on skill level.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Expert</iconPath>
 		<aptitudeOffset>16</aptitudeOffset>
-		<displayOrderOffset>60</displayOrderOffset>
+		<displayOrderOffset>70</displayOrderOffset>
 		<biostatCpx>4</biostatCpx>
 		<biostatMet>-4</biostatMet>
 	</VREAndroids.AndroidGeneTemplateDef>

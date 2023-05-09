@@ -4,12 +4,12 @@ using Verse;
 
 namespace VREAndroids
 {
-    [HarmonyPatch(typeof(SocialCardUtility), "DrawTryRomance")]
-    public static class SocialCardUtility_DrawTryRomance_Patch
+    [HarmonyPatch(typeof(SocialCardUtility), "DrawRelationsAndOpinions")]
+    public static class SocialCardUtility_DrawRelationsAndOpinions_Patch
     {
-        public static bool Prefix(Pawn pawn)
+        public static bool Prefix(Pawn selPawnForSocialInfo)
         {
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !pawn.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators))
+            if (selPawnForSocialInfo.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !selPawnForSocialInfo.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators))
             {
                 return false;
             }

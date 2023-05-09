@@ -139,6 +139,17 @@ namespace VREAndroids
             return HasActiveGene(pawn, VREA_DefOf.VREA_SyntheticBody);
         }
 
+        public static void TrySpawnWaste(this Pawn pawn, IntVec3 pos, Map map)
+        {
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_ZeroWaste) is false)
+            {
+                var wasteCount = pawn.HasActiveGene(VREA_DefOf.VREA_ExtraWaste) ? 15 : 5;
+                var wastepack = ThingMaker.MakeThing(ThingDefOf.Wastepack);
+                wastepack.stackCount = wasteCount;
+                GenSpawn.Spawn(wastepack, pos, map);
+            }
+        }
+
         public static bool IsAndroidType(this XenotypeDef def)
         {
             return def.genes.Count > 0 && def.genes.All(x => x.IsAndroidGene());

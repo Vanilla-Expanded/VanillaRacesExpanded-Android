@@ -4,6 +4,7 @@ using Verse;
 
 namespace VREAndroids
 {
+
     [HarmonyPatch(typeof(CompAbilityEffect_BloodfeederBite), "Valid")]
     public static class CompAbilityEffect_BloodfeederBite_Valid_Patch
     {

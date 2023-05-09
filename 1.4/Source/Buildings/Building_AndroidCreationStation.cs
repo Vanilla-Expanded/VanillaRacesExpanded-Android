@@ -69,6 +69,10 @@ namespace VREAndroids
         public void FinishAndroidProject()
         {
             var android = PawnGenerator.GeneratePawn(new PawnGenerationRequest(VREA_DefOf.VREA_AndroidBasic, Faction.OfPlayer));
+            android.apparel.wornApparel.Clear();
+            android.equipment.equipment.Clear();
+            android.inventory.innerContainer.Clear();
+
             android.ageTracker.AgeBiologicalTicks = 0;
             android.ageTracker.AgeChronologicalTicks = 0;
             var neutroloss = HediffMaker.MakeHediff(VREA_DefOf.VREA_NeutroLoss, android);

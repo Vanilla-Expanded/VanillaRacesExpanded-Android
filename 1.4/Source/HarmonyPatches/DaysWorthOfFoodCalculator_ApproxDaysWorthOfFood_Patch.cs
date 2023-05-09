@@ -22,7 +22,6 @@ namespace VREAndroids
                 yield return codes[i];
                 if ((codes[i].opcode == OpCodes.Brfalse_S || codes[i].opcode == OpCodes.Brfalse) && codes[i - 1].Calls(eatsFood))
                 {
-                    Log.Message("Found: " + codes[i - 3]);
                     if (codes[i - 3].opcode == OpCodes.Ldloc_S)
                     {
                         yield return new CodeInstruction(OpCodes.Ldloc_S, (codes[i - 3].operand as LocalBuilder).LocalIndex);

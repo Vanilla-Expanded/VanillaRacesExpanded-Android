@@ -45,11 +45,24 @@ namespace VREAndroids
         {
             base.Tick();
             var baseDrainSpeed = (1f / (GenDate.TicksPerYear * 2f)) * PowerEfficiencyDrainMultiplier;
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_SolarPowered))
+            {
+                if (pawn.Spawned && pawn.Map.gameConditionManager.ElectricityDisabled || Find.World.gameConditionManager.ElectricityDisabled)
+                {
+                    Energy = Mathf.Min(1, Energy + baseDrainSpeed);
+                    return;
+                }
+                else if (pawn.Position.InSunlight(pawn.Map))
+                {
+                    return;
+                }
+            }
             if (pawn.HasActiveGene(VREA_DefOf.VREA_RainVulnerability) && pawn.Spawned && pawn.Position.Roofed(pawn.Map) is false
                 && pawn.Map.weatherManager.RainRate >= 0.01f)
             {
                 baseDrainSpeed *= 2f;
             }
+
             Energy = Mathf.Max(0, Energy - baseDrainSpeed);
         }
 

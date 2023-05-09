@@ -36,6 +36,7 @@
 	<VREA.PowerEfficiencyTotalDesc>The total power efficiency of all subroutines and hardware. High efficiency means an android's reactor lasts a longer time. Low efficiency means the reactor will last less time.	</VREA.PowerEfficiencyTotalDesc>
 	<VREA.PowerDrain>Power drain</VREA.PowerDrain>
 	<VREA.Android>Android</VREA.Android>
+	<VREA.CannotUseAndroid>Android cannot use this</VREA.CannotUseAndroid>
 	<VREA.CannotInstallOnAndroid>Cannot install on android</VREA.CannotInstallOnAndroid>
 	<VREA.CannotFeedOnAndroid>Cannot feed on android.</VREA.CannotFeedOnAndroid>
 	<VREA.CannotImplantGenesOnAndroid>Cannot implant genes on android.</VREA.CannotImplantGenesOnAndroid>
@@ -98,4 +99,14 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.ReplaceReactor>Replace reactor</VREA.ReplaceReactor>
 	<VREA.AndroidSummaryWithGender>{PAWN_gender} android, age {PAWN_ageFull}</VREA.AndroidSummaryWithGender>
 	<VREA.CommandAndroidStandSetOwnerDesc>Assign this stand to be owned by a specific android</VREA.CommandAndroidStandSetOwnerDesc>
+	<VREA.SleepModeOn>Sleep mode</VREA.SleepModeOn>
+	<VREA.SleepModeOnDesc>Put this android in sleep mode. Reactor and memory will not be drained, but the android will be unable to respond to anything. Can be turned off at will.</VREA.SleepModeOnDesc>
+	<VREA.SleepModeOff>Cancel Sleep mode</VREA.SleepModeOff>
+	<VREA.SleepModeOffDesc>Wake this android up from the sleep mode.</VREA.SleepModeOffDesc>
+	<VREA.SleepMode>Sleep mode</VREA.SleepMode>
+	<VREA.TriggerSelfDestruct>Trigger self-destruct</VREA.TriggerSelfDestruct>
+	<VREA.TriggerSelfDestructDesc>Initiate a self-destruct protocol, which drains the remaining reactor power at an extreme rate, triggering an explosion when it’s done.</VREA.TriggerSelfDestructDesc>
+	<VREA.CancelSelfDestruct>Cancel self-destruct</VREA.CancelSelfDestruct>
+	<VREA.CancelSelfDestructDesc>Cancel the self-destruct protocol.</VREA.CancelSelfDestructDesc>
+	<VREA.CommandAutoRepairDesc>If active, an available crafter will automatically repair an android on this {0}.</VREA.CommandAutoRepairDesc>
 </LanguageData>

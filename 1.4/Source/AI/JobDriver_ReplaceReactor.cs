@@ -27,12 +27,7 @@ namespace VREAndroids
                 {
                     var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_Reactor) as Hediff_AndroidReactor;
                     hediff.Energy = Reactor.curEnergy;
-                    if (pawn.HasActiveGene(VREA_DefOf.VREA_ZeroWaste) is false)
-                    {
-                        var wastepack = ThingMaker.MakeThing(ThingDefOf.Wastepack);
-                        wastepack.stackCount = 5;
-                        GenSpawn.Spawn(wastepack, pawn.Position, pawn.Map);
-                    }
+                    pawn.TrySpawnWaste(pawn.Position, pawn.Map);
                     Reactor.Destroy();
                 },
             };

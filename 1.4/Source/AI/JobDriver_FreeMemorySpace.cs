@@ -17,8 +17,7 @@ namespace VREAndroids
         {
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.FailOnBurningImmobile(TargetIndex.A);
-            this.FailOn(() => AndroidStand.compPower != null && AndroidStand.compPower.PowerOn is false
-                || AndroidStand.CompAssignableToPawn.AssignedPawns.Contains(pawn) is false);
+            this.FailOn(() => AndroidStand.compPower != null && AndroidStand.compPower.PowerOn is false);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.OnCell);
             Toil toil = new Toil();
             toil.initAction = delegate

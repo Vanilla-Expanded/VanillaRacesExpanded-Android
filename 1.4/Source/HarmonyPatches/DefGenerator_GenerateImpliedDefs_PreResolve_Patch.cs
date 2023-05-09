@@ -73,7 +73,7 @@ namespace VREAndroids
                 description = "VREA.ArtificalDesc".Translate() + " " + bodyPartDef.label + ".",
                 costList = new List<ThingDefCountClass>
                 {
-                    new ThingDefCountClass { thingDef = ThingDefOf.Plasteel, count = bodyPartDef.hitPoints / 2},
+                    new ThingDefCountClass { thingDef = ThingDefOf.Plasteel, count = bodyPartDef.hitPoints / 4},
                 },
                 thingClass = typeof(ThingWithComps),
                 category = ThingCategory.Item,

@@ -66,6 +66,7 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\JobDriver_RepairAndroid.cs" />
     <Compile Include="AI\JobDriver_ReplaceReactor.cs" />
     <Compile Include="AI\JobDriver_ModifyAndroid.cs" />
     <Compile Include="AI\JobDriver_FreeMemorySpace.cs" />
@@ -73,6 +74,19 @@
     <Compile Include="AI\MentalState_Reformatting.cs" />
     <Compile Include="AI\MentalState_SolarFlared.cs" />
     <Compile Include="AI\WorkGiver_CarryToSubcorePolyanalyzer.cs" />
+    <Compile Include="AI\WorkGiver_RepairAndroid.cs" />
+    <Compile Include="Buildings\Building_AndroidBed.cs" />
+    <Compile Include="Buildings\Building_AndroidSleepMode.cs" />
+    <Compile Include="Genes\Gene_NeutroSynthesis.cs" />
+    <Compile Include="Genes\Gene_SelfDestructProtocols.cs" />
+    <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
+    <Compile Include="HarmonyPatches\Designator_ExtractSkull_CanDesignateThing_Patch.cs" />
+    <Compile Include="HarmonyPatches\Dialog_InfoCard_DoWindowContents_Patch.cs" />
+    <Compile Include="HarmonyPatches\FoodUtility_IsAcceptablePreyFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\InteractionUtility_CanInitiateInteraction_Patch.cs" />
+    <Compile Include="HarmonyPatches\ITab_Pawn_Character_PawnToShowInfoAbout_Patch.cs" />
+    <Compile Include="Genes\Gene_SleepMode.cs" />
     <Compile Include="HarmonyPatches\Bill_Medical_Clone_Patch.cs" />
     <Compile Include="HarmonyPatches\Bill_Medical_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Caravan_NeedsTracker_AnyPawnOutOfFood_Patch.cs" />
