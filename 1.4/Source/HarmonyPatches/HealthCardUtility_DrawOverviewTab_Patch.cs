@@ -13,15 +13,15 @@ namespace VREAndroids
     {
         public static bool Prefix(ref float __result, Rect leftRect, Pawn pawn, float curY)
         {
-            if (pawn.IsAndroid())
+            if (pawn.IsAndroid(out var gene))
             {
-                __result = DrawOverviewTabAndroid(leftRect, pawn, curY);
+                __result = DrawOverviewTabAndroid(leftRect, pawn, gene, curY);
                 return false;
             }
             return true;
         }
 
-        private static float DrawOverviewTabAndroid(Rect leftRect, Pawn pawn, float curY)
+        private static float DrawOverviewTabAndroid(Rect leftRect, Pawn pawn, Gene_SyntheticBody gene, float curY)
         {
             curY += 4f;
             Text.Font = GameFont.Tiny;
@@ -52,6 +52,13 @@ namespace VREAndroids
                 if (Mouse.IsOver(rect3))
                 {
                     TooltipHandler.TipRegion(rect3, "SelfTendTip".Translate(Faction.OfPlayer.def.pawnsPlural, 0.7f.ToStringPercent()).CapitalizeFirst());
+                }
+                curY += 28f;
+                rect3 = new Rect(0f, curY, leftRect.width, 24f);
+                Widgets.CheckboxLabeled(rect3, "CommandAutoRepair".Translate(), ref gene.autoRepair);
+                if (Mouse.IsOver(rect3))
+                {
+                    TooltipHandler.TipRegion(rect3, "VREA.CommandAutoRepairDesc".Translate());
                 }
                 curY += 28f;
             }

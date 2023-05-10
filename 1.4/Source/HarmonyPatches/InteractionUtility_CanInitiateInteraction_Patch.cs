@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static void Postfix(Pawn pawn, ref bool __result)
         {
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !pawn.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators))
+            if (pawn.Emotionless())
             {
                 __result = false;
             }

@@ -141,6 +141,15 @@ namespace VREAndroids
                         }
                     }
                 };
+
+                if (DebugSettings.godMode)
+                {
+                    yield return new Command_Action
+                    {
+                        defaultLabel = "DEV: finish project",
+                        action = FinishAndroidProject
+                    };
+                }
             }
             else
             {

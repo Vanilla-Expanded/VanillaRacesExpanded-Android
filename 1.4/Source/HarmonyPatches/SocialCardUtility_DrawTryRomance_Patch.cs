@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn selPawnForSocialInfo)
         {
-            if (selPawnForSocialInfo.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !selPawnForSocialInfo.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators))
+            if (selPawnForSocialInfo.Emotionless())
             {
                 return false;
             }

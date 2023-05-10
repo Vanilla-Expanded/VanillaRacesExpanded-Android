@@ -20,15 +20,30 @@ namespace VREAndroids
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Pawn pawn2 = (Pawn)t;
-            if (pawn2 is null || pawn2.IsAndroid() is false)
+            if (pawn2 is null || pawn2.IsAndroid(out var gene) is false)
             {
                 return false;
             }
-            var bed = pawn2.CurrentBed() as Building_AndroidBed;
-            if (bed is null || bed.autoRepair is false)
+            if (gene.autoRepair is false)
             {
                 return false;
             }
+            if (pawn == pawn2)
+            {
+                if (!pawn.playerSettings.selfTend)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                var bed = pawn2.CurrentBed();
+                if (bed is null)
+                {
+                    return false;
+                }
+            }
+
             if (pawn2.InAggroMentalState || pawn2.HostileTo(pawn))
             {
                 return false;

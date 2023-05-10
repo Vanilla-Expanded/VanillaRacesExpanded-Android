@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn_RelationsTracker __instance)
         {
-            if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !__instance.pawn.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators))
+            if (__instance.pawn.Emotionless())
             {
                 return false;
             }

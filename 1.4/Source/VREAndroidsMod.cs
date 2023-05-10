@@ -8,10 +8,13 @@ namespace VREAndroids
     public class VREAndroidsMod : Mod
     {
         public static VREAndroidsSettings settings;
+
+        public static Harmony harmony;
         public VREAndroidsMod(ModContentPack pack) : base(pack)
         {
             settings = GetSettings<VREAndroidsSettings>();
-			new Harmony("VREAndroidsMod").PatchAll();
+            harmony = new Harmony("VREAndroidsMod");
+            harmony.PatchAll();
         }
         public override void DoSettingsWindowContents(Rect inRect)
         {

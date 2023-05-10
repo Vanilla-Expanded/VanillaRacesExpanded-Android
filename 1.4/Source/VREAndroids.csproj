@@ -75,15 +75,17 @@
     <Compile Include="AI\MentalState_SolarFlared.cs" />
     <Compile Include="AI\WorkGiver_CarryToSubcorePolyanalyzer.cs" />
     <Compile Include="AI\WorkGiver_RepairAndroid.cs" />
-    <Compile Include="Buildings\Building_AndroidBed.cs" />
     <Compile Include="Buildings\Building_AndroidSleepMode.cs" />
     <Compile Include="Genes\Gene_NeutroSynthesis.cs" />
     <Compile Include="Genes\Gene_SelfDestructProtocols.cs" />
+    <Compile Include="HarmonyPatches\Building_Bed_GetFloatMenuOptions_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\Designator_ExtractSkull_CanDesignateThing_Patch.cs" />
     <Compile Include="HarmonyPatches\Dialog_InfoCard_DoWindowContents_Patch.cs" />
     <Compile Include="HarmonyPatches\FoodUtility_IsAcceptablePreyFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\GatheringsUtility_ShouldGuestKeepAttendingGathering_Patch.cs" />
     <Compile Include="HarmonyPatches\InteractionUtility_CanInitiateInteraction_Patch.cs" />
     <Compile Include="HarmonyPatches\ITab_Pawn_Character_PawnToShowInfoAbout_Patch.cs" />
     <Compile Include="Genes\Gene_SleepMode.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="HarmonyPatches\FeedPatientUtility_ShouldBeFed_Patch.cs" />
     <Compile Include="HarmonyPatches\FoodUtility_WillEat_ThingDef_Patch.cs" />
     <Compile Include="HarmonyPatches\HealthCardUtility_DrawPawnHealthCard_Patch.cs" />
+    <Compile Include="HarmonyPatches\JobDriver_LayDown_GetReport_Patch.cs" />
     <Compile Include="HarmonyPatches\JobDriver_Resurrect_Resurrect_Patch.cs" />
     <Compile Include="HarmonyPatches\LifeStageWorkSettings_IsDisabled_Patch.cs" />
     <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSelectButton_Patch.cs" />
@@ -122,9 +125,9 @@
     <Compile Include="HarmonyPatches\RelationsUtility_RomanceEligible_Patch.cs" />
     <Compile Include="HarmonyPatches\RelationsUtility_TryDevelopBondRelation_Patch.cs" />
     <Compile Include="HarmonyPatches\RestUtility_CanUseBedEver_Patch.cs" />
+    <Compile Include="HarmonyPatches\RestUtility_FindBedFor_Patch.cs" />
     <Compile Include="HarmonyPatches\RestUtility_IsValidBedFor_Patch.cs" />
     <Compile Include="HarmonyPatches\ResurrectionUtility_ResurrectWithSideEffects_Patch.cs" />
-    <Compile Include="HarmonyPatches\ResurrectionUtility_Resurrect_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_Aptitude_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_Interval_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_Learn_Patch.cs" />
@@ -141,6 +144,7 @@
     <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_JobOnThing_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_AddEveryMedicineToRelevantThings_Patch.cs" />
+    <Compile Include="HarmonyPatches\WorkGiver_PatientGoToBedTreatment_AnyAvailableDoctorFor_Patch.cs" />
     <Compile Include="HarmonyPatches\Xenogerm_GetFloatMenuOptions_Patch.cs" />
     <Compile Include="HarmonyPatches\Xenogerm_GetGizmos_Patch.cs" />
     <Compile Include="HarmonyPatches\XenotypeDef_SpecialDisplayStats_Patch.cs" />

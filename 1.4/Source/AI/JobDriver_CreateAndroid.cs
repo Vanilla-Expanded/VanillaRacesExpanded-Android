@@ -41,6 +41,7 @@ namespace VREAndroids
                 return thing.Spawned && thing is Building_AndroidCreationStation station && station.ReadyForAssembling(pawn, out _) 
                 ? JobCondition.Ongoing : JobCondition.Incompletable;
             });
+            this.FailOn(() => Station.unfinishedAndroid != null && Station.unfinishedAndroid.Spawned is false);
             this.FailOnBurningImmobile(TargetIndex.A);
             Toil gotoStation = Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.ClosestTouch);
             if (job.targetQueueB != null)

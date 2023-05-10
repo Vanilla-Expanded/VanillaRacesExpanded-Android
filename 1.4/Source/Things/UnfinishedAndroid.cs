@@ -47,6 +47,7 @@ namespace VREAndroids
             if (station != null) 
             {
                 station.curAndroidProject = null;
+                station.unfinishedAndroid = null;
             }
             this.Destroy();
         }

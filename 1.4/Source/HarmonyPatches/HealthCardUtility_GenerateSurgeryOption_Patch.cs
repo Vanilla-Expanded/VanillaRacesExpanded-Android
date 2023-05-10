@@ -12,17 +12,21 @@ namespace VREAndroids
     {
         public static Regex regexReplaceLabel = new Regex("(.*) (\\w+)");
         public static Pawn curPawn;
-        public static void Prefix(Pawn pawn, out ThingDef __state, BodyPartRecord part = null)
+        public static void Prefix(Pawn pawn, out ThingDef __state, ref RecipeDef recipe, BodyPartRecord part = null)
         {
             curPawn = pawn;
             __state = part?.def.spawnThingOnRemoved;
-            if (curPawn.IsAndroid() && part?.def != null)
+            if (curPawn.IsAndroid())
             {
-                var counterPart = part.def.GetAndroidCounterPart();
-                if (counterPart != null)
+                if (part?.def != null)
                 {
-                    part.def.spawnThingOnRemoved = counterPart.spawnThingOnRemoved;
+                    var counterPart = part.def.GetAndroidCounterPart();
+                    if (counterPart != null)
+                    {
+                        part.def.spawnThingOnRemoved = counterPart.spawnThingOnRemoved;
+                    }
                 }
+                recipe = recipe.RecipeForAndroid();
             }
         }
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codeInstructions)

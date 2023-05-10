@@ -9,7 +9,7 @@ namespace VREAndroids
     {
         public static bool Prefix(Pawn humanlike, Pawn animal, ref float baseChance)
         {
-            if (humanlike.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !humanlike.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators))
+            if (humanlike.Emotionless())
             {
                 return false;
             }

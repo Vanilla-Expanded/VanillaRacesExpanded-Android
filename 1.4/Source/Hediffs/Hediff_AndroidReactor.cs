@@ -16,8 +16,11 @@ namespace VREAndroids
             }
             set
             {
-                curEnergy = value;
-                UpdateSeverity();
+                curEnergy = Mathf.Clamp01(value);
+                if (pawn != null)
+                {
+                    UpdateSeverity();
+                }
             }
         }
         public override void PostAdd(DamageInfo? dinfo)
@@ -47,12 +50,14 @@ namespace VREAndroids
             var baseDrainSpeed = (1f / (GenDate.TicksPerYear * 2f)) * PowerEfficiencyDrainMultiplier;
             if (pawn.HasActiveGene(VREA_DefOf.VREA_SolarPowered))
             {
-                if (pawn.Spawned && pawn.Map.gameConditionManager.ElectricityDisabled || Find.World.gameConditionManager.ElectricityDisabled)
+                var mapHeld = pawn.MapHeld;
+                if (mapHeld != null && mapHeld.gameConditionManager.ElectricityDisabled 
+                    || Find.World.gameConditionManager.ElectricityDisabled)
                 {
                     Energy = Mathf.Min(1, Energy + baseDrainSpeed);
                     return;
                 }
-                else if (pawn.Position.InSunlight(pawn.Map))
+                else if (mapHeld != null && pawn.Position.InSunlight(mapHeld))
                 {
                     return;
                 }
@@ -82,6 +87,10 @@ namespace VREAndroids
         {
             base.ExposeData();
             Scribe_Values.Look(ref curEnergy, "curEnergy");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                UpdateSeverity();
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace VREAndroids
         {
             if (__instance.billStack != null && __instance.GiverPawn.IsAndroid())
             {
-                __instance.ChangeRecipeForAndroid();
+                __instance.recipe = __instance.recipe.RecipeForAndroid();
             }
         }
     }

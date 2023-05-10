@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -22,7 +23,7 @@ namespace VREAndroids
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 0);
                     yield return new CodeInstruction(OpCodes.Callvirt, codes[i - 3].operand);
-                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Utils), nameof(Utils.IsAndroid)));
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Utils), nameof(Utils.IsAndroid), new Type[] {typeof(Pawn)}));
                     yield return new CodeInstruction(OpCodes.Brtrue_S, codes[i].operand);
                 }
             }

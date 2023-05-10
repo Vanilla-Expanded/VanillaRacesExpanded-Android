@@ -10,7 +10,7 @@ namespace VREAndroids
         {
             if (__result is Bill_Medical bill && bill.billStack != null && bill.GiverPawn.IsAndroid())
             {
-                bill.ChangeRecipeForAndroid();
+                bill.recipe = bill.recipe.RecipeForAndroid();
             }
         }
     }

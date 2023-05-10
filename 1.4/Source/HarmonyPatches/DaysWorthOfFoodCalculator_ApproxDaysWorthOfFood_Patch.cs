@@ -25,7 +25,7 @@ namespace VREAndroids
                     if (codes[i - 3].opcode == OpCodes.Ldloc_S)
                     {
                         yield return new CodeInstruction(OpCodes.Ldloc_S, (codes[i - 3].operand as LocalBuilder).LocalIndex);
-                        yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Utils), nameof(Utils.IsAndroid)));
+                        yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Utils), nameof(Utils.IsAndroid), new Type[] {typeof(Pawn)}));
                         yield return new CodeInstruction(OpCodes.Brtrue_S, codes[i].operand);
                     }
                     else if (codes[i - 3].opcode == OpCodes.Callvirt)
@@ -33,7 +33,7 @@ namespace VREAndroids
                         yield return new CodeInstruction(OpCodes.Ldarg_0);
                         yield return new CodeInstruction(OpCodes.Ldloc_S, (codes[i - 4].operand as LocalBuilder).LocalIndex);
                         yield return new CodeInstruction(OpCodes.Callvirt, codes[i - 3].operand);
-                        yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Utils), nameof(Utils.IsAndroid)));
+                        yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Utils), nameof(Utils.IsAndroid), new Type[] { typeof(Pawn) }));
                         yield return new CodeInstruction(OpCodes.Brtrue_S, codes[i].operand);
                     }
                 }

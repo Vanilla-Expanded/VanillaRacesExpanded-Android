@@ -22,6 +22,14 @@ namespace VREAndroids
                 }
                 return 0f;
             }
+            set
+            {
+                var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_Reactor) as Hediff_AndroidReactor;
+                if (hediff != null)
+                {
+                    hediff.Energy = value;
+                }
+            }
         }
 
         public override void NeedInterval()

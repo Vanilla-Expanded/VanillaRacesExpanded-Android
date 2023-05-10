@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,6 +10,7 @@ namespace VREAndroids
     [StaticConstructorOnStartup]
     public static class Utils
     {
+        public static bool DubsMintMenusActive = ModsConfig.IsActive("Dubwise.DubsMintMenus");
         public static bool HasAndroidPartThingVariant(this BodyPartDef part)
         {
             return part != BodyPartDefOf.Torso && part != BodyPartDefOf.Brain
@@ -38,6 +40,23 @@ namespace VREAndroids
             {
                 race.recipes ??= new List<RecipeDef>();
                 race.recipes.Add(VREA_DefOf.VREA_RemoveArtificalPart);
+            }
+            if (DubsMintMenusActive)
+            {
+                LongEventHandler.ExecuteWhenFinished(delegate
+                {
+                    if (DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch.Prepare())
+                    {
+                        VREAndroidsMod.harmony.Patch(DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch.TargetMethod(),
+                            prefix: new HarmonyMethod(AccessTools.Method(typeof(DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch),
+                            nameof(DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch.Prefix))));
+                    }
+                    else
+                    {
+                        Log.Error("[VREAndroids] Failed to patch Dubs Mint Menus");
+                    }
+                });
+
             }
         }
         public static List<GeneDef> AndroidGenesGenesInOrder
@@ -115,9 +134,9 @@ namespace VREAndroids
         public static bool AndroidCanCatch(HediffDef hediffDef)
         {
             var extension = hediffDef.GetModExtension<AndroidSettingsExtension>();
-            if (extension != null && extension.androidCanCatchIt)
+            if (extension != null)
             {
-                return true;
+                return extension.androidCanCatchIt;
             }
             return VREA_DefOf.VREA_AndroidSettings.androidsShouldNotReceiveHediffs.Contains(hediffDef.defName) is false
                 && (typeof(Hediff_Addiction).IsAssignableFrom(hediffDef.hediffClass)
@@ -139,6 +158,18 @@ namespace VREAndroids
             return HasActiveGene(pawn, VREA_DefOf.VREA_SyntheticBody);
         }
 
+        public static bool IsAndroid(this Pawn pawn, out Gene_SyntheticBody gene_SyntheticBody)
+        {
+            if (pawn is null)
+            {
+                Log.Error("Checking for null pawn. It shouldn't happen.");
+                gene_SyntheticBody = null;
+                return false;
+            }
+            gene_SyntheticBody = pawn.genes?.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
+            return gene_SyntheticBody != null;
+        }
+
         public static void TrySpawnWaste(this Pawn pawn, IntVec3 pos, Map map)
         {
             if (pawn.HasActiveGene(VREA_DefOf.VREA_ZeroWaste) is false)
@@ -158,31 +189,41 @@ namespace VREAndroids
         {
             return def.genes.Count > 0 && def.genes.All(x => x.IsAndroidGene());
         }
-        public static void ChangeRecipeForAndroid(this Bill_Medical __instance)
+        public static RecipeDef RecipeForAndroid(this RecipeDef originalRecipe)
         {
-            var recipe = __instance.recipe.Clone() as RecipeDef;
-            recipe.effectWorking = VREA_DefOf.ButcherMechanoid;
-            recipe.soundWorking = VREA_DefOf.Recipe_Machining;
-            recipe.workSpeedStat = VREA_DefOf.ButcheryMechanoidSpeed;
-            recipe.workSkill = SkillDefOf.Crafting;
-            recipe.skillRequirements = new List<SkillRequirement>();
-            foreach (var skillReq in __instance.recipe.skillRequirements)
+            if (originalRecipe.workSkill != SkillDefOf.Crafting)
             {
-                if (skillReq.skill == SkillDefOf.Medicine)
+                var recipe = originalRecipe.Clone() as RecipeDef;
+                recipe.effectWorking = VREA_DefOf.ButcherMechanoid;
+                recipe.soundWorking = VREA_DefOf.Recipe_Machining;
+                recipe.workSpeedStat = VREA_DefOf.ButcheryMechanoidSpeed;
+                recipe.workSkill = SkillDefOf.Crafting;
+                if (recipe.skillRequirements != null)
                 {
-                    recipe.skillRequirements.Add(new SkillRequirement { minLevel= skillReq.minLevel, skill = SkillDefOf.Crafting });
+                    recipe.skillRequirements = new List<SkillRequirement>();
+                    foreach (var skillReq in originalRecipe.skillRequirements)
+                    {
+                        if (skillReq.skill == SkillDefOf.Medicine)
+                        {
+                            recipe.skillRequirements.Add(new SkillRequirement { minLevel = skillReq.minLevel, skill = SkillDefOf.Crafting });
+                        }
+                        else
+                        {
+                            recipe.skillRequirements.Add(new SkillRequirement { minLevel = skillReq.minLevel, skill = skillReq.skill });
+                        }
+                    }
                 }
-                else
-                {
-                    recipe.skillRequirements.Add(new SkillRequirement { minLevel = skillReq.minLevel, skill = skillReq.skill });
-                }
+                recipe.ingredients = recipe.ingredients.Where(x => (x.filter?.categories != null
+                    && x.filter.categories.Contains("Medicine")) is false).ToList();
+                return recipe;
             }
-
-            recipe.ingredients = recipe.ingredients.Where(x => (x.filter?.categories != null
-                && x.filter.categories.Contains("Medicine")) is false).ToList();
-            __instance.recipe = recipe;
+            return originalRecipe;
         }
 
+        public static bool Emotionless(this Pawn pawn)
+        {
+            return pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled) && !pawn.HasActiveGene(VREA_DefOf.VREA_EmotionSimulators);
+        }
         public static object Clone(this object obj)
         {
             var cloneMethod = obj.GetType().GetMethod("MemberwiseClone", BindingFlags.Instance | BindingFlags.NonPublic);

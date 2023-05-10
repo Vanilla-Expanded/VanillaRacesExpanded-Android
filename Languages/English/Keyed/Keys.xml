@@ -108,5 +108,9 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.TriggerSelfDestructDesc>Initiate a self-destruct protocol, which drains the remaining reactor power at an extreme rate, triggering an explosion when it’s done.</VREA.TriggerSelfDestructDesc>
 	<VREA.CancelSelfDestruct>Cancel self-destruct</VREA.CancelSelfDestruct>
 	<VREA.CancelSelfDestructDesc>Cancel the self-destruct protocol.</VREA.CancelSelfDestructDesc>
-	<VREA.CommandAutoRepairDesc>If active, an available crafter will automatically repair an android on this {0}.</VREA.CommandAutoRepairDesc>
+	<VREA.CommandAutoRepairDesc>If set active, an available crafter will automatically repair this android when laying in bed. If self tend is enabled, androids will be able to repair themselves in place.</VREA.CommandAutoRepairDesc>
+	<VREA.UseBedAndroid>Lay until repaired</VREA.UseBedAndroid>
+	<VREA.NoCrafter>no crafter</VREA.NoCrafter>
+	<VREA.NotSetToAutoRepair>not set to auto-repair</VREA.NotSetToAutoRepair>
+	<VREA.Laying>Laying.</VREA.Laying>
 </LanguageData>

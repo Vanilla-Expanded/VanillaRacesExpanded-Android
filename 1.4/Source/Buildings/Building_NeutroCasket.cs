@@ -8,7 +8,7 @@ using Verse;
 namespace VREAndroids
 {
     [HotSwappable]
-    public class Building_NeutroCasket : Building_AndroidBed
+    public class Building_NeutroCasket : Building_Bed
     {
         protected CompRefuelable compRefuelable;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
