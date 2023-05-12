@@ -110,7 +110,7 @@
     <Compile Include="HarmonyPatches\LifeStageWorkSettings_IsDisabled_Patch.cs" />
     <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSelectButton_Patch.cs" />
     <Compile Include="HarmonyPatches\MoteMaker_MakeMoodThoughtBubble_Patch.cs" />
-    <Compile Include="HarmonyPatches\PawnBreathMoteMaker_RestorePartRecursiveInt_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnBreathMoteMaker_ProcessPostTickVisuals_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnColumnWorker_FoodRestriction_DoAssignFoodRestrictionButtons_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnComponentsUtility_AddAndRemoveDynamicComponents.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GeneratePawnRelations_Patch.cs" />
