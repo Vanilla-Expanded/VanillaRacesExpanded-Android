@@ -19,7 +19,7 @@ namespace VREAndroids
                 for (int i = 0; i < list.Count; i++)
                 {
                     Pawn pawn = list[i] as Pawn;
-                    if (pawn != null && pawn.IsAndroid())
+                    if (pawn != null && pawn.IsAndroid() && pawn.pather.moving is false)
                     {
                         return pawn;
                     }
@@ -112,7 +112,7 @@ namespace VREAndroids
             }
             if (!RestUtility.CanUseBedNow(this, selPawn, checkSocialProperness: false))
             {
-                return "CannotUse".Translate();
+                return "VREA.CannotUse".Translate();
             }
             return null;
         }

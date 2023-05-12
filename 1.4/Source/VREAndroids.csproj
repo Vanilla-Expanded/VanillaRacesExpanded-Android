@@ -73,6 +73,7 @@
     <Compile Include="AI\JobGiver_FreeMemorySpace.cs" />
     <Compile Include="AI\MentalState_Reformatting.cs" />
     <Compile Include="AI\MentalState_SolarFlared.cs" />
+    <Compile Include="AI\WorkGiver_CarryToAndroidBehavioristStation.cs" />
     <Compile Include="AI\WorkGiver_CarryToSubcorePolyanalyzer.cs" />
     <Compile Include="AI\WorkGiver_RepairAndroid.cs" />
     <Compile Include="Buildings\Building_AndroidSleepMode.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="HarmonyPatches\Dialog_InfoCard_DoWindowContents_Patch.cs" />
     <Compile Include="HarmonyPatches\FoodUtility_IsAcceptablePreyFor_Patch.cs" />
     <Compile Include="HarmonyPatches\GatheringsUtility_ShouldGuestKeepAttendingGathering_Patch.cs" />
+    <Compile Include="HarmonyPatches\InspectPaneFiller_DrawMood_Patch.cs" />
     <Compile Include="HarmonyPatches\InteractionUtility_CanInitiateInteraction_Patch.cs" />
     <Compile Include="HarmonyPatches\ITab_Pawn_Character_PawnToShowInfoAbout_Patch.cs" />
     <Compile Include="Genes\Gene_SleepMode.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="HarmonyPatches\LifeStageWorkSettings_IsDisabled_Patch.cs" />
     <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSelectButton_Patch.cs" />
     <Compile Include="HarmonyPatches\MoteMaker_MakeMoodThoughtBubble_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnBreathMoteMaker_RestorePartRecursiveInt_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnColumnWorker_FoodRestriction_DoAssignFoodRestrictionButtons_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnComponentsUtility_AddAndRemoveDynamicComponents.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GeneratePawnRelations_Patch.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="HarmonyPatches\PawnUtility_GetPosture_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_AgeTracker_BirthdayBiological_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_AgeTracker_RecalculateLifeStageIndex_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_StoryTracker_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StyleTracker_CanDesireLookChange_Patch.cs" />
     <Compile Include="HarmonyPatches\RaceProperties_CanEverEat_Patch.cs" />
     <Compile Include="HarmonyPatches\RecipeDef_AvailableNow_Patch.cs" />
@@ -132,7 +136,7 @@
     <Compile Include="HarmonyPatches\SkillRecord_Interval_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillRecord_Learn_Patch.cs" />
     <Compile Include="HarmonyPatches\SkillUI_GetSkillDescription_Patch.cs" />
-    <Compile Include="HarmonyPatches\SocialCardUtility_DrawTryRomance_Patch.cs" />
+    <Compile Include="HarmonyPatches\SocialCardUtility_DrawRelationsAndOpinions_Patch.cs" />
     <Compile Include="HarmonyPatches\StatPart_Age_ActiveFor_Patch.cs" />
     <Compile Include="HarmonyPatches\StatWorker_ShouldShowFor_Patch.cs" />
     <Compile Include="HarmonyPatches\StunHandler_Notify_DamageApplied_Patch.cs" />

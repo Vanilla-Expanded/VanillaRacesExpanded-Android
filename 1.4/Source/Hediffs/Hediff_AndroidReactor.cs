@@ -7,6 +7,9 @@ namespace VREAndroids
     [HotSwappable]
     public class Hediff_AndroidReactor : Hediff_AndroidPart
     {
+
+        private Need_ReactorPower needInt;
+        public Need_ReactorPower NeedReactor => needInt ??= pawn.needs.TryGetNeed<Need_ReactorPower>();
         private float curEnergy;
         public float Energy 
         { 
@@ -17,6 +20,7 @@ namespace VREAndroids
             set
             {
                 curEnergy = Mathf.Clamp01(value);
+                NeedReactor.curLevelInt = curEnergy;
                 if (pawn != null)
                 {
                     UpdateSeverity();

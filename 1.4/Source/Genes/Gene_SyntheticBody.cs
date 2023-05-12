@@ -45,7 +45,7 @@ namespace VREAndroids
                     }
                     pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk);
                 }
-                if (pawn.needs.mood.CurLevel >= 0.95f && Rand.Chance(0.01f))
+                if (pawn.needs.mood.CurLevel >= 0.8f && Rand.Chance(0.01f))
                 {
                     Awaken();
                     Find.LetterStack.ReceiveLetter("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")),

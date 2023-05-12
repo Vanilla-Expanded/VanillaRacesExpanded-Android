@@ -20,6 +20,7 @@
 		<modExtensions>
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
 			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>
@@ -30,6 +31,7 @@
 		<modExtensions>
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Subroutine</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Subroutine</backgroundPathEndogenes>
 			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>
@@ -174,6 +176,7 @@
 		<modExtensions Inherit="False">
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
 				<customBloodThingDef>VREA_Filth_Neutroamine</customBloodThingDef>
 				<customBloodIcon>UI/Icons/NeutrolossIcon</customBloodIcon>
 				<customBloodEffect>VREA_Damage_HitAndroid</customBloodEffect>
@@ -322,6 +325,7 @@
 		<modExtensions Inherit="False">
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
 				<useSkinColorForFur>true</useSkinColorForFur>
 			</li>
 		</modExtensions>

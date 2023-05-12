@@ -13,6 +13,7 @@ namespace VREAndroids
         {
 
         }
+
         public override void SetInitialLevel()
         {
             this.curLevelInt = Rand.Range(0.1f, 0.9f);

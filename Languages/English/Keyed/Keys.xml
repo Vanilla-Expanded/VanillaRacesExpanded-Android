@@ -113,4 +113,6 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.NoCrafter>no crafter</VREA.NoCrafter>
 	<VREA.NotSetToAutoRepair>not set to auto-repair</VREA.NotSetToAutoRepair>
 	<VREA.Laying>Laying.</VREA.Laying>
+	<VREA.CannotUse>cannot use this</VREA.CannotUse>
+	<VREA.RefusesReprogramming>refuses reprogramming</VREA.RefusesReprogramming>
 </LanguageData>

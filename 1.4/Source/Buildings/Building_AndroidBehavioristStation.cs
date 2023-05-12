@@ -102,6 +102,15 @@ namespace VREAndroids
             {
                 return false;
             }
+            var geneSyntheticBody = selPawn.genes.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
+            if (geneSyntheticBody.Awakened && selPawn.IsColonist)
+            {
+                return "VREA.RefusesReprogramming".Translate();
+            }
+            if (selPawn.IsQuestLodger())
+            {
+                return "CryptosleepCasketGuestsNotAllowed".Translate();
+            }
             if (selectedPawn != null && selectedPawn != selPawn)
             {
                 return false;
