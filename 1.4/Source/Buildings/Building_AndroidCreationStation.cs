@@ -97,7 +97,7 @@ namespace VREAndroids
             GenSpawn.Spawn(android, Position, Map);
             currentWorkAmountDone = 0;
             totalWorkAmount = 0;
-            unfinishedAndroid.Destroy();
+            unfinishedAndroid?.Destroy();
             unfinishedAndroid = null;
         }
 

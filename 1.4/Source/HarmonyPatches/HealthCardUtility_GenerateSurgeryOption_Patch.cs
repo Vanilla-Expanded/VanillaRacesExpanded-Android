@@ -62,7 +62,7 @@ namespace VREAndroids
                     }
                     else
                     {
-                        return regexReplaceLabel.Replace(newLabel, "$1 " + "VREA.Artifical".Translate().ToLower() + " $2");
+                        return regexReplaceLabel.Replace(newLabel, "$1 " + "VREA.Artificial".Translate().ToLower() + " $2");
                     }
                 }
                 else

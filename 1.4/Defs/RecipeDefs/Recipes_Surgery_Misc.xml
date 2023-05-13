@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <RecipeDef Abstract="True" Name="VREA_SurgeryAndroid">
@@ -10,11 +10,11 @@
   </RecipeDef>
 
   <RecipeDef ParentName="VREA_SurgeryAndroid">
-    <defName>VREA_RemoveArtificalPart</defName>
+    <defName>VREA_RemoveArtificialPart</defName>
     <label>remove component</label>
-    <description>Remove an artifical part.</description>
-    <workerClass>VREAndroids.Recipe_RemoveArtificalBodyPart</workerClass>
-    <jobString>Removing artifical body part.</jobString>
+    <description>Remove an artificial part.</description>
+    <workerClass>VREAndroids.Recipe_RemoveArtificialBodyPart</workerClass>
+    <jobString>Removing artificial body part.</jobString>
     <workAmount>2000</workAmount>
     <surgerySuccessChanceFactor>1.2</surgerySuccessChanceFactor>
   </RecipeDef>

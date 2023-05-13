@@ -36,11 +36,11 @@ namespace VREAndroids
             {
                 return false;
             }
-            if (recipeWorker is Recipe_RemoveBodyPart && recipeWorker is not Recipe_RemoveArtificalBodyPart)
+            if (recipeWorker is Recipe_RemoveBodyPart && recipeWorker is not Recipe_RemoveArtificialBodyPart)
             {
                 return false;
             }
-            if (pawn.def.recipes.Contains(recipeWorker.recipe) && recipeWorker.recipe != VREA_DefOf.VREA_RemoveArtificalPart)
+            if (pawn.def.recipes.Contains(recipeWorker.recipe) && recipeWorker.recipe != VREA_DefOf.VREA_RemoveArtificialPart)
             {
                 return false;
             }

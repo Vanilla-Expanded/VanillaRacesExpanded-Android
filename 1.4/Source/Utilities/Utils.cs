@@ -36,10 +36,11 @@ namespace VREAndroids
         private static List<GeneDef> cachedGeneDefsInOrder = null;
         static Utils()
         {
+            Log.Message("Startup");
             foreach (var race in DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.race != null && x.race.Humanlike))
             {
                 race.recipes ??= new List<RecipeDef>();
-                race.recipes.Add(VREA_DefOf.VREA_RemoveArtificalPart);
+                race.recipes.Add(VREA_DefOf.VREA_RemoveArtificialPart);
             }
             if (DubsMintMenusActive)
             {

@@ -5,7 +5,7 @@ using Verse;
 
 namespace VREAndroids
 {
-    public class Recipe_RemoveArtificalBodyPart : Recipe_RemoveBodyPart
+    public class Recipe_RemoveArtificialBodyPart : Recipe_RemoveBodyPart
     {
         public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
         {

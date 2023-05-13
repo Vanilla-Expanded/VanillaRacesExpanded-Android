@@ -44,13 +44,6 @@ namespace VREAndroids
                     pawn.skills.Learn(SkillDefOf.Crafting, 0.05f);
                 }
             };
-            toil.AddFinishAction(delegate
-            {
-                if (Android.jobs?.curJob != null)
-                {
-                    Android.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                }
-            });
             toil.AddEndCondition(() => CanRepairAndroid(Android) ? JobCondition.Ongoing : JobCondition.Succeeded);
             toil.activeSkill = () => SkillDefOf.Crafting;
             yield return toil;

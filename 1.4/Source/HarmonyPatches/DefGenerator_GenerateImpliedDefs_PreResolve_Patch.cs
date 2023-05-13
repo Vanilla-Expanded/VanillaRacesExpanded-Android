@@ -69,8 +69,8 @@ namespace VREAndroids
             return new ThingDef
             {
                 defName = "VREA_" + bodyPartDef.defName,
-                label = "VREA.Artifical".Translate().ToLower() + " " + bodyPartDef.label,
-                description = "VREA.ArtificalDesc".Translate() + " " + bodyPartDef.label + ".",
+                label = "VREA.Artificial".Translate().ToLower() + " " + bodyPartDef.label,
+                description = "VREA.ArtificialDesc".Translate() + " " + bodyPartDef.label + ".",
                 costList = new List<ThingDefCountClass>
                 {
                     new ThingDefCountClass { thingDef = ThingDefOf.Plasteel, count = bodyPartDef.hitPoints / 4},
@@ -141,7 +141,7 @@ namespace VREAndroids
 
         public static HediffDef GetAndroidPartHediff(BodyPartDef bodyPartDef, ThingDef ingredient)
         {
-            var label = "VREA.Artifical".Translate().ToLower() + " " + bodyPartDef.label;
+            var label = "VREA.Artificial".Translate().ToLower() + " " + bodyPartDef.label;
             var hediffDef = new HediffDef
             {
                 defName = "VREA_" + bodyPartDef.defName,

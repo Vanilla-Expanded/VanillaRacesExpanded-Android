@@ -308,10 +308,10 @@
   </RecipeDef>
 
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
-    <defName>VREA_ArtificalBrain</defName>
-    <label>artifical brain</label>
-    <labelNoun>an artifical brain</labelNoun>
-    <description>An installed artifical brain.</description>
+    <defName>VREA_ArtificialBrain</defName>
+    <label>artificial brain</label>
+    <labelNoun>an artificial brain</labelNoun>
+    <description>An installed artificial brain.</description>
 	<addedPartProps>
 		<solid>true</solid>
 	</addedPartProps>
@@ -425,38 +425,38 @@
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
-    <defName>VREA_ArtificalNose</defName>
-    <label>artifical nose</label>
-    <labelNoun>an artifical nose</labelNoun>
-    <description>An installed artifical nose.</description>
-    <descriptionHyperlinks><ThingDef>VREA_ArtificalNose</ThingDef></descriptionHyperlinks>
-    <spawnThingOnRemoved>VREA_ArtificalNose</spawnThingOnRemoved>
+    <defName>VREA_ArtificialNose</defName>
+    <label>artificial nose</label>
+    <labelNoun>an artificial nose</labelNoun>
+    <description>An installed artificial nose.</description>
+    <descriptionHyperlinks><ThingDef>VREA_ArtificialNose</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>VREA_ArtificialNose</spawnThingOnRemoved>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
-    <defName>VREA_ArtificalNose</defName>
-    <label>artifical nose</label>
+    <defName>VREA_ArtificialNose</defName>
+    <label>artificial nose</label>
     <description>A synthetic, android nose. Allows the android to detect smells.</description>
-    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalNose</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificialNose</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>5</Plasteel>
     </costList>
   </ThingDef>
 
   <RecipeDef ParentName="VREA_SurgeryInstallBodyPartAndroidBase">
-    <defName>VREA_InstallArtificalNose</defName>
-    <label>install artifical nose</label>
-    <description>Install an artifical nose.</description>
+    <defName>VREA_InstallArtificialNose</defName>
+    <label>install artificial nose</label>
+    <description>Install an artificial nose.</description>
     <descriptionHyperlinks>
-      <ThingDef>VREA_ArtificalNose</ThingDef>
-      <HediffDef>VREA_ArtificalNose</HediffDef>
+      <ThingDef>VREA_ArtificialNose</ThingDef>
+      <HediffDef>VREA_ArtificialNose</HediffDef>
     </descriptionHyperlinks>
-    <jobString>Installing artifical nose.</jobString>
+    <jobString>Installing artificial nose.</jobString>
     <ingredients>
       <li>
         <filter>
           <thingDefs>
-            <li>VREA_ArtificalNose</li>
+            <li>VREA_ArtificialNose</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -464,49 +464,49 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>VREA_ArtificalNose</li>
+        <li>VREA_ArtificialNose</li>
       </thingDefs>
     </fixedIngredientFilter>
     <appliedOnFixedBodyParts>
       <li>Nose</li>
     </appliedOnFixedBodyParts>
-    <addsHediff>VREA_ArtificalNose</addsHediff>
-	<uiIconThing>VREA_ArtificalNose</uiIconThing>
+    <addsHediff>VREA_ArtificialNose</addsHediff>
+	<uiIconThing>VREA_ArtificialNose</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
-    <defName>VREA_ArtificalJaw</defName>
-    <label>artifical jaw</label>
-    <labelNoun>an artifical jaw</labelNoun>
-    <description>An installed artifical jaw.</description>
-    <descriptionHyperlinks><ThingDef>VREA_ArtificalJaw</ThingDef></descriptionHyperlinks>
-    <spawnThingOnRemoved>VREA_ArtificalJaw</spawnThingOnRemoved>
+    <defName>VREA_ArtificialJaw</defName>
+    <label>artificial jaw</label>
+    <labelNoun>an artificial jaw</labelNoun>
+    <description>An installed artificial jaw.</description>
+    <descriptionHyperlinks><ThingDef>VREA_ArtificialJaw</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>VREA_ArtificialJaw</spawnThingOnRemoved>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
-    <defName>VREA_ArtificalJaw</defName>
-    <label>artifical jaw</label>
+    <defName>VREA_ArtificialJaw</defName>
+    <label>artificial jaw</label>
     <description>A synthetic, android jaw.</description>
-    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalJaw</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificialJaw</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
     </costList>
   </ThingDef>
 
   <RecipeDef ParentName="VREA_SurgeryInstallBodyPartAndroidBase">
-    <defName>VREA_InstallArtificalJaw</defName>
-    <label>install artifical jaw</label>
-    <description>Install an artifical jaw.</description>
+    <defName>VREA_InstallArtificialJaw</defName>
+    <label>install artificial jaw</label>
+    <description>Install an artificial jaw.</description>
     <descriptionHyperlinks>
-      <ThingDef>VREA_ArtificalJaw</ThingDef>
-      <HediffDef>VREA_ArtificalJaw</HediffDef>
+      <ThingDef>VREA_ArtificialJaw</ThingDef>
+      <HediffDef>VREA_ArtificialJaw</HediffDef>
     </descriptionHyperlinks>
-    <jobString>Installing artifical jaw.</jobString>
+    <jobString>Installing artificial jaw.</jobString>
     <ingredients>
       <li>
         <filter>
           <thingDefs>
-            <li>VREA_ArtificalJaw</li>
+            <li>VREA_ArtificialJaw</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -514,52 +514,52 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>VREA_ArtificalJaw</li>
+        <li>VREA_ArtificialJaw</li>
       </thingDefs>
     </fixedIngredientFilter>
     <appliedOnFixedBodyParts>
       <li>Jaw</li>
     </appliedOnFixedBodyParts>
-    <addsHediff>VREA_ArtificalJaw</addsHediff>
-	<uiIconThing>VREA_ArtificalJaw</uiIconThing>
+    <addsHediff>VREA_ArtificialJaw</addsHediff>
+	<uiIconThing>VREA_ArtificialJaw</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
-    <defName>VREA_ArtificalRibcage</defName>
-    <label>artifical ribcage</label>
-    <labelNoun>an artifical ribcage</labelNoun>
-    <description>An installed artifical ribcage.</description>
-    <descriptionHyperlinks><ThingDef>VREA_ArtificalRibcage</ThingDef></descriptionHyperlinks>
-    <spawnThingOnRemoved>VREA_ArtificalRibcage</spawnThingOnRemoved>
+    <defName>VREA_ArtificialRibcage</defName>
+    <label>artificial ribcage</label>
+    <labelNoun>an artificial ribcage</labelNoun>
+    <description>An installed artificial ribcage.</description>
+    <descriptionHyperlinks><ThingDef>VREA_ArtificialRibcage</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>VREA_ArtificialRibcage</spawnThingOnRemoved>
 	<addedPartProps>
 		<solid>true</solid>
 	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
-    <defName>VREA_ArtificalRibcage</defName>
-    <label>artifical ribcage</label>
+    <defName>VREA_ArtificialRibcage</defName>
+    <label>artificial ribcage</label>
     <description>A synthetic, android ribcage.</description>
-    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalRibcage</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificialRibcage</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
     </costList>
   </ThingDef>
 
   <RecipeDef ParentName="VREA_SurgeryInstallBodyPartAndroidBase">
-    <defName>VREA_InstallArtificalRibcage</defName>
-    <label>install artifical ribcage</label>
-    <description>Install an artifical ribcage.</description>
+    <defName>VREA_InstallArtificialRibcage</defName>
+    <label>install artificial ribcage</label>
+    <description>Install an artificial ribcage.</description>
     <descriptionHyperlinks>
-      <ThingDef>VREA_ArtificalRibcage</ThingDef>
-      <HediffDef>VREA_ArtificalRibcage</HediffDef>
+      <ThingDef>VREA_ArtificialRibcage</ThingDef>
+      <HediffDef>VREA_ArtificialRibcage</HediffDef>
     </descriptionHyperlinks>
-    <jobString>Installing artifical ribcage.</jobString>
+    <jobString>Installing artificial ribcage.</jobString>
     <ingredients>
       <li>
         <filter>
           <thingDefs>
-            <li>VREA_ArtificalRibcage</li>
+            <li>VREA_ArtificialRibcage</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -567,33 +567,33 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>VREA_ArtificalRibcage</li>
+        <li>VREA_ArtificialRibcage</li>
       </thingDefs>
     </fixedIngredientFilter>
     <appliedOnFixedBodyParts>
       <li>Ribcage</li>
     </appliedOnFixedBodyParts>
-    <addsHediff>VREA_ArtificalRibcage</addsHediff>
-	<uiIconThing>VREA_ArtificalRibcage</uiIconThing>
+    <addsHediff>VREA_ArtificialRibcage</addsHediff>
+	<uiIconThing>VREA_ArtificialRibcage</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
-    <defName>VREA_ArtificalSpine</defName>
-    <label>artifical spine</label>
-    <labelNoun>an artifical spine</labelNoun>
-    <description>An installed artifical spine.</description>
-    <descriptionHyperlinks><ThingDef>VREA_ArtificalSpine</ThingDef></descriptionHyperlinks>
-    <spawnThingOnRemoved>VREA_ArtificalSpine</spawnThingOnRemoved>
+    <defName>VREA_ArtificialSpine</defName>
+    <label>artificial spine</label>
+    <labelNoun>an artificial spine</labelNoun>
+    <description>An installed artificial spine.</description>
+    <descriptionHyperlinks><ThingDef>VREA_ArtificialSpine</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>VREA_ArtificialSpine</spawnThingOnRemoved>
 	<addedPartProps>
 		<solid>true</solid>
 	</addedPartProps>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
-    <defName>VREA_ArtificalSpine</defName>
-    <label>artifical spine</label>
+    <defName>VREA_ArtificialSpine</defName>
+    <label>artificial spine</label>
     <description>A synthetic, android spine.</description>
-    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificalSpine</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>VREA_InstallArtificialSpine</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
       <Gold>1</Gold>
@@ -601,19 +601,19 @@
   </ThingDef>
 
   <RecipeDef ParentName="VREA_SurgeryInstallBodyPartAndroidBase">
-    <defName>VREA_InstallArtificalSpine</defName>
-    <label>install artifical spine</label>
-    <description>Install an artifical spine.</description>
+    <defName>VREA_InstallArtificialSpine</defName>
+    <label>install artificial spine</label>
+    <description>Install an artificial spine.</description>
     <descriptionHyperlinks>
-      <ThingDef>VREA_ArtificalSpine</ThingDef>
-      <HediffDef>VREA_ArtificalSpine</HediffDef>
+      <ThingDef>VREA_ArtificialSpine</ThingDef>
+      <HediffDef>VREA_ArtificialSpine</HediffDef>
     </descriptionHyperlinks>
-    <jobString>Installing artifical spine.</jobString>
+    <jobString>Installing artificial spine.</jobString>
     <ingredients>
       <li>
         <filter>
           <thingDefs>
-            <li>VREA_ArtificalSpine</li>
+            <li>VREA_ArtificialSpine</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -621,14 +621,14 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>VREA_ArtificalSpine</li>
+        <li>VREA_ArtificialSpine</li>
       </thingDefs>
     </fixedIngredientFilter>
     <appliedOnFixedBodyParts>
       <li>Spine</li>
     </appliedOnFixedBodyParts>
-    <addsHediff>VREA_ArtificalSpine</addsHediff>
-	<uiIconThing>VREA_ArtificalSpine</uiIconThing>
+    <addsHediff>VREA_ArtificialSpine</addsHediff>
+	<uiIconThing>VREA_ArtificialSpine</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">

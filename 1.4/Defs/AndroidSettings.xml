@@ -13,6 +13,7 @@
 			<li>DBHThirst</li>
 			<li>FoodVariety</li>
 			<li>CultMindedness</li>
+			<li>VME_Desserts</li>
 		</excludedNeedsForAndroids>
         <androidExclusiveNeeds>
 			<li>VREA_FoodSuppressed</li>

@@ -31,7 +31,8 @@ namespace VREAndroids
         public Window_CreateAndroidBase(Action callback)
         {
             this.callback = callback;
-            xenotypeName = string.Empty;
+            xenotypeName = GetAndroidTypeName();
+            forcePause = true;
             absorbInputAroundWindow = true;
             alwaysUseFullBiostatsTableHeight = true;
             searchWidgetOffsetX = ButSize.x * 2f + 4f;

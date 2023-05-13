@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Linq;
 using Verse;
 namespace VREAndroids
 {
@@ -6,7 +7,7 @@ namespace VREAndroids
 	{
 		public override ThoughtState ShouldHaveThought(Pawn p)
 		{
-			if (!ModsConfig.BiotechActive || !ModsConfig.IdeologyActive || p.Faction == null)
+			if (!ModsConfig.BiotechActive || !ModsConfig.IdeologyActive || p.Faction == null || p.MapHeld is null)
 			{
 				return ThoughtState.Inactive;
 			}
@@ -19,6 +20,15 @@ namespace VREAndroids
 					num++;
 				}
 			}
+
+            foreach (var androidSleepMode in p.MapHeld.listerThings.ThingsOfDef(VREA_DefOf.VREA_AndroidSleepMode).OfType<Building_AndroidSleepMode>())
+            {
+                if (androidSleepMode.android.Faction == p.Faction)
+                {
+                    num++;
+                }
+            }
+
             if (num > 10)
             {
 				num = 10;
