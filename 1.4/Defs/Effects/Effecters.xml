@@ -67,7 +67,7 @@
 	</ThingDef>
 	
   <EffecterDef>
-    <defName>VREA_AndroidAwakened</defName>
+    <defName>VREA_AndroidAwakenedEffect</defName>
     <children>
       <li>
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>

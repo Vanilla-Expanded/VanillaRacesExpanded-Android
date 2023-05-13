@@ -69,6 +69,7 @@ namespace VREAndroids
         public static HistoryEventDef VRE_AndroidDied;
         [MayRequireIdeology]
         public static PreceptDef VRE_Androids_Tools;
+        public static QuestScriptDef VREA_Quest_AndroidJoins;
 
         public static GeneDef VREA_FireVulnerability, VREA_RainVulnerability, VREA_ColdEfficiency, VREA_Uncontrollable, 
             VREA_AntiAwakeningProtocols, VREA_EmotionSimulators, VREA_PresenceFirewall, VREA_ZeroWaste, VREA_SelfRecharge, VREA_MemoryDecay;
@@ -79,7 +80,8 @@ namespace VREAndroids
         public static RecipeDef VREA_ButcherCorpseAndroid;
         public static RecipeDef ButcherCorpseFlesh;
         public static GeneDef VREA_PainDisabled;
-        public static EffecterDef VREA_AndroidAwakened;
+        public static XenotypeDef VREA_AndroidAwakened;
+        public static EffecterDef VREA_AndroidAwakenedEffect;
         public static ThingDef VREA_AndroidAwakenedMote;
         public static ThingDef VREA_AndroidStand, VREA_AndroidStandSpot;
         public static BodyPartDef Skull;
