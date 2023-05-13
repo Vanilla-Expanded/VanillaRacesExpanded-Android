@@ -73,7 +73,7 @@ namespace VREAndroids
                 pawn.Name = storedTripleName;
             }
             MoteMaker.MakeColonistActionOverlay(pawn, VREA_DefOf.VREA_AndroidAwakenedMote);
-            VREA_DefOf.VREA_AndroidAwakened.SpawnAttached(pawn, pawn.Map);
+            VREA_DefOf.VREA_AndroidAwakenedEffect.SpawnAttached(pawn, pawn.Map);
         }
 
         public override void ExposeData()
