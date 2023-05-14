@@ -12,7 +12,7 @@ namespace VREAndroids
         public static bool isPawnRendering;
         public static bool Prefix(Pawn p, ref PawnPosture __result)
         {
-            if (isPawnRendering && p.Spawned)
+            if (isPawnRendering && p.pather?.moving is false && p.Spawned)
             {
                 List<Thing> thingList = p.Position.GetThingList(p.Map);
                 for (int i = 0; i < thingList.Count; i++)

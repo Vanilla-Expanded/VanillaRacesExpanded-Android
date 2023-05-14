@@ -80,6 +80,7 @@
     <Compile Include="Genes\Gene_NeutroSynthesis.cs" />
     <Compile Include="Genes\Gene_SelfDestructProtocols.cs" />
     <Compile Include="HarmonyPatches\Building_Bed_GetFloatMenuOptions_Patch.cs" />
+    <Compile Include="CachedResult.cs" />
     <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="HarmonyPatches\Dialog_InfoCard_DoWindowContents_Patch.cs" />
     <Compile Include="HarmonyPatches\FoodUtility_IsAcceptablePreyFor_Patch.cs" />
     <Compile Include="HarmonyPatches\GatheringsUtility_ShouldGuestKeepAttendingGathering_Patch.cs" />
+    <Compile Include="HarmonyPatches\GenLabel_BestKindLabel_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\Hediff_Psylink_ChangeLevel_Patch.cs" />
     <Compile Include="HarmonyPatches\InspectPaneFiller_DrawMood_Patch.cs" />

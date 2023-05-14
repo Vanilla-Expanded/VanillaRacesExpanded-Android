@@ -20,9 +20,13 @@ namespace VREAndroids
             set
             {
                 curEnergy = Mathf.Clamp01(value);
-                NeedReactor.curLevelInt = curEnergy;
                 if (pawn != null)
                 {
+                    var need = NeedReactor;
+                    if (need != null)
+                    {
+                        need.curLevelInt = curEnergy;
+                    }
                     UpdateSeverity();
                 }
             }
@@ -48,31 +52,38 @@ namespace VREAndroids
                 return AndroidStatsTable.PowerEfficiencyToPowerDrainFactorCurve.Evaluate(efficiency);
             }
         }
+
+        public const int AndroidReactorTickRate = 60;
         public override void Tick()
         {
             base.Tick();
-            var baseDrainSpeed = (1f / (GenDate.TicksPerYear * 2f)) * PowerEfficiencyDrainMultiplier;
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_SolarPowered))
+            if (pawn.IsHashIntervalTick(AndroidReactorTickRate))
             {
-                var mapHeld = pawn.MapHeld;
-                if (mapHeld != null && mapHeld.gameConditionManager.ElectricityDisabled 
-                    || Find.World.gameConditionManager.ElectricityDisabled)
+                var baseDrainSpeed = (1f / (GenDate.TicksPerYear * 2f)) * PowerEfficiencyDrainMultiplier;
+                baseDrainSpeed *= AndroidReactorTickRate;
+                if (pawn.HasActiveGene(VREA_DefOf.VREA_SolarPowered))
                 {
-                    Energy = Mathf.Min(1, Energy + baseDrainSpeed);
-                    return;
+                    var mapHeld = pawn.MapHeld;
+                    if (mapHeld != null && mapHeld.gameConditionManager.ElectricityDisabled
+                        || Find.World.gameConditionManager.ElectricityDisabled)
+                    {
+                        Energy = Mathf.Min(1, Energy + baseDrainSpeed);
+                        return;
+                    }
+                    else if (mapHeld != null && pawn.Position.InSunlight(mapHeld))
+                    {
+                        return;
+                    }
                 }
-                else if (mapHeld != null && pawn.Position.InSunlight(mapHeld))
+                if (pawn.HasActiveGene(VREA_DefOf.VREA_RainVulnerability) && pawn.Spawned && pawn.Position.Roofed(pawn.Map) is false
+                    && pawn.Map.weatherManager.RainRate >= 0.01f)
                 {
-                    return;
+                    baseDrainSpeed *= 2f;
                 }
-            }
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_RainVulnerability) && pawn.Spawned && pawn.Position.Roofed(pawn.Map) is false
-                && pawn.Map.weatherManager.RainRate >= 0.01f)
-            {
-                baseDrainSpeed *= 2f;
+
+                Energy = Mathf.Max(0, Energy - baseDrainSpeed);
             }
 
-            Energy = Mathf.Max(0, Energy - baseDrainSpeed);
         }
 
         private void UpdateSeverity()

@@ -12,13 +12,15 @@ namespace VREAndroids
         {
             if (__instance.pawn.IsAndroid())
             {
-                if (__instance.hediffSet.hediffs.OfType<Hediff_AndroidReactor>().Any() is false)
+                if (__instance.pawn.genes.GetGene(VREA_DefOf.VREA_SyntheticBody) != null 
+                    && __instance.hediffSet.hediffs.OfType<Hediff_AndroidReactor>().Any() is false)
                 {
                     __result = true;
                 }
                 else
                 {
-                    __result = __instance.capacities.CanBeAwake is false || __instance.capacities.CapableOf(PawnCapacityDefOf.Moving) is false;
+                    __result = __instance.capacities.CanBeAwake is false 
+                        || __instance.capacities.CapableOf(PawnCapacityDefOf.Moving) is false;
                 }
                 return false;
             }

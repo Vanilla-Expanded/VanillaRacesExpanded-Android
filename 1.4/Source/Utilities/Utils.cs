@@ -36,7 +36,6 @@ namespace VREAndroids
         private static List<GeneDef> cachedGeneDefsInOrder = null;
         static Utils()
         {
-            Log.Message("Startup");
             foreach (var race in DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.race != null && x.race.Humanlike))
             {
                 race.recipes ??= new List<RecipeDef>();
@@ -149,6 +148,7 @@ namespace VREAndroids
                 || hediffDef.makesSickThought) is false;
         }
 
+        private static Dictionary<Pawn, bool> cachedPawnTypes = new();
         public static bool IsAndroid(this Pawn pawn)
         {
             if (pawn is null)
@@ -156,7 +156,13 @@ namespace VREAndroids
                 Log.Error("Checking for null pawn. It shouldn't happen.");
                 return false;
             }
-            return HasActiveGene(pawn, VREA_DefOf.VREA_SyntheticBody);
+            if (pawn.genes is null) return false;
+            if (!cachedPawnTypes.TryGetValue(pawn, out var isAndroid))
+            {
+                if (pawn.genes.xenogenes.Count == 0 && pawn.genes.endogenes.Count == 0) return false;
+                cachedPawnTypes[pawn] = isAndroid = pawn.genes.GenesListForReading.Any(x => x.def.IsHardware());
+            }
+            return isAndroid;
         }
 
         public static bool IsAndroid(this Pawn pawn, out Gene_SyntheticBody gene_SyntheticBody)

@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using Verse;
 
 namespace VREAndroids
 {
@@ -8,9 +9,12 @@ namespace VREAndroids
     {
         public static void Prefix(Pawn_StoryTracker __instance)
         {
-            if (__instance.pawn != null && __instance.pawn.IsAndroid())
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                __instance.pawn.ageTracker.RecalculateLifeStageIndex();
+                if (__instance.pawn != null && __instance.pawn.IsAndroid())
+                {
+                    __instance.pawn.ageTracker.RecalculateLifeStageIndex();
+                }
             }
         }
     }
