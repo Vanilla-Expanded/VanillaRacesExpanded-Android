@@ -1,6 +1,6 @@
 <ModMetaData>
 	<name>Vanilla Races Expanded - Android</name>
-	<author>Oskar Potocki, Taranchuk, ISOREX</author>
+	<author>Oskar Potocki, Taranchuk, ISOREX, Sarg Bjornson</author>
 	<supportedVersions>
 
 		<li>1.4</li>
@@ -32,5 +32,22 @@
 	<packageId>vanillaracesexpanded.android</packageId>
 	<description>Vanilla Races Expanded is a brand new series of mods to enhance Biotech features, add to the storytelling and the world-building of RimWorld, and to introduce new, cool types ofxenohumans, complete with their own unique genes, behaviors, mechanics and items.
 
-Text.todo</description>
+Introducing Vanilla Races Expanded - Androids, a unique addition to your RimWorld experience that introduces a new dimension of gameplay: Android Colonists. Built with the Biotech DLC, this mod reinvents the concept of colonists, bringing fully customizable Androids to your colonies, complete with their own set of genes - the immutable Hardware and programmable Subroutines.
+
+Hardware genes are the framework that defines an Android's behavior and aesthetics. These include Synthetic Body, Neutroamine Circulation, Joy Disabled, Beauty Disabled, Comfort Disabled, and No Mental Breaks, among others. These genes, which cannot be removed, dictate the Android's fundamental needs, like their neutroamine blood.
+
+Subroutines, on the other hand, dictate an Android's capabilities. These can be programmed during the creation of an Android, or later using the Android Behaviorist Station. Subroutines cover a wide range of skills, RAM quality, and behaviors related to various environmental factors like solar flares, EMP, and rain. These, however, cost Power Efficiency points, akin to an organic metabolism. Striking a balance between positive and negative subroutines is crucial to maintain an optimal power level and prevent reactor drain.
+
+A new world opens for these Androids. Freed from human needs like food, sleep, or recreation, they're designed for relentless work and pre-programmed services. Damages? They can be repaired using Neutrocaskets. Running out of blood? They use neutroamine. Need a new part? Just craft it on a new workbench and replace it.
+
+This mod also introduces a new set of buildable structures, including a neutroamine network that pumps neutroamine from high-tech tanks to Neutrocaskets. The Android Creation Station lets you create new Androids, while the Subcore Polyanalyzer is a new type of brain scanner that creates persona subcores, essential for new Androids. Android stands can be placed around the base for daily reformatting.
+
+An exciting twist awaits with the Android Awakening. Under extreme mood, Androids can develop humanity, breaking away from their standard rule sets and behaving more like human pawns. They can learn new skills, gain new traits, and even require comfort and risk mental breaks.
+
+Awakened Androids are integrated into in-game factions, and the mod comes with 30 new backstories for these evolved beings. Additionally, the mod includes Ideology integration, featuring a new precept, Androids, which dictates how synthetic humans are viewed by other colonists.
+
+Lastly, a new starting scenario lets you establish an Android Utopia, welcoming chased Android refugees from all across RimWorld to join your mission to build a haven of equality and peace.
+
+Vanilla Races Expanded - Androids is more than a mod; it's a complete reinvention of the RimWorld experience. Discover the potential of Androids and redefine what it means to be a colonist. Are you ready to step into the future?
+</description>
 </ModMetaData>
