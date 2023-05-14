@@ -18,7 +18,7 @@
       <summary>A hideout for awakened androids. A classic Vanilla Races Expanded - Android experience.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
-        <factionDef>PlayerColony</factionDef>
+        <factionDef>VREA_AndroidAwakenedUtopia</factionDef>
       </playerFaction>
       <parts>
         <li Class="VREAndroids.ScenPart_NewAndroidArrival">
@@ -38,7 +38,7 @@
           <overrideKinds>
             <li>
               <xenotype>VREA_AndroidAwakened</xenotype>
-              <pawnKind>VREA_AndroidBasic</pawnKind>
+              <pawnKind>VREA_AndroidAwakened</pawnKind>
             </li>
           </overrideKinds>
           <xenotypeCounts>
