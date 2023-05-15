@@ -88,6 +88,12 @@
             </parms>
           </node>
         </li>
+		
+		 <li Class="QuestNode_Delay">
+          <delayTicks>$($raidDelayTicks+600)</delayTicks>
+          <node Class="QuestNode_End" />
+        </li>
+		
 
       
       </nodes>
