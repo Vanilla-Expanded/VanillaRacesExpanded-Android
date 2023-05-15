@@ -17,16 +17,12 @@
 		<skillGains>
 			<li><key>Shooting</key><value>3</value></li>
 			<li><key>Melee</key><value>3</value></li>
-			<li><key>Animals</key><value>0</value></li>
 			<li><key>Artistic</key><value>2</value></li>
 			<li><key>Crafting</key><value>4</value></li>
 			<li><key>Construction</key><value>4</value></li>
 			<li><key>Cooking</key><value>1</value></li>
 			<li><key>Medicine</key><value>1</value></li>
 			<li><key>Mining</key><value>2</value></li>
-			<li><key>Intellectual</key><value>0</value></li>
-			<li><key>Plants</key><value>0</value></li>
-			<li><key>Social</key><value>0</value></li>
 		</skillGains>
 	</BackstoryDef>
 
@@ -42,13 +38,7 @@
 			<li>AwakenedAndroid</li>
 		</spawnCategories>
 		<skillGains>
-			<li><key>Shooting</key><value>0</value></li>
-			<li><key>Melee</key><value>0</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>6</value></li>
-			<li><key>Construction</key><value>0</value></li>
-			<li><key>Cooking</key><value>0</value></li>
 			<li><key>Medicine</key><value>8</value></li>
 			<li><key>Mining</key><value>2</value></li>
 			<li><key>Intellectual</key><value>6</value></li>
@@ -72,14 +62,10 @@
 			<li><key>Shooting</key><value>6</value></li>
 			<li><key>Melee</key><value>4</value></li>
 			<li><key>Animals</key><value>2</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>2</value></li>
 			<li><key>Construction</key><value>4</value></li>
 			<li><key>Cooking</key><value>2</value></li>
 			<li><key>Medicine</key><value>6</value></li>
-			<li><key>Mining</key><value>0</value></li>
-			<li><key>Intellectual</key><value>0</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>4</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -98,15 +84,10 @@
 		<skillGains>
 			<li><key>Shooting</key><value>2</value></li>
 			<li><key>Melee</key><value>2</value></li>
-			<li><key>Animals</key><value>0</value></li>
 			<li><key>Artistic</key><value>6</value></li>
 			<li><key>Crafting</key><value>2</value></li>
-			<li><key>Construction</key><value>0</value></li>
 			<li><key>Cooking</key><value>3</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>4</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>8</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -123,18 +104,11 @@
 			<li>AwakenedAndroid</li>
 		</spawnCategories>
 		<skillGains>
-			<li><key>Shooting</key><value>0</value></li>
-			<li><key>Melee</key><value>0</value></li>
-			<li><key>Animals</key><value>0</value></li>
 			<li><key>Artistic</key><value>2</value></li>
 			<li><key>Crafting</key><value>3</value></li>
 			<li><key>Construction</key><value>8</value></li>
-			<li><key>Cooking</key><value>0</value></li>
 			<li><key>Medicine</key><value>1</value></li>
 			<li><key>Mining</key><value>8</value></li>
-			<li><key>Intellectual</key><value>0</value></li>
-			<li><key>Plants</key><value>0</value></li>
-			<li><key>Social</key><value>0</value></li>
 		</skillGains>
 	</BackstoryDef>
 
@@ -150,15 +124,11 @@
 			<li>AwakenedAndroid</li>
 		</spawnCategories>
 		<skillGains>
-			<li><key>Shooting</key><value>0</value></li>
-			<li><key>Melee</key><value>0</value></li>
 			<li><key>Animals</key><value>2</value></li>
 			<li><key>Artistic</key><value>3</value></li>
 			<li><key>Crafting</key><value>2</value></li>
-			<li><key>Construction</key><value>0</value></li>
 			<li><key>Cooking</key><value>4</value></li>
 			<li><key>Medicine</key><value>3</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>6</value></li>
 			<li><key>Plants</key><value>4</value></li>
 			<li><key>Social</key><value>6</value></li>
@@ -207,11 +177,8 @@
 			<li><key>Shooting</key><value>2</value></li>
 			<li><key>Melee</key><value>2</value></li>
 			<li><key>Animals</key><value>6</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>5</value></li>
 			<li><key>Construction</key><value>7</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
 			<li><key>Mining</key><value>3</value></li>
 			<li><key>Intellectual</key><value>6</value></li>
 			<li><key>Plants</key><value>6</value></li>
@@ -234,14 +201,11 @@
 			<li><key>Shooting</key><value>4</value></li>
 			<li><key>Melee</key><value>5</value></li>
 			<li><key>Animals</key><value>2</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>4</value></li>
 			<li><key>Construction</key><value>5</value></li>
 			<li><key>Cooking</key><value>2</value></li>
 			<li><key>Medicine</key><value>2</value></li>
-			<li><key>Mining</key><value>0</value></li>
-			<li><key>Intellectual</key><value>100</value></li>
-			<li><key>Plants</key><value>0</value></li>
+			<li><key>Intellectual</key><value>10</value></li>
 			<li><key>Social</key><value>3</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -260,15 +224,10 @@
 		<skillGains>
 			<li><key>Shooting</key><value>2</value></li>
 			<li><key>Melee</key><value>6</value></li>
-			<li><key>Animals</key><value>0</value></li>
 			<li><key>Artistic</key><value>2</value></li>
-			<li><key>Crafting</key><value>0</value></li>
-			<li><key>Construction</key><value>0</value></li>
-			<li><key>Cooking</key><value>0</value></li>
 			<li><key>Medicine</key><value>10</value></li>
 			<li><key>Mining</key><value>2</value></li>
 			<li><key>Intellectual</key><value>2</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>-6</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -287,15 +246,11 @@
 		<skillGains>
 			<li><key>Shooting</key><value>8</value></li>
 			<li><key>Melee</key><value>6</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>3</value></li>
 			<li><key>Construction</key><value>2</value></li>
 			<li><key>Cooking</key><value>2</value></li>
 			<li><key>Medicine</key><value>6</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>3</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>2</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -318,9 +273,6 @@
 			<li><key>Artistic</key><value>4</value></li>
 			<li><key>Crafting</key><value>4</value></li>
 			<li><key>Construction</key><value>8</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>2</value></li>
 			<li><key>Plants</key><value>2</value></li>
 			<li><key>Social</key><value>2</value></li>
@@ -344,12 +296,7 @@
 			<li><key>Animals</key><value>2</value></li>
 			<li><key>Artistic</key><value>12</value></li>
 			<li><key>Crafting</key><value>5</value></li>
-			<li><key>Construction</key><value>0</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>5</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>-2</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -369,14 +316,9 @@
 			<li><key>Shooting</key><value>2</value></li>
 			<li><key>Melee</key><value>2</value></li>
 			<li><key>Animals</key><value>4</value></li>
-			<li><key>Artistic</key><value>0</value></li>
-			<li><key>Crafting</key><value>0</value></li>
-			<li><key>Construction</key><value>0</value></li>
 			<li><key>Cooking</key><value>4</value></li>
 			<li><key>Medicine</key><value>8</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>6</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>4</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -393,15 +335,10 @@
 			<li>AwakenedAndroid</li>
 		</spawnCategories>
 		<skillGains>
-			<li><key>Shooting</key><value>0</value></li>
 			<li><key>Melee</key><value>4</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>2</value></li>
-			<li><key>Construction</key><value>0</value></li>
 			<li><key>Cooking</key><value>7</value></li>
 			<li><key>Medicine</key><value>3</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>5</value></li>
 			<li><key>Plants</key><value>4</value></li>
 			<li><key>Social</key><value>8</value></li>
@@ -424,16 +361,10 @@
 		<skillGains>
 			<li><key>Shooting</key><value>2</value></li>
 			<li><key>Melee</key><value>1</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>10</value></li>
 			<li><key>Construction</key><value>7</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
 			<li><key>Mining</key><value>4</value></li>
 			<li><key>Intellectual</key><value>6</value></li>
-			<li><key>Plants</key><value>0</value></li>
-			<li><key>Social</key><value>0</value></li>
 		</skillGains>
 	</BackstoryDef>
 
@@ -451,15 +382,8 @@
 		<skillGains>
 			<li><key>Shooting</key><value>3</value></li>
 			<li><key>Melee</key><value>1</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>4</value></li>
-			<li><key>Construction</key><value>0</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>4</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>7</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -478,15 +402,8 @@
 		<skillGains>
 			<li><key>Shooting</key><value>8</value></li>
 			<li><key>Melee</key><value>6</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>2</value></li>
-			<li><key>Construction</key><value>0</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>3</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>4</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -504,14 +421,9 @@
 		</spawnCategories>
 		<skillGains>
 			<li><key>Shooting</key><value>1</value></li>
-			<li><key>Melee</key><value>0</value></li>
 			<li><key>Animals</key><value>2</value></li>
 			<li><key>Artistic</key><value>4</value></li>
-			<li><key>Crafting</key><value>0</value></li>
-			<li><key>Construction</key><value>0</value></li>
 			<li><key>Cooking</key><value>14</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>3</value></li>
 			<li><key>Plants</key><value>6</value></li>
 			<li><key>Social</key><value>5</value></li>
@@ -531,16 +443,9 @@
 		</spawnCategories>
 		<skillGains>
 			<li><key>Shooting</key><value>2</value></li>
-			<li><key>Melee</key><value>0</value></li>
-			<li><key>Animals</key><value>0</value></li>
 			<li><key>Artistic</key><value>3</value></li>
-			<li><key>Crafting</key><value>0</value></li>
-			<li><key>Construction</key><value>0</value></li>
-			<li><key>Cooking</key><value>0</value></li>
 			<li><key>Medicine</key><value>4</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>6</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>14</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -557,15 +462,11 @@
 			<li>AwakenedAndroid</li>
 		</spawnCategories>
 		<skillGains>
-			<li><key>Shooting</key><value>0</value></li>
 			<li><key>Melee</key><value>1</value></li>
 			<li><key>Animals</key><value>4</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>2</value></li>
-			<li><key>Construction</key><value>0</value></li>
 			<li><key>Cooking</key><value>3</value></li>
 			<li><key>Medicine</key><value>3</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>8</value></li>
 			<li><key>Plants</key><value>14</value></li>
 			<li><key>Social</key><value>1</value></li>
@@ -586,15 +487,10 @@
 		<skillGains>
 			<li><key>Shooting</key><value>14</value></li>
 			<li><key>Melee</key><value>4</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>3</value></li>
 			<li><key>Construction</key><value>1</value></li>
-			<li><key>Cooking</key><value>0</value></li>
 			<li><key>Medicine</key><value>2</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>2</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>4</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -613,15 +509,9 @@
 		<skillGains>
 			<li><key>Shooting</key><value>12</value></li>
 			<li><key>Melee</key><value>8</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>2</value></li>
 			<li><key>Construction</key><value>3</value></li>
-			<li><key>Cooking</key><value>0</value></li>
 			<li><key>Medicine</key><value>5</value></li>
-			<li><key>Mining</key><value>0</value></li>
-			<li><key>Intellectual</key><value>0</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>5</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -638,17 +528,11 @@
 			<li>AwakenedAndroid</li>
 		</spawnCategories>
 		<skillGains>
-			<li><key>Shooting</key><value>0</value></li>
 			<li><key>Melee</key><value>1</value></li>
-			<li><key>Animals</key><value>0</value></li>
 			<li><key>Artistic</key><value>12</value></li>
 			<li><key>Crafting</key><value>14</value></li>
 			<li><key>Construction</key><value>1</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>2</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>5</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -667,15 +551,10 @@
 		<skillGains>
 			<li><key>Shooting</key><value>4</value></li>
 			<li><key>Melee</key><value>3</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>6</value></li>
 			<li><key>Construction</key><value>4</value></li>
-			<li><key>Cooking</key><value>0</value></li>
 			<li><key>Medicine</key><value>5</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>14</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>2</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -692,17 +571,10 @@
 			<li>AwakenedAndroid</li>
 		</spawnCategories>
 		<skillGains>
-			<li><key>Shooting</key><value>0</value></li>
 			<li><key>Melee</key><value>1</value></li>
-			<li><key>Animals</key><value>0</value></li>
 			<li><key>Artistic</key><value>8</value></li>
 			<li><key>Crafting</key><value>2</value></li>
-			<li><key>Construction</key><value>0</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>9</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>14</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -719,17 +591,13 @@
 			<li>AwakenedAndroid</li>
 		</spawnCategories>
 		<skillGains>
-			<li><key>Shooting</key><value>0</value></li>
 			<li><key>Melee</key><value>1</value></li>
-			<li><key>Animals</key><value>0</value></li>
 			<li><key>Artistic</key><value>10</value></li>
 			<li><key>Crafting</key><value>3</value></li>
 			<li><key>Construction</key><value>4</value></li>
 			<li><key>Cooking</key><value>6</value></li>
 			<li><key>Medicine</key><value>5</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>4</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>7</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -748,15 +616,9 @@
 		<skillGains>
 			<li><key>Shooting</key><value>2</value></li>
 			<li><key>Melee</key><value>1</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>4</value></li>
 			<li><key>Construction</key><value>3</value></li>
-			<li><key>Cooking</key><value>0</value></li>
-			<li><key>Medicine</key><value>0</value></li>
-			<li><key>Mining</key><value>0</value></li>
 			<li><key>Intellectual</key><value>14</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>6</value></li>
 		</skillGains>
 	</BackstoryDef>
@@ -802,15 +664,11 @@
 		<skillGains>
 			<li><key>Shooting</key><value>3</value></li>
 			<li><key>Melee</key><value>3</value></li>
-			<li><key>Animals</key><value>0</value></li>
-			<li><key>Artistic</key><value>0</value></li>
 			<li><key>Crafting</key><value>5</value></li>
 			<li><key>Construction</key><value>4</value></li>
-			<li><key>Cooking</key><value>0</value></li>
 			<li><key>Medicine</key><value>8</value></li>
 			<li><key>Mining</key><value>4</value></li>
 			<li><key>Intellectual</key><value>10</value></li>
-			<li><key>Plants</key><value>0</value></li>
 			<li><key>Social</key><value>2</value></li>
 		</skillGains>
 	</BackstoryDef>
