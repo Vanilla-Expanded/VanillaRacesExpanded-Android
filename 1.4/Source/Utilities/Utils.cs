@@ -165,6 +165,46 @@ namespace VREAndroids
             return isAndroid;
         }
 
+        private static List<GeneDef> skinColorGenes;
+
+        public static List<GeneDef> SkinColorAndroidGenesInOrder
+        {
+            get
+            {
+                if (skinColorGenes == null)
+                {
+                    skinColorGenes = new List<GeneDef>();
+                    foreach (GeneDef allDef in DefDatabase<GeneDef>.AllDefs)
+                    {
+                        if ((allDef.endogeneCategory == EndogeneCategory.Melanin || !(allDef.minMelanin >= 0f)) && allDef.skinColorBase.HasValue)
+                        {
+                            if (allDef.IsAndroidGene())
+                            {
+                                skinColorGenes.Add(allDef);
+                            }
+                        }
+                    }
+                    skinColorGenes.SortBy((GeneDef x) => x.minMelanin);
+                }
+                return skinColorGenes;
+            }
+        }
+
+        private static List<GeneDef> cachedHairColorGenes;
+
+        public static List<GeneDef> HairColorAndroidGenes
+        {
+            get
+            {
+                if (cachedHairColorGenes == null)
+                {
+                    cachedHairColorGenes = DefDatabase<GeneDef>.AllDefs.Where((GeneDef x) => x.hairColorOverride.HasValue && x.IsAndroidGene()).ToList();
+                }
+                return cachedHairColorGenes;
+            }
+        }
+
+
         public static bool IsAndroid(this Pawn pawn, out Gene_SyntheticBody gene_SyntheticBody)
         {
             if (pawn is null)

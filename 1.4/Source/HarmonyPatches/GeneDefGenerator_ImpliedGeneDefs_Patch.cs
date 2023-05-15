@@ -8,6 +8,7 @@ using Verse;
 
 namespace VREAndroids
 {
+
     [HarmonyPatch(typeof(GeneDefGenerator), "ImpliedGeneDefs")]
     public static class GeneDefGenerator_ImpliedGeneDefs_Patch
     {
@@ -37,11 +38,21 @@ namespace VREAndroids
                     {
                         GeneDef clonedGene = geneDef.Clone() as GeneDef;
                         clonedGene.defName = "VREA_" + geneDef.defName;
-                        clonedGene.modExtensions ??= new List<DefModExtension>();
-                        clonedGene.modExtensions.Add(new GeneExtension
+                        var existingGeneExtension = clonedGene.GetModExtension<GeneExtension>();
+                        if (existingGeneExtension != null)
                         {
-                            backgroundPathXenogenes = "UI/Icons/Genes/GeneBackground_Hardware"
-                        });
+                            existingGeneExtension.backgroundPathXenogenes = "UI/Icons/Genes/GeneBackground_Hardware";
+                            existingGeneExtension.backgroundPathEndogenes = "UI/Icons/Genes/GeneBackground_Hardware";
+                        }
+                        else
+                        {
+                            clonedGene.modExtensions ??= new List<DefModExtension>();
+                            clonedGene.modExtensions.Add(new GeneExtension
+                            {
+                                backgroundPathXenogenes = "UI/Icons/Genes/GeneBackground_Hardware",
+                                backgroundPathEndogenes = "UI/Icons/Genes/GeneBackground_Hardware"
+                            });
+                        }
                         clonedGene.canGenerateInGeneSet = false;
                         Utils.allAndroidGenes.Add(clonedGene);
                         originalGenesWithAndroidCounterparts[geneDef] = clonedGene;

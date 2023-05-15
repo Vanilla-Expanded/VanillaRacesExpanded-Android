@@ -117,11 +117,16 @@
     <Compile Include="HarmonyPatches\PawnBreathMoteMaker_ProcessPostTickVisuals_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnColumnWorker_FoodRestriction_DoAssignFoodRestrictionButtons_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnComponentsUtility_AddAndRemoveDynamicComponents.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_GenerateGenes_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GeneratePawnRelations_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GenerateSkills_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_TryGenerateNewPawnInternal_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnHairColors_HairColorGenes_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnHairColors_RandomHairColorGene_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnRelationWorker_BaseGenerationChanceFactor_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnSkinColors_RandomSkinColorGene_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnSkinColors_SkinColorGenesInOrder_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnUtility_GetPosture_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_AgeTracker_BirthdayBiological_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_AgeTracker_RecalculateLifeStageIndex_Patch.cs" />
