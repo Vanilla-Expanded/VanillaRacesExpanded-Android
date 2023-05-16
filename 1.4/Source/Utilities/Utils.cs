@@ -92,6 +92,15 @@ namespace VREAndroids
             }
             return true;
         }
+
+        public static bool CanBeRemovedFromAndroidAwakened(this GeneDef geneDef)
+        {
+            if (geneDef is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent is true && androidGeneDef.removeWhenAwakened is false)
+            {
+                return false;
+            }
+            return true;
+        }
         public static bool HasActiveGene(this Pawn pawn, GeneDef geneDef)
         {
             if (pawn.genes is null) return false;

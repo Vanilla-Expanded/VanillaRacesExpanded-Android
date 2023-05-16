@@ -19,6 +19,7 @@ namespace VREAndroids
             generationRequestIndex = index;
             alwaysUseFullBiostatsTableHeight = true;
             searchWidgetOffsetX = ButSize.x * 2f + 4f;
+            disableAndroidHardwareLimitation = true;
         }
 
         public override bool CanAccept()
@@ -67,7 +68,6 @@ namespace VREAndroids
                     xenotypeName = xenotype.name;
                     xenotypeNameLocked = true;
                     selectedGenes.Clear();
-                    selectedGenes = Utils.AndroidGenesGenesInOrder.Where(x => x.CanBeRemovedFromAndroid() is false).ToList();
                     selectedGenes.AddRange(xenotype.genes);
                     selectedGenes = selectedGenes.Distinct().ToList();
                     iconDef = xenotype.IconDef;
@@ -82,13 +82,12 @@ namespace VREAndroids
             foreach (XenotypeDef item in DefDatabase<XenotypeDef>.AllDefs.OrderBy((XenotypeDef c) => 0f - c.displayPriority))
             {
                 XenotypeDef xenotype2 = item;
-                if (xenotype2.IsAndroidType() && xenotype2.genes.Contains(VREA_DefOf.VREA_PsychologyDisabled)) 
+                if (xenotype2.IsAndroidType())
                 {
                     list.Add(new FloatMenuOption(xenotype2.LabelCap, delegate
                     {
                         xenotypeName = xenotype2.label;
                         selectedGenes.Clear();
-                        selectedGenes = Utils.AndroidGenesGenesInOrder.Where(x => x.CanBeRemovedFromAndroid() is false).ToList();
                         selectedGenes.AddRange(xenotype2.genes);
                         selectedGenes = selectedGenes.Distinct().ToList();
                         OnGenesChanged();

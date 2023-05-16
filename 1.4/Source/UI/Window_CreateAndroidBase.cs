@@ -28,6 +28,8 @@ namespace VREAndroids
         public override List<GeneDef> SelectedGenes => selectedGenes;
 
         public List<ThingDefCount> requiredItems;
+
+        public bool disableAndroidHardwareLimitation;
         public Window_CreateAndroidBase(Action callback)
         {
             this.callback = callback;
@@ -388,7 +390,7 @@ namespace VREAndroids
                     {
                         if (selectedGenes.Contains(geneDef))
                         {
-                            if (geneDef.CanBeRemovedFromAndroid())
+                            if (geneDef.CanBeRemovedFromAndroid() || disableAndroidHardwareLimitation && geneDef.CanBeRemovedFromAndroidAwakened())
                             {
                                 SoundDefOf.Tick_Low.PlayOneShotOnCamera();
                                 selectedGenes.Remove(geneDef);
@@ -527,7 +529,7 @@ namespace VREAndroids
             {
                 text += "\n\n";
             }
-            if (geneDef.CanBeRemovedFromAndroid())
+            if (geneDef.CanBeRemovedFromAndroid() || disableAndroidHardwareLimitation && geneDef.CanBeRemovedFromAndroidAwakened())
             {
                 return text + (selectedGenes.Contains(geneDef) ? "ClickToRemove" : "ClickToAdd").Translate().Colorize(ColoredText.SubtleGrayColor);
             }
