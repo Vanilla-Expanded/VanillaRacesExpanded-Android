@@ -305,7 +305,6 @@
     <Compile Include="Hediffs\Hediff_AndroidPart.cs" />
     <Compile Include="Hediffs\Hediff_AndroidReactor.cs" />
     <Compile Include="Recipes\Recipe_InstallReactor.cs" />
-    <Compile Include="AI\JobDriver_TendAndroid.cs" />
     <Compile Include="Needs\Need_FoodSuppressed.cs" />
     <Compile Include="Needs\Need_MemorySpace.cs" />
     <Compile Include="Needs\Need_ReactorPower.cs" />

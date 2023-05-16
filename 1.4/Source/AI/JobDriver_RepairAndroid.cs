@@ -20,7 +20,7 @@ namespace VREAndroids
             this.FailOnDestroyedOrNull(TargetIndex.A);
             this.FailOnForbidden(TargetIndex.A);
             this.FailOn(() => Patient.IsAttacking());
-            var gotoToil = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
+            var gotoToil = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
 
             int ticks = (int)(1f / pawn.GetStatValue(StatDefOf.GeneralLaborSpeed) * 600f);
             Toil tendToil;
@@ -40,7 +40,7 @@ namespace VREAndroids
                     }
                 });
             }
-            tendToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch).WithProgressBarToilDelay(TargetIndex.A)
+            tendToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell).WithProgressBarToilDelay(TargetIndex.A)
                 .PlaySustainerOrSound(VREA_DefOf.Interact_ConstructMetal);
             tendToil.activeSkill = () => SkillDefOf.Crafting;
             tendToil.handlingFacing = true;
