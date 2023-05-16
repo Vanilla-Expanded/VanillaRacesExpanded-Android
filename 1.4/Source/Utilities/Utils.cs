@@ -138,6 +138,13 @@ namespace VREAndroids
             {
                 return extension.androidCanCatchIt;
             }
+            if (hediffDef.tags != null)
+            {
+                if (hediffDef.tags.Contains("Sterilized"))
+                {
+                    return false;
+                }
+            }
             return VREA_DefOf.VREA_AndroidSettings.androidsShouldNotReceiveHediffs.Contains(hediffDef.defName) is false
                 && (typeof(Hediff_Addiction).IsAssignableFrom(hediffDef.hediffClass)
                 || DefDatabase<ChemicalDef>.AllDefs.Any(x => x.toleranceHediff == hediffDef)
@@ -148,7 +155,7 @@ namespace VREAndroids
                 || hediffDef.makesSickThought) is false;
         }
 
-        private static Dictionary<Pawn, bool> cachedPawnTypes = new();
+        public static Dictionary<Pawn_GeneTracker, bool> cachedPawnTypes = new();
         public static bool IsAndroid(this Pawn pawn)
         {
             if (pawn is null)
@@ -157,12 +164,80 @@ namespace VREAndroids
                 return false;
             }
             if (pawn.genes is null) return false;
-            if (!cachedPawnTypes.TryGetValue(pawn, out var isAndroid))
+            if (!cachedPawnTypes.TryGetValue(pawn.genes, out var isAndroid))
             {
                 if (pawn.genes.xenogenes.Count == 0 && pawn.genes.endogenes.Count == 0) return false;
-                cachedPawnTypes[pawn] = isAndroid = pawn.genes.GenesListForReading.Any(x => x.def.IsHardware());
+                cachedPawnTypes[pawn.genes] = isAndroid = pawn.genes.GenesListForReading.Any(x => x.def.CanBeRemovedFromAndroid() is false);
             }
             return isAndroid;
+        }
+
+        public static void RecheckGenes(Pawn_GeneTracker __instance)
+        {
+            if (__instance.pawn.IsAndroid())
+            {
+                for (var i = 0; i < __instance.endogenes.Count; i++)
+                {
+                    var gene = __instance.endogenes[i];
+                    if (gene.def.IsAndroidGene() is false)
+                    {
+                        var androidVariant = DefDatabase<GeneDef>.GetNamedSilentFail("VREA_" + gene.def.defName);
+                        if (androidVariant != null)
+                        {
+                            __instance.endogenes[i] = GeneMaker.MakeGene(androidVariant, __instance.pawn);
+                        }
+                    }
+                }
+
+                for (var i = 0; i < __instance.xenogenes.Count; i++)
+                {
+                    var gene = __instance.xenogenes[i];
+                    if (gene.def.IsAndroidGene() is false)
+                    {
+                        var androidVariant = DefDatabase<GeneDef>.GetNamedSilentFail("VREA_" + gene.def.defName);
+                        if (androidVariant != null)
+                        {
+                            __instance.xenogenes[i] = GeneMaker.MakeGene(androidVariant, __instance.pawn);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (var i = 0; i < __instance.endogenes.Count; i++)
+                {
+                    var gene = __instance.endogenes[i];
+                    if (gene.def.IsAndroidGene())
+                    {
+                        var humanVariant = DefDatabase<GeneDef>.GetNamedSilentFail(gene.def.defName.Replace("VREA_", ""));
+                        if (humanVariant != null)
+                        {
+                            __instance.endogenes[i] = GeneMaker.MakeGene(humanVariant, __instance.pawn);
+                        }
+                    }
+                }
+
+                for (var i = 0; i < __instance.xenogenes.Count; i++)
+                {
+                    var gene = __instance.xenogenes[i];
+                    if (gene.def.IsAndroidGene())
+                    {
+                        var humanVariant = DefDatabase<GeneDef>.GetNamedSilentFail(gene.def.defName.Replace("VREA_", ""));
+                        if (humanVariant != null)
+                        {
+                            __instance.xenogenes[i] = GeneMaker.MakeGene(humanVariant, __instance.pawn);
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void TryAssignBackstory(Pawn pawn, string spawnCategory)
+        {
+            if (pawn.story.Childhood.spawnCategories?.Contains(spawnCategory) is false)
+            {
+                pawn.story.Childhood = DefDatabase<BackstoryDef>.AllDefs.Where(x => x.spawnCategories?.Contains(spawnCategory) ?? false).RandomElement();
+            }
         }
 
         private static List<GeneDef> skinColorGenes;
@@ -230,11 +305,11 @@ namespace VREAndroids
 
         public static bool IsAndroidType(this XenotypeDef def)
         {
-            return def.genes.Count > 0 && def.genes.All(x => x.IsAndroidGene());
+            return def.genes.Count > 0 && def.genes.All(x => x is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent);
         }
         public static bool IsAndroidType(this CustomXenotype def)
         {
-            return def.genes.Count > 0 && def.genes.All(x => x.IsAndroidGene());
+            return def.genes.Count > 0 && def.genes.All(x => x is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent);
         }
         public static RecipeDef RecipeForAndroid(this RecipeDef originalRecipe)
         {

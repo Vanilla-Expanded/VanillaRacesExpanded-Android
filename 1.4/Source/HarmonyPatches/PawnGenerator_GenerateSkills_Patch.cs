@@ -19,11 +19,11 @@ namespace VREAndroids
                 pawn.story.Adulthood = null;
                 if (geneSyntheticBody.Awakened)
                 {
-                    TryAssignBackstory(pawn, "AwakenedAndroid");
+                    Utils.TryAssignBackstory(pawn, "AwakenedAndroid");
                 }
                 else
                 {
-                    TryAssignBackstory(pawn, "ColonyAndroid");
+                    Utils.TryAssignBackstory(pawn, "ColonyAndroid");
                 }
                 var years = Rand.Range(0f, 25f);
                 pawn.ageTracker.AgeBiologicalTicks = (long)(years * 3600000f);
@@ -56,14 +56,6 @@ namespace VREAndroids
                 return false;
             }
             return true;
-        }
-
-        private static void TryAssignBackstory(Pawn pawn, string spawnCategory)
-        {
-            if (pawn.story.Childhood.spawnCategories?.Contains(spawnCategory) is false)
-            {
-                pawn.story.Childhood = DefDatabase<BackstoryDef>.AllDefs.Where(x => x.spawnCategories?.Contains(spawnCategory) ?? false).RandomElement();
-            }
         }
 
         private static int FinalLevelOfSkill(Pawn pawn, SkillDef sk, PawnGenerationRequest request)

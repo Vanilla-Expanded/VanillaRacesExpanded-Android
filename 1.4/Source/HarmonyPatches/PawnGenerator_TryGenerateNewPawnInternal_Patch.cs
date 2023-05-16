@@ -8,8 +8,14 @@ namespace VREAndroids
     [HarmonyPatch(typeof(PawnGenerator), "TryGenerateNewPawnInternal")]
     public static class PawnGenerator_TryGenerateNewPawnInternal_Patch
     {
+        public static PawnGenerationRequest? curRequest;
+        public static void Prefix(PawnGenerationRequest request)
+        {
+            curRequest = request;
+        }
         public static void Postfix(ref Pawn __result)
         {
+            curRequest = null;
             if (__result?.genes != null)
             {
                 if (__result.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))

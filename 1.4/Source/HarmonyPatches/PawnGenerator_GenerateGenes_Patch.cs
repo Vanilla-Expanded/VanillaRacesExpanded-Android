@@ -12,9 +12,13 @@ namespace VREAndroids
             curPawn = pawn;
         }
 
-        public static void Postfix()
+        public static void Postfix(Pawn pawn)
         {
             curPawn = null;
+            if (pawn.IsAndroid())
+            {
+                pawn.needs.AddOrRemoveNeedsAsAppropriate();
+            }
         }
     }
 }

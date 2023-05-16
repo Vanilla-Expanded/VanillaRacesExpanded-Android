@@ -8,7 +8,6 @@ using Verse.Sound;
 
 namespace VREAndroids
 {
-
     [HotSwappable]
     public class Window_CreateAndroidXenotype : Window_CreateAndroidBase
     {
@@ -83,7 +82,7 @@ namespace VREAndroids
             foreach (XenotypeDef item in DefDatabase<XenotypeDef>.AllDefs.OrderBy((XenotypeDef c) => 0f - c.displayPriority))
             {
                 XenotypeDef xenotype2 = item;
-                if (xenotype2.IsAndroidType()) 
+                if (xenotype2.IsAndroidType() && xenotype2.genes.Contains(VREA_DefOf.VREA_PsychologyDisabled)) 
                 {
                     list.Add(new FloatMenuOption(xenotype2.LabelCap, delegate
                     {

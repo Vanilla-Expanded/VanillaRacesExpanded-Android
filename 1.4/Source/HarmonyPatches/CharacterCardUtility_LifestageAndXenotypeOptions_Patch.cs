@@ -15,6 +15,7 @@ namespace VREAndroids
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codeInstructions)
         {
             var codes = codeInstructions.ToList();
+            var get_AllDefsInfo = AccessTools.PropertyGetter(typeof(DefDatabase<XenotypeDef>), "AllDefs");
             for (var i = 0; i < codes.Count; i++)
             {
                 var code = codes[i];
@@ -28,7 +29,18 @@ namespace VREAndroids
                         AccessTools.Method(typeof(CharacterCardUtility_LifestageAndXenotypeOptions_Patch),
                         nameof(AddAndroidEditorOption)));
                 }
+
+                if (code.Calls(get_AllDefsInfo))
+                {
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(CharacterCardUtility_LifestageAndXenotypeOptions_Patch),
+                        nameof(FilterAwakenedAndroidTypes)));
+                }
             }
+        }
+
+        public static IEnumerable<XenotypeDef> FilterAwakenedAndroidTypes(IEnumerable<XenotypeDef> list)
+        {
+            return list.Where(x => x.IsAndroidType() is false || x.genes.Contains(VREA_DefOf.VREA_PsychologyDisabled));
         }
 
         public static void AddAndroidEditorOption(Pawn pawn, List<FloatMenuOption> list, Action randomizeCallback)

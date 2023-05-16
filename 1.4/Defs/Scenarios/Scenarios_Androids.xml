@@ -33,7 +33,7 @@
         </li>
          <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
           <def>ConfigurePawnsXenotypes</def>
-          <pawnChoiceCount>6</pawnChoiceCount>
+          <pawnChoiceCount>3</pawnChoiceCount>
           <customSummary>Start with three awakened androids.</customSummary>
           <overrideKinds>
             <li>
@@ -46,7 +46,6 @@
               <xenotype>VREA_AndroidAwakened</xenotype>
               <count>3</count>
               <description>awakened android</description>
-              <requiredAtStart>true</requiredAtStart>
               <allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
             </li>
            

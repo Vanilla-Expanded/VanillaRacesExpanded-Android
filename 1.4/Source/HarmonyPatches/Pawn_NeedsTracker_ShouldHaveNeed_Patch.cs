@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System.Linq;
 using Verse;
 
 namespace VREAndroids
@@ -7,32 +8,31 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Pawn_NeedsTracker), "ShouldHaveNeed")]
     public static class Pawn_NeedsTracker_ShouldHaveNeed_Patch
     {
-        public static bool Prefix(Pawn ___pawn, NeedDef nd, ref bool __result)
+        [HarmonyPriority(int.MinValue)]
+        public static void Postfix(Pawn ___pawn, NeedDef nd, ref bool __result)
         {
             if (___pawn.IsAndroid())
             {
                 if (VREA_DefOf.VREA_AndroidSettings.excludedNeedsForAndroids.Contains(nd.defName))
                 {
-                    return false;
+                    __result = false;
                 }
                 else if (VREA_DefOf.VREA_AndroidSettings.androidExclusiveNeeds.Contains(nd.defName))
                 {
                     __result = true;
-                    return false;
                 }
             }
             else
             {
                 if (VREA_DefOf.VREA_AndroidSettings.androidExclusiveNeeds.Contains(nd.defName))
                 {
-                    return false;
+                    __result = false;
                 }
                 if (nd == VREA_DefOf.VREA_MemorySpace || nd == VREA_DefOf.VREA_ReactorPower)
                 {
-                    return false;
+                    __result = false;
                 }
             }
-            return true;
         }
     }
 }

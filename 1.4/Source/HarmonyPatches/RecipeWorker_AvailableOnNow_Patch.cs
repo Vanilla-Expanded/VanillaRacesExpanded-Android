@@ -40,6 +40,10 @@ namespace VREAndroids
             {
                 return false;
             }
+            if (recipeWorker is Recipe_InstallNaturalBodyPart)
+            {
+                return false;
+            }
             if (pawn.def.recipes.Contains(recipeWorker.recipe) && recipeWorker.recipe != VREA_DefOf.VREA_RemoveArtificialPart)
             {
                 return false;

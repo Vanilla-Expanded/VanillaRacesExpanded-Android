@@ -5,7 +5,7 @@ using Verse;
 
 namespace VREAndroids
 {
-    public class CompAssignableToPawn_AndroidStand : CompAssignableToPawn
+    public class CompAssignableToPawn_AndroidStand : CompAssignableToPawn_Bed
     {
         public override IEnumerable<Pawn> AssigningCandidates
         {

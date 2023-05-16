@@ -114,6 +114,7 @@
     <Compile Include="HarmonyPatches\LifeStageWorkSettings_IsDisabled_Patch.cs" />
     <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSelectButton_Patch.cs" />
     <Compile Include="HarmonyPatches\MoteMaker_MakeMoodThoughtBubble_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnBioAndNameGenerator_GiveShuffledBioTo_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnBreathMoteMaker_ProcessPostTickVisuals_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnColumnWorker_FoodRestriction_DoAssignFoodRestrictionButtons_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnComponentsUtility_AddAndRemoveDynamicComponents.cs" />
@@ -130,6 +131,8 @@
     <Compile Include="HarmonyPatches\PawnUtility_GetPosture_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_AgeTracker_BirthdayBiological_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_AgeTracker_RecalculateLifeStageIndex_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_GeneTracker_ExposeData_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_GeneTracker_Notify_GenesChanged_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StoryTracker_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StyleTracker_CanDesireLookChange_Patch.cs" />
     <Compile Include="HarmonyPatches\RaceProperties_CanEverEat_Patch.cs" />
