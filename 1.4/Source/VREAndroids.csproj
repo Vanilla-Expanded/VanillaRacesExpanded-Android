@@ -84,6 +84,7 @@
     <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\DeathRattle_PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch.cs" />
     <Compile Include="HarmonyPatches\Designator_ExtractSkull_CanDesignateThing_Patch.cs" />
     <Compile Include="HarmonyPatches\Dialog_InfoCard_DoWindowContents_Patch.cs" />
     <Compile Include="HarmonyPatches\FoodUtility_IsAcceptablePreyFor_Patch.cs" />
@@ -155,8 +156,8 @@
     <Compile Include="HarmonyPatches\ThingDef_SpecialDisplayStats_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_Pain_CurrentThoughtState_Patch.cs" />
     <Compile Include="HarmonyPatches\TraitSet_GainTrait_Patch.cs" />
-    <Compile Include="HarmonyPatches\VFEAncients_Pawn_PowerTracker_CanGetPowers_Patch.cs" />
-    <Compile Include="HarmonyPatches\VSIE_SocialInteractionsManager_TryDevelopNewTrait_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VFEAncients_Pawn_PowerTracker_CanGetPowers_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VSIE_SocialInteractionsManager_TryDevelopNewTrait_Patch.cs" />
     <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_JobOnThing_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_AddEveryMedicineToRelevantThings_Patch.cs" />

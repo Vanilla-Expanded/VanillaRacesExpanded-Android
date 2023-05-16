@@ -145,14 +145,21 @@ namespace VREAndroids
                     return false;
                 }
             }
-            return VREA_DefOf.VREA_AndroidSettings.androidsShouldNotReceiveHediffs.Contains(hediffDef.defName) is false
-                && (typeof(Hediff_Addiction).IsAssignableFrom(hediffDef.hediffClass)
+            if (VREA_DefOf.VREA_AndroidSettings.androidsShouldNotReceiveHediffs.Contains(hediffDef.defName))
+            {
+                return false;
+            }
+            if (typeof(Hediff_Addiction).IsAssignableFrom(hediffDef.hediffClass)
                 || DefDatabase<ChemicalDef>.AllDefs.Any(x => x.toleranceHediff == hediffDef)
                 || typeof(Hediff_Psylink).IsAssignableFrom(hediffDef.hediffClass)
                 || typeof(Hediff_High).IsAssignableFrom(hediffDef.hediffClass)
                 || typeof(Hediff_Hangover).IsAssignableFrom(hediffDef.hediffClass)
                 || hediffDef.chronic || hediffDef.CompProps<HediffCompProperties_Immunizable>() != null
-                || hediffDef.makesSickThought) is false;
+                || hediffDef.makesSickThought)
+            {
+                return false;
+            }
+            return true;
         }
 
         public static Dictionary<Pawn_GeneTracker, bool> cachedPawnTypes = new();
