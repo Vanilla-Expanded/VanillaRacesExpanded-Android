@@ -10,6 +10,7 @@ namespace VREAndroids
     })]
     public static class Hediff_Psylink_ChangeLevel_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         private static bool Prefix(Hediff_Psylink __instance)
         {
             if (__instance.pawn.IsAndroid())

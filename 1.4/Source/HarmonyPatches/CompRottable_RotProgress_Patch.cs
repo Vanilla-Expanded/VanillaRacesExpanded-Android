@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(CompRottable), "RotProgress", MethodType.Setter)]
     public static class CompRottable_RotProgress_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(CompRottable __instance)
         {
             if (__instance.parent is Pawn pawn && pawn.IsAndroid())

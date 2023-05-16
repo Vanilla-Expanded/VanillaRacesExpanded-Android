@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Pawn_StoryTracker), "TryGetRandomHeadFromSet")]
     public static class Pawn_StoryTracker_TryGetRandomHeadFromSet_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn_StoryTracker __instance, ref bool __result, IEnumerable<HeadTypeDef> options)
         {
             if (__instance.pawn.IsAndroid())

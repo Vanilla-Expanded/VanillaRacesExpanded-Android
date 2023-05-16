@@ -6,6 +6,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Hediff_Injury), "PainOffset", MethodType.Getter)]
     public static class Hediff_Injury_PainOffset_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Hediff_Injury __instance, ref float __result)
         {
             if (__instance.pawn.IsAndroid())

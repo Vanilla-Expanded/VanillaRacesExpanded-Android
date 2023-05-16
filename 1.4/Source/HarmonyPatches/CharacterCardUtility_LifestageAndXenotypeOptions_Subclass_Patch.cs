@@ -23,6 +23,7 @@ namespace VREAndroids
             return null;
         }
 
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(CustomXenotype ___customInner)
         {
             if (___customInner.IsAndroidType())

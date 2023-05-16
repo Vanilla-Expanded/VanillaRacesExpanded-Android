@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(HealthAIUtility), "ShouldBeTendedNowByPlayer")]
     public static class HealthAIUtility_ShouldBeTendedNowByPlayer_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(Pawn pawn, ref bool __result)
         {
             if (pawn.IsAndroid())

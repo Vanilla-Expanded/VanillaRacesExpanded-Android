@@ -11,6 +11,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(GeneUIUtility), "DrawGenesInfo")]
     public static class GeneUIUtility_DrawGenesInfo_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Rect rect, Thing target, float initialHeight, ref Vector2 size, ref Vector2 scrollPosition, GeneSet pregnancyGenes = null)
         {
             if (target is Pawn pawn && pawn.IsAndroid())

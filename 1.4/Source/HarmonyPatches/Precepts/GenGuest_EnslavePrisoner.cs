@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(GenGuest), "EnslavePrisoner")]
     public static class GenGuest_EnslavePrisoner_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn warden, Pawn prisoner)
         {
             if ( (warden.Ideo?.HasPrecept(VREA_DefOf.VRE_Androids_Tools) == true && prisoner.IsAndroid()))

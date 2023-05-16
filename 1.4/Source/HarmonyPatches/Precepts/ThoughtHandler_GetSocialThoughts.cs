@@ -12,6 +12,7 @@ namespace VREAndroids
     })]
     public static class ThoughtHandler_GetSocialThoughts_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn otherPawn, List<ISocialThought> outThoughts, ThoughtHandler __instance)
         {
             if (!__instance.pawn.IsAndroid() && (__instance.pawn.Ideo?.HasPrecept(VREA_DefOf.VRE_Androids_Tools)==true&&otherPawn.IsAndroid()))

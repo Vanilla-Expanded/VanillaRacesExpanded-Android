@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Pawn), "DescriptionFlavor", MethodType.Getter)]
     public static class Pawn_DescriptionFlavor_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(ref string __result, Pawn __instance)
         {
             if (__instance.IsAndroid())

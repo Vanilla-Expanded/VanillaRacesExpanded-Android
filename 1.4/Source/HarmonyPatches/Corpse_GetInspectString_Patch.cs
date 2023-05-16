@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Corpse), "GetInspectString")]
     public static class Corpse_GetInspectString_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(Corpse __instance, ref string __result)
         {
             if (__instance.InnerPawn.IsAndroid())

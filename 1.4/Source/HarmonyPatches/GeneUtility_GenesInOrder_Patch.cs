@@ -10,6 +10,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(GeneUtility), "GenesInOrder", MethodType.Getter)]
     public static class GeneUtility_GenesInOrder_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref List<GeneDef> __result)
         {
             var window = Find.WindowStack.WindowOfType<GeneCreationDialogBase>();

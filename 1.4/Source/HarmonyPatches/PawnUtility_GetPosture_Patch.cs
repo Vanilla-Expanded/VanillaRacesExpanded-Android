@@ -10,6 +10,7 @@ namespace VREAndroids
     public static class PawnUtility_GetPosture_Patch
     {
         public static bool isPawnRendering;
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn p, ref PawnPosture __result)
         {
             if (isPawnRendering && p.pather?.moving is false && p.Spawned)

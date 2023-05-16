@@ -46,6 +46,7 @@ namespace VREAndroids
             }
             return null;
         }
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn ___pawn, Rect ___leftRect, Rect sectionRect)
         {
             if (___pawn.IsAndroid())

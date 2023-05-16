@@ -6,6 +6,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(HediffGiver_Bleeding), "OnIntervalPassed")]
     public static class HediffGiver_Bleeding_OnIntervalPassed_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn, Hediff cause)
         {
             if (pawn.HasActiveGene(VREA_DefOf.VREA_NeutroCirculation))

@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(CompAbilityEffect_ReimplantXenogerm), "Valid")]
     public static class CompAbilityEffect_ReimplantXenogerm_Valid_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref bool __result, LocalTargetInfo target, bool throwMessages = false)
         {
             if (__result)

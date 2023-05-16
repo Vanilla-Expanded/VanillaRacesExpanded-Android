@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(FactionUtility), "GetSlavesInFactionCount")]
     public static class FactionUtility_GetSlavesInFactionCount_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(Faction faction, ref int __result)
         {
             if (Faction.OfPlayerSilentFail?.ideos?.primaryIdeo?.HasPrecept(VREA_DefOf.VRE_Androids_Tools) == true)

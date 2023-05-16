@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(GeneDef), "GetDescriptionFull")]
     public static class GeneDef_GetDescriptionFull_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(GeneDef __instance, ref string __result)
         {
             if (__instance.IsAndroidGene())

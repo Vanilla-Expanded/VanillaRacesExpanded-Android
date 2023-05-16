@@ -8,6 +8,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(PawnBioAndNameGenerator), "GiveShuffledBioTo")]
     public static class PawnBioAndNameGenerator_GiveShuffledBioTo_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn, FactionDef factionType, string requiredLastName, List<BackstoryCategoryFilter> 
             backstoryCategories, bool forceNoBackstory = false, bool forceNoNick = false, XenotypeDef xenotype = null)
         {

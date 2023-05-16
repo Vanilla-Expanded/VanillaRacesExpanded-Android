@@ -10,6 +10,7 @@ namespace VREAndroids
     public static class MentalBreaker_CanDoRandomMentalBreaks_Patch
     {
         public static Dictionary<MentalBreaker, CachedResult<bool>> cachedResults = new ();
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(MentalBreaker __instance, ref bool __result)
         {
             if (__result)

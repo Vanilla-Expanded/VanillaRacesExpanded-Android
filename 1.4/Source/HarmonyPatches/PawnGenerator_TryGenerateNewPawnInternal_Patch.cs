@@ -13,6 +13,7 @@ namespace VREAndroids
         {
             curRequest = request;
         }
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref Pawn __result)
         {
             curRequest = null;

@@ -8,6 +8,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Dialog_ViewGenes), "DoWindowContents")]
     public static class Dialog_ViewGenes_DoWindowContents_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Dialog_ViewGenes __instance, Rect inRect)
         {
             if (__instance.target.IsAndroid())

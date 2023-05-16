@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Pawn_AgeTracker), "RecalculateLifeStageIndex")]
     public static class Pawn_AgeTracker_RecalculateLifeStageIndex_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn_AgeTracker __instance)
         {
             if (__instance.pawn.IsAndroid())

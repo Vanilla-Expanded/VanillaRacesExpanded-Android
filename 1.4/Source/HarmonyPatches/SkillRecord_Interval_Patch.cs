@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(SkillRecord), "Interval")]
     public static class SkillRecord_Interval_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(SkillRecord __instance, Pawn ___pawn)
         {
             if (___pawn.HasActiveGene(VREA_DefOf.VREA_NoSkillGain))

@@ -19,6 +19,7 @@ namespace VREAndroids
         [HarmonyTargetMethod]
         public static MethodBase TargetMethod() => methodInfo;
 
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn)
         {
             if (pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))

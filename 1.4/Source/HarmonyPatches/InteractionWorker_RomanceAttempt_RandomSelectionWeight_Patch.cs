@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "RandomSelectionWeight")]
     public static class InteractionWorker_RomanceAttempt_RandomSelectionWeight_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref float __result, Pawn initiator, Pawn recipient)
         {
             if (initiator.Emotionless())

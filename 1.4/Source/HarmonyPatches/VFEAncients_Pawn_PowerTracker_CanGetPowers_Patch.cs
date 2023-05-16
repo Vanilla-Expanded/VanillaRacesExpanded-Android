@@ -18,6 +18,7 @@ namespace VREAndroids
             return targetMethod;
         }
 
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(Pawn pawn, ref bool __result)
         {
             if (pawn.IsAndroid())

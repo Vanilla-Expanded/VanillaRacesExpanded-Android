@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(HediffSet), "GetPartHealth")]
     public static class HediffSet_GetPartHealth_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(HediffSet __instance, ref float __result, BodyPartRecord part) 
         {
             if (__instance.pawn.IsAndroid())

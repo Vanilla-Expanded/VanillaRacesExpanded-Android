@@ -9,6 +9,7 @@ namespace VREAndroids
     public static class InteractionUtility_CanInitiateInteraction_Patch
     {
         public static Dictionary<Pawn, CachedResult<bool>> cachedResults = new();
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(Pawn pawn, ref bool __result)
         {
             if (__result)

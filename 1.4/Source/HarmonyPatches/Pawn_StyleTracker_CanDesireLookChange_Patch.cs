@@ -6,6 +6,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Pawn_StyleTracker), "CanDesireLookChange", MethodType.Getter)]
     public static class Pawn_StyleTracker_CanDesireLookChange_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn_StyleTracker __instance, ref bool __result)
         {
             var gene = __instance.pawn.genes?.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;

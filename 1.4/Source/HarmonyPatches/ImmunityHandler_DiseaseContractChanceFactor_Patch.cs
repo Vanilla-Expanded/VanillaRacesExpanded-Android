@@ -9,6 +9,7 @@ namespace VREAndroids
         new ArgumentType[] { ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal})]
     public static class ImmunityHandler_DiseaseContractChanceFactor_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref float __result, ImmunityHandler __instance, HediffDef diseaseDef, ref HediffDef immunityCause, BodyPartRecord part = null)
         {
             if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticImmunity) && Utils.AndroidCanCatch(diseaseDef) is false)

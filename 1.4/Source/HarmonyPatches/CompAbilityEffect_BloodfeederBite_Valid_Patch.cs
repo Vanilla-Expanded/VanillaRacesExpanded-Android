@@ -22,6 +22,7 @@ namespace VREAndroids
             }
         }
 
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref bool __result, LocalTargetInfo target, bool throwMessages = false)
         {
             if (__result)

@@ -10,6 +10,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(GeneDef), "SpecialDisplayStats")]
     public static class GeneDef_SpecialDisplayStats_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(GeneDef __instance, ref IEnumerable<StatDrawEntry> __result)
         {
             var stats = __result.ToList();

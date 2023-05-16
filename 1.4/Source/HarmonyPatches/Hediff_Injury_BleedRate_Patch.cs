@@ -6,6 +6,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Hediff_Injury), "BleedRate", MethodType.Getter)]
     public static class Hediff_Injury_BleedRate_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(ref float __result, Hediff_Injury __instance)
         {
             if (__instance.pawn.HasActiveGene(VREA_DefOf.VREA_NeutroCirculation))

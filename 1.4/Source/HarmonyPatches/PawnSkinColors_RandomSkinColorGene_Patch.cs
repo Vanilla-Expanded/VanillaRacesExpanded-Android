@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(PawnSkinColors), "RandomSkinColorGene")]
     public static class PawnSkinColors_RandomSkinColorGene_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn, ref GeneDef __result)
         {
             if (pawn.IsAndroid())

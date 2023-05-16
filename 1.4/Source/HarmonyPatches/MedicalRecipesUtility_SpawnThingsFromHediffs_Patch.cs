@@ -9,6 +9,7 @@ namespace VREAndroids
     public static class MedicalRecipesUtility_SpawnThingsFromHediffs_Patch
     {
         public static bool shouldCheck;
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn, BodyPartRecord part, IntVec3 pos, Map map)
         {
             if (pawn.IsAndroid())

@@ -8,6 +8,7 @@ namespace VREAndroids
 
     public static class StatWorker_ShouldShowFor_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(StatWorker __instance, StatRequest req, ref bool __result)
         {
             if (__result && req.Thing is Pawn pawn && pawn.IsAndroid())

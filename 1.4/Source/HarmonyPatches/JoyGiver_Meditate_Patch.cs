@@ -8,6 +8,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(JoyGiver_Meditate), "TryGiveJob")]
     public static class JoyGiver_Meditate_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref Job __result, Pawn pawn)
         {
             if (pawn.HasActiveGene(VREA_DefOf.VREA_JoyDisabled))

@@ -6,6 +6,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Pawn_DraftController), "ShowDraftGizmo", MethodType.Getter)]
     public static class Pawn_DraftController_ShowDraftGizmo_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(Pawn_DraftController __instance, ref bool __result)
         {
             if (__result && __instance.pawn.HasActiveGene(VREA_DefOf.VREA_Uncontrollable))

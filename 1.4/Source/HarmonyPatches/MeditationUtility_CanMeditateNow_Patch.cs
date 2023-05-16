@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(MeditationUtility), "CanMeditateNow")]
     public static class MeditationUtility_CanMeditateNow_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref bool __result, Pawn pawn)
         {
             if (pawn.HasActiveGene(VREA_DefOf.VREA_JoyDisabled))

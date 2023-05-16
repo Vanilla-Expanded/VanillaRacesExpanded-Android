@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(PawnDiedOrDownedThoughtsUtility), "AppendThoughts_ForHumanlike")]
     public static class PawnDiedOrDownedThoughtsUtility_AppendThoughts_ForHumanlike_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn victim, DamageInfo? dinfo)
         {
             

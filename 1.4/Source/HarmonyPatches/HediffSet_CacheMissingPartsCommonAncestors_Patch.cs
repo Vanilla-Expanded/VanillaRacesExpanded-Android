@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(HediffSet), nameof(HediffSet.CacheMissingPartsCommonAncestors))]
     public static class HediffSet_CacheMissingPartsCommonAncestors_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(HediffSet __instance)
         {
             if (__instance.pawn.IsAndroid())

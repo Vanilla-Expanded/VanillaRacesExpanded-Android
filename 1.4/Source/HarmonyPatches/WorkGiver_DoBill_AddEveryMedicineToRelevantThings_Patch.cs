@@ -10,6 +10,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(WorkGiver_DoBill), "AddEveryMedicineToRelevantThings")]
     public static class WorkGiver_DoBill_AddEveryMedicineToRelevantThings_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Thing billGiver)
         {
             if (billGiver is Pawn pawn2 && pawn2.IsAndroid())

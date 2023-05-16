@@ -11,6 +11,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(HealthCardUtility), "DrawOverviewTab")]
     public static class HealthCardUtility_DrawOverviewTab_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(ref float __result, Rect leftRect, Pawn pawn, float curY)
         {
             if (pawn.IsAndroid(out var gene))

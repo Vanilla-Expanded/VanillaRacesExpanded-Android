@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(PawnCapacityUtility), "CalculatePartEfficiency")]
     public static class PawnCapacityUtility_CalculatePartEfficiency_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(ref float __result, HediffSet diffSet, BodyPartRecord part, bool ignoreAddedParts = false, List<CapacityImpactor> impactors = null)
         {
             if (diffSet.pawn.IsAndroid())

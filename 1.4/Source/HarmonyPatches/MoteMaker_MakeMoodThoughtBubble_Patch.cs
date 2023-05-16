@@ -7,6 +7,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(MoteMaker), "MakeMoodThoughtBubble")]
     public static class MoteMaker_MakeMoodThoughtBubble_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn)
         {
             if (pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))

@@ -8,6 +8,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(Pawn_HealthTracker), "ShouldBeDowned")]
     public static class Pawn_HealthTracker_ShouldBeDowned_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(ref bool __result, Pawn_HealthTracker __instance)
         {
             if (__instance.pawn.IsAndroid())

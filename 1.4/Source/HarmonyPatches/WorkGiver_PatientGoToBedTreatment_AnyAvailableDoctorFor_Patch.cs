@@ -9,6 +9,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(WorkGiver_PatientGoToBedTreatment), "AnyAvailableDoctorFor")]
     public static class WorkGiver_PatientGoToBedTreatment_AnyAvailableDoctorFor_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn, ref bool __result)
         {
             if (pawn.IsAndroid())

@@ -8,6 +8,7 @@ namespace VREAndroids
     [HarmonyPatch(typeof(ThoughtWorker_Pain), "CurrentThoughtState")]
     public static class ThoughtWorker_Pain_CurrentThoughtState_Patch
     {
+        [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(ref ThoughtState __result, Pawn p)
         {
             if (p.HasActiveGene(VREA_DefOf.VREA_PainDisabled))
