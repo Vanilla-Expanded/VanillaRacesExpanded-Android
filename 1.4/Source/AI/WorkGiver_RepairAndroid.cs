@@ -24,26 +24,18 @@ namespace VREAndroids
             {
                 return false;
             }
+            if (pawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
+            {
+                return false;
+            }
             if (gene.autoRepair is false)
             {
                 return false;
             }
-            if (pawn == pawn2)
+            if (GoodLayingStatusForTend(pawn2, pawn) is false)
             {
-                if (!pawn.playerSettings.selfTend)
-                {
-                    return false;
-                }
+                return false;
             }
-            else
-            {
-                var bed = pawn2.CurrentBed();
-                if (bed is null)
-                {
-                    return false;
-                }
-            }
-
             if (pawn2.InAggroMentalState || pawn2.HostileTo(pawn))
             {
                 return false;
@@ -69,6 +61,15 @@ namespace VREAndroids
                 return false;
             }
             return true;
+        }
+
+        public static bool GoodLayingStatusForTend(Pawn patient, Pawn doctor)
+        {
+            if (patient == doctor)
+            {
+                return true;
+            }
+            return patient.InBed();
         }
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)

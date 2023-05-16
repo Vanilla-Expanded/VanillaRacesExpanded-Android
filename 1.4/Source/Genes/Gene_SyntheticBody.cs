@@ -8,7 +8,7 @@ namespace VREAndroids
     {
         public NameTriple storedTripleName;
 
-        public bool autoRepair;
+        public bool autoRepair = true;
         public bool Awakened => pawn.genes.GenesListForReading.Select(x => x.def).OfType<AndroidGeneDef>()
             .Any(x => x.removeWhenAwakened) is false;
         public override void PostAdd()
@@ -80,7 +80,7 @@ namespace VREAndroids
         {
             base.ExposeData();
             Scribe_Deep.Look(ref storedTripleName, "storedTripleName");
-            Scribe_Values.Look(ref autoRepair, "autoRepair");
+            Scribe_Values.Look(ref autoRepair, "autoRepair", true);
         }
     }
 }

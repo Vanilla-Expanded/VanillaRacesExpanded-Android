@@ -9,13 +9,6 @@
 		<playerInterruptible>false</playerInterruptible>
 	</JobDef>
 	
-	<JobDef>
-		<defName>VREA_TendAndroid</defName>
-		<driverClass>VREAndroids.JobDriver_TendAndroid</driverClass>
-		<reportString>tending to TargetA.</reportString>
-		<casualInterruptible>false</casualInterruptible>
-	</JobDef>
-	
   <JobDef>
     <defName>VREA_CreateAndroid</defName>
     <driverClass>VREAndroids.JobDriver_CreateAndroid</driverClass>

@@ -32,7 +32,6 @@ namespace VREAndroids
         public static DamageDef VREA_Freeze;
         public static HediffDef VREA_Overheating;
         public static StatDef VREA_MemorySpaceDrainMultiplier;
-        public static JobDef VREA_TendAndroid;
         public static SoundDef Interact_ConstructMetal;
         public static MentalStateDef VREA_SolarFlared;
 

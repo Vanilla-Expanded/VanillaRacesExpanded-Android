@@ -312,7 +312,6 @@
     <Compile Include="Things\Reactor.cs" />
     <Compile Include="VREAndroidsMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AI\WorkGiver_TendAndroid.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
