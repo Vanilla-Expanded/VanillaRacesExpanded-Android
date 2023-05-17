@@ -15,6 +15,7 @@ namespace VREAndroids
         public static List<GeneDef> allGenes = DefDatabase<GeneDef>.AllDefsListForReading.ListFullCopy();
 
         public static List<GeneDef> androidConvertableGenes = new List<GeneDef>();
+        public static List<GeneDef> androidConvertableGenesBlacklist = new List<GeneDef>();
         public static List<GeneCategoryDef> androidConvertableGeneCategories = new List<GeneCategoryDef>();
 
 
@@ -36,6 +37,7 @@ namespace VREAndroids
             {
                 androidConvertableGenes.AddRange(individualList.genes);
                 androidConvertableGeneCategories.AddRange(individualList.geneCategories);
+                androidConvertableGenesBlacklist.AddRange(individualList.genesBlacklist);
             }
            
 
@@ -48,7 +50,7 @@ namespace VREAndroids
                 }
                 else
                 {
-                    if ((allCosmeticCategories.Contains(geneDef.displayCategory) && geneDef.biostatArc <= 0) || 
+                    if (!androidConvertableGenesBlacklist.Contains(geneDef) &&(allCosmeticCategories.Contains(geneDef.displayCategory) && geneDef.biostatArc <= 0) || 
                         androidConvertableGeneCategories.Contains(geneDef.displayCategory) || androidConvertableGenes.Contains(geneDef))
                     {
                         GeneDef clonedGene = geneDef.Clone() as GeneDef;
