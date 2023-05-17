@@ -14,6 +14,8 @@ namespace VREAndroids
     {
         public static List<GeneDef> allGenes = DefDatabase<GeneDef>.AllDefsListForReading.ListFullCopy();
 
+        public static List<GeneDef> androidConvertableGenes = new List<GeneDef>();
+
         public static HashSet<GeneCategoryDef> allCosmeticCategories = new()
         {
             VREA_DefOf.Cosmetic, VREA_DefOf.Cosmetic_Body, VREA_DefOf.Cosmetic_Hair, VREA_DefOf.Cosmetic_Skin, VREA_DefOf.Beauty
@@ -26,6 +28,14 @@ namespace VREAndroids
             {
                 yield return r;
             }
+
+            List<AndroidConvertableGenesDef> allAndroidConvertableGenes = DefDatabase<AndroidConvertableGenesDef>.AllDefsListForReading;
+            foreach (AndroidConvertableGenesDef individualList in allAndroidConvertableGenes)
+            {
+                androidConvertableGenes.AddRange(individualList.genes);
+            }
+
+
             foreach (var geneDef in allGenes) 
             {
                 if (geneDef.displayCategory == VREA_DefOf.VREA_Hardware || geneDef.displayCategory == VREA_DefOf.VREA_Subroutine)
@@ -34,7 +44,7 @@ namespace VREAndroids
                 }
                 else
                 {
-                    if (allCosmeticCategories.Contains(geneDef.displayCategory) && geneDef.biostatArc <= 0)
+                    if ((allCosmeticCategories.Contains(geneDef.displayCategory) && geneDef.biostatArc <= 0)|| androidConvertableGenes.Contains(geneDef))
                     {
                         GeneDef clonedGene = geneDef.Clone() as GeneDef;
                         clonedGene.defName = "VREA_" + geneDef.defName;
