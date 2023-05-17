@@ -165,7 +165,7 @@
     <Compile Include="HarmonyPatches\Xenogerm_GetFloatMenuOptions_Patch.cs" />
     <Compile Include="HarmonyPatches\Xenogerm_GetGizmos_Patch.cs" />
     <Compile Include="HarmonyPatches\XenotypeDef_SpecialDisplayStats_Patch.cs" />
-    <Compile Include="NewFolder1\AndroidConvertableGenesDef.cs" />
+    <Compile Include="Defs\AndroidConvertableGenesDef.cs" />
     <Compile Include="QuestNodes\QuestNode_GenerateAndroid.cs" />
     <Compile Include="Recipes\Recipe_RemoveArtificalBodyPart.cs" />
     <Compile Include="AI\Stance_Stand.cs" />

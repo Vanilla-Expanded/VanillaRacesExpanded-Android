@@ -11,5 +11,7 @@ namespace VREAndroids
     {
 
         public List<GeneDef> genes;
+        public List<GeneCategoryDef> geneCategories;
+
     }
 }
