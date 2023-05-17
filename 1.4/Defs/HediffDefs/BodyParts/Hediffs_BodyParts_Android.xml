@@ -793,7 +793,7 @@
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_AndroidHand</defName>
     <label>android hand</label>
-    <description>A synthetic, android arm.</description>
+    <description>A synthetic, android hand.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidHand</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>5</Plasteel>
