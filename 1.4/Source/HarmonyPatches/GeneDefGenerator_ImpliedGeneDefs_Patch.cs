@@ -55,11 +55,19 @@ namespace VREAndroids
                     {
                         GeneDef clonedGene = geneDef.Clone() as GeneDef;
                         clonedGene.defName = "VREA_" + geneDef.defName;
+                        
                         var existingGeneExtension = clonedGene.GetModExtension<GeneExtension>();
+                        
                         if (existingGeneExtension != null)
                         {
-                            existingGeneExtension.backgroundPathXenogenes = "UI/Icons/Genes/GeneBackground_Hardware";
-                            existingGeneExtension.backgroundPathEndogenes = "UI/Icons/Genes/GeneBackground_Hardware";
+                            clonedGene.modExtensions.Remove(existingGeneExtension);
+                            var clonedGeneExtension = (GeneExtension)existingGeneExtension.Clone();
+                            
+                            clonedGeneExtension.backgroundPathXenogenes = "UI/Icons/Genes/GeneBackground_Hardware";
+                            clonedGeneExtension.backgroundPathEndogenes = "UI/Icons/Genes/GeneBackground_Hardware";
+                          
+                            clonedGene.modExtensions.Add(clonedGeneExtension);
+                            
                         }
                         else
                         {
