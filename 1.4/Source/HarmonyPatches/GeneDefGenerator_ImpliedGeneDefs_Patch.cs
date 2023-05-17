@@ -55,7 +55,8 @@ namespace VREAndroids
                     {
                         GeneDef clonedGene = geneDef.Clone() as GeneDef;
                         clonedGene.defName = "VREA_" + geneDef.defName;
-                        
+                        clonedGene.modExtensions = clonedGene.modExtensions?.ListFullCopy();
+
                         var existingGeneExtension = clonedGene.GetModExtension<GeneExtension>();
                         
                         if (existingGeneExtension != null)
