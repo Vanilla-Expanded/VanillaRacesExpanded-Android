@@ -35,9 +35,9 @@ namespace VREAndroids
             List<AndroidConvertableGenesDef> allAndroidConvertableGenes = DefDatabase<AndroidConvertableGenesDef>.AllDefsListForReading;
             foreach (AndroidConvertableGenesDef individualList in allAndroidConvertableGenes)
             {
-                androidConvertableGenes.AddRange(individualList.genes);
-                androidConvertableGeneCategories.AddRange(individualList.geneCategories);
-                androidConvertableGenesBlacklist.AddRange(individualList.genesBlacklist);
+                if (!individualList.genes.NullOrEmpty()) { androidConvertableGenes.AddRange(individualList.genes); }
+                if (!individualList.geneCategories.NullOrEmpty()) { androidConvertableGeneCategories.AddRange(individualList.geneCategories); }
+                if (!individualList.genesBlacklist.NullOrEmpty()) { androidConvertableGenesBlacklist.AddRange(individualList.genesBlacklist); }
             }
            
 
