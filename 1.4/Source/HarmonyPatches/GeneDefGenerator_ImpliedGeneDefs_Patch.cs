@@ -50,8 +50,8 @@ namespace VREAndroids
                 }
                 else
                 {
-                    if (!androidConvertableGenesBlacklist.Contains(geneDef) &&(allCosmeticCategories.Contains(geneDef.displayCategory) && geneDef.biostatArc <= 0) || 
-                        androidConvertableGeneCategories.Contains(geneDef.displayCategory) || androidConvertableGenes.Contains(geneDef))
+                    if (!androidConvertableGenesBlacklist.Contains(geneDef) && ((allCosmeticCategories.Contains(geneDef.displayCategory) && geneDef.biostatArc <= 0) || 
+                        androidConvertableGeneCategories.Contains(geneDef.displayCategory) || androidConvertableGenes.Contains(geneDef)))
                     {
                         GeneDef clonedGene = geneDef.Clone() as GeneDef;
                         clonedGene.defName = "VREA_" + geneDef.defName;
