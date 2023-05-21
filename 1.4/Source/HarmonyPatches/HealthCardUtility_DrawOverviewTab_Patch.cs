@@ -37,22 +37,22 @@ namespace VREAndroids
             {
                 bool selfTend = pawn.playerSettings.selfTend;
                 Rect rect3 = new Rect(0f, curY, leftRect.width, 24f);
-                Widgets.CheckboxLabeled(rect3, "SelfTend".Translate(), ref pawn.playerSettings.selfTend);
+                Widgets.CheckboxLabeled(rect3, "VREA.SelfRepair".Translate(), ref pawn.playerSettings.selfTend);
                 if (pawn.playerSettings.selfTend && !selfTend)
                 {
                     if (pawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
                     {
                         pawn.playerSettings.selfTend = false;
-                        Messages.Message("VREA.MessageCannotSelfTendEver".Translate(pawn.LabelShort, pawn), MessageTypeDefOf.RejectInput, historical: false);
+                        Messages.Message("VREA.MessageCannotSelfRepairEver".Translate(pawn.LabelShort, pawn), MessageTypeDefOf.RejectInput, historical: false);
                     }
                     else if (pawn.workSettings.GetPriority(WorkTypeDefOf.Crafting) == 0)
                     {
-                        Messages.Message("VREA.MessageSelfTendUnsatisfied".Translate(pawn.LabelShort, pawn), MessageTypeDefOf.CautionInput, historical: false);
+                        Messages.Message("VREA.MessageSelfRepairUnsatisfied".Translate(pawn.LabelShort, pawn), MessageTypeDefOf.CautionInput, historical: false);
                     }
                 }
                 if (Mouse.IsOver(rect3))
                 {
-                    TooltipHandler.TipRegion(rect3, "SelfTendTip".Translate(Faction.OfPlayer.def.pawnsPlural, 0.7f.ToStringPercent()).CapitalizeFirst());
+                    TooltipHandler.TipRegion(rect3, "VREA.SelfRepairTip".Translate(Faction.OfPlayer.def.pawnsPlural, 0.7f.ToStringPercent()).CapitalizeFirst());
                 }
                 curY += 28f;
                 rect3 = new Rect(0f, curY, leftRect.width, 24f);

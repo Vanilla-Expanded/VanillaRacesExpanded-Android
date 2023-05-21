@@ -68,7 +68,8 @@ namespace VREAndroids
 
         public void FinishAndroidProject()
         {
-            var android = PawnGenerator.GeneratePawn(new PawnGenerationRequest(VREA_DefOf.VREA_AndroidBasic, Faction.OfPlayer));
+            var android = PawnGenerator.GeneratePawn(new PawnGenerationRequest(VREA_DefOf.VREA_AndroidBasic, Faction.OfPlayer, 
+                allowDowned: true, allowAddictions: false));
             android.apparel.wornApparel.Clear();
             android.equipment.equipment.Clear();
             android.inventory.innerContainer.Clear();

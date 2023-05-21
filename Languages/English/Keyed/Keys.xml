@@ -45,8 +45,8 @@
 	<VREA.NeutrolossRate>Neutroloss rate</VREA.NeutrolossRate>
 	<VREA.TotalNeutroLoss>Total neutro loss in {0}</VREA.TotalNeutroLoss>
 	<VREA.NeutroamineLeakedOutCompletely>Neutroamine leaked out completely</VREA.NeutroamineLeakedOutCompletely>
-	<VREA.MessageCannotSelfTendEver>{1_labelShort} is incapable of doing Crafting work, and so cannot ever self-tend.</VREA.MessageCannotSelfTendEver>
-	<VREA.MessageSelfTendUnsatisfied>To self-tend, {1_labelShort} must also be assigned to Crafting work.</VREA.MessageSelfTendUnsatisfied>
+	<VREA.MessageCannotSelfRepairEver>{1_labelShort} is incapable of doing Crafting work, and so cannot ever self-repair.</VREA.MessageCannotSelfRepairEver>
+	<VREA.MessageSelfRepairUnsatisfied>To self-repair, {1_labelShort} must also be assigned to Crafting work.</VREA.MessageSelfRepairUnsatisfied>
 	<VREA.ViewComponents>View components</VREA.ViewComponents>
 	<VREA.ViewComponentsDesc>Click to view {PAWN_nameDef}'s components.</VREA.ViewComponentsDesc>
 	<VREA.MoreInfoInInfoScreen>More information is available on this android's information screen.</VREA.MoreInfoInInfoScreen>
@@ -56,7 +56,7 @@
 	<VREA.SubroutinesDesc>Subroutine components dictate how the android will behave and what knowledge it has. They can be changed via behaviorist station.</VREA.SubroutinesDesc>
 	<VREA.ScanProgress>Scan progress: {0}</VREA.ScanProgress>
 	<VREA.AndroidAreNotAllowed>Androids are not allowed</VREA.AndroidAreNotAllowed>
-	<VREA.MessageSubcorePolyanalyzerCompleted>Subcore polyanalyzer completed for {PAWN_nameDef}. Scan progres: {1}</VREA.MessageSubcorePolyanalyzerCompleted>
+	<VREA.MessageSubcorePolyanalyzerCompleted>Subcore polyanalyzer completed for {PAWN_nameDef}. Scan progress: {1}</VREA.MessageSubcorePolyanalyzerCompleted>
 	<VREA.AlreadyScanned>{PAWN_nameDef} has already been scanned.</VREA.AlreadyScanned>
 	<VREA.SubcorePolyanalyzerNotInit>Subcore polyanalyzer not initiated</VREA.SubcorePolyanalyzerNotInit>
 	<VREA.SubcorePolyanalyzerStart>Start subcore polyanalyzer</VREA.SubcorePolyanalyzerStart>
@@ -108,11 +108,14 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.TriggerSelfDestructDesc>Initiate a self-destruct protocol, which drains the remaining reactor power at an extreme rate, triggering an explosion when it’s done.</VREA.TriggerSelfDestructDesc>
 	<VREA.CancelSelfDestruct>Cancel self-destruct</VREA.CancelSelfDestruct>
 	<VREA.CancelSelfDestructDesc>Cancel the self-destruct protocol.</VREA.CancelSelfDestructDesc>
-	<VREA.CommandAutoRepairDesc>If set active, an available crafter will automatically repair this android when laying in bed. If self tend is enabled, androids will be able to repair themselves in place.</VREA.CommandAutoRepairDesc>
+	<VREA.CommandAutoRepairDesc>If set active, an available crafter will automatically repair this android when laying in bed. If self-repair is enabled, androids will be able to repair themselves in place.</VREA.CommandAutoRepairDesc>
 	<VREA.UseBedAndroid>Lay until repaired</VREA.UseBedAndroid>
 	<VREA.NoCrafter>no crafter</VREA.NoCrafter>
 	<VREA.NotSetToAutoRepair>not set to auto-repair</VREA.NotSetToAutoRepair>
 	<VREA.Laying>Laying.</VREA.Laying>
 	<VREA.CannotUse>cannot use this</VREA.CannotUse>
 	<VREA.RefusesReprogramming>refuses reprogramming</VREA.RefusesReprogramming>
+	<VREA.SelfRepair>Self-repair</VREA.SelfRepair>
+	<VREA.SelfRepairTip>Androids with self-repair enabled will automatically repair themselves on the spot at {1} the normal efficiency.</VREA.SelfRepairTip>
+
 </LanguageData>

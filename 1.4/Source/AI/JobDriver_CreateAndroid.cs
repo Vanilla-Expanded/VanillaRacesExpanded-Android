@@ -41,7 +41,8 @@ namespace VREAndroids
                 return thing.Spawned && thing is Building_AndroidCreationStation station && station.ReadyForAssembling(pawn, out _) 
                 ? JobCondition.Ongoing : JobCondition.Incompletable;
             });
-            this.FailOn(() => Station.unfinishedAndroid != null && Station.unfinishedAndroid.Spawned is false);
+            this.FailOn(() => Station.unfinishedAndroid != null && Station.unfinishedAndroid.Spawned is false 
+            && pawn.carryTracker.CarriedThing != Station.unfinishedAndroid);
             this.FailOnBurningImmobile(TargetIndex.A);
             Toil gotoStation = Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.ClosestTouch);
             if (job.targetQueueB != null)
@@ -77,7 +78,7 @@ namespace VREAndroids
             };
             yield return Toils_Reserve.Reserve(TargetIndex.C);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
-            yield return new Toil
+            var createAndroid = new Toil
             {
                 tickAction = delegate
                 {
@@ -88,8 +89,10 @@ namespace VREAndroids
                         this.EndJobWith(JobCondition.Succeeded);
                     }
                 },
-                defaultCompleteMode = ToilCompleteMode.Never
+                defaultCompleteMode = ToilCompleteMode.Delay
             }.WithEffect(() => VREA_DefOf.ButcherMechanoid, TargetIndex.C).WithProgressBar(TargetIndex.C, () => (Station.currentWorkAmountDone / Station.totalWorkAmount));
+            createAndroid.defaultDuration = 5000;
+            yield return createAndroid;
         }
 
         public IEnumerable<Toil> CollectIngredientsToils(TargetIndex ingredientInd, TargetIndex billGiverInd, TargetIndex ingredientPlaceCellInd, bool subtractNumTakenFromJobCount = false, bool failIfStackCountLessThanJobCount = true)

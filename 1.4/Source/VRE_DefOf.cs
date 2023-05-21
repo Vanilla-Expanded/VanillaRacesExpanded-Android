@@ -34,16 +34,8 @@ namespace VREAndroids
         public static StatDef VREA_MemorySpaceDrainMultiplier;
         public static SoundDef Interact_ConstructMetal;
         public static MentalStateDef VREA_SolarFlared;
-
-        public static GeneCategoryDef Cosmetic;
-        public static GeneCategoryDef Cosmetic_Skin;
-        public static GeneCategoryDef Cosmetic_Hair;
-        public static GeneCategoryDef Beauty;
-        public static GeneCategoryDef Cosmetic_Body;
-
         public static GeneCategoryDef VREA_Hardware;
         public static GeneCategoryDef VREA_Subroutine;
-
         public static RecipeDef VREA_RemoveArtificialPart;
         public static GeneDef VREA_EMPVulnerability;
         public static DamageDef VREA_EMPBurn;

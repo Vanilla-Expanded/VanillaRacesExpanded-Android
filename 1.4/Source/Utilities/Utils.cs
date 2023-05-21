@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,7 +9,6 @@ namespace VREAndroids
     [StaticConstructorOnStartup]
     public static class Utils
     {
-        public static bool DubsMintMenusActive = ModsConfig.IsActive("Dubwise.DubsMintMenus");
         public static bool HasAndroidPartThingVariant(this BodyPartDef part)
         {
             return part != BodyPartDefOf.Torso && part != BodyPartDefOf.Brain
@@ -40,23 +38,6 @@ namespace VREAndroids
             {
                 race.recipes ??= new List<RecipeDef>();
                 race.recipes.Add(VREA_DefOf.VREA_RemoveArtificialPart);
-            }
-            if (DubsMintMenusActive)
-            {
-                LongEventHandler.ExecuteWhenFinished(delegate
-                {
-                    if (DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch.Prepare())
-                    {
-                        VREAndroidsMod.harmony.Patch(DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch.TargetMethod(),
-                            prefix: new HarmonyMethod(AccessTools.Method(typeof(DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch),
-                            nameof(DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch.Prefix))));
-                    }
-                    else
-                    {
-                        Log.Error("[VREAndroids] Failed to patch Dubs Mint Menus");
-                    }
-                });
-
             }
         }
         public static List<GeneDef> AndroidGenesGenesInOrder

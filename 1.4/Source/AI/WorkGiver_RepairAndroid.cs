@@ -65,7 +65,7 @@ namespace VREAndroids
 
         public static bool GoodLayingStatusForTend(Pawn patient, Pawn doctor)
         {
-            if (patient == doctor)
+            if (patient == doctor && patient.playerSettings.selfTend)
             {
                 return true;
             }

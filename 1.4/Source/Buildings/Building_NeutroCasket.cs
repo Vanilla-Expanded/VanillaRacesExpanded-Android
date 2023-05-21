@@ -11,10 +11,12 @@ namespace VREAndroids
     public class Building_NeutroCasket : Building_Bed
     {
         protected CompRefuelable compRefuelable;
+        protected CompPowerTrader compPower;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.compRefuelable = base.GetComp<CompRefuelable>();
+            this.compPower = base.GetComp<CompPowerTrader>();
             this.Medical = true;
         }
 
@@ -31,7 +33,7 @@ namespace VREAndroids
         public override void Tick()
         {
             base.Tick();
-            if (this.IsHashIntervalTick(60))
+            if (this.IsHashIntervalTick(60) && compPower.PowerOn)
             {
                 foreach (var occupant in CurOccupants)
                 {
@@ -53,14 +55,10 @@ namespace VREAndroids
             {
                 if (gizmo is Command_Toggle toggle)
                 {
-                    if (toggle.defaultLabel == "CommandBedSetForPrisonersLabel".Translate() || toggle.defaultLabel == "CommandBedSetAsMedicalLabel".Translate())
+                    if (toggle.defaultLabel == "CommandBedSetAsMedicalLabel".Translate())
                     {
                         continue;
                     }
-                }
-                else if (gizmo is Command_SetBedOwnerType)
-                {
-                    continue;
                 }
                 yield return gizmo;
             }

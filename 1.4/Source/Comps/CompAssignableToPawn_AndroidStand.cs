@@ -7,6 +7,9 @@ namespace VREAndroids
 {
     public class CompAssignableToPawn_AndroidStand : CompAssignableToPawn_Bed
     {
+        public override void PostPostExposeData()
+        {
+        }
         public override IEnumerable<Pawn> AssigningCandidates
         {
             get

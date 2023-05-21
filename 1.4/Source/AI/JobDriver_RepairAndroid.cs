@@ -40,11 +40,15 @@ namespace VREAndroids
                     }
                 });
             }
-            tendToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell).WithProgressBarToilDelay(TargetIndex.A)
-                .PlaySustainerOrSound(VREA_DefOf.Interact_ConstructMetal);
+            tendToil.WithProgressBarToilDelay(TargetIndex.A).PlaySustainerOrSound(VREA_DefOf.Interact_ConstructMetal);
+            if (pawn != Patient)
+            {
+                tendToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell);
+            }
             tendToil.activeSkill = () => SkillDefOf.Crafting;
             tendToil.handlingFacing = true;
-            tendToil.WithEffect(VREA_DefOf.ButcherMechanoid, TargetIndex.A);
+            tendToil.WithEffect(EffecterDefOf.MechRepairing, TargetIndex.A);
+            tendToil.PlaySustainerOrSound(SoundDefOf.RepairMech_Touch);
             tendToil.tickAction = delegate
             {
                 if (pawn == Patient && pawn.Faction != Faction.OfPlayer
@@ -84,8 +88,10 @@ namespace VREAndroids
             };
             repairToil.AddEndCondition(() => CanRepairAndroid(Patient) ? JobCondition.Ongoing : JobCondition.Succeeded);
             repairToil.activeSkill = () => SkillDefOf.Crafting;
-
-            yield return gotoToil;
+            if (pawn != Patient)
+            {
+                yield return gotoToil;
+            }
             yield return Toils_Jump.JumpIf(repairToil, () => Patient.health.HasHediffsNeedingTend() is false);
             yield return tendToil;
             yield return FinalizeTend(Patient);

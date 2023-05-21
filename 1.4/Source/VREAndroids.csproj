@@ -71,6 +71,7 @@
     <Compile Include="AI\JobDriver_ModifyAndroid.cs" />
     <Compile Include="AI\JobDriver_FreeMemorySpace.cs" />
     <Compile Include="AI\JobGiver_FreeMemorySpace.cs" />
+    <Compile Include="AI\JobGiver_MakeLovin.cs" />
     <Compile Include="AI\MentalState_Reformatting.cs" />
     <Compile Include="AI\MentalState_SolarFlared.cs" />
     <Compile Include="AI\WorkGiver_CarryToAndroidBehavioristStation.cs" />
@@ -84,6 +85,8 @@
     <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
+    <Compile Include="HarmonyPatches\DrugPolicyUIUtility_DoAssignDrugPolicyButtons_Patch.cs" />
+    <Compile Include="HarmonyPatches\LovePartnerRelationUtility_LovinMtbSinglePawnFactor_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\DeathRattle_PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch.cs" />
     <Compile Include="HarmonyPatches\Designator_ExtractSkull_CanDesignateThing_Patch.cs" />
     <Compile Include="HarmonyPatches\Dialog_InfoCard_DoWindowContents_Patch.cs" />
@@ -130,10 +133,13 @@
     <Compile Include="HarmonyPatches\PawnSkinColors_RandomSkinColorGene_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnSkinColors_SkinColorGenesInOrder_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnUtility_GetPosture_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_AgeTracker_AgeBiologicalYearsFloat_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_AgeTracker_BirthdayBiological_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_AgeTracker_RecalculateLifeStageIndex_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_DrugPolicyTracker_ShouldTryToTakeScheduledNow_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_GeneTracker_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_GeneTracker_Notify_GenesChanged_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_RelationsTracker_LovinAgeFactor_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StoryTracker_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StyleTracker_CanDesireLookChange_Patch.cs" />
     <Compile Include="HarmonyPatches\RaceProperties_CanEverEat_Patch.cs" />
@@ -293,6 +299,7 @@
     <Compile Include="UI\Window_CreateAndroidXenotype.cs" />
     <Compile Include="HotSwappableAttribute.cs" />
     <Compile Include="UI\Window_CreateAndroidBase.cs" />
+    <Compile Include="Utilities\ModCompatibility.cs" />
     <Compile Include="Utilities\Utils.cs" />
     <Compile Include="VRE_DefOf.cs" />
     <Compile Include="Misc\Alert_Freezing.cs" />
