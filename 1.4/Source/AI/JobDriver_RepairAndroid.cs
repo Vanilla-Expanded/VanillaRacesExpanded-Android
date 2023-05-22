@@ -31,14 +31,6 @@ namespace VREAndroids
             else
             {
                 tendToil = Toils_General.WaitWith(TargetIndex.A, ticks, useProgressBar: false, maintainPosture: true);
-                tendToil.AddFinishAction(delegate
-                {
-                    if (Patient != null && Patient != pawn && Patient.CurJob != null
-                    && (Patient.CurJob.def == JobDefOf.Wait || Patient.CurJob.def == JobDefOf.Wait_MaintainPosture))
-                    {
-                        Patient.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                    }
-                });
             }
             tendToil.WithProgressBarToilDelay(TargetIndex.A).PlaySustainerOrSound(VREA_DefOf.Interact_ConstructMetal);
             if (pawn != Patient)
@@ -51,11 +43,6 @@ namespace VREAndroids
             tendToil.PlaySustainerOrSound(SoundDefOf.RepairMech_Touch);
             tendToil.tickAction = delegate
             {
-                if (pawn == Patient && pawn.Faction != Faction.OfPlayer
-                && pawn.IsHashIntervalTick(100) && !pawn.Position.Fogged(pawn.Map))
-                {
-                    FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.HealingCross);
-                }
                 if (pawn != Patient)
                 {
                     pawn.rotationTracker.FaceTarget(Patient);
@@ -97,6 +84,14 @@ namespace VREAndroids
             yield return FinalizeTend(Patient);
             yield return Toils_Jump.Jump(gotoToil);
             yield return repairToil;
+            AddFinishAction(() =>
+            {
+                if (Patient != null && Patient != pawn && Patient.CurJob != null
+                    && (Patient.CurJob.def == JobDefOf.Wait || Patient.CurJob.def == JobDefOf.Wait_MaintainPosture))
+                {
+                    Patient.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                }
+            });
         }
 
         public static Toil FinalizeTend(Pawn patient)

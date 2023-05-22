@@ -25,6 +25,7 @@
 		</androidSpecificMentalBreaks>
 		<androidsShouldNotReceiveHediffs>
 			<li>Scaria</li>
+			<li>Coma</li>
 		</androidsShouldNotReceiveHediffs>
 	</VREAndroids.AndroidSettings>
 

@@ -10,10 +10,12 @@ namespace VREAndroids
         [HarmonyPriority(int.MinValue)]
         public static void Postfix(Pawn pawn, ref bool __result)
         {
-            if (pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss) != null
-                || JobDriver_RepairAndroid.CanRepairAndroid(pawn))
+            if (pawn.IsAndroid())
             {
-                __result = true;
+                if (JobDriver_RepairAndroid.CanRepairAndroid(pawn) || pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss) != null)
+                {
+                    __result = true;
+                }
             }
         }
     }
