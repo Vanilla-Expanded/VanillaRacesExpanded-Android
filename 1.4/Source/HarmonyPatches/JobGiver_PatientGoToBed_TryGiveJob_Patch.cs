@@ -15,7 +15,8 @@ namespace VREAndroids
                 if (JobDriver_RepairAndroid.CanRepairAndroid(pawn) is false 
                     && pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss) != null)
                 {
-                    if (__result.targetA.Thing is not Building_NeutroCasket)
+                    if (__result.targetA.Thing is not Building_NeutroCasket neutroCasket || (neutroCasket.compPower.PowerOn is false 
+                        || neutroCasket.compRefuelable.HasFuel is false))
                     {
                         __result = null;
                     }

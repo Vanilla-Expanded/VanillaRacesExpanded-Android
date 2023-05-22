@@ -10,8 +10,8 @@ namespace VREAndroids
     [HotSwappable]
     public class Building_NeutroCasket : Building_Bed
     {
-        protected CompRefuelable compRefuelable;
-        protected CompPowerTrader compPower;
+        public CompRefuelable compRefuelable;
+        public CompPowerTrader compPower;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
