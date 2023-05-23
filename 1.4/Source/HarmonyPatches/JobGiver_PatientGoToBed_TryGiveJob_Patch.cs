@@ -12,13 +12,20 @@ namespace VREAndroids
         {
             if (__result != null && pawn.IsAndroid()) 
             {
-                if (JobDriver_RepairAndroid.CanRepairAndroid(pawn) is false 
-                    && pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss) != null)
+                bool canRepairAndroid = JobDriver_RepairAndroid.CanRepairAndroid(pawn);
+                if (canRepairAndroid is false && pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss) != null)
                 {
                     if (__result.targetA.Thing is not Building_NeutroCasket neutroCasket || (neutroCasket.compPower.PowerOn is false 
                         || neutroCasket.compRefuelable.HasFuel is false))
                     {
                         __result = null;
+                    }
+                }
+                if (__result != null && canRepairAndroid && pawn.playerSettings.selfTend)
+                {
+                    if (WorkGiver_RepairAndroid.HasJobOn(pawn, pawn, false))
+                    {
+                        __result = JobMaker.MakeJob(VREA_DefOf.VREA_RepairAndroid, pawn);
                     }
                 }
             }

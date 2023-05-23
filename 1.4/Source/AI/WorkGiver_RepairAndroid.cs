@@ -19,6 +19,10 @@ namespace VREAndroids
         }
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
+            return HasJobOn(pawn, t, forced);
+        }
+        public static bool HasJobOn(Pawn pawn, Thing t, bool forced)
+        {
             Pawn pawn2 = (Pawn)t;
             if (pawn2 is null || pawn2.IsAndroid(out var gene) is false)
             {
@@ -36,25 +40,28 @@ namespace VREAndroids
             {
                 return false;
             }
-            if (pawn2.InAggroMentalState || pawn2.HostileTo(pawn))
+            if (pawn != pawn2)
             {
-                return false;
-            }
-            if (t.IsForbidden(pawn))
-            {
-                return false;
-            }
-            if (!pawn.CanReserve(t, 1, -1, null, forced))
-            {
-                return false;
-            }
-            if (pawn2.IsBurning())
-            {
-                return false;
-            }
-            if (pawn2.IsAttacking())
-            {
-                return false;
+                if (pawn2.InAggroMentalState || pawn2.HostileTo(pawn))
+                {
+                    return false;
+                }
+                if (t.IsForbidden(pawn))
+                {
+                    return false;
+                }
+                if (!pawn.CanReserve(t, 1, -1, null, forced))
+                {
+                    return false;
+                }
+                if (pawn2.IsBurning())
+                {
+                    return false;
+                }
+                if (pawn2.IsAttacking())
+                {
+                    return false;
+                }
             }
             if (!JobDriver_RepairAndroid.CanRepairAndroid(pawn2))
             {

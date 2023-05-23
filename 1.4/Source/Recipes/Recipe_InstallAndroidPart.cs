@@ -19,11 +19,6 @@ namespace VREAndroids
         {
             return MedicalRecipesUtility.GetFixedPartsToApplyOn(recipe, pawn, delegate (BodyPartRecord record)
             {
-                IEnumerable<Hediff> source = pawn.health.hediffSet.hediffs.Where((Hediff x) => x.Part == record);
-                if (source.Count() == 1 && source.First().def == recipe.addsHediff)
-                {
-                    return false;
-                }
                 if (record.parent != null && !pawn.health.hediffSet.GetNotMissingParts().Contains(record.parent))
                 {
                     return false;
