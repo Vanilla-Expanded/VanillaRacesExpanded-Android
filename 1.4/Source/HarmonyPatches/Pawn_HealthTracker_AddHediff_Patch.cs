@@ -15,11 +15,20 @@ namespace VREAndroids
         [HarmonyPriority(int.MaxValue)]
         private static bool Prefix(Pawn_HealthTracker __instance, Pawn ___pawn, ref Hediff hediff, BodyPartRecord part = null, DamageInfo? dinfo = null, DamageWorker.DamageResult result = null)
         {
+            if (___pawn.IsAndroid())
+            {
+                return HandleHediffForAndroid(___pawn, ref hediff);
+            }
+            return true;
+        }
+
+        public static bool HandleHediffForAndroid(Pawn ___pawn, ref Hediff hediff)
+        {
             if (___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticImmunity) && Utils.AndroidCanCatch(hediff.def) is false)
             {
                 return false;
             }
-            if (hediff is Hediff_MissingPart && hediff.Part != null && !__instance.hediffSet.GetNotMissingParts().Contains(hediff.Part))
+            if (hediff is Hediff_MissingPart && hediff.Part != null && !___pawn.health.hediffSet.GetNotMissingParts().Contains(hediff.Part))
             {
                 return false;
             }
