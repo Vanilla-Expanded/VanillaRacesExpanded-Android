@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -169,6 +170,32 @@ namespace VREAndroids
             return isAndroid;
         }
 
+        public static void RecheckHediffs(Pawn pawn)
+        {
+            if (pawn.IsAndroid())
+            {
+                TrySwapHediff(pawn, HediffDefOf.Hypothermia, VREA_DefOf.VREA_Freezing);
+                TrySwapHediff(pawn, HediffDefOf.Heatstroke, VREA_DefOf.VREA_Overheating);
+            }
+            else
+            {
+                TrySwapHediff(pawn, VREA_DefOf.VREA_Freezing, HediffDefOf.Hypothermia);
+                TrySwapHediff(pawn, VREA_DefOf.VREA_Overheating, HediffDefOf.Heatstroke);
+            }
+        }
+
+        public static void TrySwapHediff(Pawn pawn, HediffDef from, HediffDef to)
+        {
+            var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(from);
+            if (hediff != null)
+            {
+                var newHediff = HediffMaker.MakeHediff(to, pawn, hediff.part);
+                newHediff.Severity = hediff.Severity;
+                Log.Message("Changing " + hediff + " to " + newHediff);
+                pawn.health.RemoveHediff(hediff);
+                pawn.health.AddHediff(newHediff);
+            }
+        }
         public static void RecheckGenes(Pawn_GeneTracker __instance)
         {
             if (__instance.pawn.IsAndroid())

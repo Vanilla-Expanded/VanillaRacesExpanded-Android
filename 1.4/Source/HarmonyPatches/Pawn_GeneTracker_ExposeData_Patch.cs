@@ -14,6 +14,7 @@ namespace VREAndroids
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 Utils.RecheckGenes(__instance);
+                Utils.RecheckHediffs(__instance.pawn);
             }
         }
     }
