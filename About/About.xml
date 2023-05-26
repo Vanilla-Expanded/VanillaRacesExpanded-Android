@@ -1,7 +1,7 @@
 <ModMetaData>
 	<name>Vanilla Races Expanded - Android</name>
 	<author>Oskar Potocki, Taranchuk, ISOREX, Sarg Bjornson</author>
-	<modVersion>1.02</modVersion>
+	<modVersion>1.0.3</modVersion>
 	<supportedVersions>
 
 		<li>1.4</li>
@@ -51,9 +51,4 @@ Lastly, a new starting scenario lets you establish an Android Utopia, welcoming 
 
 Vanilla Races Expanded - Androids is more than a mod; it's a complete reinvention of the RimWorld experience. Discover the potential of Androids and redefine what it means to be a colonist. Are you ready to step into the future?
 </description>
-	<incompatibleWith>
-		<!-- Elite Bionics Framework is marked as incompatible due to the error message coming from this mod:
-[V1024-EBF] Elite Bionics Framework has detected some mods using the unmodified GetMaxHealth() method, which violates the EBF protocol. The author(s) of the involved mod(s) should adopt the EBF to clarify their intentions. -->
-        <li>V1024.EBFramework</li>
-    </incompatibleWith>
 </ModMetaData>

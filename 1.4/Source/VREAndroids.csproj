@@ -84,12 +84,18 @@
     <Compile Include="Genes\Gene_SelfDestructProtocols.cs" />
     <Compile Include="HarmonyPatches\Building_Bed_GetFloatMenuOptions_Patch.cs" />
     <Compile Include="CachedResult.cs" />
+    <Compile Include="HarmonyPatches\CompBiosculpterPod_AddCarryToPodJobs_Patch.cs" />
     <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\DrugPolicyUIUtility_DoAssignDrugPolicyButtons_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_VisibleHediffs_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffSet_HasDirectlyAddedPartFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\ITab_Pawn_Visitor_CanUsePrisonerInteractionMode_Patch.cs" />
+    <Compile Include="HarmonyPatches\ITab_Pawn_Visitor_FillTab_Patch.cs" />
     <Compile Include="HarmonyPatches\JobGiver_PatientGoToBed_TryGiveJob_Patch.cs" />
     <Compile Include="HarmonyPatches\LovePartnerRelationUtility_LovinMtbSinglePawnFactor_Patch.cs" />
+    <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSetter_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\DeathRattle_PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch.cs" />
     <Compile Include="HarmonyPatches\Designator_ExtractSkull_CanDesignateThing_Patch.cs" />
     <Compile Include="HarmonyPatches\Dialog_InfoCard_DoWindowContents_Patch.cs" />
@@ -262,7 +268,6 @@
     <Compile Include="HarmonyPatches\HediffGiver_Heat_OnIntervalPassed_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffGiver_Hypothermia_OnIntervalPassed_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_CacheMissingPartsCommonAncestors_Patch.cs" />
-    <Compile Include="HarmonyPatches\HediffSet_PartOrAnyAncestorHasDirectlyAddedParts_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffUtility_CanHealFromTending_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffUtility_CanHealNaturally_Patch.cs" />
     <Compile Include="Hediffs\Hediff_ElectromagneticShock.cs" />
@@ -288,7 +293,6 @@
     <Compile Include="HarmonyPatches\NeedsCardUtility_DoMoodAndThoughts_Patch.cs" />
     <Compile Include="HarmonyPatches\Need_ShowOnNeedList_Patch.cs" />
     <Compile Include="HarmonyPatches\Page_ConfigureStartingPawns_DrawXenotypeEditorButton_Patch.cs" />
-    <Compile Include="HarmonyPatches\PawnCapacityUtility_CalculatePartEfficiency_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_AddHediff_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromLethalDamageThreshold_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromRequiredCapacity_Patch.cs" />

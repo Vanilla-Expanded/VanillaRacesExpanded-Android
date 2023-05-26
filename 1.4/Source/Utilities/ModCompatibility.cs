@@ -34,8 +34,6 @@ namespace VREAndroids
                 var list = field.GetValue(null) as List<string>;
                 list.Add(VREA_DefOf.VREA_Reformatting.defName);
                 list.Add(VREA_DefOf.VREA_SolarFlared.defName);
-                Log.Message("list: " + string.Join(", ", list));
-                Log.Message("list: " + string.Join(", ", field.GetValue(null) as List<string>));
             }
         }
     }
