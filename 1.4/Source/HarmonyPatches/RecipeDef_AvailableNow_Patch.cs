@@ -11,9 +11,16 @@ namespace VREAndroids
         public static void Postfix(RecipeDef __instance, ref bool __result)
         {
             var curPawn = HealthCardUtility_DrawPawnHealthCard_Patch.curPawn;
-            if (__result && curPawn != null && curPawn.IsAndroid()) 
+            if (__result && curPawn != null) 
             {
-                __result = RecipeWorker_AvailableOnNow_Patch.RecipeIsAvailableOnAndroid(__instance.Worker, curPawn);
+                if (curPawn.IsAndroid())
+                {
+                    __result = RecipeWorker_AvailableOnNow_Patch.RecipeIsAvailableOnAndroid(__instance.Worker, curPawn);
+                }
+                else if (__instance.Worker is Recipe_RemoveArtificialBodyPart || __instance.Worker is Recipe_InstallAndroidPart)
+                {
+                    __result = false;
+                }
             }
         }
     }

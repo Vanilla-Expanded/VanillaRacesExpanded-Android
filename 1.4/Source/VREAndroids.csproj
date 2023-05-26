@@ -176,6 +176,7 @@
     <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_JobOnThing_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_AddEveryMedicineToRelevantThings_Patch.cs" />
+    <Compile Include="HarmonyPatches\WorkGiver_DoBill_ThingIsUsableBillGiver_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_PatientGoToBedTreatment_AnyAvailableDoctorFor_Patch.cs" />
     <Compile Include="HarmonyPatches\Xenogerm_GetFloatMenuOptions_Patch.cs" />
     <Compile Include="HarmonyPatches\Xenogerm_GetGizmos_Patch.cs" />

@@ -2,6 +2,22 @@
 <Defs>
 
 	<WorkGiverDef>
+		<defName>VREA_DoBillsAndroidOperation</defName>
+		<label>operate on androids</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>70</priorityInType>
+		<billGiversAllHumanlikes>true</billGiversAllHumanlikes>
+		<billGiversAllHumanlikesCorpses>true</billGiversAllHumanlikesCorpses>
+		<verb>operate on</verb>
+		<gerund>operating on</gerund>
+		<requiredCapacities>
+		<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+  
+	<WorkGiverDef>
 		<defName>VREA_DoBillsUseAndroidPartWorkbench</defName>
 		<label>make android parts at android part workbench</label>
 		<giverClass>WorkGiver_DoBill</giverClass>
