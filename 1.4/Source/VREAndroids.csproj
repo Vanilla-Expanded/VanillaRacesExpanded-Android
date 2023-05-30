@@ -88,6 +88,7 @@
     <Compile Include="HarmonyPatches\CompBiosculpterPod_AddCarryToPodJobs_Patch.cs" />
     <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
     <Compile Include="HarmonyPatches\CompNeuralSupercharger_CanAutoUse_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompNeuralSupercharger_CompFloatMenuOptions_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\DrugPolicyUIUtility_DoAssignDrugPolicyButtons_Patch.cs" />
