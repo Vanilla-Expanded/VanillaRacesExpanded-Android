@@ -29,6 +29,14 @@
     <reportString>Replacing own reactor with TargetA.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+
+  
+  <JobDef>
+    <defName>VREA_RefuelWithNeutroamine</defName>
+    <driverClass>VREAndroids.JobDriver_RefuelWithNeutroamine</driverClass>
+    <reportString>Refueling with TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
   
   <JobDef>
     <defName>VREA_RepairAndroid</defName>

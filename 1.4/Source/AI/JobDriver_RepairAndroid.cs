@@ -73,6 +73,10 @@ namespace VREAndroids
                     pawn.skills.Learn(SkillDefOf.Crafting, 0.05f);
                 }
             };
+            if (pawn != Patient)
+            {
+                repairToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell);
+            }
             repairToil.AddEndCondition(() => CanRepairAndroid(Patient) ? JobCondition.Ongoing : JobCondition.Succeeded);
             repairToil.activeSkill = () => SkillDefOf.Crafting;
             if (pawn != Patient)

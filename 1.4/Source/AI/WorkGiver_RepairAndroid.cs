@@ -42,6 +42,10 @@ namespace VREAndroids
             }
             if (pawn != pawn2)
             {
+                if (pawn2.CurJobDef == VREA_DefOf.VREA_RepairAndroid)
+                {
+                    return false;
+                }
                 if (pawn2.InAggroMentalState || pawn2.HostileTo(pawn))
                 {
                     return false;
@@ -72,9 +76,9 @@ namespace VREAndroids
 
         public static bool GoodLayingStatusForTend(Pawn patient, Pawn doctor)
         {
-            if (patient == doctor && patient.playerSettings.selfTend)
+            if (patient == doctor && patient.playerSettings.selfTend is false)
             {
-                return true;
+                return false;
             }
             return patient.InBed();
         }

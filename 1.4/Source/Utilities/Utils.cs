@@ -191,7 +191,6 @@ namespace VREAndroids
             {
                 var newHediff = HediffMaker.MakeHediff(to, pawn, hediff.part);
                 newHediff.Severity = hediff.Severity;
-                Log.Message("Changing " + hediff + " to " + newHediff);
                 pawn.health.RemoveHediff(hediff);
                 pawn.health.AddHediff(newHediff);
             }

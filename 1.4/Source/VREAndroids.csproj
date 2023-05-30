@@ -68,6 +68,7 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\JobDriver_RefuelWithNeutroamine.cs" />
     <Compile Include="AI\JobDriver_RepairAndroid.cs" />
     <Compile Include="AI\JobDriver_ReplaceReactor.cs" />
     <Compile Include="AI\JobDriver_ModifyAndroid.cs" />
@@ -86,9 +87,11 @@
     <Compile Include="CachedResult.cs" />
     <Compile Include="HarmonyPatches\CompBiosculpterPod_AddCarryToPodJobs_Patch.cs" />
     <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompNeuralSupercharger_CanAutoUse_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\DrugPolicyUIUtility_DoAssignDrugPolicyButtons_Patch.cs" />
+    <Compile Include="HarmonyPatches\FloatMenuMakerMap_AddHumanlikeOrders_Patch.cs" />
     <Compile Include="HarmonyPatches\HealthCardUtility_VisibleHediffs_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_HasDirectlyAddedPartFor_Patch.cs" />
     <Compile Include="HarmonyPatches\ITab_Pawn_Visitor_CanUsePrisonerInteractionMode_Patch.cs" />
@@ -105,7 +108,7 @@
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\Hediff_Psylink_ChangeLevel_Patch.cs" />
     <Compile Include="HarmonyPatches\InspectPaneFiller_DrawMood_Patch.cs" />
-    <Compile Include="HarmonyPatches\InteractionUtility_CanInitiateInteraction_Patch.cs" />
+    <Compile Include="HarmonyPatches\InteractionUtility_CanInitiateRandomInteraction_Patch.cs" />
     <Compile Include="HarmonyPatches\ITab_Pawn_Character_PawnToShowInfoAbout_Patch.cs" />
     <Compile Include="Genes\Gene_SleepMode.cs" />
     <Compile Include="HarmonyPatches\Bill_Medical_Clone_Patch.cs" />

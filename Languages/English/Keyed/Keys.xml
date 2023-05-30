@@ -117,5 +117,5 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.RefusesReprogramming>refuses reprogramming</VREA.RefusesReprogramming>
 	<VREA.SelfRepair>Self-repair</VREA.SelfRepair>
 	<VREA.SelfRepairTip>Androids with self-repair enabled will automatically repair themselves on the spot at {1} the normal efficiency.</VREA.SelfRepairTip>
-
+	<VREA.RefuelWithNeutroamine>Refuel with neutroamine</VREA.RefuelWithNeutroamine>
 </LanguageData>

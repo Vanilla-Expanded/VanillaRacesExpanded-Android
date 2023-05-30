@@ -85,5 +85,6 @@ namespace VREAndroids
         public static GeneDef VREA_ClearInstructions;
         public static JobDef VREA_RepairAndroid;
         public static WorkGiverDef VREA_DoBillsAndroidOperation;
+        public static JobDef VREA_RefuelWithNeutroamine;
     }
 }

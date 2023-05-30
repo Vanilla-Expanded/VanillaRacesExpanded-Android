@@ -5,23 +5,23 @@ using Verse;
 
 namespace VREAndroids
 {
-    [HarmonyPatch(typeof(InteractionUtility), "CanInitiateInteraction")]
-    public static class InteractionUtility_CanInitiateInteraction_Patch
+    [HarmonyPatch(typeof(InteractionUtility), "CanInitiateRandomInteraction")]
+    public static class InteractionUtility_CanInitiateRandomInteraction_Patch
     {
         public static Dictionary<Pawn, CachedResult<bool>> cachedResults = new();
         [HarmonyPriority(int.MinValue)]
-        public static void Postfix(Pawn pawn, ref bool __result)
+        public static void Postfix(Pawn p, ref bool __result)
         {
             if (__result)
             {
-                if (!cachedResults.TryGetValue(pawn, out var cachedResult))
+                if (!cachedResults.TryGetValue(p, out var cachedResult))
                 {
-                    cachedResults[pawn] = cachedResult = new CachedResult<bool>();
-                    cachedResult.Result = pawn.Emotionless();
+                    cachedResults[p] = cachedResult = new CachedResult<bool>();
+                    cachedResult.Result = p.Emotionless();
                 }
                 else if (cachedResult.CacheExpired)
                 {
-                    cachedResult.Result = pawn.Emotionless();
+                    cachedResult.Result = p.Emotionless();
                 }
 
                 if (cachedResult.Result)
