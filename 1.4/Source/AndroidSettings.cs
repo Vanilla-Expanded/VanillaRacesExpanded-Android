@@ -12,5 +12,7 @@ namespace VREAndroids
         public List<string> androidsShouldNotReceiveHediffs;
 
         public List<string> androidSpecificMentalBreaks;
+
+        public List<string> allowedTraits;
     }
 }

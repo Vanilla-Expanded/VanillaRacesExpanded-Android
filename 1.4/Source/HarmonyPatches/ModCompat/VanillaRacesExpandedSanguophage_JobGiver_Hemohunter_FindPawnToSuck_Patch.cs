@@ -7,13 +7,18 @@ using Verse;
 
 namespace VREAndroids
 {
-
     [HarmonyPatch]
-    public static class Xenogerm_GetGizmos_Patch
+    public static class VanillaRacesExpandedSanguophage_JobGiver_Hemohunter_FindPawnToSuck_Patch
     {
+        public static MethodBase targetMethod;
+        public static bool Prepare()
+        {
+            targetMethod = AccessTools.Method("VanillaRacesExpandedSanguophage.JobGiver_Hemohunter:FindPawnToSuck");
+            return targetMethod != null;
+        }
         public static MethodBase TargetMethod()
         {
-            return AccessTools.Method("RimWorld.Xenogerm:<GetGizmos>b__16_0");
+            return targetMethod;
         }
 
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -21,7 +26,7 @@ namespace VREAndroids
             var codes = instructions.ToList();
             var AllPawnsSpawnedInfo = AccessTools.PropertyGetter(typeof(MapPawns), nameof(MapPawns.AllPawnsSpawned));
             bool patched = false;
-            foreach ( var code in codes)
+            foreach (var code in codes)
             {
                 yield return code;
                 if (code.Calls(AllPawnsSpawnedInfo))
@@ -32,7 +37,7 @@ namespace VREAndroids
             }
             if (!patched)
             {
-                Log.Error("VREAndroids failed to patch Xenogerm_GetGizmos");
+                Log.Error("VREAndroids failed to patch VanillaRacesExpandedSanguophage.JobGiver_Hemohunter:FindPawnToSuck");
             }
         }
 

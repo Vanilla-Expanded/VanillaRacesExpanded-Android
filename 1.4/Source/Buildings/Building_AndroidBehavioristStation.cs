@@ -175,7 +175,7 @@ namespace VREAndroids
                 }
             }
 
-            foreach (GeneDef gene in curAndroidProject.genes)
+            foreach (GeneDef gene in curAndroidProject.genes.OrderByDescending(x => x.CanBeRemovedFromAndroid() is false).ToList())
             {
                 android.genes.AddGene(gene, true);
             }

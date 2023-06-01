@@ -27,6 +27,10 @@
 			<li>Scaria</li>
 			<li>Coma</li>
 		</androidsShouldNotReceiveHediffs>
+		<allowedTraits>
+			<li>VFEP_WarcasketTrait</li>
+			<li>VFEP_Shellcasket</li>
+		</allowedTraits>
 	</VREAndroids.AndroidSettings>
 
 </Defs>

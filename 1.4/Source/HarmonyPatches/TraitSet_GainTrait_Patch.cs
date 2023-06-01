@@ -13,6 +13,10 @@ namespace VREAndroids
         {
             if (___pawn.HasActiveGene(VREA_DefOf.VREA_PsychologyDisabled))
             {
+                if (VREA_DefOf.VREA_AndroidSettings.allowedTraits.Contains(trait.def.defName))
+                {
+                    return true;
+                }
                 return false;
             }
             return true;
