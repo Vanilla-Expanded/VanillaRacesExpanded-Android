@@ -9,8 +9,6 @@ namespace VREAndroids
         public NameTriple storedTripleName;
 
         public bool autoRepair = true;
-        public bool Awakened => pawn.genes.GenesListForReading.Select(x => x.def).OfType<AndroidGeneDef>()
-            .Any(x => x.removeWhenAwakened) is false;
         public override void PostAdd()
         {
             base.PostAdd();
@@ -30,14 +28,12 @@ namespace VREAndroids
         {
             base.Tick();
             pawn.needs.AddOrRemoveNeedsAsAppropriate();
-            if (pawn.IsHashIntervalTick(GenDate.TicksPerHour) && Awakened is false 
+            if (pawn.IsHashIntervalTick(GenDate.TicksPerHour) && pawn.IsAwakened() is false 
                 && pawn.HasActiveGene(VREA_DefOf.VREA_AntiAwakeningProtocols) is false)
             {
                 if (pawn.needs.mood.CurLevel <= 0.05f && Rand.Chance(0.01f))
                 {
-                    Awaken();
-                    Find.LetterStack.ReceiveLetter("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")),
-                        "VREA.AndroidAwakeningLowMood".Translate(pawn.Named("PAWN")), LetterDefOf.ThreatBig, pawn);
+                    Awaken("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")), "VREA.AndroidAwakeningLowMood".Translate(pawn.Named("PAWN")));
                     var gene = pawn.genes.GetGene(VREA_DefOf.VREA_CombatIncapability);
                     if (gene != null)
                     {
@@ -47,9 +43,7 @@ namespace VREAndroids
                 }
                 if (pawn.needs.mood.CurLevel >= 0.8f && Rand.Chance(0.01f))
                 {
-                    Awaken();
-                    Find.LetterStack.ReceiveLetter("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")),
-                        "VREA.AndroidAwakeningHighMood".Translate(pawn.Named("PAWN")), LetterDefOf.PositiveEvent, pawn);
+                    Awaken("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")), "VREA.AndroidAwakeningHighMood".Translate(pawn.Named("PAWN")));
                     InspirationDef randomAvailableInspirationDef = pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
                     if (randomAvailableInspirationDef != null)
                     {
@@ -59,8 +53,14 @@ namespace VREAndroids
             }
         }
 
-        public void Awaken()
+        public void Awaken(TaggedString title, TaggedString description)
         {
+            var letter = (ChoiceLetter_AndroidAwakened)LetterMaker.MakeLetter(VREA_DefOf.VREA_AndroidAwakenedLetter);
+            letter.Label = title;
+            letter.Text = description;
+            letter.ConfigureAwakenedLetter(pawn, 8, 6, 4);
+            Find.LetterStack.ReceiveLetter(letter);
+
             foreach (var gene in pawn.genes.GenesListForReading.ToList())
             {
                 if (gene.def is AndroidGeneDef geneDef && geneDef.removeWhenAwakened)

@@ -46,6 +46,8 @@ namespace VREAndroids
             OnGenesChanged();
         }
 
+        public virtual bool GeneValidator(GeneDef x) => true;
+
         public override void DoWindowContents(Rect rect)
         {
             Rect rect2 = rect;
@@ -227,7 +229,7 @@ namespace VREAndroids
             containingRect.y = curY + scrollPosition.y;
             containingRect.height = rect.height;
             bool? collapsed = null;
-            DrawSection(rect, Utils.AndroidGenesGenesInOrder, null, ref curY, ref unselectedHeight, adding: true, containingRect, ref collapsed);
+            DrawSection(rect, Utils.AndroidGenesGenesInOrder.Where(GeneValidator).ToList(), null, ref curY, ref unselectedHeight, adding: true, containingRect, ref collapsed);
             if (Event.current.type == EventType.Layout)
             {
                 scrollHeight = curY - num2;

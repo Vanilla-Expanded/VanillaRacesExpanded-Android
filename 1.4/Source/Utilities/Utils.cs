@@ -25,9 +25,9 @@ namespace VREAndroids
         private static void AwakenAndroid(Pawn p)
         {
             var gene = p.genes?.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
-            if (gene != null && gene.Awakened is false) 
+            if (gene != null && p.IsAwakened() is false) 
             {
-                gene.Awaken();
+                gene.Awaken("VREA.AndroidAwakening".Translate(p.Named("PAWN")), "VREA.AndroidAwakeningHighMood".Translate(p.Named("PAWN")));
             }
         }
 
@@ -75,6 +75,11 @@ namespace VREAndroids
             return true;
         }
 
+        public static bool IsAwakened(this Pawn pawn)
+        {
+            return pawn.genes.GenesListForReading.Select(x => x.def).OfType<AndroidGeneDef>()
+            .Any(x => x.removeWhenAwakened) is false;
+        }
         public static bool CanBeRemovedFromAndroidAwakened(this GeneDef geneDef)
         {
             if (geneDef is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent is true && androidGeneDef.removeWhenAwakened is false)

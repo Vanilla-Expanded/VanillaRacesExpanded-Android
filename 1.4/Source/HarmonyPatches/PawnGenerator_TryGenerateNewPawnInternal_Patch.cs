@@ -25,15 +25,12 @@ namespace VREAndroids
                     __result.story.favoriteColor = null;
                 }
                 var gene = __result.genes.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
-                if (gene != null)
+                if (gene != null && __result.IsAwakened() is false)
                 {
-                    if (gene.Awakened is false)
+                    if (__result.Name is NameTriple nameTriple)
                     {
-                        if (__result.Name is NameTriple nameTriple)
-                        {
-                            gene.storedTripleName = nameTriple;
-                            __result.Name = new NameSingle(nameTriple.First);
-                        }
+                        gene.storedTripleName = nameTriple;
+                        __result.Name = new NameSingle(nameTriple.First);
                     }
                 }
             }

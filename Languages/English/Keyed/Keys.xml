@@ -118,4 +118,6 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.SelfRepair>Self-repair</VREA.SelfRepair>
 	<VREA.SelfRepairTip>Androids with self-repair enabled will automatically repair themselves on the spot at {1} the normal efficiency.</VREA.SelfRepairTip>
 	<VREA.RefuelWithNeutroamine>Refuel with neutroamine</VREA.RefuelWithNeutroamine>
+	
+	<VREA.AndroidAwakenedChoices>When an android awakens, you can pick passions and a trait for an android. You will no longer be able to enter the android behaviorist station with {PAWN_nameDef}, unless you arrest and force them.</VREA.AndroidAwakenedChoices>
 </LanguageData>

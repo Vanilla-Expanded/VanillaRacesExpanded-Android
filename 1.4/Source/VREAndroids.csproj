@@ -154,6 +154,7 @@
     <Compile Include="HarmonyPatches\Pawn_GeneTracker_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_GeneTracker_Notify_GenesChanged_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_RelationsTracker_LovinAgeFactor_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_RoyaltyTracker_CanRequireBedroom_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StoryTracker_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StyleTracker_CanDesireLookChange_Patch.cs" />
     <Compile Include="HarmonyPatches\RaceProperties_CanEverEat_Patch.cs" />
@@ -230,6 +231,8 @@
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidPresent.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidsInColony.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android_Social.cs" />
+    <Compile Include="UI\ChoiceLetter_AndroidAwakened.cs" />
+    <Compile Include="UI\Dialog_AndroidAwakenedChoices.cs" />
     <Compile Include="Utilities\AndroidProjectUtils.cs" />
     <Compile Include="UI\Window_AndroidModification.cs" />
     <Compile Include="Utilities\AndroidCreationUtility.cs" />

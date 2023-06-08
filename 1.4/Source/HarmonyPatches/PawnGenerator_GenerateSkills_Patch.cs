@@ -17,7 +17,7 @@ namespace VREAndroids
             if (geneSyntheticBody != null)
             {
                 pawn.story.Adulthood = null;
-                if (geneSyntheticBody.Awakened)
+                if (pawn.IsAwakened())
                 {
                     Utils.TryAssignBackstory(pawn, "AwakenedAndroid");
                 }

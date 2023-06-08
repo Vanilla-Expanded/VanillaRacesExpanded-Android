@@ -14,7 +14,6 @@ namespace VREAndroids
         public Building_AndroidBehavioristStation station;
 
         public Pawn android;
-
         public Window_AndroidModification(Building_AndroidBehavioristStation station, Pawn android, Action callback) : base(callback)
         {
             this.station = station;
@@ -22,12 +21,8 @@ namespace VREAndroids
             this.selectedGenes = android.genes.GenesListForReading.Where(x => x.def.IsAndroidGene()).Select(x => x.def).ToList();
             forcePause = true;
         }
-
         public override string Header => "VREA.ModifyAndroid".Translate();
         public override string AcceptButtonLabel => "VREA.ModifyAndroid".Translate();
-
-
-
         public override void Close(bool doCloseSound = true)
         {
             base.Close(doCloseSound);
@@ -50,6 +45,22 @@ namespace VREAndroids
             station.totalWorkAmount = (genesToRemove.Count * 2000) + (newGenesToAdd.Count * 2000);
             station.currentWorkAmountDone = 0;
             station.initModification = true;
+        }
+
+        public override bool GeneValidator(GeneDef x)
+        {
+            if (android.IsAwakened())
+            {
+                if (x is AndroidGeneDef geneDef && geneDef.removeWhenAwakened)
+                {
+                    return false;
+                }
+                else if (x == VREA_DefOf.VREA_AntiAwakeningProtocols)
+                {
+                    return false;
+                }
+            }
+            return base.GeneValidator(x);
         }
 
         protected override TaggedString AndroidName()

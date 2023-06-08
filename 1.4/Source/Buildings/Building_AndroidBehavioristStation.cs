@@ -102,8 +102,7 @@ namespace VREAndroids
             {
                 return false;
             }
-            var geneSyntheticBody = selPawn.genes.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
-            if (geneSyntheticBody.Awakened && selPawn.IsColonist && selPawn.IsPrisoner is false)
+            if (selPawn.IsAwakened() && selPawn.IsColonist && selPawn.IsPrisoner is false)
             {
                 return "VREA.RefusesReprogramming".Translate();
             }
