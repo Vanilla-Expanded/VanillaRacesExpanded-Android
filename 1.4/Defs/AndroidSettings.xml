@@ -28,7 +28,6 @@
 			<li>Coma</li>
 			<li>DrugOverdose</li>
 			<li>BloodLoss</li>
-			<li>Anesthetic</li>
 			<li>FoodPoisoning</li>
 		</androidsShouldNotReceiveHediffs>
 		<allowedTraits>
