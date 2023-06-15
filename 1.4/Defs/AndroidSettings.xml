@@ -28,6 +28,7 @@
 			<li>Coma</li>
 			<li>DrugOverdose</li>
 			<li>FoodPoisoning</li>
+			<li>VPEH_Bloodmist</li>
 		</androidsShouldNotReceiveHediffs>
 		<allowedTraits>
 			<li>VFEP_WarcasketTrait</li>

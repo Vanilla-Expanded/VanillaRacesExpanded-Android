@@ -41,6 +41,7 @@
 	<VREA.CannotFeedOnAndroid>Cannot feed on android.</VREA.CannotFeedOnAndroid>
 	<VREA.CannotImplantGenesOnAndroid>Cannot implant genes on android.</VREA.CannotImplantGenesOnAndroid>
 	<VREA.CannotCoagulateOnAndroid>Cannot coagulate on android.</VREA.CannotCoagulateOnAndroid>
+	<VREA.CannotCastOnAndroid>Cannot cast on android.</VREA.CannotCastOnAndroid>
 	<VREA.IsAndroid>{PAWN_nameDef} is an android.</VREA.IsAndroid>
 	<VREA.NeutrolossRate>Neutroloss rate</VREA.NeutrolossRate>
 	<VREA.TotalNeutroLoss>Total neutro loss in {0}</VREA.TotalNeutroLoss>
