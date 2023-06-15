@@ -27,7 +27,6 @@
 			<li>Scaria</li>
 			<li>Coma</li>
 			<li>DrugOverdose</li>
-			<li>BloodLoss</li>
 			<li>FoodPoisoning</li>
 		</androidsShouldNotReceiveHediffs>
 		<allowedTraits>
