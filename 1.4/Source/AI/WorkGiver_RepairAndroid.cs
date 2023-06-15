@@ -36,7 +36,7 @@ namespace VREAndroids
             {
                 return false;
             }
-            if (GoodLayingStatusForTend(pawn2, pawn) is false)
+            if (GoodLayingStatusForTend(pawn2, pawn, forced) is false)
             {
                 return false;
             }
@@ -74,11 +74,22 @@ namespace VREAndroids
             return true;
         }
 
-        public static bool GoodLayingStatusForTend(Pawn patient, Pawn doctor)
+        public static bool GoodLayingStatusForTend(Pawn patient, Pawn doctor, bool forced)
         {
-            if (patient == doctor && patient.playerSettings.selfTend is false)
+            if (patient == doctor)
             {
-                return false;
+                if (patient.playerSettings.selfTend is false)
+                {
+                    return false;
+                }
+                else if (forced is false && patient.InBed())
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             return patient.InBed();
         }

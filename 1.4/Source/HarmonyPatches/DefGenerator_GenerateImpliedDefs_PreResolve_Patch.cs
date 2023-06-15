@@ -66,9 +66,32 @@ namespace VREAndroids
 
         public static ThingDef GetAndroidPartThing(BodyPartDef bodyPartDef)
         {
+            var digitsReplacements = new Dictionary<char, string>
+            { 
+                {'0', "ZERO"},
+                {'1',"ONE"},
+                {'2', "TWO"},
+                {'3', "THREE"},
+                {'4', "FOUR"},
+                {'5', "FIVE"},
+                {'6', "SIX"},
+                {'7', "SEVEN"},
+                {'8',"EIGHT"},
+                { '9', "NINE"},
+            };
+            var defname = "VREA_" + bodyPartDef.defName;
+            for (int i = defname.Length - 1; i > 0; i--)
+            {
+                if (digitsReplacements.TryGetValue(defname[i], out var replacement))
+                {
+                    defname = defname.Remove(i, 1);
+                    defname = defname.Insert(i, replacement);
+                    i = defname.Length - 1;
+                }
+            }
             return new ThingDef
             {
-                defName = "VREA_" + bodyPartDef.defName,
+                defName = defname,
                 label = "VREA.Artificial".Translate().ToLower() + " " + bodyPartDef.label,
                 description = "VREA.ArtificialDesc".Translate() + " " + bodyPartDef.label + ".",
                 costList = new List<ThingDefCountClass>
