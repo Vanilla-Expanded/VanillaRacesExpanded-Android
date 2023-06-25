@@ -333,11 +333,11 @@ namespace VREAndroids
 
         public static bool IsAndroidType(this XenotypeDef def)
         {
-            return def.genes.Count > 0 && def.genes.All(x => x is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent);
+            return def.genes.Count > 0 && def.genes.Any(x => x is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent);
         }
         public static bool IsAndroidType(this CustomXenotype def)
         {
-            return def.genes.Count > 0 && def.genes.All(x => x is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent);
+            return def.genes.Count > 0 && def.genes.Any(x => x is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent);
         }
         public static RecipeDef RecipeForAndroid(this RecipeDef originalRecipe)
         {
