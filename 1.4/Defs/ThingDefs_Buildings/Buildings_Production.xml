@@ -249,7 +249,7 @@ Persona subcores created by this device can only be used to create complex, huma
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(3,3)</drawSize>
       <shadowData>
-        <volume>(2.8, 0.35, 3.59)</volume>
+        <volume>(1.8, 0.35, 1.8)</volume>
         <offset>(0, 0, 0.08)</offset>
       </shadowData>
       <damageData>
