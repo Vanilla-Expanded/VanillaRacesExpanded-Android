@@ -8,7 +8,7 @@ namespace VREAndroids
     public class WorkGiver_RepairAndroid : WorkGiver_Scanner
     {
         public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForGroup(ThingRequestGroup.Pawn);
-        public override PathEndMode PathEndMode => PathEndMode.Touch;
+        public override PathEndMode PathEndMode => PathEndMode.InteractionCell;
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
         {
             return pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction);
