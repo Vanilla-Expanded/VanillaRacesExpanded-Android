@@ -132,8 +132,7 @@
     <Compile Include="HarmonyPatches\JobDriver_Resurrect_Resurrect_Patch.cs" />
     <Compile Include="HarmonyPatches\LifeStageWorkSettings_IsDisabled_Patch.cs" />
     <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSelectButton_Patch.cs" />
-    <Compile Include="HarmonyPatches\ModCompat\VPEHemosage_Ability_Hemodrain_ValidateTarget_Patch.cs" />
-    <Compile Include="HarmonyPatches\ModCompat\VPEHemosage_Ability_WordofOffering_ValidateTarget_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VPEHemosage_AbilityExtension_OnlyNonHemogenicHumanlikes_ValidateTarget_Patch.cs" />
     <Compile Include="HarmonyPatches\MoteMaker_MakeMoodThoughtBubble_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnBioAndNameGenerator_GiveShuffledBioTo_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnBreathMoteMaker_ProcessPostTickVisuals_Patch.cs" />
@@ -238,6 +237,7 @@
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidPresent.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidsInColony.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android_Social.cs" />
+    <Compile Include="UI\Alert_AndroidsLowOnPower.cs" />
     <Compile Include="UI\ChoiceLetter_AndroidAwakened.cs" />
     <Compile Include="UI\Dialog_AndroidAwakenedChoices.cs" />
     <Compile Include="Utilities\AndroidProjectUtils.cs" />

@@ -121,4 +121,9 @@ As the awakening happened due to high mood, {PAWN_nameDef} has gained an inspira
 	<VREA.RefuelWithNeutroamine>Refuel with neutroamine</VREA.RefuelWithNeutroamine>
 	
 	<VREA.AndroidAwakenedChoices>When an android awakens, you can pick passions and a trait for an android. You will no longer be able to enter the android behaviorist station with {PAWN_nameDef}, unless you arrest and force them.</VREA.AndroidAwakenedChoices>
+	<VREA.AndroidsLowOnPower>Androids low on power</VREA.AndroidsLowOnPower>
+	<VREA.AndroidsLowOnPowerDesc>These androids are running low on power. Consider crafting new reactors and schedule them for reactor replacement.
+
+Androids low on power:\n\n{0}</VREA.AndroidsLowOnPowerDesc>
+	
 </LanguageData>

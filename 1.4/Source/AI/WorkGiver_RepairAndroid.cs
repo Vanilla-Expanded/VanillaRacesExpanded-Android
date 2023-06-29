@@ -46,7 +46,7 @@ namespace VREAndroids
                 {
                     return false;
                 }
-                if (pawn2.InAggroMentalState || pawn2.HostileTo(pawn))
+                if (pawn2.HostileTo(pawn))
                 {
                     return false;
                 }
@@ -54,15 +54,7 @@ namespace VREAndroids
                 {
                     return false;
                 }
-                if (!pawn.CanReserve(t, 1, -1, null, forced))
-                {
-                    return false;
-                }
-                if (pawn2.IsBurning())
-                {
-                    return false;
-                }
-                if (pawn2.IsAttacking())
+                if (!pawn.CanReserveAndReach(t, PathEndMode.InteractionCell, Danger.Deadly))
                 {
                     return false;
                 }

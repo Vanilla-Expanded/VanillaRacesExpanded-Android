@@ -13,25 +13,19 @@ namespace VREAndroids
         protected int TicksPerHeal => 200;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
+            if (pawn.jobs.jobsGivenThisTick > 8)
+            {
+                pawn.jobs.debugLog = true;
+            }
             return pawn.Reserve(Patient, job, 1, -1, null, errorOnFailed);
         }
         public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDestroyedOrNull(TargetIndex.A);
             this.FailOnForbidden(TargetIndex.A);
-            this.FailOn(() => Patient.IsAttacking());
             var gotoToil = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
-
             int ticks = (int)(1f / pawn.GetStatValue(StatDefOf.GeneralLaborSpeed) * 600f);
-            Toil tendToil;
-            if (!job.draftedTend)
-            {
-                tendToil = Toils_General.Wait(ticks);
-            }
-            else
-            {
-                tendToil = Toils_General.WaitWith(TargetIndex.A, ticks, useProgressBar: false, maintainPosture: true);
-            }
+            Toil tendToil = Toils_General.Wait(ticks);
             tendToil.WithProgressBarToilDelay(TargetIndex.A).PlaySustainerOrSound(VREA_DefOf.Interact_ConstructMetal);
             if (pawn != Patient)
             {
@@ -48,7 +42,6 @@ namespace VREAndroids
                     pawn.rotationTracker.FaceTarget(Patient);
                 }
             };
-
 
             Toil repairToil = Toils_General.WaitWith(TargetIndex.A, int.MaxValue,
                 useProgressBar: false, maintainPosture: true, maintainSleep: true);
@@ -73,6 +66,7 @@ namespace VREAndroids
                     pawn.skills.Learn(SkillDefOf.Crafting, 0.05f);
                 }
             };
+
             if (pawn != Patient)
             {
                 repairToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell);
@@ -129,6 +123,18 @@ namespace VREAndroids
 
         public static bool CanRepairAndroid(Pawn android)
         {
+            if (android.InMentalState)
+            {
+                return false;
+            }
+            if (android.IsBurning())
+            {
+                return false;
+            }
+            if (android.IsAttacking())
+            {
+                return false;
+            }
             return android.health.HasHediffsNeedingTend() || GetHediffToHeal(android) != null;
         }
 
