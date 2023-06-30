@@ -43,7 +43,7 @@ namespace VREAndroids
                 }
             };
 
-            Toil repairToil = Toils_General.Wait(ticks);
+            Toil repairToil = Toils_General.Wait(int.MaxValue);
             repairToil.WithEffect(EffecterDefOf.MechRepairing, TargetIndex.A);
             repairToil.PlaySustainerOrSound(SoundDefOf.RepairMech_Touch);
             repairToil.AddPreInitAction(delegate
