@@ -29,9 +29,9 @@ namespace VREAndroids
             base.Tick();
             pawn.needs.AddOrRemoveNeedsAsAppropriate();
             if (pawn.IsHashIntervalTick(GenDate.TicksPerHour) && pawn.IsAwakened() is false 
-                && pawn.HasActiveGene(VREA_DefOf.VREA_AntiAwakeningProtocols) is false)
+                && pawn.HasActiveGene(VREA_DefOf.VREA_AntiAwakeningProtocols) is false && Rand.Chance(0.5f))
             {
-                if (pawn.needs.mood.CurLevel <= 0.05f && Rand.Chance(0.01f))
+                if (pawn.needs.mood.CurLevel <= 0.05f)
                 {
                     Awaken("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")), "VREA.AndroidAwakeningLowMood".Translate(pawn.Named("PAWN")));
                     var gene = pawn.genes.GetGene(VREA_DefOf.VREA_CombatIncapability);
@@ -41,7 +41,7 @@ namespace VREAndroids
                     }
                     pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk);
                 }
-                if (pawn.needs.mood.CurLevel >= 0.8f && Rand.Chance(0.01f))
+                if (pawn.needs.mood.CurLevel >= 0.8f)
                 {
                     Awaken("VREA.AndroidAwakening".Translate(pawn.Named("PAWN")), "VREA.AndroidAwakeningHighMood".Translate(pawn.Named("PAWN")));
                     InspirationDef randomAvailableInspirationDef = pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
