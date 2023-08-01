@@ -101,6 +101,8 @@
     <Compile Include="HarmonyPatches\JobGiver_PatientGoToBed_TryGiveJob_Patch.cs" />
     <Compile Include="HarmonyPatches\LovePartnerRelationUtility_LovinMtbSinglePawnFactor_Patch.cs" />
     <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSetter_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreakWorker_RunWild_BreakCanOccur_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreakWorker_RunWild_TryStart_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\VanillaRacesExpandedSanguophage_CompAbilityEffect_HeartCrush_Valid_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\DeathRattle_PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch.cs" />
     <Compile Include="HarmonyPatches\Designator_ExtractSkull_CanDesignateThing_Patch.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="HarmonyPatches\JobDriver_Resurrect_Resurrect_Patch.cs" />
     <Compile Include="HarmonyPatches\LifeStageWorkSettings_IsDisabled_Patch.cs" />
     <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSelectButton_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VPEPuppeteer_AbilityExtension_TargetValidator_ValidateTarget_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\VPEHemosage_AbilityExtension_OnlyNonHemogenicHumanlikes_ValidateTarget_Patch.cs" />
     <Compile Include="HarmonyPatches\MoteMaker_MakeMoodThoughtBubble_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnBioAndNameGenerator_GiveShuffledBioTo_Patch.cs" />
