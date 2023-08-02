@@ -87,5 +87,6 @@ namespace VREAndroids
         public static WorkGiverDef VREA_DoBillsAndroidOperation;
         public static JobDef VREA_RefuelWithNeutroamine;
         public static LetterDef VREA_AndroidAwakenedLetter;
+        public static ThingDef VREA_Mote_AndroidReformatting;
     }
 }

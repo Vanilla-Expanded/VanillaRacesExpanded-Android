@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
@@ -13,6 +14,9 @@ namespace VREAndroids
         {
             return pawn.Reserve(job.targetA, job, 1, -1, null, errorOnFailed);
         }
+
+        private Mote moteCharging;
+
         public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
@@ -37,6 +41,12 @@ namespace VREAndroids
                 {
                     this.EndJobWith(JobCondition.Succeeded);
                 }
+
+                if (moteCharging == null || moteCharging.Destroyed)
+                {
+                    moteCharging = MoteMaker.MakeAttachedOverlay(pawn, VREA_DefOf.VREA_Mote_AndroidReformatting, Vector3.zero);
+                }
+                moteCharging?.Maintain();
             };
             yield return toil;
         }
