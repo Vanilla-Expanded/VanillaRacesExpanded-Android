@@ -11,6 +11,7 @@
     </resource>
     <pipeDefs>
       <li>VREA_NeutroPipe</li>
+	  <li>VREA_SubterraneanNeutroPipe</li>
     </pipeDefs>
     <designator>
       <deconstructIconPath>UI/NeutroPipes_Deconstruct</deconstructIconPath>
@@ -74,6 +75,77 @@
       </li>
       <li Class="PipeSystem.CompProperties_SpillWhenDamaged">
         <spillEachTicks>600</spillEachTicks>
+        <startAtHitPointsPercent>0.333</startAtHitPointsPercent>
+        <amountToDraw>1</amountToDraw>
+        <filthMaxSpawnRadius>1</filthMaxSpawnRadius>
+        <chooseFilthFrom>
+          <li>VREA_Filth_Neutroamine</li>
+        </chooseFilthFrom>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PipeSystem.PlaceWorker_Pipe</li>
+    </placeWorkers>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <clearBuildingArea>false</clearBuildingArea>
+    <researchPrerequisites>
+      <li>VREA_NeutroamineLogistics</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_SubterraneanNeutroPipe</defName>
+    <label>subterranean neutro pipe</label>
+    <description>Light, sterile pipes for transporting the liquid neutroamine in bulk to and from tanks. This pipe is hidden from view. More expensive to build than regular pipes.</description>
+    <thingClass>PipeSystem.Building_Pipe</thingClass>
+    <category>Building</category>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>UI/CSG/IConduit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Custom8</li>
+      </linkFlags>
+      <damageData>
+        <rect>(0,0.35,1,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Neutro/NeutroPipes_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <blueprintGraphicData>
+        <texPath>Things/Linked/NeutroPipes_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToBuild>40</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <costList>
+      <Silver>6</Silver>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+      <li Class="PipeSystem.CompProperties_SpillWhenDamaged">
+        <spillEachTicks>1200</spillEachTicks>
         <startAtHitPointsPercent>0.333</startAtHitPointsPercent>
         <amountToDraw>1</amountToDraw>
         <filthMaxSpawnRadius>1</filthMaxSpawnRadius>
