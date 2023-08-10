@@ -27,7 +27,6 @@ namespace VREAndroids
         public override void Tick()
         {
             base.Tick();
-            pawn.needs.AddOrRemoveNeedsAsAppropriate();
             if (pawn.IsHashIntervalTick(GenDate.TicksPerHour) && pawn.IsAwakened() is false 
                 && pawn.HasActiveGene(VREA_DefOf.VREA_AntiAwakeningProtocols) is false && Rand.Chance(0.5f))
             {
@@ -74,6 +73,7 @@ namespace VREAndroids
             }
             MoteMaker.MakeColonistActionOverlay(pawn, VREA_DefOf.VREA_AndroidAwakenedMote);
             VREA_DefOf.VREA_AndroidAwakenedEffect.SpawnAttached(pawn, pawn.Map);
+            pawn.needs.AddOrRemoveNeedsAsAppropriate();
         }
 
         public override void ExposeData()
