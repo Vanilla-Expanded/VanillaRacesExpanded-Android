@@ -15,7 +15,7 @@ namespace VREAndroids
             yield return typeof(RecipeWorker).GetMethod("AvailableOnNow", AccessTools.all);
             foreach (var type in typeof(RecipeWorker).AllSubclasses())
             {
-                var method = type.GetMethod("AvailableOnNow", AccessTools.all);
+                var method = type.GetMethod("AvailableOnNow", AccessTools.allDeclared);
                 if (method != null)
                 {
                     yield return method;
