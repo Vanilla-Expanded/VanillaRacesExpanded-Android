@@ -178,7 +178,7 @@ namespace VREAndroids
             pawn.ageTracker.canGainGrowthPoints = true;
         }
 
-        public static List<SkillDef> PassionOptions_NewTemp(Pawn pawn, int count, bool checkGenes)
+        public static List<SkillDef> PassionOptions(Pawn pawn, int count, bool checkGenes)
         {
             return DefDatabase<SkillDef>.AllDefsListForReading.Where((SkillDef s) => IsValidGrowthPassionOption_NewTemp(pawn, s, checkGenes)).InRandomOrder().Take(count)
                 .ToList();
@@ -192,7 +192,8 @@ namespace VREAndroids
             }
             if (passionChoiceCount > 0 && passionChoices == null)
             {
-                passionChoices = PassionOptions_NewTemp(pawn, passionChoiceCount, checkGenes: false);
+                passionChoices = PassionOptions(pawn, passionChoiceCount, checkGenes: false);
+                passionGainsCount = passionChoices.Count;
             }
             if (traitChoiceCount > 0 && traitChoices == null)
             {
@@ -217,11 +218,11 @@ namespace VREAndroids
                     }
                 }
             }
-            if (!skill2.PermanentlyDisabled)
+            if (skill2.TotallyDisabled)
             {
-                return skill2.passion != Passion.Major;
+                return false;
             }
-            return false;
+            return skill2.passion != Passion.Major;
         }
 
         public override void ExposeData()
