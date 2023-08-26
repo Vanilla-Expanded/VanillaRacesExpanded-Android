@@ -201,7 +201,17 @@ namespace VREAndroids
                 {
                     traitChoiceCount--;
                 }
-                traitChoices = PawnGenerator.GenerateTraitsFor(pawn, traitChoiceCount, null, growthMomentTrait: true);
+                var prohibitedTraits = new List<TraitDef>();
+                foreach (var disallowedTrait in VREA_DefOf.VREA_AndroidSettings.disallowedTraits)
+                {
+                    var trait = DefDatabase<TraitDef>.GetNamedSilentFail(disallowedTrait);
+                    if (trait != null)
+                    {
+                        prohibitedTraits.Add(trait);
+                    }
+                }
+                traitChoices = PawnGenerator.GenerateTraitsFor(pawn, traitChoiceCount, 
+                    new PawnGenerationRequest(pawn.kindDef, prohibitedTraits: prohibitedTraits), growthMomentTrait: true);
             }
         }
 

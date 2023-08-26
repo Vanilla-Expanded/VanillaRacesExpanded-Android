@@ -144,6 +144,7 @@
     <Compile Include="HarmonyPatches\PawnGenerator_GenerateGenes_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GeneratePawnRelations_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GenerateSkills_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_GenerateTraits_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_TryGenerateNewPawnInternal_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnHairColors_HairColorGenes_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnHairColors_RandomHairColorGene_Patch.cs" />

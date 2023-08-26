@@ -34,6 +34,18 @@
 			<li>VFEP_WarcasketTrait</li>
 			<li>VFEP_Shellcasket</li>
 		</allowedTraits>
+		<disallowedTraits>
+			<li>BodyPurist</li>
+			<li>PsychicSensitivity</li>
+			<li>DrugDesire</li>
+			<li>Cannibal</li>
+			<li>NightOwl</li>
+			<li>CreepyBreathing</li>
+			<li>Gourmand</li>
+			<li>QuickSleeper</li>
+			<li>Immunity</li>
+			<li>Delicate</li>
+		</disallowedTraits>
 	</VREAndroids.AndroidSettings>
 
 </Defs>

@@ -54,11 +54,18 @@ namespace VREAndroids
 
         public void Awaken(TaggedString title, TaggedString description)
         {
-            var letter = (ChoiceLetter_AndroidAwakened)LetterMaker.MakeLetter(VREA_DefOf.VREA_AndroidAwakenedLetter);
-            letter.Label = title;
-            letter.Text = description;
-            letter.ConfigureAwakenedLetter(pawn, 8, 6, 4);
-            Find.LetterStack.ReceiveLetter(letter);
+            if (PawnUtility.ShouldSendNotificationAbout(pawn))
+            {
+                var letter = (ChoiceLetter_AndroidAwakened)LetterMaker.MakeLetter(VREA_DefOf.VREA_AndroidAwakenedLetter);
+                letter.Label = title;
+                letter.Text = description;
+                letter.ConfigureAwakenedLetter(pawn, 8, 6, 4);
+                Find.LetterStack.ReceiveLetter(letter);
+            }
+            else
+            {
+                PawnGenerator.GenerateTraits(pawn, new PawnGenerationRequest(pawn.kindDef, pawn.Faction));
+            }
 
             foreach (var gene in pawn.genes.GenesListForReading.ToList())
             {

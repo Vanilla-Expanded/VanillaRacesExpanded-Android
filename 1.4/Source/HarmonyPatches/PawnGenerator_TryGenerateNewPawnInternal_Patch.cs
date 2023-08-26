@@ -34,6 +34,7 @@ namespace VREAndroids
                     }
                 }
             }
+            PawnBioAndNameGenerator_GiveShuffledBioTo_Patch.xenotypeStatic = null;
         }
     }
 }

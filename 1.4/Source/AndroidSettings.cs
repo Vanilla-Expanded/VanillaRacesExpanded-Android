@@ -14,5 +14,7 @@ namespace VREAndroids
         public List<string> androidSpecificMentalBreaks;
 
         public List<string> allowedTraits;
+
+        public List<string> disallowedTraits;
     }
 }
