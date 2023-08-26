@@ -45,11 +45,15 @@ namespace VREAndroids
             base.MentalStateTick();
             var memorySpace = this.pawn.needs.TryGetNeed<Need_MemorySpace>();
             memorySpace.curLevelInt = Mathf.Min(1f, memorySpace.curLevelInt + (1f / (float)TicksToRecoverFromReformatting(pawn, null)));
-            if (moteCharging == null || moteCharging.Destroyed)
+            if (pawn.Spawned)
             {
-                moteCharging = MoteMaker.MakeAttachedOverlay(pawn, VREA_DefOf.VREA_Mote_AndroidReformatting, Vector3.zero);
+                if (moteCharging == null || moteCharging.Destroyed)
+                {
+                    moteCharging = MoteMaker.MakeAttachedOverlay(pawn, VREA_DefOf.VREA_Mote_AndroidReformatting, Vector3.zero);
+                }
+                moteCharging?.Maintain();
             }
-            moteCharging?.Maintain();
+
             if (memorySpace.curLevelInt == 1f)
             {
                 this.RecoverFromState();
