@@ -3,6 +3,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Verse;
 
 namespace VREAndroids
@@ -159,6 +160,7 @@ namespace VREAndroids
         }
 
         public static Dictionary<Pawn_GeneTracker, bool> cachedPawnTypes = new();
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsAndroid(this Pawn pawn)
         {
             if (pawn is null)
@@ -169,7 +171,8 @@ namespace VREAndroids
             if (pawn.genes is null) return false;
             if (!cachedPawnTypes.TryGetValue(pawn.genes, out var isAndroid))
             {
-                if (pawn.genes.xenogenes.Count == 0 && pawn.genes.endogenes.Count == 0) return false;
+                if (pawn.genes.xenogenes.Count == 0 && pawn.genes.endogenes.Count == 0) 
+                    return false;
                 cachedPawnTypes[pawn.genes] = isAndroid = pawn.genes.GenesListForReading.Any(x => x.def.CanBeRemovedFromAndroid() is false);
             }
             return isAndroid;
