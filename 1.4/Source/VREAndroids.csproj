@@ -165,6 +165,7 @@
     <Compile Include="HarmonyPatches\Pawn_StoryTracker_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StyleTracker_CanDesireLookChange_Patch.cs" />
     <Compile Include="HarmonyPatches\RaceProperties_CanEverEat_Patch.cs" />
+    <Compile Include="HarmonyPatches\RecipeDefGenerator_DrugAdministerDefs_Patch.cs" />
     <Compile Include="HarmonyPatches\RecipeDef_AvailableNow_Patch.cs" />
     <Compile Include="HarmonyPatches\RecipeWorker_AvailableOnNow_Patch.cs" />
     <Compile Include="HarmonyPatches\Recipe_Surgery_CheckSurgeryFail_Patch.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="HarmonyPatches\XenotypeDef_SpecialDisplayStats_Patch.cs" />
     <Compile Include="Defs\AndroidConvertableGenesDef.cs" />
     <Compile Include="QuestNodes\QuestNode_GenerateAndroid.cs" />
+    <Compile Include="Recipes\Recipe_AdministerNeutroamineForAndroid.cs" />
     <Compile Include="Recipes\Recipe_RemoveArtificalBodyPart.cs" />
     <Compile Include="AI\Stance_Stand.cs" />
     <Compile Include="AI\WorkGiver_ModifyAndroid.cs" />

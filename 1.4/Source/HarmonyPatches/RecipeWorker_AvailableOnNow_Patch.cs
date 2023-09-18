@@ -33,7 +33,7 @@ namespace VREAndroids
 
         public static bool RecipeIsAvailableOnAndroid(RecipeWorker recipeWorker, Pawn pawn)
         {
-            if (recipeWorker is Recipe_AdministerIngestible)
+            if (recipeWorker is Recipe_AdministerIngestible && recipeWorker is not Recipe_AdministerNeutroamineForAndroid)
             {
                 return false;
             }
@@ -53,7 +53,6 @@ namespace VREAndroids
             {
                 return false;
             }
-
             return true;
         }
     }
