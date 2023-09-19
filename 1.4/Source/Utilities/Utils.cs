@@ -147,8 +147,8 @@ namespace VREAndroids
                 return false;
             }
             if (typeof(Hediff_Addiction).IsAssignableFrom(hediffDef.hediffClass)
+                || typeof(Hediff_ChemicalDependency).IsAssignableFrom(hediffDef.hediffClass)
                 || DefDatabase<ChemicalDef>.AllDefs.Any(x => x.toleranceHediff == hediffDef)
-                || typeof(Hediff_Psylink).IsAssignableFrom(hediffDef.hediffClass)
                 || typeof(Hediff_High).IsAssignableFrom(hediffDef.hediffClass)
                 || typeof(Hediff_Hangover).IsAssignableFrom(hediffDef.hediffClass)
                 || hediffDef.chronic || hediffDef.CompProps<HediffCompProperties_Immunizable>() != null
