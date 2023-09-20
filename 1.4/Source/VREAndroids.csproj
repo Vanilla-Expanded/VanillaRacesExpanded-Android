@@ -193,6 +193,7 @@
     <Compile Include="HarmonyPatches\ModCompat\VSIE_SocialInteractionsManager_TryDevelopNewTrait_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\VanillaRacesExpandedSanguophage_JobGiver_Hemohunter_FindPawnToSuck_Patch.cs" />
     <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
+    <Compile Include="HarmonyPatches\WorkGiver_DoBill_CannotDoBillDueToMedicineRestriction_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_JobOnThing_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_AddEveryMedicineToRelevantThings_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkGiver_DoBill_ThingIsUsableBillGiver_Patch.cs" />
