@@ -184,6 +184,7 @@
     <Compile Include="HarmonyPatches\StatWorker_ShouldShowFor_Patch.cs" />
     <Compile Include="HarmonyPatches\StunHandler_Notify_DamageApplied_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingDef_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThoughtUtility_CanGetThought_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_AgeReversalDemanded_CanHaveThought_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_AgeReversalDemanded_ShouldHaveThought_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_NeedNeuralSupercharge_ShouldHaveThought_Patch.cs" />
