@@ -13,7 +13,7 @@ namespace VREAndroids
         [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn, PawnGenerationRequest request)
         {
-            var geneSyntheticBody = pawn.genes.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
+            var geneSyntheticBody = pawn.genes?.GetGene(VREA_DefOf.VREA_SyntheticBody) as Gene_SyntheticBody;
             if (geneSyntheticBody != null)
             {
                 pawn.story.Adulthood = null;
