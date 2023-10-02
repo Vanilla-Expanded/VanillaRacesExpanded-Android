@@ -16,7 +16,11 @@ namespace VREAndroids
         [HarmonyPriority(int.MinValue)]
         public static void Postfix(PawnKindDef kind, FactionDef factionDef = null, Faction faction = null)
         {
-            PawnGenerator.tmpXenotypeChances.RemoveAll(x => ShouldExcludeForAndroid(x.Key));
+            if (preventAndroidGeneration || (kind.xenotypeSet is null 
+                || kind.xenotypeSet.xenotypeChances.Any(x => x.xenotype.IsAndroidType()) is false))
+            {
+                PawnGenerator.tmpXenotypeChances.RemoveAll(x => ShouldExcludeForAndroid(x.Key));
+            }
         }
 
         public static bool ShouldExcludeForAndroid(this XenotypeDef xenotypeDef)
