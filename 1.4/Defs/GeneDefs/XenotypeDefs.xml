@@ -24,7 +24,6 @@
 			<li>VREA_MentalBreaksDisabled</li>
 			<li>VREA_PsychologyDisabled</li>
 		</genes>
-		<factionlessGenerationWeight>0</factionlessGenerationWeight>
 	</XenotypeDef>
 	
 	<XenotypeDef Name="VREA_AndroidXenotypeAwakenedBase" Abstract="True">

@@ -338,12 +338,6 @@ namespace VREAndroids
         {
             return def.genes.Count > 0 && def.genes.Any(x => x is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent);
         }
-
-        public static bool IsNonAwakeneedAndroidType(this XenotypeDef def)
-        {
-            return def.genes.Any(x => x == VREA_DefOf.VREA_PsychologyDisabled);
-        }
-
         public static bool IsAndroidType(this CustomXenotype def)
         {
             return def.genes.Count > 0 && def.genes.Any(x => x is AndroidGeneDef androidGeneDef && androidGeneDef.isCoreComponent);

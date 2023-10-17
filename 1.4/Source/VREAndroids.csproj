@@ -143,13 +143,11 @@
     <Compile Include="HarmonyPatches\PawnBreathMoteMaker_ProcessPostTickVisuals_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnColumnWorker_FoodRestriction_DoAssignFoodRestrictionButtons_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnComponentsUtility_AddAndRemoveDynamicComponents.cs" />
-    <Compile Include="HarmonyPatches\PawnGenerator_AdjustXenotypeForFactionlessPawn_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GenerateGenes_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GeneratePawnRelations_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GenerateSkills_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_GenerateTraits_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnGenerator_TryGenerateNewPawnInternal_Patch.cs" />
-    <Compile Include="HarmonyPatches\PawnGenerator_XenotypesAvailableFor_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnHairColors_HairColorGenes_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnHairColors_RandomHairColorGene_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnRelationWorker_BaseGenerationChanceFactor_Patch.cs" />
@@ -168,8 +166,6 @@
     <Compile Include="HarmonyPatches\Pawn_RoyaltyTracker_CanRequireBedroom_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StoryTracker_ExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_StyleTracker_CanDesireLookChange_Patch.cs" />
-    <Compile Include="HarmonyPatches\QuestNode_GeneratePawn_RunInt_Patch.cs" />
-    <Compile Include="HarmonyPatches\QuestNode_Root_WandererJoinAbasia_GeneratePawn_Patch.cs" />
     <Compile Include="HarmonyPatches\RaceProperties_CanEverEat_Patch.cs" />
     <Compile Include="HarmonyPatches\RecipeDefGenerator_DrugAdministerDefs_Patch.cs" />
     <Compile Include="HarmonyPatches\RecipeDef_AvailableNow_Patch.cs" />
