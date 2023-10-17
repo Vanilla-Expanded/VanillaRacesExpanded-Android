@@ -9,15 +9,17 @@ namespace VREAndroids
 {
     public class JobGiver_FreeMemorySpace : ThinkNode_JobGiver
     {
+        public const float FreeMemorySpaceThreshold = 0.2f;
         public override float GetPriority(Pawn pawn)
         {
             var memorySpace = pawn.needs.TryGetNeed<Need_MemorySpace>();
-            if (memorySpace == null || memorySpace.CurLevelPercentage > 0.1f)
+            if (memorySpace == null || memorySpace.CurLevelPercentage > FreeMemorySpaceThreshold)
             {
                 return 0f;
             }
-            return 8f;
+            return 999f;
         }
+
         public override Job TryGiveJob(Pawn pawn)
         {
             var memorySpace = pawn.needs.TryGetNeed<Need_MemorySpace>();
