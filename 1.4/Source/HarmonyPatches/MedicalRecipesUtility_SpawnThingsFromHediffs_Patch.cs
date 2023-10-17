@@ -8,7 +8,6 @@ namespace VREAndroids
     [HarmonyPatch(typeof(MedicalRecipesUtility), "SpawnThingsFromHediffs")]
     public static class MedicalRecipesUtility_SpawnThingsFromHediffs_Patch
     {
-        public static bool shouldCheck;
         [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn, BodyPartRecord part, IntVec3 pos, Map map)
         {
@@ -28,11 +27,7 @@ namespace VREAndroids
             }
             foreach (Hediff item in pawn.health.hediffSet.hediffs.Where((Hediff x) => x.Part == part))
             {
-                if (item is Hediff_AndroidReactor reactor)
-                {
-                    pawn.TrySpawnWaste(pos, map);
-                }
-                else if (item.def.spawnThingOnRemoved != null)
+                if (item.def.spawnThingOnRemoved != null)
                 {
                     GenSpawn.Spawn(item.def.spawnThingOnRemoved, pos, map);
                 }

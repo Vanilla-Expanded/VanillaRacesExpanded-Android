@@ -7,7 +7,6 @@ namespace VREAndroids
     [HotSwappable]
     public class Hediff_AndroidReactor : Hediff_AndroidPart
     {
-
         private Need_ReactorPower needInt;
         public Need_ReactorPower NeedReactor => needInt ??= pawn.needs.TryGetNeed<Need_ReactorPower>();
         private float curEnergy;
@@ -35,6 +34,15 @@ namespace VREAndroids
         {
             base.PostAdd(dinfo);
             Energy = 1f;
+        }
+
+        public override void PostRemoved()
+        {
+            base.PostRemoved();
+            if (pawn.MapHeld != null)
+            {
+                pawn.TrySpawnWaste(pawn.PositionHeld, pawn.MapHeld);
+            }
         }
 
         public float PowerEfficiencyDrainMultiplier
