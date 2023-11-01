@@ -27,7 +27,7 @@ namespace VREAndroids
         {
             if (xenotypeDef.IsAndroidType())
             {
-                if (xenotypeDef.IsNonAwakeneedAndroidType())
+                if (xenotypeDef.IsNonAwakenedAndroidType())
                 {
                     return true;
                 }

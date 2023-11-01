@@ -106,6 +106,11 @@ namespace VREAndroids
             return geneDef.displayCategory == VREA_DefOf.VREA_Subroutine;
         }
 
+        public static bool IsNonAwakenedAndroidType(this XenotypeDef def)
+        {
+            return def.genes.Any(x => x == VREA_DefOf.VREA_PsychologyDisabled);
+        }
+
         public static Dictionary<BodyPartDef, HediffDef> cachedCounterParts = new Dictionary<BodyPartDef, HediffDef>();
         public static HediffDef GetAndroidCounterPart(this BodyPartDef bodyPart)
         {

@@ -25,7 +25,7 @@ namespace VREAndroids
         [HarmonyPriority(int.MinValue)]
         public static void Postfix(ref bool __result, RecipeWorker __instance, Thing __0)
         {
-            if (__0 is Pawn pawn && pawn.IsAndroid())
+            if (__result && __0 is Pawn pawn && pawn.IsAndroid())
             {
                 __result = RecipeIsAvailableOnAndroid(__instance, pawn);
             }
