@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using Verse;
 
@@ -9,6 +10,8 @@ namespace VREAndroids
     {
         public static bool DubsMintMenusActive = ModsConfig.IsActive("Dubwise.DubsMintMenus");
         public static bool SnapOutActive = ModsConfig.IsActive("weilbyte.snapout");
+        public static bool MSE2Active = ModsConfig.IsActive("MSE2.Core");
+        public static Type ignoreSubPartsExtensionType;
         static ModCompatibility()
         {
             if (DubsMintMenusActive)
@@ -34,6 +37,10 @@ namespace VREAndroids
                 var list = field.GetValue(null) as List<string>;
                 list.Add(VREA_DefOf.VREA_Reformatting.defName);
                 list.Add(VREA_DefOf.VREA_SolarFlared.defName);
+            }
+            if (MSE2Active)
+            {
+                ignoreSubPartsExtensionType = AccessTools.TypeByName("MSE2.IgnoreSubParts");
             }
         }
     }

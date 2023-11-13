@@ -339,6 +339,7 @@
     <Compile Include="HotSwappableAttribute.cs" />
     <Compile Include="UI\Window_CreateAndroidBase.cs" />
     <Compile Include="Utilities\ModCompatibility.cs" />
+    <Compile Include="Utilities\Startup.cs" />
     <Compile Include="Utilities\Utils.cs" />
     <Compile Include="VRE_DefOf.cs" />
     <Compile Include="Misc\Alert_Freezing.cs" />

@@ -24,6 +24,18 @@ namespace VREAndroids
 
         public static bool HandleHediffForAndroid(Pawn ___pawn, ref Hediff hediff)
         {
+            if (ModCompatibility.MSE2Active)
+            {
+                foreach (var androidImplant in Utils.cachedCounterParts.Values.ToList())
+                {
+                    var extension = androidImplant.modExtensions?.FirstOrDefault(x => x.GetType() == ModCompatibility.ignoreSubPartsExtensionType);
+                    if (extension != null)
+                    {
+                        androidImplant.modExtensions.Remove(extension);
+                    }
+                }
+            }
+
             if (___pawn.HasActiveGene(VREA_DefOf.VREA_SyntheticImmunity) && Utils.AndroidCanCatch(hediff.def) is false)
             {
                 return false;
