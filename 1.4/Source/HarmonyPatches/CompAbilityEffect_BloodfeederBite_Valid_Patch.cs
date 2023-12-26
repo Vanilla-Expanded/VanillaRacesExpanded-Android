@@ -9,7 +9,7 @@ namespace VREAndroids
     [HarmonyPatch]
     public static class CompAbilityEffect_BloodfeederBite_Valid_Patch
     {
-        public static bool VanillaRacesExpandedSanguophageActive = ModsConfig.IsActive("vanillaracesexpanded.sanguophage");
+        public static bool VanillaRacesExpandedSanguophageActive = ModsConfig.IsActive("vanillaracesexpanded.sanguophage") || ModsConfig.IsActive("vanillaracesexpanded.sanguophage_steam");
         
         [HarmonyTargetMethods]
         public static IEnumerable<MethodBase> TargetMethods()
