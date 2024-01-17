@@ -25,12 +25,27 @@
 		</androidSpecificMentalBreaks>
 		<androidsShouldNotReceiveHediffs>
 			<li>Scaria</li>
+			<li>Carcinoma</li>
 			<li>Coma</li>
 			<li>DrugOverdose</li>
 			<li>PsychicAmplifier</li>
 			<li>FoodPoisoning</li>
 			<li>VPEH_Bloodmist</li>
+			<li>Sterilized</li>
 		</androidsShouldNotReceiveHediffs>
+		<disallowedRecipes>
+			<li>ExciseCarcinoma</li>
+			<li>AdministerMechSerumHealer</li>
+			<li>Euthanize</li>
+			<li>Anesthetize</li>
+			<li>CureScaria</li>
+			<li>CureBloodRot</li>
+			<li>CureAbasia</li>
+			<li>ExtractHemogenPack</li>
+			<li>BloodTransfusion</li>
+			<li>ImplantXenogerm</li>
+			<li>TerminatePregnancy</li>
+		</disallowedRecipes>
 		<allowedTraits>
 			<li>VFEP_WarcasketTrait</li>
 			<li>VFEP_Shellcasket</li>

@@ -16,5 +16,7 @@ namespace VREAndroids
         public List<string> allowedTraits;
 
         public List<string> disallowedTraits;
+
+        public List<string> disallowedRecipes;
     }
 }

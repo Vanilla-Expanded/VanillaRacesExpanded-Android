@@ -45,11 +45,11 @@ namespace VREAndroids
             {
                 return false;
             }
-            if (pawn.def.recipes.Contains(recipeWorker.recipe) && recipeWorker.recipe != VREA_DefOf.VREA_RemoveArtificialPart)
+            if (recipeWorker.recipe.addsHediff != null && Utils.AndroidCanCatch(recipeWorker.recipe.addsHediff) is false)
             {
                 return false;
             }
-            if (recipeWorker.recipe.addsHediff == HediffDefOf.Sterilized)
+            if (VREA_DefOf.VREA_AndroidSettings.disallowedRecipes.Contains(recipeWorker.recipe.defName))
             {
                 return false;
             }

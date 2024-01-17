@@ -8,7 +8,6 @@ using Verse;
 
 namespace VREAndroids
 {
-    [StaticConstructorOnStartup]
     public static class Utils
     {
         public static bool HasAndroidPartThingVariant(this BodyPartDef part)
@@ -17,11 +16,18 @@ namespace VREAndroids
                 && part != BodyPartDefOf.Head && part != VREA_DefOf.Skull;
         }
 
-        private static HashSet<ThingDef> androidBeds = new HashSet<ThingDef>
+        private static HashSet<ThingDef> androidBeds;
+        public static bool IsAndroidBed(this ThingDef thingDef)
         {
-            VREA_DefOf.VREA_NeutroCasket, VREA_DefOf.VREA_AndroidStand, VREA_DefOf.VREA_AndroidStandSpot
-        };
-        public static bool IsAndroidBed(this ThingDef thingDef) => androidBeds.Contains(thingDef);
+            if (androidBeds is null)
+            {
+                androidBeds = new HashSet<ThingDef>
+                {
+                    VREA_DefOf.VREA_NeutroCasket, VREA_DefOf.VREA_AndroidStand, VREA_DefOf.VREA_AndroidStandSpot
+                };
+            }
+            return androidBeds.Contains(thingDef);
+        }
         [DebugAction("Pawns", null, false, false, false, 0, false, actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 1000)]
         private static void AwakenAndroid(Pawn p)
         {
@@ -263,7 +269,7 @@ namespace VREAndroids
 
         public static void TryAssignBackstory(Pawn pawn, string spawnCategory)
         {
-            if (pawn.story.Childhood.spawnCategories?.Contains(spawnCategory) is false)
+            if (pawn.story.Childhood?.spawnCategories?.Contains(spawnCategory) is false)
             {
                 pawn.story.Childhood = DefDatabase<BackstoryDef>.AllDefs.Where(x => x.spawnCategories?.Contains(spawnCategory) ?? false).RandomElement();
             }

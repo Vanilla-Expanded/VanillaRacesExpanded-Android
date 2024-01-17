@@ -19,7 +19,7 @@ namespace VREAndroids
                 && PawnGenerator_TryGenerateNewPawnInternal_Patch.curRequest.Value.ForcedCustomXenotype != null
                 && PawnGenerator_TryGenerateNewPawnInternal_Patch.curRequest.Value.ForcedCustomXenotype.IsAndroidType()) 
             {
-                PawnBioAndNameGenerator.FillBackstorySlotShuffled(pawn, BackstorySlot.Childhood, backstoryCategories, factionType, null);
+                Utils.TryAssignBackstory(pawn, "ColonyAndroid");
                 pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full, requiredLastName, forceNoNick, xenotype);
                 return false;
             }

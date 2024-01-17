@@ -12,7 +12,7 @@ namespace VREAndroids
         {
             if (__result && bedThing != null && sleeper != null)
             {
-                if (sleeper.IsAndroid() is false && bedThing?.def.IsAndroidBed() is true)
+                if (sleeper.IsAndroid() is false && bedThing.def.IsAndroidBed() is true)
                 {
                     __result = false;
                 }
