@@ -489,7 +489,7 @@
     <description>A synthetic, android jaw.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallArtificialJaw</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>10</Plasteel>
+      <Plasteel>15</Plasteel>
     </costList>
   </ThingDef>
 
@@ -646,7 +646,7 @@
     <description>A synthetic, android leg.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidLeg</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>15</Plasteel>
+      <Plasteel>50</Plasteel>
     </costList>
   </ThingDef>
 
@@ -696,7 +696,7 @@
     <description>A synthetic, android foot.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidFoot</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>5</Plasteel>
+      <Plasteel>15</Plasteel>
     </costList>
   </ThingDef>
 
@@ -746,7 +746,7 @@
     <description>A synthetic, android arm.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidShoulder</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>15</Plasteel>
+      <Plasteel>50</Plasteel>
     </costList>
   </ThingDef>
 
@@ -796,7 +796,7 @@
     <description>A synthetic, android hand.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidHand</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>5</Plasteel>
+      <Plasteel>15</Plasteel>
     </costList>
   </ThingDef>
 
