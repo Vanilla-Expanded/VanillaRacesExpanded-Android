@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using Verse;
 
 namespace VREAndroids
@@ -22,8 +23,8 @@ namespace VREAndroids
             {
                 if (part.def.HasAndroidPartThingVariant() is false)
                     continue;
-
-                if (pawn.health.hediffSet.hediffs.Any((Hediff d) => (d is Hediff_Injury || d.IsPermanent()) && d.Part == part) is false)
+                
+                if (pawn.health.hediffSet.hediffs.Any((Hediff d) => (d is Hediff_Injury || d.IsPermanent() || d.def.spawnThingOnRemoved is null) && d.Part == part) is false)
                 {
                     yield return part;
                 }
@@ -33,7 +34,7 @@ namespace VREAndroids
                 }
             }
         }
-
+        
         public override bool IsViolationOnPawn(Pawn pawn, BodyPartRecord part, Faction billDoerFaction)
         {
             if ((pawn.Faction == billDoerFaction || pawn.Faction == null) && !pawn.IsQuestLodger())
@@ -46,7 +47,7 @@ namespace VREAndroids
             }
             return false;
         }
-
+        
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             bool flag = MedicalRecipesUtility.IsClean(pawn, part);
@@ -54,7 +55,7 @@ namespace VREAndroids
             if (billDoer != null)
             {
                 TaleRecorder.RecordTale(TaleDefOf.DidSurgery, billDoer, pawn);
-                if (SpawnPartsWhenRemoved)
+                if (SpawnPartsWhenRemoved && Recipe_InstallAndroidPart.IsChildrenClean(pawn, part))
                 {
                     MedicalRecipesUtility.SpawnNaturalPartIfClean(pawn, part, billDoer.Position, billDoer.Map);
                     MedicalRecipesUtility.SpawnThingsFromHediffs(pawn, part, billDoer.Position, billDoer.Map);

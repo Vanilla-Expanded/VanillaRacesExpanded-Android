@@ -148,6 +148,10 @@ namespace VREAndroids
                     num = hediff2.Severity;
                     hediff = hediff2;
                 }
+                if (hediff2 is Hediff_MissingPart && num == float.PositiveInfinity && (hediff2.part.Label == "sternum" || hediff2.part.Label == "pelvis" || hediff2.part.Label == "utility slot" || hediff2.part.Label == "ribcage"))
+                {
+                    hediff = hediff2;
+                }
             }
             if (hediff != null)
             {
@@ -160,6 +164,12 @@ namespace VREAndroids
             Hediff hediffToHeal = GetHediffToHeal(android);
             if (hediffToHeal != null)
             {
+                if(hediffToHeal is Hediff_MissingPart hediff && (hediffToHeal.part.Label == "sternum" || hediffToHeal.part.Label == "pelvis" || hediffToHeal.part.Label == "utility slot" || hediffToHeal.part.Label == "ribcage"))
+                {
+                    var replacement = Utils.GetAndroidCounterPart(hediffToHeal.part.def);
+                    android.health.RemoveHediff(hediffToHeal);
+                    android.health.AddHediff(replacement, hediffToHeal.part);
+                }
                 hediffToHeal.Heal(1f);
             }
         }

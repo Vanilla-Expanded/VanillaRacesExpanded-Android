@@ -52,9 +52,9 @@ namespace VREAndroids
 
                     if (androidPartThingDef != null)
                     {
-                        var androidPartRecipeDef = GetAndroidPartRecipe(recipeUsers, androidPartThingDef, androidPartHediffDef, bodyPartDef);
+                        //var androidPartRecipeDef = GetAndroidPartRecipe(recipeUsers, androidPartThingDef, androidPartHediffDef, bodyPartDef);
                         DefGenerator.AddImpliedDef(androidPartThingDef);
-                        DefGenerator.AddImpliedDef(androidPartRecipeDef);
+                        //DefGenerator.AddImpliedDef(androidPartRecipeDef);
                     }
 
                     DefGenerator.AddImpliedDef(androidPartHediffDef);
@@ -137,7 +137,7 @@ namespace VREAndroids
                     new StatModifier { stat = StatDefOf.Beauty, value = -4 },
                     new StatModifier { stat = StatDefOf.DeteriorationRate, value = 2.0f },
                     new StatModifier { stat = StatDefOf.Mass, value = 1 },
-                },
+                },/*
                 recipeMaker = new RecipeMakerProperties
                 {
                     workSpeedStat = StatDefOf.GeneralLaborSpeed,
@@ -154,7 +154,7 @@ namespace VREAndroids
                     {
                         VREA_DefOf.VREA_AndroidPartWorkbench
                     }
-                },
+                },*/
                 comps = new List<CompProperties>
                 {
                     new CompProperties_Forbiddable()
@@ -186,11 +186,11 @@ namespace VREAndroids
                 {
                     new DefHyperlink{ def = ingredient}
                 };
-                hediffDef.spawnThingOnRemoved = ingredient;
+                //hediffDef.spawnThingOnRemoved = ingredient;
             }
             return hediffDef;
         }
-
+        /*
         public static RecipeDef GetAndroidPartRecipe(List<ThingDef> recipeUsers, ThingDef ingredient, HediffDef hediffDef, BodyPartDef bodyPart)
         {
             return new RecipeDef
@@ -241,6 +241,6 @@ namespace VREAndroids
                     new DefHyperlink { def = ingredient}, new DefHyperlink{ def = hediffDef}
                 },
             };
-        }
+        }*/
     }
 }

@@ -3,9 +3,9 @@
 
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
     <defName>VREA_NeuroPump</defName>
-    <label>neuropump</label>
-    <labelNoun>a neuropump</labelNoun>
-    <description>An installed neuropump.</description>
+    <label>neutropump</label>
+    <labelNoun>a neutropump</labelNoun>
+    <description>An installed neutropump.</description>
     <descriptionHyperlinks><ThingDef>VREA_NeuroPump</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>VREA_NeuroPump</spawnThingOnRemoved>
 	<addedPartProps>
@@ -15,8 +15,8 @@
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_NeuroPump</defName>
-    <label>neuropump</label>
-    <description>A synthetic, android neuropump. Distributes neutroamine across all android subsystems.</description>
+    <label>neutropump</label>
+    <description>A synthetic, android neutropump. Distributes neutroamine across all android subsystems.</description>
     <descriptionHyperlinks><RecipeDef>VREA_InstallNeuroPump</RecipeDef></descriptionHyperlinks>
 	<statBases>
       <WorkToMake>26000</WorkToMake>
@@ -29,13 +29,13 @@
 
   <RecipeDef ParentName="VREA_SurgeryInstallBodyPartAndroidBase">
     <defName>VREA_InstallNeuroPump</defName>
-    <label>install neuropump</label>
-    <description>Install a neuropump.</description>
+    <label>install neutropump</label>
+    <description>Install a neutropump.</description>
     <descriptionHyperlinks>
       <ThingDef>VREA_NeuroPump</ThingDef>
       <HediffDef>VREA_NeuroPump</HediffDef>
     </descriptionHyperlinks>
-    <jobString>Installing neuropump.</jobString>
+    <jobString>Installing neutropump.</jobString>
     <ingredients>
       <li>
         <filter>
@@ -523,7 +523,7 @@
     <addsHediff>VREA_ArtificialJaw</addsHediff>
 	<uiIconThing>VREA_ArtificialJaw</uiIconThing>
   </RecipeDef>
-  
+  <!--
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
     <defName>VREA_ArtificialRibcage</defName>
     <label>artificial ribcage</label>
@@ -535,7 +535,7 @@
 		<solid>true</solid>
 	</addedPartProps>
   </HediffDef>
-
+  
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
     <defName>VREA_ArtificialRibcage</defName>
     <label>artificial ribcage</label>
@@ -545,7 +545,7 @@
       <Plasteel>10</Plasteel>
     </costList>
   </ThingDef>
-
+  
   <RecipeDef ParentName="VREA_SurgeryInstallBodyPartAndroidBase">
     <defName>VREA_InstallArtificialRibcage</defName>
     <label>install artificial ribcage</label>
@@ -576,7 +576,7 @@
     <addsHediff>VREA_ArtificialRibcage</addsHediff>
 	<uiIconThing>VREA_ArtificialRibcage</uiIconThing>
   </RecipeDef>
-  
+  -->
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
     <defName>VREA_ArtificialSpine</defName>
     <label>artificial spine</label>
@@ -732,38 +732,38 @@
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
-    <defName>VREA_AndroidArm</defName>
-    <label>android arm</label>
-    <labelNoun>an android arm</labelNoun>
-    <description>An installed android arm.</description>
-    <descriptionHyperlinks><ThingDef>VREA_AndroidArm</ThingDef></descriptionHyperlinks>
-    <spawnThingOnRemoved>VREA_AndroidArm</spawnThingOnRemoved>
+    <defName>VREA_AndroidShoulder</defName>
+    <label>android shoulder</label>
+    <labelNoun>an android shoulder</labelNoun>
+    <description>An installed android shoulder.</description>
+    <descriptionHyperlinks><ThingDef>VREA_AndroidShoulder</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>VREA_AndroidShoulder</spawnThingOnRemoved>
   </HediffDef>
 
   <ThingDef ParentName="VREA_BodyPartAndroidBase">
-    <defName>VREA_AndroidArm</defName>
+    <defName>VREA_AndroidShoulder</defName>
     <label>android arm</label>
     <description>A synthetic, android arm.</description>
-    <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidArm</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>VREA_InstallAndroidShoulder</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>15</Plasteel>
     </costList>
   </ThingDef>
 
   <RecipeDef ParentName="VREA_SurgeryInstallBodyPartAndroidBase">
-    <defName>VREA_InstallAndroidArm</defName>
+    <defName>VREA_InstallAndroidShoulder</defName>
     <label>install android arm</label>
     <description>Install an android arm.</description>
     <descriptionHyperlinks>
-      <ThingDef>VREA_AndroidArm</ThingDef>
-      <HediffDef>VREA_AndroidArm</HediffDef>
+      <ThingDef>VREA_AndroidShoulder</ThingDef>
+      <HediffDef>VREA_AndroidShoulder</HediffDef>
     </descriptionHyperlinks>
     <jobString>Installing android arm.</jobString>
     <ingredients>
       <li>
         <filter>
           <thingDefs>
-            <li>VREA_AndroidArm</li>
+            <li>VREA_AndroidShoulder</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -771,14 +771,14 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>VREA_AndroidArm</li>
+        <li>VREA_AndroidShoulder</li>
       </thingDefs>
     </fixedIngredientFilter>
     <appliedOnFixedBodyParts>
-      <li>Arm</li>
+      <li>Shoulder</li>
     </appliedOnFixedBodyParts>
-    <addsHediff>VREA_AndroidArm</addsHediff>
-	<uiIconThing>VREA_AndroidArm</uiIconThing>
+    <addsHediff>VREA_AndroidShoulder</addsHediff>
+	<uiIconThing>VREA_AndroidShoulder</uiIconThing>
   </RecipeDef>
   
   <HediffDef ParentName="VREA_AndroidBodyPartBase">
