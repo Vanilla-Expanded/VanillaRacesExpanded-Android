@@ -56,7 +56,6 @@ namespace VREAndroids
             {
                 RestorePartRecursiveInt(pawn.health, part.parts[i]);
             }
-            Log.Message("Restoring " + part + " - recipe.addsHediff: " + recipe.addsHediff);
             pawn.health.AddHediff(recipe.addsHediff, part);
         }
 
@@ -75,7 +74,6 @@ namespace VREAndroids
                     {
                         var androidHediff = HediffMaker.MakeHediff(androidPart, __instance.pawn, part);
                         __instance.pawn.health.AddHediff(androidHediff, part);
-                        Log.Message("Restoring " + part + " - androidHediff: " + androidHediff);
                     }
                 }
             }
