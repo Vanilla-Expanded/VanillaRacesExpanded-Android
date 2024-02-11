@@ -93,6 +93,7 @@
     <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
     <Compile Include="HarmonyPatches\DrugPolicyUIUtility_DoAssignDrugPolicyButtons_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_DrawMedOperationsTab_Patch.cs" />
     <Compile Include="HarmonyPatches\Hediff_AddedPart_PostAdd_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch.cs" />
     <Compile Include="HarmonyPatches\MemoryUtility_UnloadUnusedUnityAssets_Patch.cs" />

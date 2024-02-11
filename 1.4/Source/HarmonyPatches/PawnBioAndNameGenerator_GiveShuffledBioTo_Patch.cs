@@ -17,7 +17,7 @@ namespace VREAndroids
             if (xenotype != null && xenotype.IsAndroidType() 
                 || PawnGenerator_TryGenerateNewPawnInternal_Patch.curRequest != null 
                 && PawnGenerator_TryGenerateNewPawnInternal_Patch.curRequest.Value.ForcedCustomXenotype != null
-                && PawnGenerator_TryGenerateNewPawnInternal_Patch.curRequest.Value.ForcedCustomXenotype.IsAndroidType()) 
+                && PawnGenerator_TryGenerateNewPawnInternal_Patch.curRequest.Value.ForcedCustomXenotype.IsAndroidType())
             {
                 Utils.TryAssignBackstory(pawn, "ColonyAndroid");
                 pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full, requiredLastName, forceNoNick, xenotype);

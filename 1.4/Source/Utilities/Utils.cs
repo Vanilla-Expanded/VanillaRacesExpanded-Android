@@ -269,7 +269,7 @@ namespace VREAndroids
 
         public static void TryAssignBackstory(Pawn pawn, string spawnCategory)
         {
-            if (pawn.story.Childhood?.spawnCategories?.Contains(spawnCategory) is false)
+            if (pawn.story.Childhood?.spawnCategories is null || pawn.story.Childhood.spawnCategories.Contains(spawnCategory) is false)
             {
                 pawn.story.Childhood = DefDatabase<BackstoryDef>.AllDefs.Where(x => x.spawnCategories?.Contains(spawnCategory) ?? false).RandomElement();
             }
