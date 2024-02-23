@@ -7,7 +7,6 @@
         <excludedNeedsForAndroids>
 			<li>Food</li>
 			<li>Rest</li>
-			<li>Suppression</li>
 			<li>Bladder</li>
 			<li>Hygiene</li>
 			<li>DBHThirst</li>
