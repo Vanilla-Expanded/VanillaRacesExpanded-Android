@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <LetterDef ParentName="PositiveEvent">
+    <defName>VREA_AndroidAwakenedLetter</defName>
+    <letterClass>VREAndroids.ChoiceLetter_AndroidAwakened</letterClass>
+  </LetterDef>
+  
+</Defs>

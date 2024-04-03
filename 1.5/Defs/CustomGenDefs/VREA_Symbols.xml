@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+ <KCSG.SymbolDef>
+  <defName>VREA_NeutroPipe</defName>
+  <thing>VREA_NeutroPipe</thing>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_NeutroTank_North</defName>
+  <thing>VREA_NeutroTank</thing>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_NeutroDrain</defName>
+  <thing>VREA_NeutroDrain</thing>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_AndroidPartWorkbench_East</defName>
+  <thing>VREA_AndroidPartWorkbench</thing>
+  <rotation>East</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_NeutroTap</defName>
+  <thing>VREA_NeutroTap</thing>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_NeutroCasket_South</defName>
+  <thing>VREA_NeutroCasket</thing>
+  <rotation>South</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_AndroidStand</defName>
+  <thing>VREA_AndroidStand</thing>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_AndroidBehavioristStation_North</defName>
+  <thing>VREA_AndroidBehavioristStation</thing>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_AndroidPartWorkbench_South</defName>
+  <thing>VREA_AndroidPartWorkbench</thing>
+  <rotation>South</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_NeutroTank_South</defName>
+  <thing>VREA_NeutroTank</thing>
+  <rotation>South</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_AndroidBehavioristStation_East</defName>
+  <thing>VREA_AndroidBehavioristStation</thing>
+  <rotation>East</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_NeutroCasket_East</defName>
+  <thing>VREA_NeutroCasket</thing>
+  <rotation>East</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_NeutroCasket_North</defName>
+  <thing>VREA_NeutroCasket</thing>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_NeutroTank_East</defName>
+  <thing>VREA_NeutroTank</thing>
+  <rotation>East</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_AndroidBehavioristStation_West</defName>
+  <thing>VREA_AndroidBehavioristStation</thing>
+  <rotation>West</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_AndroidBehavioristStation_South</defName>
+  <thing>VREA_AndroidBehavioristStation</thing>
+  <rotation>South</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VREA_AndroidPartWorkbench_North</defName>
+  <thing>VREA_AndroidPartWorkbench</thing>
+</KCSG.SymbolDef>
+
+
+
+</Defs>

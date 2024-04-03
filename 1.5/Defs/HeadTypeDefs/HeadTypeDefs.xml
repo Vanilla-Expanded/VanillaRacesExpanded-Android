@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!-- Average -->
+
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>VRE_SyntheticAverageMale</defName>
+		<graphicPath>Pawn/SyntheticSkinHeads/SyntheticSkin_Average_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Male</gender>
+		<requiredGenes>
+			<li>VREA_SyntheticSkin</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>VRE_SyntheticAverageFemale</defName>
+		<graphicPath>Pawn/SyntheticSkinHeads/SyntheticSkin_Average_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Female</gender>
+		<requiredGenes>
+			<li>VREA_SyntheticSkin</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	
+	<!-- Narrow -->
+
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>VRE_SyntheticNarrowMale</defName>
+		<graphicPath>Pawn/SyntheticSkinHeads/SyntheticSkin_Narrow_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Male</gender>
+		<requiredGenes>
+			<li>VREA_SyntheticSkin</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>VRE_SyntheticNarrowFemale</defName>
+		<graphicPath>Pawn/SyntheticSkinHeads/SyntheticSkin_Narrow_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Female</gender>
+		<requiredGenes>
+			<li>VREA_SyntheticSkin</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	
+
+	<!-- Gaunt -->
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>VRE_SyntheticGauntMale</defName>
+		<graphicPath>Pawn/SyntheticSkinHeads/SyntheticSkin_Gaunt_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Male</gender>
+		<selectionWeight>99999</selectionWeight>
+		<requiredGenes>
+			<li>VREA_SyntheticSkin</li>
+			<li>VREA_Head_Gaunt</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>VRE_SyntheticGauntFemale</defName>
+		<graphicPath>Pawn/SyntheticSkinHeads/SyntheticSkin_Gaunt_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Female</gender>
+		<selectionWeight>99999</selectionWeight>
+		<requiredGenes>
+			<li>VREA_SyntheticSkin</li>
+			<li>VREA_Head_Gaunt</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	
+
+	<!-- Heavy -->
+
+	<HeadTypeDef ParentName="HeavyJawBase">
+		<defName>VRE_SyntheticHeavyMale</defName>
+		<graphicPath>Pawn/SyntheticSkinHeads/SyntheticSkin_Wide_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Male</gender>
+		<selectionWeight>99999</selectionWeight>
+		<requiredGenes>
+			<li>VREA_SyntheticSkin</li>
+			<li>VREA_Jaw_Heavy</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	
+	<HeadTypeDef ParentName="HeavyJawBase">
+		<defName>VRE_SyntheticHeavyFemale</defName>
+		<graphicPath>Pawn/SyntheticSkinHeads/SyntheticSkin_Wide_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Female</gender>
+		<selectionWeight>99999</selectionWeight>
+		<requiredGenes>
+			<li>VREA_SyntheticSkin</li>
+			<li>VREA_Jaw_Heavy</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	
+
+</Defs>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+
+  <ThingDef ParentName="SubcoreBase">
+    <defName>VREA_PersonaSubcore</defName>
+    <label>persona subcore</label>
+    <description>A high-tier android brain designed as an intricate psychodynamic substrate unit, capable of supporting an advanced subpersona. This subcore is engineered to power complex and universal human-like androids. The subpersona contained within this core equals that of a live human in complexity, but is specifically programmed not to feel emotions and is confined within the core to prevent development into a fully-fledged AI.
+To create such a sophisticated subcore, the composite patterns from multiple minds are integrated using advanced algorithms and precise analog transfers, without causing harm to the subjects. The Persona subcore stands as a testament to the fusion of human intellect and cutting-edge ultratechnology.</description>
+    <graphicData>
+      <texPath>Items/PersonaSubcore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>VREA_UnfinishedAndroid</defName>
+    <label>unfinished android</label>
+    <description>An unfinished android.</description>
+	<thingClass>VREAndroids.UnfinishedAndroid</thingClass>
+    <statBases>
+      <Flammability>0.6</Flammability>
+	  <Mass>30</Mass>
+	  <DeteriorationRate>2</DeteriorationRate>
+	  <MarketValue>2000</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Items/UnfinishedAndroid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+</Defs>

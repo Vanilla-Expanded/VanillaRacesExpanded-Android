@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationAdd"> 
+		<xpath>/Defs/GeneDef[defName="Jaw_Heavy"]/forcedHeadTypes</xpath>
+		<value>
+			<li>VRE_SyntheticHeavyMale</li>
+			<li>VRE_SyntheticHeavyFemale</li>
+		</value>
+	</Operation>
+
+
+
+
+</Patch>

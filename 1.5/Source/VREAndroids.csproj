@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97FA1308-3ED7-41D8-827D-0CC3A3291EE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VREAndroids</RootNamespace>
+    <AssemblyName>VREAndroids</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>false</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VFECore">
+      <HintPath>..\..\..\VanillaExpandedFramework\1.4\Assemblies\VFECore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer" Version="2.2.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.5.4042-beta</Version>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.3.1.1</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <Publicize Include="Assembly-CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AI\JobDriver_RefuelWithNeutroamine.cs" />
+    <Compile Include="AI\JobDriver_RepairAndroid.cs" />
+    <Compile Include="AI\JobDriver_ReplaceReactor.cs" />
+    <Compile Include="AI\JobDriver_ModifyAndroid.cs" />
+    <Compile Include="AI\JobDriver_FreeMemorySpace.cs" />
+    <Compile Include="AI\JobGiver_FreeMemorySpace.cs" />
+    <Compile Include="AI\JobGiver_MakeLovin.cs" />
+    <Compile Include="AI\MentalState_Reformatting.cs" />
+    <Compile Include="AI\MentalState_SolarFlared.cs" />
+    <Compile Include="AI\WorkGiver_CarryToAndroidBehavioristStation.cs" />
+    <Compile Include="AI\WorkGiver_CarryToSubcorePolyanalyzer.cs" />
+    <Compile Include="AI\WorkGiver_RepairAndroid.cs" />
+    <Compile Include="Buildings\Building_AndroidSleepMode.cs" />
+    <Compile Include="Genes\Gene_NeutroSynthesis.cs" />
+    <Compile Include="Genes\Gene_SelfDestructProtocols.cs" />
+    <Compile Include="HarmonyPatches\Anomaly\CompRevenant_Hypnotize_Patch.cs" />
+    <Compile Include="HarmonyPatches\Anomaly\GameComponent_Anomaly_Hypnotize_Patch.cs" />
+    <Compile Include="HarmonyPatches\Anomaly\IncidentWorker_UnnaturalCorpseArrival_ValidatePawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\Anomaly\MutantUtility_CanResurrectAsShambler_Patch.cs" />
+    <Compile Include="HarmonyPatches\Anomaly\QuestNode_Root_MysteriousCargo_ValidatePawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\Building_Bed_GetFloatMenuOptions_Patch.cs" />
+    <Compile Include="CachedResult.cs" />
+    <Compile Include="HarmonyPatches\CompBiosculpterPod_AddCarryToPodJobs_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompBiosculpterPod_CanAgeReverse_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompNeuralSupercharger_CanAutoUse_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompNeuralSupercharger_CompFloatMenuOptions_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompUsable_CanBeUsedBy_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompUseEffect_InstallImplant_CanBeUsedBy_Patch.cs" />
+    <Compile Include="HarmonyPatches\DrugPolicyUIUtility_DoAssignDrugPolicyButtons_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_DrawMedOperationsTab_Patch.cs" />
+    <Compile Include="HarmonyPatches\Hediff_AddedPart_PostAdd_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\DubsMintMenus_Patch_HealthCardUtility_GenerateListing_Patch.cs" />
+    <Compile Include="HarmonyPatches\MemoryUtility_UnloadUnusedUnityAssets_Patch.cs" />
+    <Compile Include="HarmonyPatches\FloatMenuMakerMap_AddHumanlikeOrders_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_VisibleHediffs_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffSet_HasDirectlyAddedPartFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\ITab_Pawn_Visitor_CanUsePrisonerInteractionMode_Patch.cs" />
+    <Compile Include="HarmonyPatches\ITab_Pawn_Visitor_FillTab_Patch.cs" />
+    <Compile Include="HarmonyPatches\JobGiver_PatientGoToBed_TryGiveJob_Patch.cs" />
+    <Compile Include="HarmonyPatches\LovePartnerRelationUtility_LovinMtbSinglePawnFactor_Patch.cs" />
+    <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSetter_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreakWorker_RunWild_BreakCanOccur_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreakWorker_RunWild_TryStart_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VanillaRacesExpandedSanguophage_CompAbilityEffect_HeartCrush_Valid_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\DeathRattle_PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch.cs" />
+    <Compile Include="HarmonyPatches\Designator_ExtractSkull_CanDesignateThing_Patch.cs" />
+    <Compile Include="HarmonyPatches\Dialog_InfoCard_DoWindowContents_Patch.cs" />
+    <Compile Include="HarmonyPatches\FoodUtility_IsAcceptablePreyFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\GatheringsUtility_ShouldGuestKeepAttendingGathering_Patch.cs" />
+    <Compile Include="HarmonyPatches\GenLabel_BestKindLabel_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
+    <Compile Include="HarmonyPatches\Hediff_Psylink_ChangeLevel_Patch.cs" />
+    <Compile Include="HarmonyPatches\InspectPaneFiller_DrawMood_Patch.cs" />
+    <Compile Include="HarmonyPatches\InteractionUtility_CanInitiateRandomInteraction_Patch.cs" />
+    <Compile Include="HarmonyPatches\ITab_Pawn_Character_PawnToShowInfoAbout_Patch.cs" />
+    <Compile Include="Genes\Gene_SleepMode.cs" />
+    <Compile Include="HarmonyPatches\Bill_Medical_Clone_Patch.cs" />
+    <Compile Include="HarmonyPatches\Bill_Medical_ExposeData_Patch.cs" />
+    <Compile Include="HarmonyPatches\Caravan_NeedsTracker_AnyPawnOutOfFood_Patch.cs" />
+    <Compile Include="HarmonyPatches\CharacterCardUtility_LifestageAndXenotypeOptions_Subclass_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompAbilityEffect_Resurrect_Valid_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompRottable_Active_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompRottable_CompInspectStringExtra_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompTargetable_BaseTargetValidator_Patch.cs" />
+    <Compile Include="HarmonyPatches\Corpse_GetInspectString_Patch.cs" />
+    <Compile Include="HarmonyPatches\DaysWorthOfFoodCalculator_AnyFoodEatingPawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\DaysWorthOfFoodCalculator_ApproxDaysWorthOfFood_Patch.cs" />
+    <Compile Include="HarmonyPatches\FeedPatientUtility_ShouldBeFed_Patch.cs" />
+    <Compile Include="HarmonyPatches\FoodUtility_WillEat_ThingDef_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_DrawPawnHealthCard_Patch.cs" />
+    <Compile Include="HarmonyPatches\JobDriver_LayDown_GetReport_Patch.cs" />
+    <Compile Include="HarmonyPatches\JobDriver_Resurrect_Resurrect_Patch.cs" />
+    <Compile Include="HarmonyPatches\LifeStageWorkSettings_IsDisabled_Patch.cs" />
+    <Compile Include="HarmonyPatches\MedicalCareUtility_MedicalCareSelectButton_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VPEPuppeteer_AbilityExtension_TargetValidator_ValidateTarget_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VPEHemosage_AbilityExtension_OnlyNonHemogenicHumanlikes_ValidateTarget_Patch.cs" />
+    <Compile Include="HarmonyPatches\MoteMaker_MakeMoodThoughtBubble_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnBioAndNameGenerator_GiveShuffledBioTo_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnBreathMoteMaker_ProcessPostTickVisuals_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnColumnWorker_FoodRestriction_DoAssignFoodRestrictionButtons_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnComponentsUtility_AddAndRemoveDynamicComponents.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_AdjustXenotypeForFactionlessPawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_GenerateGenes_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_GeneratePawnRelations_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_GenerateSkills_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_GenerateTraits_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_TryGenerateNewPawnInternal_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnGenerator_XenotypesAvailableFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnHairColors_HairColorGenes_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnHairColors_RandomHairColorGene_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnRelationWorker_BaseGenerationChanceFactor_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnSkinColors_RandomSkinColorGene_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnSkinColors_SkinColorGenesInOrder_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnUtility_GetPosture_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_AgeTracker_AgeBiologicalYearsFloat_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_AgeTracker_BirthdayBiological_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_AgeTracker_RecalculateLifeStageIndex_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_DrugPolicyTracker_ShouldTryToTakeScheduledNow_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_GeneTracker_ExposeData_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_GeneTracker_Notify_GenesChanged_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_JobTracker_StartJob_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_RelationsTracker_LovinAgeFactor_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_RoyaltyTracker_CanRequireBedroom_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_StoryTracker_ExposeData_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_StyleTracker_CanDesireLookChange_Patch.cs" />
+    <Compile Include="HarmonyPatches\QuestNode_GeneratePawn_RunInt_Patch.cs" />
+    <Compile Include="HarmonyPatches\QuestNode_Root_WandererJoinAbasia_GeneratePawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\RaceProperties_CanEverEat_Patch.cs" />
+    <Compile Include="HarmonyPatches\RecipeDefGenerator_DrugAdministerDefs_Patch.cs" />
+    <Compile Include="HarmonyPatches\RecipeDef_AvailableNow_Patch.cs" />
+    <Compile Include="HarmonyPatches\RecipeWorker_AvailableOnNow_Patch.cs" />
+    <Compile Include="HarmonyPatches\Recipe_Surgery_CheckSurgeryFail_Patch.cs" />
+    <Compile Include="HarmonyPatches\RelationsUtility_RomanceEligible_Patch.cs" />
+    <Compile Include="HarmonyPatches\RelationsUtility_TryDevelopBondRelation_Patch.cs" />
+    <Compile Include="HarmonyPatches\RestUtility_CanUseBedEver_Patch.cs" />
+    <Compile Include="HarmonyPatches\RestUtility_FindBedFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\RestUtility_IsValidBedFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\ResurrectionUtility_ResurrectWithSideEffects_Patch.cs" />
+    <Compile Include="HarmonyPatches\SkillRecord_Aptitude_Patch.cs" />
+    <Compile Include="HarmonyPatches\SkillRecord_Interval_Patch.cs" />
+    <Compile Include="HarmonyPatches\SkillRecord_Learn_Patch.cs" />
+    <Compile Include="HarmonyPatches\SkillUI_GetSkillDescription_Patch.cs" />
+    <Compile Include="HarmonyPatches\SocialCardUtility_DrawRelationsAndOpinions_Patch.cs" />
+    <Compile Include="HarmonyPatches\StatPart_Age_ActiveFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\StatWorker_ShouldShowFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\StunHandler_Notify_DamageApplied_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThingDef_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThoughtUtility_CanGetThought_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThoughtWorker_AgeReversalDemanded_CanHaveThought_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThoughtWorker_AgeReversalDemanded_ShouldHaveThought_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThoughtWorker_NeedNeuralSupercharge_ShouldHaveThought_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThoughtWorker_Pain_CurrentThoughtState_Patch.cs" />
+    <Compile Include="HarmonyPatches\TraitSet_GainTrait_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VFEAncients_Pawn_PowerTracker_CanGetPowers_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VSIE_SocialInteractionsManager_TryDevelopNewTrait_Patch.cs" />
+    <Compile Include="HarmonyPatches\ModCompat\VanillaRacesExpandedSanguophage_JobGiver_Hemohunter_FindPawnToSuck_Patch.cs" />
+    <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />
+    <Compile Include="HarmonyPatches\WorkGiver_DoBill_CannotDoBillDueToMedicineRestriction_Patch.cs" />
+    <Compile Include="HarmonyPatches\WorkGiver_DoBill_JobOnThing_Patch.cs" />
+    <Compile Include="HarmonyPatches\WorkGiver_DoBill_AddEveryMedicineToRelevantThings_Patch.cs" />
+    <Compile Include="HarmonyPatches\WorkGiver_DoBill_ThingIsUsableBillGiver_Patch.cs" />
+    <Compile Include="HarmonyPatches\WorkGiver_PatientGoToBedTreatment_AnyAvailableDoctorFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\Xenogerm_GetFloatMenuOptions_Patch.cs" />
+    <Compile Include="HarmonyPatches\Xenogerm_GetGizmos_Patch.cs" />
+    <Compile Include="HarmonyPatches\XenotypeDef_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="Defs\AndroidConvertableGenesDef.cs" />
+    <Compile Include="QuestNodes\QuestNode_GenerateAndroid.cs" />
+    <Compile Include="Recipes\Recipe_AdministerNeutroamineForAndroid.cs" />
+    <Compile Include="Recipes\Recipe_RemoveArtificalBodyPart.cs" />
+    <Compile Include="AI\Stance_Stand.cs" />
+    <Compile Include="AI\WorkGiver_ModifyAndroid.cs" />
+    <Compile Include="Buildings\Building_AndroidBehavioristStation.cs" />
+    <Compile Include="HarmonyPatches\Pawn_JobTracker_Notify_TuckedIntoBed_Patch.cs" />
+    <Compile Include="Genes\Gene_MemoryDecay.cs" />
+    <Compile Include="Genes\Gene_RainVulnerability.cs" />
+    <Compile Include="HarmonyPatches\AgeInjuryUtility_GenerateRandomOldAgeInjuries_Patch.cs" />
+    <Compile Include="HarmonyPatches\AgeInjuryUtility_RandomHediffsToGainOnBirthday_Patch.cs" />
+    <Compile Include="HarmonyPatches\Bill_IsFixedOrAllowedIngredient_Patch.cs" />
+    <Compile Include="HarmonyPatches\CharacterCardUtility_CustomXenotypes_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompRottable_RotProgress_Patch.cs" />
+    <Compile Include="HarmonyPatches\Dialog_CreateXenotype_DrawSearchRect_Patch.cs" />
+    <Compile Include="HarmonyPatches\FloatMenuMakerMap_CanTakeOrder_Patch.cs" />
+    <Compile Include="HarmonyPatches\FoodUtility_WillEat_Thing_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthAIUtility_ShouldSeekMedicalRestUrgent_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffSet_GetPartHealth_Patch.cs" />
+    <Compile Include="HarmonyPatches\Hediff_Injury_PainOffset_Patch.cs" />
+    <Compile Include="HarmonyPatches\JobGiver_ExtinguishSelf_TryGiveJob_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_ButcherProducts_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_DescriptionFlavor_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_DraftController_Drafted_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_DraftController_ShowDraftGizmo_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_HealthTracker_RestorePartRecursiveInt_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_JobTracker_IsCurrentJobPlayerInterruptible_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_StoryTracker_TryGetRandomHeadFromSet_Patch.cs" />
+    <Compile Include="HarmonyPatches\Precepts\FactionUtility_GetSlavesInFactionCount.cs" />
+    <Compile Include="HarmonyPatches\Precepts\GenGuest_EnslavePrisoner.cs" />
+    <Compile Include="HarmonyPatches\Precepts\TaleUtility_Notify_PawnDied.cs" />
+    <Compile Include="HarmonyPatches\Precepts\PawnDiedOrDownedThoughtsUtility_AppendThoughts_ForHumanlike.cs" />
+    <Compile Include="HarmonyPatches\Precepts\ThoughtHandler_GetSocialThoughts.cs" />
+    <Compile Include="Recipes\Recipe_InstallAndroidPart.cs" />
+    <Compile Include="ScenParts\ScenPart_NewAndroidArrival.cs" />
+    <Compile Include="StatParts\StatPart_Android.cs" />
+    <Compile Include="StatParts\StatPart_AndroidColdEfficiency.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidPresent.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_AndroidsInColony.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_Android_Social.cs" />
+    <Compile Include="UI\Alert_AndroidsLowOnPower.cs" />
+    <Compile Include="UI\ChoiceLetter_AndroidAwakened.cs" />
+    <Compile Include="UI\Dialog_AndroidAwakenedChoices.cs" />
+    <Compile Include="Utilities\AndroidProjectUtils.cs" />
+    <Compile Include="UI\Window_AndroidModification.cs" />
+    <Compile Include="Utilities\AndroidCreationUtility.cs" />
+    <Compile Include="Buildings\Building_AndroidCreationStation.cs" />
+    <Compile Include="Buildings\Building_SubcorePolyanalyzer.cs" />
+    <Compile Include="AI\JobDriver_CreateAndroid.cs" />
+    <Compile Include="Things\UnfinishedAndroid.cs" />
+    <Compile Include="UI\Dialog_AndroidProjectList.cs" />
+    <Compile Include="UI\Dialog_AndroidProjectList_Load.cs" />
+    <Compile Include="UI\Dialog_AndroidProjectList_Save.cs" />
+    <Compile Include="UI\Window_AndroidCreation.cs" />
+    <Compile Include="AI\WorkGiver_CreateAndroid.cs" />
+    <Compile Include="HarmonyPatches\Building_SubcoreScanner_CanAcceptPawn_Patch.cs" />
+    <Compile Include="AI\WorkGiver_HaulToSubcorePolyanalyzer.cs" />
+    <Compile Include="Genes\AndroidGeneDef.cs" />
+    <Compile Include="Genes\Gene_SyntheticBody.cs" />
+    <Compile Include="HarmonyPatches\Bill_Medical_Label_Patch.cs" />
+    <Compile Include="HarmonyPatches\BodyPartDef_IsSkinCovered_Patch.cs" />
+    <Compile Include="HarmonyPatches\Building_GeneExtractor_CanAcceptPawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\Building_GrowthVat_CanAcceptPawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\CharacterCardUtility_DoTopStack_Patch.cs" />
+    <Compile Include="HarmonyPatches\CharacterCardUtility_DoLeftSection_Patch.cs" />
+    <Compile Include="HarmonyPatches\CharacterCardUtility_LifestageAndXenotypeOptions_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompAbilityEffect_BloodfeederBite_Valid_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompAbilityEffect_Coagulate_Valid_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompAbilityEffect_ReimplantXenogerm_Valid_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompAssignableToPawn_PlayerCanSeeAssignments_Patch.cs" />
+    <Compile Include="HarmonyPatches\DefGenerator_GenerateImpliedDefs_PreResolve_Patch.cs" />
+    <Compile Include="HarmonyPatches\Dialog_ViewGenes_DoWindowContents_Patch.cs" />
+    <Compile Include="HarmonyPatches\GeneDefGenerator_ImpliedGeneDefs_Patch.cs" />
+    <Compile Include="HarmonyPatches\GeneDef_GetDescriptionFull_Patch.cs" />
+    <Compile Include="HarmonyPatches\GeneDef_SpecialDisplayStats_Patch.cs" />
+    <Compile Include="HarmonyPatches\GeneUIUtility_DrawGenesInfo_Patch.cs" />
+    <Compile Include="HarmonyPatches\GeneUtility_GenesInOrder_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthAIUtility_ShouldBeTendedNowByPlayer_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_CanDoRecipeWithMedicineRestriction_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_CreateSurgeryBill_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_DrawHediffListing_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_DrawHediffRow_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_DrawOverviewTab_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthCardUtility_GenerateSurgeryOption_Patch.cs" />
+    <Compile Include="HarmonyPatches\HealthUtility_TryAnesthetize_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffGiver_Bleeding_OnIntervalPassed_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffGiver_Heat_OnIntervalPassed_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffGiver_Hypothermia_OnIntervalPassed_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffSet_CacheMissingPartsCommonAncestors_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffUtility_CanHealFromTending_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffUtility_CanHealNaturally_Patch.cs" />
+    <Compile Include="Hediffs\Hediff_ElectromagneticShock.cs" />
+    <Compile Include="HarmonyPatches\Hediff_Injury_BleedRate_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_GeneTracker_XenotypeDescShort_Patch.cs" />
+    <Compile Include="Hediffs\Hediff_Neutroloss.cs" />
+    <Compile Include="HarmonyPatches\ImmunityHandler_DiseaseContractChanceFactor_Patch.cs" />
+    <Compile Include="HarmonyPatches\IncidentWorker_DiseaseHuman_PotentialVictimCandidates.cs" />
+    <Compile Include="HarmonyPatches\InspirationHandler_TryStartInspiration_Patch.cs" />
+    <Compile Include="HarmonyPatches\InteractionWorker_RomanceAttempt_RandomSelectionWeight_Patch.cs" />
+    <Compile Include="HarmonyPatches\JobGiver_GetHemogen_CanFeedOnPrisoner_Patch.cs" />
+    <Compile Include="HarmonyPatches\JoyGiver_Meditate_Patch.cs" />
+    <Compile Include="HarmonyPatches\MedicalRecipesUtility_SpawnThingsFromHediffs_Patch.cs" />
+    <Compile Include="HarmonyPatches\MeditationFocusTypeAvailabilityCache_PawnCanUseInt_Patch.cs" />
+    <Compile Include="HarmonyPatches\MeditationUtility_CanMeditateNow_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreaker_BreakExtremeIsApproaching_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreaker_BreakExtremeIsImminent_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreaker_BreakMajorIsImminent_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreaker_BreakMinorIsImminent_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalBreaker_CanDoRandomMentalBreaks_Patch.cs" />
+    <Compile Include="HarmonyPatches\MentalStateHandler_TryStartMentalState_Patch.cs" />
+    <Compile Include="HarmonyPatches\Messages_Message_Patch.cs" />
+    <Compile Include="HarmonyPatches\NeedsCardUtility_DoMoodAndThoughts_Patch.cs" />
+    <Compile Include="HarmonyPatches\Need_ShowOnNeedList_Patch.cs" />
+    <Compile Include="HarmonyPatches\Page_ConfigureStartingPawns_DrawXenotypeEditorButton_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_HealthTracker_AddHediff_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromLethalDamageThreshold_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromRequiredCapacity_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDowned_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_NeedsTracker_AddNeed_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_NeedsTracker_BindDirectNeedFields_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_NeedsTracker_ShouldHaveNeed_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_RelationsTracker_OpinionOf_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_StoryTracker_SkinColor_Patch.cs" />
+    <Compile Include="Utilities\AndroidStatsTable.cs" />
+    <Compile Include="UI\Window_CreateAndroidXenotype.cs" />
+    <Compile Include="HotSwappableAttribute.cs" />
+    <Compile Include="UI\Window_CreateAndroidBase.cs" />
+    <Compile Include="Utilities\ModCompatibility.cs" />
+    <Compile Include="Utilities\Startup.cs" />
+    <Compile Include="Utilities\Utils.cs" />
+    <Compile Include="VRE_DefOf.cs" />
+    <Compile Include="Misc\Alert_Freezing.cs" />
+    <Compile Include="Misc\Alert_Overheating.cs" />
+    <Compile Include="AndroidSettings.cs" />
+    <Compile Include="AndroidSettingsExtension.cs" />
+    <Compile Include="Buildings\Building_AndroidStand.cs" />
+    <Compile Include="Buildings\Building_NeutroCasket.cs" />
+    <Compile Include="Comps\CompAssignableToPawn_AndroidStand.cs" />
+    <Compile Include="Genes\Gene_SolarFlareVulnerability.cs" />
+    <Compile Include="Hediffs\Hediff_AndroidPart.cs" />
+    <Compile Include="Hediffs\Hediff_AndroidReactor.cs" />
+    <Compile Include="Recipes\Recipe_InstallReactor.cs" />
+    <Compile Include="Needs\Need_FoodSuppressed.cs" />
+    <Compile Include="Needs\Need_MemorySpace.cs" />
+    <Compile Include="Needs\Need_ReactorPower.cs" />
+    <Compile Include="Things\Reactor.cs" />
+    <Compile Include="VREAndroidsMod.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

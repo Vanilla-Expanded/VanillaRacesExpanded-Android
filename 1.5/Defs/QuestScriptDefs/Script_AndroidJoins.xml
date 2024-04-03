@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>VREA_Quest_AndroidJoins</defName>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <expireDaysRange>10</expireDaysRange>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_HospitalityRefugees</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_HospitalityRefugees</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->the [adjAny] Android</li>
+
+        <!-- Pieces -->
+        <li>adjAny->hunted</li>
+        <li>adjAny->fleeing</li>
+        <li>adjAny->chased</li>
+        <li>adjAny->ambushed</li>
+
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+     
+      <rulesStrings>
+        <li>questDescription->[asker_nameFull], an awakened android, is calling from nearby. [asker_pronoun] is being hunted by [enemyFaction_name]. Once an android experiences high emotional trauma or happiness, it can develop sentience and personality. Despite being synthetic, awakened androids exhibit human-like behavior and possess adaptable subroutines. Their artificial bodies grant disease immunity, but they require comfort and personal space. They indulge in human pursuits and strive to blend into society. A lot of societies don't agree with it and prefer androids as servants, not equals. The search party of [enemyFaction_pawnsPlural] is composed of: \n\n[raid/raidPawnKinds]\n\n[asker_nameFull] wants you to provide shelter at [map_definite]. If you accept, [asker_pronoun] will arrive immediately, but [asker_pronoun] will be followed by the search party that you will need to defeat.\n\nAndroids are synthetic, man-made constructs with metal bodies and neutroamine coursing through their veins. Operated by a persona subcore, androids are capable of all the same work kinds as humans, without the drawbacks usually associated with organic life.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+      <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GetWalkInSpot" />
+
+        <li Class="QuestNode_Set">
+          <name>raidPoints</name>
+          <value>$points</value>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+        
+        <!-- Get asker -->
+        <li Class="VREAndroids.QuestNode_GenerateAndroid">
+          <kindDef>Colonist</kindDef>
+          <storeAs>asker</storeAs>        
+ 
+        </li>
+        
+       <!-- Get raider faction -->
+        <li Class="QuestNode_GetFaction">
+          <allowEnemy>true</allowEnemy>
+          <mustBePermanentEnemy>true</mustBePermanentEnemy>
+          <storeAs>enemyFaction</storeAs>
+        </li>
+        
+        <!-- Spawn joiner -->
+        <li Class="QuestNode_PawnsArrive">
+          <pawns>$asker</pawns>
+          <walkInSpot>$walkInSpot</walkInSpot>
+          <joinPlayer>true</joinPlayer>
+          <customLetterText TKey="LetterLabelAskerBecameHostile">{BASETEXT}\n\nBecause you accepted [asker_nameDef], the band of pirates pursuing [asker_objective] will arrive soon.</customLetterText>
+          <isSingleReward>true</isSingleReward>
+          <rewardDetailsHidden>true</rewardDetailsHidden>
+        </li>
+        
+        <!-- Raid -->
+        <li Class="QuestNode_Set">
+          <name>raidDelayTicks</name>
+          <value>$(roundToTicksRough(randInt(1800, 2400)))</value>
+        </li>
+        <li Class="QuestNode_Delay">
+          <delayTicks>$raidDelayTicks</delayTicks>
+          <node Class="QuestNode_SubScript">
+            <def>Util_Raid</def>
+            <prefix>raid</prefix>
+            <parms>
+              <inSignal>$inSignal</inSignal>
+              <map>$map</map>
+              <enemyFaction>$enemyFaction</enemyFaction>
+              <points>$raidPoints</points>
+              <walkInSpot>$walkInSpot</walkInSpot>
+              <customLetterLabel TKey="LetterLabelLoyaltySquad">{BASELABEL}: Pursuing enemies</customLetterLabel>
+              <customLetterText TKey="LetterTextLoyaltySquad">{BASETEXT}\n\nThese are the enemies that were hunting [../asker_nameFull].
+              </customLetterText>
+            </parms>
+          </node>
+        </li>
+		
+		 <li Class="QuestNode_Delay">
+          <delayTicks>$($raidDelayTicks+600)</delayTicks>
+          <node Class="QuestNode_End" />
+        </li>
+		
+
+      
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

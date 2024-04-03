@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_AndroidStandSpot</defName>
+    <label>android stand spot</label>
+    <description>Designates a spot on the ground where androids should stand to free up consumed memory space.</description>
+	<thingClass>VREAndroids.Building_AndroidStand</thingClass>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+      <Comfort>0.4</Comfort>
+      <SurgerySuccessChanceFactor>0.7</SurgerySuccessChanceFactor>
+    </statBases>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>False</useHitPoints>
+    <uiOrder>2000</uiOrder>
+    <passability>Standable</passability>
+    <drawGUIOverlay>True</drawGUIOverlay>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+	<tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/AndroidStandingSpot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+	<designationCategory>Biotech</designationCategory>
+    <size>(1,1)</size>
+    <designationHotKey>Misc1</designationHotKey>
+	<comps>
+		<li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>VREAndroids.CompAssignableToPawn_AndroidStand</compClass>
+      </li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_AndroidStand</defName>
+    <label>android stand</label>
+    <description>A wireless interface that allows an android to rapidly free up consumed memory space. Considerably more efficient than running in sleep mode, as the stand executes the conversion externally.</description>
+	<thingClass>VREAndroids.Building_AndroidStand</thingClass>
+	<tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/AndroidStand/AndroidStand</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1200</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<costList>
+		<Steel>50</Steel>
+	</costList>
+    <rotatable>false</rotatable>
+    <pathCost>42</pathCost>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+	<designationCategory>Biotech</designationCategory>
+    <fillPercent>0.20</fillPercent>
+	<building>
+		<bed_showSleeperBody>True</bed_showSleeperBody>
+	</building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>40</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>VREAndroids.CompAssignableToPawn_AndroidStand</compClass>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>VREA_AndroidTech</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_AndroidSleepMode</defName>
+    <label>android (sleep mode)</label>
+	<thingClass>VREAndroids.Building_AndroidSleepMode</thingClass>
+	<drawerType>RealtimeOnly</drawerType>
+	<inspectorTabs>
+		<li>ITab_Pawn_Character</li>
+	</inspectorTabs>
+	<building>
+		<ai_chillDestination>false</ai_chillDestination>
+		<claimable>false</claimable>
+		<isEdifice>false</isEdifice>
+	</building>
+  </ThingDef>
+</Defs>

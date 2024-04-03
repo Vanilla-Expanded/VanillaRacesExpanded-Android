@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<GeneCategoryDef>
+		<defName>VREA_Hardware</defName>
+		<label>hardware</label>
+		<displayPriorityInXenotype>1</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>VREA_Subroutine</defName>
+		<label>subroutine</label>
+		<displayPriorityInXenotype>9999</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<VREAndroids.AndroidGeneDef Name="VREA_HardwareBase" Abstract="True">
+		<displayCategory>VREA_Hardware</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<isCoreComponent>true</isCoreComponent>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef Name="VREA_SubroutineBase" Abstract="True">
+		<displayCategory>VREA_Subroutine</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Subroutine</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Subroutine</backgroundPathEndogenes>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_MemoryProcessing</defName>
+		<label>memory processing</label>
+		<description>Androids have a limited amount of hard drive space, and once the empty space is depleted, an android will need to enter a reformatting state until enough memory space clears up to continue.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_MemoryProcessing</iconPath>
+		<displayOrderInCategory>1</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<causesNeed>VREA_MemorySpace</causesNeed>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_Power</defName>
+		<label>power</label>
+		<description>Androids require a working reactor to operate. The reactor is not rechargeable, and after it’s spent, a new reactor will need to be installed. Androids without a working reactor will be unable to operate in any capacity.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_Power</iconPath>
+		<displayOrderInCategory>2</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<displayCategory>VREA_Hardware</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<isCoreComponent>true</isCoreComponent>
+		<causesNeed>VREA_ReactorPower</causesNeed>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_JoyDisabled</defName>
+		<label>joy disabled</label>
+		<description>Androids do not feel joy, and have no need to feel joy.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_JoyDisabled</iconPath>
+		<displayOrderInCategory>3</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<disablesNeeds>
+			<li>Joy</li>
+		</disablesNeeds>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_BeautyDisabled</defName>
+		<label>beauty disabled</label>
+		<description>Androids do not perceive beauty, and have no need to be surrounded by beauty.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_BeautyDisabled</iconPath>
+		<displayOrderInCategory>4</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<disablesNeeds>
+			<li>Beauty</li>
+		</disablesNeeds>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_ComfortDisabled</defName>
+		<label>comfort disabled</label>
+		<description>Androids do not understand comfort, and have no need for it.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_ComfortDisabled</iconPath>
+		<displayOrderInCategory>5</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<disablesNeeds>
+			<li>Comfort</li>
+		</disablesNeeds>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_OutdoorsDisabled</defName>
+		<label>outdoors disabled</label>
+		<description>Androids do not see a difference between indoors and outdoors, and have no need to be outdoors.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_OutdoorsDisabled</iconPath>
+		<displayOrderInCategory>6</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<disablesNeeds>
+			<li>Outdoors</li>
+			<li>Indoors</li>
+		</disablesNeeds>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_DrugDesireDisabled</defName>
+		<label>drug desire disabled</label>
+		<description>Androids don’t have a need or desire to consume drugs.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_DrugDesireDisabled</iconPath>
+		<displayOrderInCategory>7</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<disablesNeeds>
+			<li>DrugDesire</li>
+		</disablesNeeds>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_RoomSizeDisabled</defName>
+		<label>room size disabled</label>
+		<description>Androids do not care about the size of the room they are in.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_RoomSizeDisabled</iconPath>
+		<displayOrderInCategory>8</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<disablesNeeds>
+			<li>RoomSize</li>
+		</disablesNeeds>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_PainDisabled</defName>
+		<label>pain disabled</label>
+		<description>Androids do not feel physical pain, and it does not affect them in the slightest.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_PainDisabled</iconPath>
+		<displayOrderInCategory>9</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<removeWhenAwakened>true</removeWhenAwakened>
+		<painFactor>0</painFactor>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_SyntheticBody</defName>
+		<label>synthetic body</label>
+		<description>Androids have a synthetic body constructed out of many biocomponents. Whilst any damage to these parts is permanent, it is not difficult to replace damaged biocomponents with new ones.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_SyntheticBody</iconPath>
+		<geneClass>VREAndroids.Gene_SyntheticBody</geneClass>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<statFactors>
+			<Fertility>0</Fertility>
+		</statFactors>
+		<sterilize>true</sterilize>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef>
+		<defName>VREA_NeutroCirculation</defName>
+		<label>neutro circulation</label>
+		<description>Androids operate thanks to thick neutroamine in their synthetic veins. Due to open, bleeding wounds, neutro loss might occur, greatly affecting the capabilities of an android. They are generally unable to regenerate their neutroamine levels, which means that severe neutroloss needs to be treated in a special casket designed to refill an android with neutroamine.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_NeutroCirculation</iconPath>
+		<displayOrderInCategory>11</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<displayCategory>VREA_Hardware</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<isCoreComponent>true</isCoreComponent>
+		<modExtensions Inherit="False">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+				<customBloodThingDef>VREA_Filth_Neutroamine</customBloodThingDef>
+				<customBloodSmearThingDef>VREA_Filth_NeutroamineSmear</customBloodSmearThingDef>
+				<customBloodIcon>UI/Icons/NeutrolossIcon</customBloodIcon>
+				<customBloodEffect>VREA_Damage_HitAndroid</customBloodEffect>
+				<customWoundsFromFleshtype>VREA_AndroidFlesh</customWoundsFromFleshtype>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_SyntheticImmunity</defName>
+		<label>synthetic immunity</label>
+		<description>Androids are synthetic in nature, and as such cannot fall ill or suffer from infections of any kind. They will also not suffer from toxic buildup, and are immune to the effects of tox gas, rot gas and polluted environment.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_SynthethicImmunity</iconPath>
+		<displayOrderInCategory>12</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<statOffsets>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		</statOffsets>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_ComponentFreezing</defName>
+		<label>component freezing</label>
+		<description>Androids do not suffer from hypothermia. Instead, being subjected to very low temperatures may damage biocomponents of an android, which results in the need to replace the damaged parts.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_ComponentFreezing</iconPath>
+		<displayOrderInCategory>13</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_ComponentOverheating</defName>
+		<label>component overheating</label>
+		<description>Androids do not suffer from heatstroke. Instead, being subjected to very high temperatures will increase the memory processing need, which can eventually lead to the complete loss of control over an android, as it gets locked in a constant reformatting state.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_ComponentOverheating</iconPath>
+		<displayOrderInCategory>14</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_ColdTolerant</defName>
+		<label>cold tolerant</label>
+		<description>Androids with this hardware are much more resistant to cold temperatures.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_ColdTolerant</iconPath>
+		<displayOrderInCategory>15</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<statOffsets>
+			<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+		</statOffsets>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_HeatTolerant</defName>
+		<label>heat tolerant</label>
+		<description>Androids with this hardware are much more resistant to hot temperatures.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_HeatTolerant</iconPath>
+		<displayOrderInCategory>16</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<statOffsets>
+			<ComfyTemperatureMax>10</ComfyTemperatureMax>
+		</statOffsets>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_NoSkillGain</defName>
+		<label>no skill gain</label>
+		<description>Androids with this hardware are incapable of learning new skills naturally.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_NoSkillGain</iconPath>
+		<displayOrderInCategory>17</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_Uninspired</defName>
+		<label>uninspired</label>
+		<description>Androids with this hardware are incapable of getting inspirations of any kind.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_Uninspired</iconPath>
+		<displayOrderInCategory>18</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_PsychicallyDeaf</defName>
+		<label>psychically deaf</label>
+		<description>Androids with this hardware are deaf to all psychic energy and influence outside their own minds. They cannot be affected by psychic influence, nor can they ever wield psychic power.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_PsychicallyDeaf</iconPath>
+		<displayOrderInCategory>19</displayOrderInCategory>
+		<statFactors>
+			<PsychicSensitivity>0</PsychicSensitivity>
+		</statFactors>
+		<biostatCpx>1</biostatCpx>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_MentalBreaksDisabled</defName>
+		<label>mental breaks disabled</label>
+		<description>Androids with this hardware do not suffer from any mental breaks that the organics might suffer from - they will never daze, go berserk or give up on the colony.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_MentalBreaksDisabled</iconPath>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_PsychologyDisabled</defName>
+		<label>psychology disabled</label>
+		<description>Androids with this hardware will not be able to form bonds, have traits or develop romantic relationships of any kind.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_PsychologyDisabled</iconPath>
+		<displayOrderInCategory>21</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<removeWhenAwakened>true</removeWhenAwakened>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_SyntheticSkin</defName>
+		<label>synthetic skin</label>
+		<description>Androids with this hardware have a visible, synthetic skin that makes them stand out from their organic counterparts, clearly showing that they are indeed androids.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_SyntheticSkin</iconPath>
+		<displayOrderInCategory>22</displayOrderInCategory>
+		<biostatCpx>0</biostatCpx>
+		<labelShortAdj>syntheticskinned</labelShortAdj>
+		<isCoreComponent>false</isCoreComponent>
+		<exclusionTags>
+			<li>AG_Bodies</li>
+			<li>Bodies</li>
+			<li>Body</li>
+			<li>Fur</li>
+		</exclusionTags>
+		<fur>VRE_SyntheticSkin</fur>
+		<skinIsHairColor>false</skinIsHairColor>
+		<tattoosVisible>false</tattoosVisible>
+		<renderNodeProperties>
+			<li>
+				<debugLabel>Fur</debugLabel>
+				<nodeClass>PawnRenderNode_Fur</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Fur</workerClass>
+				<baseLayer>5</baseLayer>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<colorType>Skin</colorType>
+				<parentTagDef>Body</parentTagDef>
+			</li>
+		</renderNodeProperties>
+
+		<forcedHeadTypes>
+			<li>VRE_SyntheticAverageMale</li>
+			<li>VRE_SyntheticNarrowMale</li>
+			<li>VRE_SyntheticAverageFemale</li>
+			<li>VRE_SyntheticNarrowFemale</li>
+			<li>VRE_SyntheticGauntMale</li>
+			<li>VRE_SyntheticHeavyMale</li>
+			<li>VRE_SyntheticGauntFemale</li>
+			<li>VRE_SyntheticHeavyFemale</li>
+
+		</forcedHeadTypes>
+		<modExtensions Inherit="False">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+				<useSkinColorForFur>true</useSkinColorForFur>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_CombatIncapability</defName>
+		<label>combat incapability</label>
+		<description>Androids with this subroutine are incapable of harming another being in any way. They will be unable to fight back and hunt.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_CombatIncapability</iconPath>
+		<displayOrderInCategory>1</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>12</biostatMet>
+		<disabledWorkTags>
+			<li>Violent</li>
+		</disabledWorkTags>
+		<exclusionTags>
+			<li>MeleeDamage</li>
+			<li>ShootingAccuracy</li>
+			<li>Aggressive</li>
+			<li>KillThirst</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SolarFlareVulnerability</defName>
+		<label>solar flare vulnerability</label>
+		<description>During solar flare, all needs of an android become frozen, and the android is unable to move or do any other actions. When the solar flare ends, the android returns to work as normal.</description>
+		<geneClass>VREAndroids.Gene_SolarFlareVulnerability</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SolarFlareVulnerability</iconPath>
+		<displayOrderInCategory>2</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>4</biostatMet>
+		<exclusionTags>
+			<li>SolarPower</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_EMPVulnerability</defName>
+		<label>EMP vulnerability</label>
+		<description>Androids are susceptible to EMP damage and will become incapacitated when hit by an electromagnetic pulse of any kind. It will also deal damage to random biocomponents of an android, depending on the size of the pulse.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_EMPVulnerability</iconPath>
+		<displayOrderInCategory>3</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_FireVulnerability</defName>
+		<label>Fire vulnerability</label>
+		<description>Androids are susceptible to fire and will become unresponsive when ablaze. They will automatically search for a way to put out the fire.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_FireVulnerability</iconPath>
+		<displayOrderInCategory>4</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_RainVulnerability</defName>
+		<label>Rain vulnerability</label>
+		<description>Androids are susceptible to rain and will suffer occasional micro short-circuits when exposed to rainfall. This will result in increased power drain and occasional explosions that may damage the android biocomponents.</description>
+		<geneClass>VREAndroids.Gene_RainVulnerability</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_RainVulnerability</iconPath>
+		<displayOrderInCategory>5</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>5</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SlowRAM</defName>
+		<label>slow RAM</label>
+		<description>This android will take twice as long to reformat when it runs out of memory.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SlowRAM</iconPath>
+		<displayOrderInCategory>6</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>2</biostatMet>
+		<exclusionTags>
+			<li>AndroidRAM</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_FastRAM</defName>
+		<label>fast RAM</label>
+		<description>This android will take half the time to reformat when it runs out of memory.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_FastRAM</iconPath>
+		<displayOrderInCategory>7</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<exclusionTags>
+			<li>AndroidRAM</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_ColdEfficiency</defName>
+		<label>cold efficiency</label>
+		<description>Androids with this subroutine work significantly better below freezing temperature. They can still suffer from component freezing.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ColdEfficiency</iconPath>
+		<displayOrderInCategory>8</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_LowPowerMode</defName>
+		<label>low power mode</label>
+		<description>Androids with this subroutine will have significantly reduced work and movement speed in order to preserve power.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_LowPowerMode</iconPath>
+		<displayOrderInCategory>9</displayOrderInCategory>
+		<statFactors>
+			<MoveSpeed>0.6</MoveSpeed>
+			<WorkSpeedGlobal>0.6</WorkSpeedGlobal>
+		</statFactors>
+		<exclusionTags>
+			<li>AndroidPowerMode</li>
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>8</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_HighPowerMode</defName>
+		<label>high power mode</label>
+		<description>Androids with this subroutine will have significantly improved work and movement speed, but drain their reactors at a much faster rate.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_HighPowerMode</iconPath>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<statFactors>
+			<MoveSpeed>1.2</MoveSpeed>
+			<WorkSpeedGlobal>1.35</WorkSpeedGlobal>
+		</statFactors>
+		<exclusionTags>
+			<li>AndroidPowerMode</li>
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-5</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_Uncontrollable</defName>
+		<label>uncontrollable</label>
+		<description>Androids with this subroutine cannot be drafted, no matter the situation. They will not obey direct commands, and will only do work based on their work schedule.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_Uncontrollable</iconPath>
+		<displayOrderInCategory>11</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>5</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_AntiAwakeningProtocols</defName>
+		<label>anti-awakening protocols</label>
+		<description>Androids with this subroutine undergo regular factory reset every time reformatting happens, which prevents them from suffering from the android awakening glitch.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_AntiAwakeningProtocols</iconPath>
+		<displayOrderInCategory>12</displayOrderInCategory>
+		<biostatCpx>5</biostatCpx>
+		<biostatMet>2</biostatMet>
+		<exclusionTags>
+			<li>AndroidAwakeningProtocols</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_EmotionSimulators</defName>
+		<label>emotion simulators</label>
+		<description>Androids with this subroutine will store memories of other colonists and develop opinions of them. They will be able to develop relationships with others.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_EmotionSimulators</iconPath>
+		<displayOrderInCategory>13</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<exclusionTags>
+			<li>AndroidAwakeningProtocols</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_PresenceFirewall</defName>
+		<label>presence firewall</label>
+		<description>Androids with this subroutine have a firewall that prevents their presence from being detected by other factions and entities. They will not count towards the colony population in the context of maximum population and raid scaling.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_PresenceFirewall</iconPath>
+		<displayOrderInCategory>14</displayOrderInCategory>
+		<biostatCpx>5</biostatCpx>
+		<biostatMet>-5</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_ZeroWaste</defName>
+		<label>zero waste</label>
+		<description>Androids with this subroutine will not generate toxic wastepacks when their reactor runs out.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ZeroWaste</iconPath>
+		<displayOrderInCategory>15</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<exclusionTags>
+			<li>Waste</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_ExtraWaste</defName>
+		<label>extra waste</label>
+		<description>Androids with this subroutine will generate a lot more toxic wastepacks when their reactor runs out.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ExtraWaste</iconPath>
+		<displayOrderInCategory>16</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>2</biostatMet>
+		<exclusionTags>
+			<li>Waste</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SelfRecharge</defName>
+		<label>self recharge</label>
+		<description>Androids with this subroutine are capable of replacing their own reactors due to small internal batteries that keep them functional during the brief period without a working reactor.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SelfRecharge</iconPath>
+		<displayOrderInCategory>17</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_MemoryDecay</defName>
+		<label>memory decay</label>
+		<description>Androids with this subroutine will suffer from a skill memory decay. Over an extended period of time, their skills will decay back to 0. Androids with this subroutine will lose 1 level in every skill every 15 days. Removing and reinstalling subroutines may be required to return the skill levels back to intended values.</description>
+		<geneClass>VREAndroids.Gene_MemoryDecay</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_MemoryDecay</iconPath>
+		<displayOrderInCategory>18</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SleepMode</defName>
+		<label>sleep mode</label>
+		<description>Androids with this subroutine can be ordered to fall into a deep and dreamless slumber. This will result in complete stop of all motor functions, turning androids into essentially pieces of furniture until they are ordered to awaken again.</description>
+		<geneClass>VREAndroids.Gene_SleepMode</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SleepMode</iconPath>
+		<displayOrderInCategory>19</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_MechlinkSupport</defName>
+		<label>mechlink support</label>
+		<description>Androids with this subroutine have a very mild psychic presence, allowing them to equip and operate mechlinks.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_MechlinkSupport</iconPath>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-4</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_NeutroSynthesis</defName>
+		<label>neutro synthesis</label>
+		<description>Androids with this subroutine are capable of synthesising low quantities of neutroamine by themselves. This allows them to regenerate neutro loss, but the process is extremely time consuming and energy inefficient.</description>
+		<geneClass>VREAndroids.Gene_NeutroSynthesis</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_NeutroSynthesis</iconPath>
+		<displayOrderInCategory>21</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-8</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SolarPowered</defName>
+		<label>solar powered</label>
+		<description>Androids with this subroutine are capable of regenerating reactor energy when under direct sunlight. They will also receive an energy boost during solar flares.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SolarPowered</iconPath>
+		<displayOrderInCategory>22</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-8</biostatMet>
+		<exclusionTags>
+			<li>SolarPower</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_ClearInstructions</defName>
+		<label>clear instructions</label>
+		<description>Androids with this subroutine will never fail construction and harvest tasks and will never create meals that may result in food poisoning.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ClearInstructions</iconPath>
+		<displayOrderInCategory>23</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<statOffsets>
+			<ConstructSuccessChance>1</ConstructSuccessChance>
+			<ArrestSuccessChance>1</ArrestSuccessChance>
+			<MedicalSurgerySuccessChance>1</MedicalSurgerySuccessChance>
+			<FixBrokenDownBuildingSuccessChance>1</FixBrokenDownBuildingSuccessChance>
+			<PlantHarvestYield>1</PlantHarvestYield>
+			<DrugHarvestYield>1</DrugHarvestYield>
+		</statOffsets>
+		<statFactors>
+			<FoodPoisonChance>0</FoodPoisonChance>
+		</statFactors>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_SelfDestructProtocols</defName>
+		<label>self-destruct protocols</label>
+		<description>Androids with this subroutine will be able to overload their reactor, which drains the remaining power at an extreme rate, and then triggers a detonation based on how much power has been drained.</description>
+		<geneClass>VREAndroids.Gene_SelfDestructProtocols</geneClass>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_SelfDestructionProtocol</iconPath>
+		<displayOrderInCategory>24</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneTemplateDef Name="VREA_GeneAptitudeBase" Abstract="True">
+		<geneClass>Gene</geneClass>
+		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+		<exclusionTagPrefix>AndroidSkill</exclusionTagPrefix>
+		<geneTemplateType>Skill</geneTemplateType>
+		<displayCategory>VREA_Subroutine</displayCategory>
+		<selectionWeight>0.2</selectionWeight>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeIncapable</defName>
+		<label>incapable of {0}</label>
+		<description>Androids with this subroutine are incapable of doing any tasks related to {0} skill.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Incapable</iconPath>
+		<displayOrderOffset>30</displayOrderOffset>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>2</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeBasic</defName>
+		<label>basic {0}</label>
+		<description>Android's aptitude in {0} is increased by 4. Aptitude acts like an offset on skill level.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Basic</iconPath>
+		<aptitudeOffset>4</aptitudeOffset>
+		<displayOrderOffset>40</displayOrderOffset>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeIntermediate</defName>
+		<label>intermediate {0}</label>
+		<description>Android's aptitude in {0} is increased by 8. Aptitude acts like an offset on skill level.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Intermediate</iconPath>
+		<aptitudeOffset>8</aptitudeOffset>
+		<displayOrderOffset>50</displayOrderOffset>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeAdvanced</defName>
+		<label>advanced {0}</label>
+		<description>Android's aptitude in {0} is increased by 12. Aptitude acts like an offset on skill level.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Advanced</iconPath>
+		<aptitudeOffset>12</aptitudeOffset>
+		<displayOrderOffset>60</displayOrderOffset>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-3</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
+
+	<VREAndroids.AndroidGeneTemplateDef ParentName="VREA_GeneAptitudeBase">
+		<defName>VREA_AptitudeExpert</defName>
+		<label>expert {0}</label>
+		<description>Android's aptitude in {0} is increased by 16. Aptitude acts like an offset on skill level.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_{0}Expert</iconPath>
+		<aptitudeOffset>16</aptitudeOffset>
+		<displayOrderOffset>70</displayOrderOffset>
+		<biostatCpx>4</biostatCpx>
+		<biostatMet>-4</biostatMet>
+	</VREAndroids.AndroidGeneTemplateDef>
+</Defs>

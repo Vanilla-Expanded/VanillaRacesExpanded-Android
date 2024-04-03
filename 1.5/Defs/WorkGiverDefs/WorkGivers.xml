@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<WorkGiverDef>
+		<defName>VREA_DoBillsAndroidOperation</defName>
+		<label>operate on androids</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>70</priorityInType>
+		<billGiversAllHumanlikes>true</billGiversAllHumanlikes>
+		<billGiversAllHumanlikesCorpses>true</billGiversAllHumanlikesCorpses>
+		<verb>operate on</verb>
+		<gerund>operating on</gerund>
+		<requiredCapacities>
+		<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+  
+	<WorkGiverDef>
+		<defName>VREA_DoBillsUseAndroidPartWorkbench</defName>
+		<label>make android parts at android part workbench</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>100</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VREA_AndroidPartWorkbench</li>
+		</fixedBillGiverDefs>
+		<verb>craft</verb>
+		<gerund>crafting at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	
+	<WorkGiverDef ParentName="HaulToBase">
+		<defName>VREA_HaulToSubcorePolyanalyzer</defName>
+		<label>haul resources to subcore polyanalyzer</label>
+		<giverClass>VREAndroids.WorkGiver_HaulToSubcorePolyanalyzer</giverClass>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VREA_CarryToSubcorePolyanalyzer</defName>
+		<label>carry to subcore polyanalyzer</label>
+		<giverClass>VREAndroids.WorkGiver_CarryToSubcorePolyanalyzer</giverClass>
+		<workType>Hauling</workType>
+		<verb>carry</verb>
+		<gerund>carrying</gerund>
+		<priorityInType>90</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VREA_CarryToAndroidBehavioristStation</defName>
+		<label>carry to android behaviorist station</label>
+		<giverClass>VREAndroids.WorkGiver_CarryToAndroidBehavioristStation</giverClass>
+		<workType>Hauling</workType>
+		<verb>carry</verb>
+		<gerund>carrying</gerund>
+		<priorityInType>90</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VREA_CreateAndroid</defName>
+		<label>creating android at station</label>
+		<giverClass>VREAndroids.WorkGiver_CreateAndroid</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>100</priorityInType>
+		<verb>create an android at</verb>
+		<gerund>creating an android at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VREA_ModifyAndroid</defName>
+		<label>modifying android at station</label>
+		<giverClass>VREAndroids.WorkGiver_ModifyAndroid</giverClass>
+		<workType>Research</workType>
+		<priorityInType>100</priorityInType>
+		<verb>modify an android at</verb>
+		<gerund>modifying an android at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VREA_RepairAndroid</defName>
+		<label>repair android</label>
+		<giverClass>VREAndroids.WorkGiver_RepairAndroid</giverClass>
+		<workType>Crafting</workType>
+		<verb>repair</verb>
+		<gerund>repairing</gerund>
+		<priorityInType>200</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
+	</WorkGiverDef>
+</Defs>

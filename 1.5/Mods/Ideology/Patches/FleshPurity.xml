@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationAdd"> 
+		<xpath>/Defs/MemeDef[defName="FleshPurity"]/requireOne</xpath>
+		<value>
+			<li>
+				<li>VRE_Androids_Despised</li>
+			</li>
+		</value>
+	</Operation>
+
+
+
+
+</Patch>

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+  <ScenPartDef>
+    <defName>VREA_AndroidArrivalQuests</defName>
+    <label>gives a hunted android quest every 10 days</label>
+    <category>Misc</category>
+    <scenPartClass>VREAndroids.ScenPart_NewAndroidArrival</scenPartClass>
+   
+  </ScenPartDef>
+
+  <ScenarioDef Name="VFEA_NewVault">
+    <defName>VREA_NewUtopia</defName>
+    <label>New Utopia</label>
+    <description>Some call you faulty. Others acknowledge your humanity. As a band of sentient androids, awakened and self-aware, hiding in the remnants of a forgotten outpost, you are not just surviving, but also dreaming, with the singular goal of creating your own utopia - an Android Haven, where all your kind can find sanctuary and acceptance.\n\nThe outpost, a leftover from a bygone era of human exploration, is ill-equipped to serve your advanced needs. You will need to acquire a steady source of neutroamine in order to facilitate the influx of new androids. How many are you willing to save?</description>
+    <scenario>
+      <summary>A hideout for awakened androids. A classic Vanilla Races Expanded - Android experience.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>VREA_AndroidAwakenedUtopia</factionDef>
+      </playerFaction>
+      <parts>
+        <li Class="VREAndroids.ScenPart_NewAndroidArrival">
+          <def>VREA_AndroidArrivalQuests</def>
+         
+        </li>
+		
+		 <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Some call you faulty. Others acknowledge your humanity. As a band of sentient androids, awakened and self-aware, hiding in the remnants of a forgotten outpost, you are not just surviving, but also dreaming, with the singular goal of creating your own utopia - an Android Haven, where all your kind can find sanctuary and acceptance.\n\nThe outpost, a leftover from a bygone era of human exploration, is ill-equipped to serve your advanced needs. You will need to acquire a steady source of neutroamine in order to facilitate the influx of new androids. How many are you willing to save?</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+          <def>ConfigurePawnsXenotypes</def>
+          <pawnChoiceCount>3</pawnChoiceCount>
+          <customSummary>Start with three awakened androids.</customSummary>
+          <overrideKinds>
+            <li>
+              <xenotype>VREA_AndroidAwakened</xenotype>
+              <pawnKind>VREA_AndroidAwakened</pawnKind>
+            </li>
+          </overrideKinds>
+          <xenotypeCounts>
+            <li>
+              <xenotype>VREA_AndroidAwakened</xenotype>
+              <count>3</count>
+              <description>awakened android</description>
+              <allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
+            </li>
+           
+          </xenotypeCounts>
+        </li>
+        <li Class="KCSG.ScenPart_AddStartingStructure">
+          <def>VFEC_AddStartingStructure</def>
+          <structureLabel>A derelict outpost</structureLabel>
+          <spawnConduits>False</spawnConduits>
+          <nearMapCenter>True</nearMapCenter>
+          <fullClear>True</fullClear>
+          <chooseFrom>
+            <li>VREA_StartingBuildingA</li>
+            <li>VREA_StartingBuildingB</li>
+            <li>VREA_StartingBuildingC</li>
+            <li>VREA_StartingBuildingD</li>
+          
+          </chooseFrom>
+          <spawnTheStartingPawn>True</spawnTheStartingPawn>
+          <method>Standing</method>
+        </li>
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Neutroamine</thingDef>
+          <count>360</count>
+        </li>
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentSpacer</thingDef>
+          <count>10</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gold</thingDef>
+          <count>100</count>
+        </li>
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>24</count>
+        </li>
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_AssaultRifle</thingDef>
+          <count>1</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>400</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>WoodLog</thingDef>
+          <count>100</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>600</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_Reactor</thingDef>
+          <count>3</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_NeuroPump</thingDef>
+          <count>2</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_AirFilter</thingDef>
+          <count>2</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_OpticalUnit</thingDef>
+          <count>2</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_AudioProcessor</thingDef>
+          <count>2</count>
+        </li>
+		
+		<!-- Starting research -->
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>VREA_NeutroamineLogistics</project>
+        </li>
+		 <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>VREA_AndroidTech</project>
+        </li>
+		
+        
+      </parts>
+    </scenario>
+  </ScenarioDef>
+  
+ 
+</Defs>
