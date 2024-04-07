@@ -1,6 +1,7 @@
 <ModMetaData>
 	<name>Vanilla Races Expanded - Android</name>
 	<author>Oskar Potocki, Taranchuk, ISOREX, Sarg Bjornson</author>
+	  <modIconPath IgnoreIfNoMatchingField="True">UI/VELogo</modIconPath>
 	<modVersion>1.1.0</modVersion>
 	<supportedVersions>
 
