@@ -86,6 +86,7 @@
     <Compile Include="HarmonyPatches\Anomaly\CompRevenant_Hypnotize_Patch.cs" />
     <Compile Include="HarmonyPatches\Anomaly\GameComponent_Anomaly_Hypnotize_Patch.cs" />
     <Compile Include="HarmonyPatches\Anomaly\IncidentWorker_UnnaturalCorpseArrival_ValidatePawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\Anomaly\MetalhorrorUtility_CanBeInfected_Patch.cs" />
     <Compile Include="HarmonyPatches\Anomaly\MutantUtility_CanResurrectAsShambler_Patch.cs" />
     <Compile Include="HarmonyPatches\Anomaly\QuestNode_Root_MysteriousCargo_ValidatePawn_Patch.cs" />
     <Compile Include="HarmonyPatches\Building_Bed_GetFloatMenuOptions_Patch.cs" />
@@ -197,7 +198,6 @@
     <Compile Include="HarmonyPatches\StatWorker_ShouldShowFor_Patch.cs" />
     <Compile Include="HarmonyPatches\StunHandler_Notify_DamageApplied_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingDef_SpecialDisplayStats_Patch.cs" />
-    <Compile Include="HarmonyPatches\ThoughtUtility_CanGetThought_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_AgeReversalDemanded_CanHaveThought_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_AgeReversalDemanded_ShouldHaveThought_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_NeedNeuralSupercharge_ShouldHaveThought_Patch.cs" />

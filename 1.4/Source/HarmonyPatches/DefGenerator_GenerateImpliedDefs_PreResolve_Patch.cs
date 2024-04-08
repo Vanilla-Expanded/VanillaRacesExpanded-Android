@@ -76,8 +76,8 @@ namespace VREAndroids
             return new ThingDef
             {
                 defName = defname,
-                label = "VREA.Artificial".Translate().ToLower() + " " + bodyPartDef.label,
-                description = "VREA.ArtificialDesc".Translate() + " " + bodyPartDef.label + ".",
+                label = "VREA.Artificial".Translate(bodyPartDef.label).ToLower(),
+                description = "VREA.ArtificialDesc".Translate(bodyPartDef.label),
                 costList = new List<ThingDefCountClass>
                 {
                     new ThingDefCountClass { thingDef = ThingDefOf.Plasteel, count = bodyPartDef.hitPoints / 4},
@@ -148,12 +148,12 @@ namespace VREAndroids
 
         public static HediffDef GetAndroidPartHediff(BodyPartDef bodyPartDef, ThingDef ingredient)
         {
-            var label = "VREA.Artificial".Translate().ToLower() + " " + bodyPartDef.label;
+            var label = "VREA.Artificial".Translate(bodyPartDef.label).ToLower();
             var hediffDef = new HediffDef
             {
                 defName = "VREA_" + bodyPartDef.defName,
                 label = label,
-                description = "VREA.AnInstalled".Translate() + " " + label,
+                description = "VREA.AnInstalled".Translate(label),
                 hediffClass = typeof(Hediff_AndroidPart),
                 defaultLabelColor = new Color(0.6f, 0.6f, 1.0f),
                 isBad = false,
@@ -180,8 +180,8 @@ namespace VREAndroids
             return new RecipeDef
             {
                 defName = "VREA_Install" + bodyPart.defName,
-                label = "VREA.Install".Translate().ToLower() + " " + ingredient.label,
-                description = "VREA.Install".Translate() + " " + ingredient.label,
+                label = "VREA.Install".Translate(ingredient.label).ToLower(),
+                description = "VREA.Install".Translate(ingredient.label),
                 ingredients = new List<IngredientCount>
                 {
                     new IngredientCount
@@ -219,7 +219,7 @@ namespace VREAndroids
                 {
                     new SkillRequirement { skill = SkillDefOf.Crafting, minLevel = 5 }
                 },
-                jobString = "VREA.Installing".Translate() + " " + ingredient.label,
+                jobString = "VREA.Installing".Translate(ingredient.label),
                 descriptionHyperlinks = new List<DefHyperlink>
                 {
                     new DefHyperlink { def = ingredient}, new DefHyperlink{ def = hediffDef}

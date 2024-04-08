@@ -44,6 +44,7 @@
 			<li>BloodTransfusion</li>
 			<li>ImplantXenogerm</li>
 			<li>TerminatePregnancy</li>
+			<li>SurgicalInspection</li>
 		</disallowedRecipes>
 		<allowedTraits>
 			<li>VFEP_WarcasketTrait</li>

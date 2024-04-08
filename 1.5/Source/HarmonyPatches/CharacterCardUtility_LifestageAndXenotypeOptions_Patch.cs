@@ -19,10 +19,10 @@ namespace VREAndroids
             {
                 var code = codes[i];
                 yield return code;
-                if (code.opcode == OpCodes.Stloc_S && code.operand is LocalBuilder lb && lb.LocalIndex == 15)
+                if (code.opcode == OpCodes.Stloc_S && code.operand is LocalBuilder lb && lb.LocalIndex == 16)
                 {
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return new CodeInstruction(OpCodes.Ldloc_S, 15);
+                    yield return new CodeInstruction(OpCodes.Ldloc_S, 16);
                     yield return new CodeInstruction(OpCodes.Ldarg_S, 4);
                     yield return new CodeInstruction(OpCodes.Call,
                         AccessTools.Method(typeof(CharacterCardUtility_LifestageAndXenotypeOptions_Patch),

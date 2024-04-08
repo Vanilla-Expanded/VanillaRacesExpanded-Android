@@ -12,7 +12,7 @@ namespace VREAndroids
         public override string Label => android.Label + " (" + "VREA.SleepMode".Translate().ToLower() + ")";
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            android.DrawAt(DrawPos);
+            android.DynamicDrawPhaseAt(DrawPhase.Draw, DrawPos);
         }
 
         public override bool ClaimableBy(RimWorld.Faction by, StringBuilder reason = null)
