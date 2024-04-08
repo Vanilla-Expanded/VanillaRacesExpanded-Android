@@ -11,7 +11,7 @@ namespace VREAndroids
         }
         public override void NeedInterval()
         {
-            CurLevel = 1f;
+            CurLevel = MaxLevel;
         }
     }
 }
