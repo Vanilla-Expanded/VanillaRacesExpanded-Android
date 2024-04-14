@@ -101,7 +101,7 @@
   
   <ThingDef ParentName="BuildingBase">
     <defName>VREA_SubterraneanNeutroPipe</defName>
-    <label>subterranean neutro pipe</label>
+    <label>hidden neutro pipe</label>
     <description>Light, sterile pipes for transporting the liquid neutroamine in bulk to and from tanks. This pipe is hidden from view. More expensive to build than regular pipes.</description>
     <thingClass>PipeSystem.Building_Pipe</thingClass>
     <category>Building</category>
@@ -126,19 +126,23 @@
       <blueprintGraphicData>
         <texPath>Things/Linked/NeutroPipes_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <isTargetable>false</isTargetable>
+      <expandHomeArea>false</expandHomeArea>
+      <canBeDamagedByAttacks>false</canBeDamagedByAttacks>
     </building>
     <drawerType>MapMeshOnly</drawerType>
     <altitudeLayer>FloorEmplacement</altitudeLayer>
     <passability>Standable</passability>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <WorkToBuild>40</WorkToBuild>
-      <Flammability>1.0</Flammability>
+      <MaxHitPoints>60</MaxHitPoints>
+      <WorkToBuild>320</WorkToBuild>
+      <Flammability>0</Flammability>
     </statBases>
     <placingDraggableDimensions>1</placingDraggableDimensions>
     <costList>
-      <Silver>6</Silver>
+      <Silver>8</Silver>
     </costList>
     <comps>
       <li Class="PipeSystem.CompProperties_Resource">
