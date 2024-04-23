@@ -4,7 +4,7 @@
 
   <ScenPartDef>
     <defName>VREA_AndroidArrivalQuests</defName>
-    <label>gives a hunted android quest every 10 days</label>
+    <label>Hunted android every 10 days</label>
     <category>Misc</category>
     <scenPartClass>VREAndroids.ScenPart_NewAndroidArrival</scenPartClass>
    
