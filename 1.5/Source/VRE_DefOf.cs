@@ -88,5 +88,6 @@ namespace VREAndroids
         public static LetterDef VREA_AndroidAwakenedLetter;
         public static ThingDef VREA_Mote_AndroidReformatting;
         public static BodyPartDef Brain;
+        public static ThingDef VREA_SpentReactor;
     }
 }

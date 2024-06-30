@@ -58,7 +58,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.5.4055-beta</Version>
+      <Version>1.5.4136-beta</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.3.3</Version>
@@ -196,6 +196,7 @@
     <Compile Include="HarmonyPatches\SocialCardUtility_DrawRelationsAndOpinions_Patch.cs" />
     <Compile Include="HarmonyPatches\StatPart_Age_ActiveFor_Patch.cs" />
     <Compile Include="HarmonyPatches\StatWorker_ShouldShowFor_Patch.cs" />
+    <Compile Include="HarmonyPatches\SteadyEnvironmentEffects_FinalDeteriorationRate_Patch.cs" />
     <Compile Include="HarmonyPatches\StunHandler_Notify_DamageApplied_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingDef_SpecialDisplayStats_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_AgeReversalDemanded_CanHaveThought_Patch.cs" />

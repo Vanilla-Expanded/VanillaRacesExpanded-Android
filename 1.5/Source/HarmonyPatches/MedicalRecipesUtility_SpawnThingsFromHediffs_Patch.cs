@@ -29,10 +29,18 @@ namespace VREAndroids
             {
                 if (item.def.spawnThingOnRemoved != null)
                 {
-                    var thing = GenSpawn.Spawn(item.def.spawnThingOnRemoved, pos, map);
-                    if (thing is Reactor reactor && item is Hediff_AndroidReactor hediffReactor)
+                    if (item is Hediff_AndroidReactor hediffReactor)
                     {
-                        reactor.curEnergy = hediffReactor.Energy;
+                        var itemToSpawn = hediffReactor.Energy >= 0.25f ? item.def.spawnThingOnRemoved : VREA_DefOf.VREA_SpentReactor;
+                        var thing = GenSpawn.Spawn(itemToSpawn, pos, map);
+                        if (thing is Reactor reactor)
+                        {
+                            reactor.curEnergy = hediffReactor.Energy;
+                        }
+                    }
+                    else
+                    {
+                        GenSpawn.Spawn(item.def.spawnThingOnRemoved, pos, map);
                     }
                 }
             }
