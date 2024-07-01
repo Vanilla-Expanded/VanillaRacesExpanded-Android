@@ -76,7 +76,9 @@ namespace VREAndroids
                             PawnCapacityDef activityLocal = item;
                             Pair<string, Color> efficiencyLabel = HealthCardUtility.GetEfficiencyLabel(pawn, item);
                             Func<string> textGetter = () => (!pawn.Dead) ? HealthCardUtility.GetPawnCapacityTip(pawn, activityLocal) : "";
-                            HealthCardUtility.DrawLeftRow(leftRect, ref curY, item.GetLabelFor(pawn).CapitalizeFirst(), efficiencyLabel.First, efficiencyLabel.Second, new TipSignal(textGetter, pawn.thingIDNumber ^ item.index));
+                            HealthCardUtility.DrawLeftRow(leftRect, ref curY, (item.labelMechanoids.NullOrEmpty() is false 
+                                ? item.labelMechanoids : item.label).CapitalizeFirst(), efficiencyLabel.First, 
+                                efficiencyLabel.Second, new TipSignal(textGetter, pawn.thingIDNumber ^ item.index));
                         }
                     }
                     return curY;
