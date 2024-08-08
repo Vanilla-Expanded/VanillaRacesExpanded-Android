@@ -64,6 +64,7 @@
       <MaxHitPoints>100</MaxHitPoints>
       <WorkToBuild>1200</WorkToBuild>
       <Flammability>1.0</Flammability>
+	  <Comfort>0.75</Comfort>
     </statBases>
 	<costList>
 		<Steel>50</Steel>
