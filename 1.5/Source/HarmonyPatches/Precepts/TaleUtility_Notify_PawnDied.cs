@@ -11,7 +11,7 @@ namespace VREAndroids
     {
         public static void Postfix(Pawn victim, DamageInfo? dinfo)
         {
-            if (Utils.IsAndroid(victim)) {
+            if (ModsConfig.IdeologyActive && Utils.IsAndroid(victim)) {
 
                 Pawn pawn = dinfo?.Instigator as Pawn;
                 if (pawn != null)
