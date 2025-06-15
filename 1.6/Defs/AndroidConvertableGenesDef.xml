@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<VREAndroids.AndroidConvertableGenesDef>
+		<defName>VREA_AndroidConvertableGenes</defName>
+		<geneCategories>
+			<li>Cosmetic</li>
+			<li>Cosmetic_Body</li>
+			<li>Cosmetic_Hair</li>
+			<li>Cosmetic_Skin</li>
+			<li>Beauty</li>
+			<li MayRequire="Neronix17.Outland.Genetics">Outland_HeadType</li>
+			<li MayRequire="Neronix17.Outland.Genetics">Outland_Eyes</li>
+			<li MayRequire="Neronix17.Outland.Genetics">Outland_Ears</li>
+			<li MayRequire="Neronix17.Outland.Genetics">Outland_Headbone</li>
+			<li MayRequire="Neronix17.Outland.Genetics">Outland_Tails</li>
+			<li MayRequire="Neronix17.Outland.Genetics">Outland_HandsAndFeet</li>
+			<li MayRequire="Neronix17.Outland.Genetics">Outland_Voice</li>
+		</geneCategories>
+	</VREAndroids.AndroidConvertableGenesDef>
+
+</Defs>

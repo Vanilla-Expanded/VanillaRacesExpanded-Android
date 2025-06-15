@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BenchBase">
+    <defName>VREA_AndroidPartWorkbench</defName>
+    <label>android part workbench</label>
+    <description>A workbench equipped with molecular printing technology to produce singular replacement parts for synthetic lifeforms.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/TableAndroidParts/TableAndroidParts</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5,1.5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <costList>
+      <Steel>220</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>-2</Cleanliness>
+	  <Mass>40</Mass>
+    </statBases>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <size>(3,1)</size>
+    <designationCategory>Biotech</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>VREA_AndroidTech</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_SubcorePolyanalyzer</defName>
+    <label>subcore polyanalyzer</label>
+    <description>A sizable device that features a pod equipped with numerous tissue probes and advanced neural scanners. Designed to accommodate one person at a time, the system requires four separate individuals to undergo scanning in sequence. Upon insertion, the polyanalyzer engages the probes and scanners to analyze the neuro-psychic patterns of each individual.
+Utilizing a sophisticated algorithm, the device fuses these distinct patterns into a single, intricate persona after all four individuals have been scanned. This composite persona is then digitally transferred into a new composite-tier persona subcore. The process may cause temporary discomfort and disorientation for the participants but leaves them otherwise unharmed.
+Persona subcores created by this device can only be used to create complex, human-like androids.</description>
+    <thingClass>VREAndroids.Building_SubcorePolyanalyzer</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/SubcorePolyanalyzer/SubcorePolyanalyzer</texPath>
+      <drawSize>(3,2)</drawSize>
+      <shadowData>
+        <volume>(3, 2, 1.9)</volume>
+      </shadowData>
+    </graphicData>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2430</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3,2)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <Mass>25</Mass>
+      <WorkToBuild>8000</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+	  <Flammability>1</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <costList>
+      <Steel>200</Steel>
+      <Plasteel>150</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>VREA_AndroidTech</li>
+    </researchPrerequisites>
+    <building>
+      <subcoreScannerOutputDef>VREA_PersonaSubcore</subcoreScannerOutputDef>
+      <subcoreScannerStartEffect>SubcoreSoftscanner_Start</subcoreScannerStartEffect>
+      <subcoreScannerWorking>SubcoreSoftscanner_Working</subcoreScannerWorking>
+      <subcoreScannerComplete>SubcoreSoftscanner_Complete</subcoreScannerComplete>
+      <subcoreScannerHediff>VREA_ScanningSickness</subcoreScannerHediff>
+      <ai_chillDestination>false</ai_chillDestination>
+	  <subcoreScannerTicks>3750</subcoreScannerTicks>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+      <subcoreScannerFixedIngredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>Plasteel</li>
+            </thingDefs>
+          </filter>
+          <count>10</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>ComponentSpacer</li>
+            </thingDefs>
+          </filter>
+          <count>1</count>
+        </li>
+      </subcoreScannerFixedIngredients>
+    </building>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_AndroidCreationStation</defName>
+    <label>android creation station</label>
+    <description>A manufacturing station capable of assembling an android from a variety of materials and advanced components. The android’s appearance is almost completely customizable, however it is limited to imitations of baseline humans.\n\nDepending on the hardware and subroutine composition of an android, the work to create one and the resources required to do it might vary.</description>
+	<tickerType>Normal</tickerType>
+    <thingClass>VREAndroids.Building_AndroidCreationStation</thingClass>
+    <canOverlapZones>true</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Building/AndroidCreationStation/AndroidCreationStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <shadowData>
+        <volume>(2.8, 0.35, 3.59)</volume>
+        <offset>(0, 0, 0.08)</offset>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<uiIconScale>0.9</uiIconScale>
+    <costList>
+      <Steel>360</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <constructEffect>ConstructMetal</constructEffect>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <WorkToBuild>10000</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <Mass>40</Mass>
+    </statBases>
+    <size>(3,3)</size>
+    <designationCategory>Biotech</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <rotatable>False</rotatable>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <hasInteractionCell>True</hasInteractionCell>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>VREA_AndroidTech</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VREA_AndroidBehavioristStation</defName>
+    <label>android behaviorist station</label>
+    <description>A reprogramming station used to imbue desirable traits and skills onto an android. Onboard software allows even complete beginners to modify an android’s personality, however a more intellectually talented user will spend less time needing to follow tutorials.</description>
+	<tickerType>Normal</tickerType>
+    <thingClass>VREAndroids.Building_AndroidBehavioristStation</thingClass>
+    <canOverlapZones>true</canOverlapZones>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/TableAndroidBehaviorist/TableAndroidBehaviorist</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1.8, 0.35, 1.8)</volume>
+        <offset>(0, 0, 0.08)</offset>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<uiIconScale>0.8</uiIconScale>
+    <costList>
+      <Steel>160</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Gold>20</Gold>
+    </costList>
+    <constructEffect>ConstructMetal</constructEffect>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <Mass>40</Mass>
+    </statBases>
+    <size>(2,2)</size>
+    <designationCategory>Biotech</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <rotatable>True</rotatable>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>True</hasInteractionCell>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <researchPrerequisites>
+      <li>VREA_AndroidTech</li>
+    </researchPrerequisites>
+  </ThingDef>
+</Defs>

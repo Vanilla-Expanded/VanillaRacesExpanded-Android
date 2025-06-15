@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="FurnitureBase">
+		<defName>VREA_NeutroCasket</defName>
+		<label>neutro casket</label>
+		<description>A casket specially designed for use by androids undergoing operations, or suffering from neutroloss as it can cycle and replace any missing neutroamine. There must be neutroamine available, either stored locally or sourced with a pipe network.\n\nThe maximum amount of neutroamine an android can hold is 100 units, but they can operate with minimal functions at 50 units.</description>
+		<thingClass>VREAndroids.Building_NeutroCasket</thingClass>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Neutrocasket/Neutrocasket</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<size>(1,2)</size>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Mass>30</Mass>
+			<Flammability>1</Flammability>
+			<WorkToBuild>3200</WorkToBuild>
+		</statBases>
+		<designationCategory>Biotech</designationCategory>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<costList>
+			<Steel>180</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<techLevel>Ultra</techLevel>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>true</rotatable>
+		<castEdgeShadows>True</castEdgeShadows>
+		<staticSunShadowHeight>0.17</staticSunShadowHeight>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<canOverlapZones>false</canOverlapZones>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<building>
+			<bed_showSleeperBody>True</bed_showSleeperBody>
+			<buildingSizeCategory>Small</buildingSizeCategory>
+			<bed_humanlike>true</bed_humanlike>
+			<bed_healPerDay>0</bed_healPerDay>
+			<bed_defaultMedical>true</bed_defaultMedical>
+		</building>
+		<fillPercent>0.5</fillPercent>
+		<pathCost>42</pathCost>
+		<uiIconScale>1.0</uiIconScale>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>40</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Neutroamine</fuelLabel>
+				<fuelGizmoLabel>Neutroamine</fuelGizmoLabel>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+				<fuelCapacity>100.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<showFuelGizmo>true</showFuelGizmo>
+			</li>
+			<li Class="CompProperties_AssignableToPawn">
+				<drawAssignmentOverlay>false</drawAssignmentOverlay>
+				<compClass>CompAssignableToPawn_Bed</compClass>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<researchPrerequisites>
+			<li>VREA_AndroidTech</li>
+		</researchPrerequisites>
+	</ThingDef>
+</Defs>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<VREAndroids.AndroidSettings>
+		<defName>VREA_AndroidSettings</defName>
+		<label>this def will have various settings used for androids. Can be used for mod compatibility from outside via xml patches.</label>
+        <excludedNeedsForAndroids>
+			<li>Food</li>
+			<li>Rest</li>
+			<li>Bladder</li>
+			<li>Hygiene</li>
+			<li>DBHThirst</li>
+			<li>FoodVariety</li>
+			<li>CultMindedness</li>
+			<li>VME_Desserts</li>
+			<li>SapientAnimalControl</li>
+		</excludedNeedsForAndroids>
+        <androidExclusiveNeeds>
+			<li>VREA_FoodSuppressed</li>
+		</androidExclusiveNeeds>
+		<androidSpecificMentalBreaks>
+			<li>VREA_Reformatting</li>
+			<li>VREA_SolarFlared</li>
+		</androidSpecificMentalBreaks>
+		<androidsShouldNotReceiveHediffs>
+			<li>Scaria</li>
+			<li>Carcinoma</li>
+			<li>Coma</li>
+			<li>DrugOverdose</li>
+			<li>PsychicAmplifier</li>
+			<li>FoodPoisoning</li>
+			<li>VPEH_Bloodmist</li>
+			<li>Sterilized</li>
+		</androidsShouldNotReceiveHediffs>
+		<disallowedRecipes>
+			<li>ExciseCarcinoma</li>
+			<li>AdministerMechSerumHealer</li>
+			<li>Euthanize</li>
+			<li>Anesthetize</li>
+			<li>CureScaria</li>
+			<li>CureBloodRot</li>
+			<li>CureAbasia</li>
+			<li>ExtractHemogenPack</li>
+			<li>BloodTransfusion</li>
+			<li>ImplantXenogerm</li>
+			<li>TerminatePregnancy</li>
+			<li>SurgicalInspection</li>
+		</disallowedRecipes>
+		<allowedTraits>
+			<li>VFEP_WarcasketTrait</li>
+			<li>VFEP_Shellcasket</li>
+		</allowedTraits>
+		<disallowedTraits>
+			<li>BodyPurist</li>
+			<li>PsychicSensitivity</li>
+			<li>DrugDesire</li>
+			<li>Cannibal</li>
+			<li>NightOwl</li>
+			<li>CreepyBreathing</li>
+			<li>Gourmand</li>
+			<li>QuickSleeper</li>
+			<li>Immunity</li>
+			<li>Delicate</li>
+		</disallowedTraits>
+	</VREAndroids.AndroidSettings>
+
+</Defs>

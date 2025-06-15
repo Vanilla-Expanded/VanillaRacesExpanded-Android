@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<FleshTypeDef>
+		<defName>VREA_AndroidFlesh</defName>
+		<corpseCategory>CorpsesAnimal</corpseCategory>
+		<damageEffecter>VREA_Damage_HitAndroid</damageEffecter>
+		<genericWounds>
+			<li>
+				<texture>Things/Pawn/Wounds/Android_WoundFleshA</texture>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/Android_WoundFleshB</texture>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/Android_WoundFleshC</texture>
+			</li>
+		</genericWounds>
+	</FleshTypeDef>
+</Defs>

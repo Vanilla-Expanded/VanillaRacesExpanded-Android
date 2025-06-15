@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<JobDef>
+		<defName>VREA_FreeMemorySpace</defName>
+		<driverClass>VREAndroids.JobDriver_FreeMemorySpace</driverClass>
+		<reportString>freeing memory space</reportString>
+		<casualInterruptible>false</casualInterruptible>
+		<playerInterruptible>false</playerInterruptible>
+	</JobDef>
+	
+  <JobDef>
+    <defName>VREA_CreateAndroid</defName>
+    <driverClass>VREAndroids.JobDriver_CreateAndroid</driverClass>
+    <reportString>Creating android at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>VREA_ModifyAndroid</defName>
+    <driverClass>VREAndroids.JobDriver_ModifyAndroid</driverClass>
+    <reportString>Modifying android at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>VREA_ReplaceReactor</defName>
+    <driverClass>VREAndroids.JobDriver_ReplaceReactor</driverClass>
+    <reportString>Replacing own reactor with TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  
+  <JobDef>
+    <defName>VREA_RefuelWithNeutroamine</defName>
+    <driverClass>VREAndroids.JobDriver_RefuelWithNeutroamine</driverClass>
+    <reportString>Refueling with TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>VREA_RepairAndroid</defName>
+    <driverClass>VREAndroids.JobDriver_RepairAndroid</driverClass>
+    <reportString>repairing TargetA.</reportString>
+  </JobDef>
+
+</Defs>
+

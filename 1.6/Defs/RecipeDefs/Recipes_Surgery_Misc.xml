@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Abstract="True" Name="VREA_SurgeryAndroid">
+    <effectWorking>ButcherMechanoid</effectWorking>
+	<soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>16</workSkillLearnFactor>
+  </RecipeDef>
+
+  <RecipeDef ParentName="VREA_SurgeryAndroid">
+    <defName>VREA_RemoveArtificialPart</defName>
+    <label>remove component</label>
+    <description>Remove an artificial part.</description>
+    <workerClass>VREAndroids.Recipe_RemoveArtificialBodyPart</workerClass>
+    <jobString>Removing artificial body part.</jobString>
+    <workAmount>2000</workAmount>
+    <surgerySuccessChanceFactor>1.2</surgerySuccessChanceFactor>
+  </RecipeDef>
+
+  <RecipeDef ParentName="ButcherCorpseMechanoidBase">
+    <defName>VREA_ButcherCorpseAndroid</defName>
+    <label>shred android</label>
+    <description>Shred a dead android to try to salvage usable material.</description>
+    <jobString>Shredding android.</jobString>
+    <workAmount>300</workAmount>
+    <soundWorking>Recipe_ButcherCorpseMechanoid</soundWorking>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <categories>
+            <li>CorpsesHumanlike</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter Inherit="False">
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter Inherit="False">
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+    </defaultIngredientFilter>
+  </RecipeDef>
+</Defs>

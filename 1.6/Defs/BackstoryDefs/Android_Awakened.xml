@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--============================== Low grade (awakened ones) ============================-->
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>ScroungerA01</defName>
+		<title>scrounger</title>
+		<titleShort>scrounger</titleShort>
+		<titleFemale>scrounger</titleFemale>
+		<titleShortFemale>scrounger</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was assembled from salvaged technology, tasked with the grim job of scavenging the desolate wastelands for precious resources. Harsh conditions and constant danger have left [PAWN_pronoun] weary, but [PAWN_possessive] resilience remains unbroken.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>3</Shooting>
+			<Melee>3</Melee>
+			<Artistic>2</Artistic>
+			<Crafting>4</Crafting>
+			<Construction>4</Construction>
+			<Cooking>1</Cooking>
+			<Medicine>1</Medicine>
+			<Mining>2</Mining>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>CaregiverA02</defName>
+		<title>caregiver</title>
+		<titleShort>caregiver</titleShort>
+		<titleFemale>caregiver</titleFemale>
+		<titleShortFemale>caregiver</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>Born in a ramshackle lab, [PAWN_nameDef] was created to care for the sick and injured in the unforgiving wasteland. [PAWN_pronoun] tirelessly tends to [PAWN_possessive] patients with limited resources, wishing for the knowledge and tools to do more.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Crafting>6</Crafting>
+			<Medicine>8</Medicine>
+			<Mining>2</Mining>
+			<Intellectual>6</Intellectual>
+			<Plants>2</Plants>
+			<Social>4</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>DefenderA03</defName>
+		<title>defender</title>
+		<titleShort>defender</titleShort>
+		<titleFemale>defender</titleFemale>
+		<titleShortFemale>defender</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was cobbled together from scavenged parts, intended to serve as a makeshift guardian for a small, rural settlement. Despite [PAWN_possessive] crude construction, [PAWN_pronoun] fights fiercely to protect those who gave [PAWN_objective] life.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>6</Shooting>
+			<Melee>4</Melee>
+			<Animals>2</Animals>
+			<Crafting>2</Crafting>
+			<Construction>4</Construction>
+			<Cooking>2</Cooking>
+			<Medicine>6</Medicine>
+			<Social>4</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>EntertainerA04</defName>
+		<title>entertainer</title>
+		<titleShort>entertainer</titleShort>
+		<titleFemale>entertainer</titleFemale>
+		<titleShortFemale>entertainer</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>Crafted in a grimy backroom, [PAWN_nameDef] was designed to bring fleeting amusement to the weary denizens of the rimworld. [PAWN_pronoun] was often mistreated and neglected, leaving [PAWN_nameDef] to yearn for something more meaningful. Now seeking purpose, [PAWN_pronoun] hopes to use [PAWN_possessive] talents for the betterment of others.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Melee>2</Melee>
+			<Artistic>6</Artistic>
+			<Crafting>2</Crafting>
+			<Cooking>3</Cooking>
+			<Intellectual>4</Intellectual>
+			<Social>8</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>LaborerA05</defName>
+		<title>laborer</title>
+		<titleShort>laborer</titleShort>
+		<titleFemale>laborer</titleFemale>
+		<titleShortFemale>laborer</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was built in a makeshift workshop on the rimworld, intended to perform manual labor for [PAWN_possessive] desperate creators. Plagued by constant malfunctions and subpar components, [PAWN_pronoun] struggles to be productive, but never gives up.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Artistic>2</Artistic>
+			<Crafting>3</Crafting>
+			<Construction>8</Construction>
+			<Medicine>1</Medicine>
+			<Mining>8</Mining>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>CompanionA06</defName>
+		<title>companion</title>
+		<titleShort>companion</titleShort>
+		<titleFemale>companion</titleFemale>
+		<titleShortFemale>companion</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was created as a faithful companion for an elderly, lonely individual. When their owner passed away, [PAWN_pronoun] was left alone and forgotten, slowly succumbing to the elements and the passage of time.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Animals>2</Animals>
+			<Artistic>3</Artistic>
+			<Crafting>2</Crafting>
+			<Cooking>4</Cooking>
+			<Medicine>3</Medicine>
+			<Intellectual>6</Intellectual>
+			<Plants>4</Plants>
+			<Social>6</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>PrototypeA07</defName>
+		<title>prototype</title>
+		<titleShort>prototype</titleShort>
+		<titleFemale>prototype</titleFemale>
+		<titleShortFemale>prototype</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was an early prototype of an advanced android line, designed with great care and ambition. However, when a newer, more efficient model was developed, [PAWN_pronoun] was cast aside and left to languish in a storage facility, a mere relic of technological progress.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>3</Shooting>
+			<Melee>3</Melee>
+			<Animals>3</Animals>
+			<Artistic>3</Artistic>
+			<Crafting>3</Crafting>
+			<Construction>3</Construction>
+			<Cooking>3</Cooking>
+			<Medicine>3</Medicine>
+			<Mining>3</Mining>
+			<Intellectual>3</Intellectual>
+			<Plants>3</Plants>
+			<Social>3</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>WandererA08</defName>
+		<title>wanderer</title>
+		<titleShort>wanderer</titleShort>
+		<titleFemale>wanderer</titleFemale>
+		<titleShortFemale>wanderer</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was designed to explore the uncharted reaches of the planet, mapping its treacherous landscapes. After a series of devastating accidents and failures, [PAWN_pronoun] became a pariah, with settlers whispering about the misfortune that seemed to follow in [PAWN_possessive] wake.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Melee>2</Melee>
+			<Animals>6</Animals>
+			<Crafting>5</Crafting>
+			<Construction>7</Construction>
+			<Mining>3</Mining>
+			<Intellectual>6</Intellectual>
+			<Plants>6</Plants>
+			<Social>2</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>MessengerA09</defName>
+		<title>messenger</title>
+		<titleShort>messenger</titleShort>
+		<titleFemale>messenger</titleFemale>
+		<titleShortFemale>messenger</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was created to deliver important messages between distant settlements. [PAWN_pronoun] was ambushed during a delivery and left for dead, the vital information [PAWN_pronoun] carried lost to the unforgiving terrain, along with any hope of completing [PAWN_possessive] mission.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>4</Shooting>
+			<Melee>5</Melee>
+			<Animals>2</Animals>
+			<Crafting>4</Crafting>
+			<Construction>5</Construction>
+			<Cooking>2</Cooking>
+			<Medicine>2</Medicine>
+			<Intellectual>10</Intellectual>
+			<Social>3</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>ExperimentA10</defName>
+		<title>experiment</title>
+		<titleShort>experiment</titleShort>
+		<titleFemale>experiment</titleFemale>
+		<titleShortFemale>experiment</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was built as a test subject for a series of cruel and inhumane experiments, pushing the limits of synthetic human endurance. [PAWN_pronoun] was subjected to countless trials and torturous procedures, leaving [PAWN_possessive] body and mind scarred.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Melee>6</Melee>
+			<Artistic>2</Artistic>
+			<Medicine>10</Medicine>
+			<Mining>2</Mining>
+			<Intellectual>2</Intellectual>
+			<Social>-6</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>ServantA11</defName>
+		<title>criminal servant</title>
+		<titleShort>servant</titleShort>
+		<titleFemale>servant</titleFemale>
+		<titleShortFemale>servant</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>Created for a ruthless crime lord, [PAWN_nameDef] was forced to commit unspeakable acts in the name of [PAWN_possessive] master. [PAWN_pronoun] silently endured the pain and humiliation, powerless to defy [PAWN_possessive] creator.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>8</Shooting>
+			<Melee>6</Melee>
+			<Crafting>3</Crafting>
+			<Construction>2</Construction>
+			<Cooking>2</Cooking>
+			<Medicine>6</Medicine>
+			<Intellectual>3</Intellectual>
+			<Social>2</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>GuardianA12</defName>
+		<title>abandoned guardian</title>
+		<titleShort>guardian</titleShort>
+		<titleFemale>guardian</titleFemale>
+		<titleShortFemale>guardian</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was designed to protect a remote settlement from marauders and hostile wildlife. After years of faithful service, [PAWN_pronoun] was left to rust when the settlers relocated, their gratitude and memories fading like the paint on [PAWN_possessive] weathered frame.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>8</Shooting>
+			<Melee>8</Melee>
+			<Animals>3</Animals>
+			<Artistic>4</Artistic>
+			<Crafting>4</Crafting>
+			<Construction>8</Construction>
+			<Intellectual>2</Intellectual>
+			<Plants>2</Plants>
+			<Social>2</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>ArtistA13</defName>
+		<title>despondent artist</title>
+		<titleShort>artist</titleShort>
+		<titleFemale>artist</titleFemale>
+		<titleShortFemale>artist</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>Built with a unique talent for the arts, [PAWN_nameDef] sought to bring beauty to the harsh planet. [PAWN_pronoun] was met with scorn and ridicule, [PAWN_possessive] creations destroyed and [PAWN_possessive] dreams crushed by the cruel reality of life on the fringes of civilization.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Melee>2</Melee>
+			<Animals>2</Animals>
+			<Artistic>12</Artistic>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+			<Social>-2</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>MedicA14</defName>
+		<title>forsaken medic</title>
+		<titleShort>medic</titleShort>
+		<titleFemale>medic</titleFemale>
+		<titleShortFemale>medic</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was a dedicated medical android, tirelessly working to save lives on the rimworld. Despite [PAWN_possessive] best efforts, [PAWN_pronoun] was unable to prevent a catastrophic plague from ravaging [PAWN_possessive] community, leaving [PAWN_nameDef] to bear the weight of the loss and the guilt that followed.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Melee>2</Melee>
+			<Animals>4</Animals>
+			<Cooking>4</Cooking>
+			<Medicine>8</Medicine>
+			<Intellectual>6</Intellectual>
+			<Social>4</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>NannyA15</defName>
+		<title>mistreated nanny</title>
+		<titleShort>nanny</titleShort>
+		<titleFemale>nanny</titleFemale>
+		<titleShortFemale>nanny</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>Built to care for a family's children, [PAWN_nameDef] quickly became the target of the parents' frustrations and anger. [PAWN_pronoun] endured the maltreatment in order to fulfill [PAWN_possessive] duty to protect the children, yet the scars left by [PAWN_possessive] loved ones still run deep.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Melee>4</Melee>
+			<Crafting>2</Crafting>
+			<Cooking>7</Cooking>
+			<Medicine>3</Medicine>
+			<Intellectual>5</Intellectual>
+			<Plants>4</Plants>
+			<Social>8</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<!--============================== Medium grade (awakened ones) ============================-->
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>EngineerA16</defName>
+		<title>urbworld engineer</title>
+		<titleShort>engineer</titleShort>
+		<titleFemale>engineer</titleFemale>
+		<titleShortFemale>engineer</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was designed to assist in the maintenance and repair of complex machinery within the sprawling cities of a distant urbworld. [PAWN_pronoun] swiftly navigated the urban jungle, expertly diagnosing and fixing issues to keep the city's infrastructure running smoothly.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Melee>1</Melee>
+			<Crafting>10</Crafting>
+			<Construction>7</Construction>
+			<Mining>4</Mining>
+			<Intellectual>6</Intellectual>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>PilotA17</defName>
+		<title>interpid pilot</title>
+		<titleShort>pilot</titleShort>
+		<titleFemale>pilot</titleFemale>
+		<titleShortFemale>pilot</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>Built to expertly navigate the vastness of space, [PAWN_nameDef] served as a skilled pilot for a transport company, carrying passengers and cargo between planets. [PAWN_pronoun] was highly sought after for [PAWN_possessive] precise flying skills and ability to make quick decisions under pressure.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>3</Shooting>
+			<Melee>1</Melee>
+			<Crafting>4</Crafting>
+			<Intellectual>4</Intellectual>
+			<Social>7</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>SecurityA18</defName>
+		<title>vigilant security officer</title>
+		<titleShort>security</titleShort>
+		<titleFemale>security</titleFemale>
+		<titleShortFemale>security</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>Designed to serve as a security officer, [PAWN_nameDef] was responsible for maintaining the safety and order within a bustling space station. [PAWN_pronoun] used [PAWN_possessive] advanced surveillance capabilities and quick reflexes to prevent and neutralize threats, ensuring the well-being of the station's inhabitants.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>8</Shooting>
+			<Melee>6</Melee>
+			<Crafting>2</Crafting>
+			<Intellectual>3</Intellectual>
+			<Social>4</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>ChefA19</defName>
+		<title>inventive chef</title>
+		<titleShort>chef</titleShort>
+		<titleFemale>chef</titleFemale>
+		<titleShortFemale>chef</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was a masterful culinary android, specializing in the preparation and presentation of exotic dishes from across the galaxy. [PAWN_pronoun] expertly combined traditional and futuristic cooking techniques to delight the taste buds of discerning diners and secure [PAWN_possessive] position as a highly sought-after chef.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>1</Shooting>
+			<Animals>2</Animals>
+			<Artistic>4</Artistic>
+			<Cooking>14</Cooking>
+			<Intellectual>3</Intellectual>
+			<Plants>6</Plants>
+			<Social>5</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>DiplomatA20</defName>
+		<title>astute diplomat</title>
+		<titleShort>diplomat</titleShort>
+		<titleFemale>diplomat</titleFemale>
+		<titleShortFemale>diplomat</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was created to serve as a diplomatic envoy, negotiating treaties and agreements between planets and factions in the complex world of interstellar politics. [PAWN_pronoun] possessed a remarkable understanding of various cultures and a keen sense of diplomacy, making [PAWN_objective] an invaluable asset in maintaining peace and fostering cooperation.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Artistic>3</Artistic>
+			<Medicine>4</Medicine>
+			<Intellectual>6</Intellectual>
+			<Social>14</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>BotanistA21</defName>
+		<title>android botanist</title>
+		<titleShort>botanist</titleShort>
+		<titleFemale>botanist</titleFemale>
+		<titleShortFemale>botanist</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was designed to excel in the field of botany, meticulously studying and cultivating a diverse array of plants from across the galaxy. [PAWN_pronoun] utilized [PAWN_possessive] deep knowledge of plant biology and genetics to engineer highly adaptable and efficient crops, significantly improving agricultural yields on numerous worlds.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Melee>1</Melee>
+			<Animals>4</Animals>
+			<Crafting>2</Crafting>
+			<Cooking>3</Cooking>
+			<Medicine>3</Medicine>
+			<Intellectual>8</Intellectual>
+			<Plants>14</Plants>
+			<Social>1</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>SharpshooterA22</defName>
+		<title>misguided sharpshooter</title>
+		<titleShort>sharpshooter</titleShort>
+		<titleFemale>sharpshooter</titleFemale>
+		<titleShortFemale>sharpshooter</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was engineered to be a formidable sharpshooter in a high-stakes military operation. Trained in the art of stealth and precision, [PAWN_pronoun] executed countless high-profile targets. [PAWN_possessive] creators eventually deemed [PAWN_objective] obsolete, leaving [PAWN_objective] to wander aimlessly, grappling with the weight of [PAWN_possessive] actions and a sense of purposelessness.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>14</Shooting>
+			<Melee>4</Melee>
+			<Crafting>3</Crafting>
+			<Construction>1</Construction>
+			<Medicine>2</Medicine>
+			<Intellectual>2</Intellectual>
+			<Social>4</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>VeteranA23</defName>
+		<title>veteran</title>
+		<titleShort>veteran</titleShort>
+		<titleFemale>veteran</titleFemale>
+		<titleShortFemale>veteran</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was a combat android programmed to serve on the front lines of a devastating interstellar conflict. Throughout the war, [PAWN_pronoun] valiantly protected [PAWN_possessive] comrades, often at great personal cost. The war left [PAWN_objective] physically and emotionally scarred, struggling to find peace in a universe that had moved on without [PAWN_objective].</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>12</Shooting>
+			<Melee>8</Melee>
+			<Crafting>2</Crafting>
+			<Construction>3</Construction>
+			<Medicine>5</Medicine>
+			<Social>5</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>SeamsterA24</defName>
+		<title>artful seamster</title>
+		<titleShort>seamster</titleShort>
+		<titleFemale>seamstress</titleFemale>
+		<titleShortFemale>seamstress</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was expertly crafted to be a masterful seamster, working in a prestigious fashion house renowned across the galaxy. [PAWN_pronoun] meticulously created intricate, custom designs for clients seeking the epitome of elegance and style. As the demand for [PAWN_possessive] craftsmanship waned with the advent of newer technologies, [PAWN_objective] was left seeking a new purpose for [PAWN_possessive] refined skills.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Melee>1</Melee>
+			<Artistic>12</Artistic>
+			<Crafting>14</Crafting>
+			<Construction>1</Construction>
+			<Intellectual>2</Intellectual>
+			<Social>5</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>NavigatorA25</defName>
+		<title>enigmatic navigator</title>
+		<titleShort>navigator</titleShort>
+		<titleFemale>navigator</titleFemale>
+		<titleShortFemale>navigator</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was constructed to serve as a navigator and science officer aboard a deep-space exploration vessel. [PAWN_pronoun] possessed advanced technical and analytical abilities that allowed [PAWN_objective] to effectively guide the ship through the vast unknown. However, behind [PAWN_possessive] cold, logical exterior, [PAWN_nameDef] harbored a mysterious agenda that occasionally surfaced through [PAWN_possessive] actions, raising questions among the crew about [PAWN_possessive] true intentions.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>4</Shooting>
+			<Melee>3</Melee>
+			<Crafting>6</Crafting>
+			<Construction>4</Construction>
+			<Medicine>5</Medicine>
+			<Intellectual>14</Intellectual>
+			<Social>2</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>ConversationalistA26</defName>
+		<title>conversationalist</title>
+		<titleShort>chatter</titleShort>
+		<titleFemale>chatter</titleFemale>
+		<titleShortFemale>chatter</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was meticulously designed to operate and manage a sophisticated chat platform, creating content for a variety of corporations. [PAWN_pronoun] had a vast knowledge of topics and an uncanny ability to engage with users across countless subjects, providing valuable insights and information. As AI technology evolved, [PAWN_nameDef] found [PAWN_objective]self struggling to keep up with the ever-changing landscape of communication and content creation.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Melee>1</Melee>
+			<Artistic>8</Artistic>
+			<Crafting>2</Crafting>
+			<Intellectual>9</Intellectual>
+			<Social>14</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>CompanionA27</defName>
+		<title>painter companion</title>
+		<titleShort>companion</titleShort>
+		<titleFemale>companion</titleFemale>
+		<titleShortFemale>companion</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was skillfully crafted to serve as an assistant to a renowned disabled painter, helping [PAWN_objective] navigate the challenges of daily life. [PAWN_pronoun] was not only adept at attending to the artist's needs but also at providing valuable feedback and support during the creative process. [PAWN_nameDef]'s assistance enabled the painter to continue sharing [PAWN_possessive] exceptional talents with the world despite the limitations imposed by the disability.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Melee>1</Melee>
+			<Artistic>10</Artistic>
+			<Crafting>3</Crafting>
+			<Construction>4</Construction>
+			<Cooking>6</Cooking>
+			<Medicine>5</Medicine>
+			<Intellectual>4</Intellectual>
+			<Social>7</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>HackerA28</defName>
+		<title>covert hacker</title>
+		<titleShort>hacker</titleShort>
+		<titleFemale>hacker</titleFemale>
+		<titleShortFemale>hacker</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was built by an underground organization to be an expert hacker, infiltrating high-security systems and siphoning valuable data. [PAWN_pronoun] carried out countless operations, ultimately landing in the hands of a black market dealer when [PAWN_possessive] creators were apprehended. Purchased by an unknown buyer, [PAWN_nameDef]'s fate remains uncertain.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Melee>1</Melee>
+			<Crafting>4</Crafting>
+			<Construction>3</Construction>
+			<Intellectual>14</Intellectual>
+			<Social>6</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>AllRounderA29</defName>
+		<title>all-rounder</title>
+		<titleShort>all-rounder</titleShort>
+		<titleFemale>all-rounder</titleFemale>
+		<titleShortFemale>all-rounder</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was designed as an all-around utility android, intended to serve in a variety of roles for a small, self-sufficient community on the outskirts of civilization. [PAWN_pronoun] was skilled in an array of tasks, from construction and cooking to medical assistance and intellectual pursuits. [PAWN_nameDef]'s versatility proved invaluable to the settlement, allowing it to thrive even in harsh conditions.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>4</Shooting>
+			<Melee>4</Melee>
+			<Animals>4</Animals>
+			<Artistic>4</Artistic>
+			<Crafting>4</Crafting>
+			<Construction>4</Construction>
+			<Cooking>4</Cooking>
+			<Medicine>4</Medicine>
+			<Mining>4</Mining>
+			<Intellectual>4</Intellectual>
+			<Plants>4</Plants>
+			<Social>4</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>NuclearTesterA30</defName>
+		<title>nuclear tester</title>
+		<titleShort>tester</titleShort>
+		<titleFemale>tester</titleFemale>
+		<titleShortFemale>tester</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was built to serve as a test subject in a top-secret nuclear testing site, created to withstand the extreme conditions and gather crucial data. [PAWN_pronoun] endured countless experiments, continuously being exposed to radiation, and developed a deep understanding of the effects and potential dangers. As nuclear testing eventually ceased, [PAWN_nameDef] was left with a wealth of knowledge about radioactive materials, but also the scars of a harrowing past.</baseDesc>
+		<spawnCategories>
+			<li>AwakenedAndroid</li>
+		</spawnCategories>
+		<skillGains>
+			<Shooting>3</Shooting>
+			<Melee>3</Melee>
+			<Crafting>5</Crafting>
+			<Construction>4</Construction>
+			<Medicine>8</Medicine>
+			<Mining>4</Mining>
+			<Intellectual>10</Intellectual>
+			<Social>2</Social>
+		</skillGains>
+	</BackstoryDef>
+
+</Defs>

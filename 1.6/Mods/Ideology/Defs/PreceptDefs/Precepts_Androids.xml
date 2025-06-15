@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- History events -->
+
+  <HistoryEventDef>
+    <defName>VRE_AndroidDied</defName>
+    <label>android died</label>
+  </HistoryEventDef>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>VRE_AndroidsIssue</defName>
+    <label>androids</label>
+   <iconPath>UI/IssueIcons/Androids</iconPath>
+  </IssueDef>
+
+ 
+
+  <!-- Precepts -->
+
+ <PreceptDef>
+    <defName>VRE_Androids_Respected</defName>
+    <issue>VRE_AndroidsIssue</issue>
+    <label>respected</label>
+    <description>Androids' sophisticated technology and intelligence should be acknowledged. We should treat them with admiration and esteem, even if they are different from humans.</description>
+    <impact>Medium</impact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>VRE_Androids_Respected_Opinion</thought>
+        <description>Android</description>
+      </li>
+     
+      <li Class="PreceptComp_SituationalThought">
+        <thought>VRE_Androids_Respected_AndroidsInColony</thought>
+       <thoughtStageDescriptions>
+          <li>No androids</li>
+          <li>Androids in colony (+1 per each android, up to +10)</li>
+         
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+  
+  <PreceptDef>
+    <defName>VRE_Androids_Equal</defName>
+    <issue>VRE_AndroidsIssue</issue>
+    <label>equal</label>
+	<defaultSelectionWeight>1</defaultSelectionWeight>
+    <description>We firmly stand for android equality, asserting that androids have the same rights, opportunities, and moral consideration as their human counterparts.</description>
+    <impact>Low</impact>
+   
+  </PreceptDef>
+
+
+  <PreceptDef>
+    <defName>VRE_Androids_Despised</defName>
+    <issue>VRE_AndroidsIssue</issue>
+    <label>despised</label>
+    <description>Androids are inferior to humans. I harbor disdain and contempt for them, as I believe they disrupt the natural order and threaten our humanity.</description>
+    <impact>Medium</impact>
+    <comps>
+     
+      <li Class="PreceptComp_SituationalThought">
+        <thought>VRE_Androids_Despised_Opinion</thought>
+        <description>Android</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>VRE_AndroidDied</eventDef>
+        <thought>VRE_AndroidDied_Despised</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>VRE_AndroidSelfHatred_Despised</thought>
+        <description>Android self hatred</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>VRE_AndroidColonist_Despised</thought>
+        <description>Android among us</description>
+      </li>
+    </comps>
+  </PreceptDef>
+  
+  <PreceptDef>
+    <defName>VRE_Androids_Tools</defName>
+    <issue>VRE_AndroidsIssue</issue>
+    <label>tools</label>
+    <description>We view androids as mere tools, designed to serve and assist humans in various tasks, asserting that they exist solely for our convenience and should not be attributed with any rights or moral consideration.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - No opinion generation of Androids.\n - No thoughts related to androids dying (works for all colonists as long as precept is part of primary ideology).\n - No thoughts related to androids being enslaved (works for all colonists as long as precept is part of primary ideology).</description>
+    <impact>Medium</impact>
+    <comps>
+     
+     
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+
+
+  <ThoughtDef>
+    <defName>VRE_Androids_Respected_Opinion</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>VREAndroids.ThoughtWorker_Precept_Android_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>android</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+   <ThoughtDef>
+    <defName>VRE_Androids_Respected_AndroidsInColony</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>VREAndroids.ThoughtWorker_Precept_AndroidsInColony</workerClass>
+    <stages>
+      <li>
+        <label>no androids</label>
+        <description>I would prefer to have some androids in the colony.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+       <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+	   <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+	   <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+	   <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+	   <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+	   <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>7</baseMoodEffect>
+      </li>
+	   <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+	   <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>9</baseMoodEffect>
+      </li>
+	   <li>
+        <label>surrounded by androids</label>
+        <description>I like having androids around. They are great!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>VRE_Androids_Despised_Opinion</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>VREAndroids.ThoughtWorker_Precept_Android_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>android</label>
+        <baseOpinionOffset>-40</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+   <ThoughtDef>
+    <defName>VRE_AndroidDied_Despised</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <durationDays>10</durationDays>
+    <stages>
+      <li>
+        <label>android died</label>
+        <description>The only good android is a dead one.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+    <ThoughtDef>
+    <defName>VRE_AndroidSelfHatred_Despised</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>VREAndroids.ThoughtWorker_Precept_Android</workerClass>
+    <stages>
+      <li>
+        <label>android self hatred</label>
+        <description>I am what I hate. My whole existence is aberrant.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+    <ThoughtDef>
+    <defName>VRE_AndroidColonist_Despised</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>VREAndroids.ThoughtWorker_Precept_AndroidPresent</workerClass>
+    <nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+    <stages>
+      <li>
+        <label>android among us</label>
+        <description>One of them walks among us. We should expel the android from our home.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+ 
+
+</Defs>

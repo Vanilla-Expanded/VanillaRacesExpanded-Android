@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>VREA_Reformatting</defName>
+    <label>reformatting</label>
+    <stateClass>VREAndroids.MentalState_Reformatting</stateClass>
+    <category>Misc</category>
+    <minTicksBeforeRecovery>600</minTicksBeforeRecovery>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <baseInspectLine>Reformatting</baseInspectLine>
+    <inCaravanCanDo>true</inCaravanCanDo>
+  </MentalStateDef>
+
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>VREA_SolarFlared</defName>
+    <label>solar flared</label>
+    <stateClass>VREAndroids.MentalState_SolarFlared</stateClass>
+    <category>Misc</category>
+    <minTicksBeforeRecovery>99999999</minTicksBeforeRecovery>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <baseInspectLine>Solar flared</baseInspectLine>
+    <inCaravanCanDo>true</inCaravanCanDo>
+  </MentalStateDef>
+</Defs>

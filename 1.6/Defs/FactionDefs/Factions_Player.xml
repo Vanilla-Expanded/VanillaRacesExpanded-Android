@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>VREA_AndroidAwakenedUtopia</defName>
+    <label>New Utopia</label>
+    <description>An utopic society of awakened androids.</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>VREA_AndroidAwakened</basicMemberKind>
+    <pawnSingular>awakened android</pawnSingular>
+    <pawnsPlural>awakened androids</pawnsPlural>
+    <techLevel>Spacer</techLevel>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>AwakenedAndroid</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+   
+    <factionIconPath>UI/MapIcons/AndroidUtopia</factionIconPath>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+      <li>ClassicStart</li>
+      <li>ClassicStartTechprints</li>
+    </startingTechprintsResearchTags>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Synthread</li>
+       
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+
+</Defs>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<NeedDef>
+		<defName>VREA_MemorySpace</defName>
+		<needClass>VREAndroids.Need_MemorySpace</needClass>
+		<label>memory space</label>
+		<description>Memory space is how much hard drive space is left in an Android. Over the course of the day, memory space will deplete. If it is at zero, android will enter a reformatting state until enough memory space clears up to continue.</description>
+		<listPriority>700</listPriority>
+		<major>true</major>
+		<showForCaravanMembers>true</showForCaravanMembers>
+		<minIntelligence>Humanlike</minIntelligence>
+		<onlyIfCausedByGene>true</onlyIfCausedByGene>
+	</NeedDef>
+
+	<NeedDef>
+		<defName>VREA_ReactorPower</defName>
+		<needClass>VREAndroids.Need_ReactorPower</needClass>
+		<label>Power</label>
+		<description>Power is how much lifespan is left in the built-in reactor of an Android. If reactor is at an end of its lifespan, it might need to be replaced. An Android without a working power source is not operational.</description>
+		<listPriority>800</listPriority>
+		<major>true</major>
+		<showForCaravanMembers>true</showForCaravanMembers>
+		<minIntelligence>Humanlike</minIntelligence>
+		<onlyIfCausedByGene>true</onlyIfCausedByGene>
+	</NeedDef>
+
+	<NeedDef>
+		<defName>VREA_FoodSuppressed</defName>
+		<needClass>VREAndroids.Need_FoodSuppressed</needClass>
+		<label>It's a stub. You shouldn't see it, report if otherwise.</label>
+		<description>Ignore it.</description>
+		<listPriority>800</listPriority>
+		<showOnNeedList>false</showOnNeedList>
+		<showForCaravanMembers>false</showForCaravanMembers>
+	</NeedDef>
+</Defs>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ResearchProjectDef Name="VREA_ResearchBase" Abstract="True">
+		<techLevel>Ultra</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<tab>VanillaExpanded</tab>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="VREA_ResearchBase">
+		<defName>VREA_AndroidTech</defName>
+		<label>androidtech</label>
+		<description>The advanced technology needed to create and control ultra-tier androids - a complete replacement of organic colonists, capable of all the same tasks and activities without the drawbacks usually associated with humans.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>HighMechtech</li>
+		</prerequisites>
+		<researchViewX>9.00</researchViewX>
+		<researchViewY>0.20</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="VREA_ResearchBase">
+		<defName>VREA_NeutroamineLogistics</defName>
+		<label>neutroamine logistics</label>
+		<description>Construct specialized tanks, capable of storing large quantities of neutroamine, as well as pipes, taps and drain to move neutroamine through the system.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>BiofuelRefining</li>
+		</prerequisites>
+		<researchViewX>8.00</researchViewX>
+		<researchViewY>0.20</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

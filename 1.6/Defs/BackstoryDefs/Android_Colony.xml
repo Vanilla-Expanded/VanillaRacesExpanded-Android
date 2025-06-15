@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--============================== Colony android ============================-->
+
+	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
+		<defName>ColonyAndroidA01</defName>
+		<title>colony android</title>
+		<titleShort>colony android</titleShort>
+		<titleFemale>colony android</titleFemale>
+		<titleShortFemale>colony android</titleShortFemale>
+		<slot>Childhood</slot>
+		<baseDesc>[PAWN_nameDef] was created in the colony in the recent past. The future may hold many things for [PAWN_objective].</baseDesc>
+		<spawnCategories>
+			<li>ColonyAndroid</li>
+		</spawnCategories>
+	</BackstoryDef>
+
+</Defs>

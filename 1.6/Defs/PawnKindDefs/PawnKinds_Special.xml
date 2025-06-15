@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef Name="VREA_AndroidBase">
+		<defName>VREA_AndroidBasic</defName>
+		<label>android</label>
+		<race>Human</race>
+		<xenotypeSet>
+			<xenotypeChances>
+				<VREA_AndroidBasic>999</VREA_AndroidBasic>
+			</xenotypeChances>
+		</xenotypeSet>
+		<useFactionXenotypes>false</useFactionXenotypes>
+		<combatPower>0</combatPower>
+		<initialWillRange>0</initialWillRange>
+		<initialResistanceRange>0</initialResistanceRange>
+	</PawnKindDef>
+	<PawnKindDef>
+		<defName>VREA_AndroidAwakened</defName>
+		<label>awakened android</label>
+		<race>Human</race>
+		<xenotypeSet>
+			<xenotypeChances>
+				<VREA_AndroidAwakened>999</VREA_AndroidAwakened>
+			</xenotypeChances>
+		</xenotypeSet>
+		<apparelMoney>300~3800</apparelMoney>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>IndustrialAdvanced</li>
+			<li>IndustrialMilitaryBasic</li>
+			<li>IndustrialMilitaryAdvanced</li>
+			<li>SpacerMilitary</li>
+			<li>BeltDefensePop</li>
+		</apparelTags>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+		<useFactionXenotypes>false</useFactionXenotypes>
+		<combatPower>0</combatPower>
+		<initialWillRange>0</initialWillRange>
+		<initialResistanceRange>0</initialResistanceRange>
+	</PawnKindDef>
+</Defs>

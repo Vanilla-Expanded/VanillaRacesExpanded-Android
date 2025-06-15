@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<HediffDef>
+		<defName>VREA_NeutroLoss</defName>
+		<label>neutro loss</label>
+		<description>A reduction in the normal neutroamine volume. Minor neutro loss has relatively mild effects, but when neutro loss becomes severe, all subsystems become badly impaired and the android loses the ability to move. Extreme neutro loss will never lead to death.
+\nNeutro loss does not naturally recover over time. An android needs to be inserted into a neutrocasket and filled with neutroamine again.</description>
+		<maxSeverity>1</maxSeverity>
+		<hediffClass>VREAndroids.Hediff_Neutroloss</hediffClass>
+		<stages>
+			<li>
+				<label>minor</label>
+			</li>
+			<li>
+				<minSeverity>0.15</minSeverity>
+				<label>minor</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.30</minSeverity>
+				<label>moderate</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.45</minSeverity>
+				<label>severe</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.4</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.60</minSeverity>
+				<label>extreme</label>
+				<lifeThreatening>true</lifeThreatening>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>VREA_Freezing</defName>
+		<label>freezing</label>
+		<description>Dangerously low core android temperature. Unless re-warmed, freezing will get worse and can result in critical biocomponent damage. Recovery is quick once the android is re-warmed. Avoid freezing by equipping warm clothes on your android in cold environments.</description>
+		<defaultLabelColor>(0.8, 0.8, 1)</defaultLabelColor>
+		<stages>
+			<li>
+				<label>shivering</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<label>shivering</label>
+				<minSeverity>0.04</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.08</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>minor</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.2</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>serious</label>
+				<minSeverity>0.35</minSeverity>
+				<painOffset>0.15</painOffset>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.5</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.20</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>extreme</label>
+				<minSeverity>0.62</minSeverity>
+				<lifeThreatening>true</lifeThreatening>
+				<painOffset>0.30</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.1</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>VREA_Freeze</defName>
+		<label>freeze</label>
+		<description>Frozen tissue caused by exposure to cold without adequate protection. Frostbite is very painful, and frostbitten body parts are often lost.</description>
+		<displayWound>false</displayWound>
+		<tendable>false</tendable>
+		<injuryProps>
+			<painPerSeverity>0.0125</painPerSeverity>
+			<averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+			<canMerge>true</canMerge>
+			<destroyedLabel>Lost to freeze</destroyedLabel>
+		</injuryProps>
+	</HediffDef>
+	
+  <HediffDef>
+    <defName>VREA_Overheating</defName>
+    <label>overheating</label>
+    <description>A generalized disruption to android functioning caused by excessive exposure to heat and sun. The android memory becomes scrambled, leading to faster drain of memory space. Recovery is quick once in a cool area, but if heat exposure continues, android will continue to lose memory space which can result in frequent reformatting.</description>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <stages>
+      <li>
+        <label>initial</label>
+        <minSeverity>0.04</minSeverity>
+		<statOffsets>
+			<VREA_MemorySpaceDrainMultiplier>0.2</VREA_MemorySpaceDrainMultiplier>
+		</statOffsets>
+      </li>
+      <li>
+        <label>minor</label>
+        <minSeverity>0.2</minSeverity>
+		<statOffsets>
+			<VREA_MemorySpaceDrainMultiplier>1</VREA_MemorySpaceDrainMultiplier>
+		</statOffsets>
+      </li>
+      <li>
+        <label>serious</label>
+        <minSeverity>0.35</minSeverity>
+		<statOffsets>
+			<VREA_MemorySpaceDrainMultiplier>3</VREA_MemorySpaceDrainMultiplier>
+		</statOffsets>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>0.62</minSeverity>
+		<statOffsets>
+			<VREA_MemorySpaceDrainMultiplier>9</VREA_MemorySpaceDrainMultiplier>
+		</statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>VREA_ScanningSickness</defName>
+    <label>Scanning sickness</label>
+    <description>This person was scanned by a softscanner to produce an android persona subcore. The high-energy scanning device has caused disturbances in their brain chemistry which will take time to resolve themselves. There won't be any long-term damage.</description>
+    <initialSeverity>2</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+        <mechanitorFactor>2</mechanitorFactor>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <vomitMtbDays>1.5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
