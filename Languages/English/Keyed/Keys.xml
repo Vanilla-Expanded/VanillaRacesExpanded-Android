@@ -26,7 +26,7 @@
 	<VREA.ComponentLeftmostActive>Of the following components, the left-most one will always apply and the others are suppressed</VREA.ComponentLeftmostActive>
 	<VREA.ComponentsConflict>Components conflict</VREA.ComponentsConflict>
 	<VREA.MessageConflictingComponentPresent>Cannot save android with multiple conflicting components.</VREA.MessageConflictingComponentPresent>
-	<VREA.MessageComponentMissingPrerequisite>{0} lacks a prerequisite component</VREA.MessageComponentMissingPrerequisite>
+	
 	<VREA.AndroidName>Android name</VREA.AndroidName>
 	<VREA.ComplexityDesc>How much complexity this adds to the process android creation.</VREA.ComplexityDesc>
 	<VREA.PowerEfficiency>Power efficiency</VREA.PowerEfficiency>
@@ -65,7 +65,7 @@
 	<VREA.CancelAndroid>Cancel an android</VREA.CancelAndroid>
 	<VREA.CancelAndroidDesc>Cancel the creation of this android and refund resources.</VREA.CancelAndroidDesc>
 	<VREA.MissingMaterials>Missing materials: {0}</VREA.MissingMaterials>
-	<VREA.CreateAndroid>Create android</VREA.CreateAndroid>
+
 	<VREA.CreateAndroidDesc>Create a new android by selecting hardware and subroutines.</VREA.CreateAndroidDesc>
 	<VREA.CreateAndroidAlreadyAssembling>Create android: already assembling an android</VREA.CreateAndroidAlreadyAssembling>
 	<VREA.AndroidtypeName>Androidtype name</VREA.AndroidtypeName>
