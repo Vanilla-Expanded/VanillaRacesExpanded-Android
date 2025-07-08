@@ -12,8 +12,6 @@ namespace VREAndroids
     [HarmonyPatch(typeof(GeneDefGenerator), "ImpliedGeneDefs")]
     public static class GeneDefGenerator_ImpliedGeneDefs_Patch
     {
-        public static List<GeneDef> allGenes = DefDatabase<GeneDef>.AllDefsListForReading.ListFullCopy();
-
         public static List<GeneDef> androidConvertableGenes = new List<GeneDef>();
         public static List<GeneDef> androidConvertableGenesBlacklist = new List<GeneDef>();
         public static List<GeneCategoryDef> androidConvertableGeneCategories = new List<GeneCategoryDef>();
@@ -33,13 +31,11 @@ namespace VREAndroids
                 if (!individualList.genesBlacklist.NullOrEmpty()) { androidConvertableGenesBlacklist.AddRange(individualList.genesBlacklist); }
             }
            
-
-
-            foreach (var geneDef in allGenes) 
+            foreach (var geneDef in DefDatabase<GeneDef>.AllDefsListForReading.ListFullCopy()) 
             {
                 if (geneDef.displayCategory == VREA_DefOf.VREA_Hardware || geneDef.displayCategory == VREA_DefOf.VREA_Subroutine)
                 {
-                    Utils.allAndroidGenes.Add(geneDef);
+                    AddAndroidGene(geneDef);
                 }
                 else if (geneDef.biostatArc <= 0)
                 {
@@ -74,7 +70,7 @@ namespace VREAndroids
                             });
                         }
                         clonedGene.canGenerateInGeneSet = false;
-                        Utils.allAndroidGenes.Add(clonedGene);
+                        AddAndroidGene(clonedGene);
                         originalGenesWithAndroidCounterparts[geneDef] = clonedGene;
                         yield return clonedGene;
                     }
@@ -97,11 +93,17 @@ namespace VREAndroids
                         {
                             backgroundPathXenogenes = "UI/Icons/Genes/GeneBackground_Subroutine"
                         });
-                        Utils.allAndroidGenes.Add(def);
+                        AddAndroidGene(def);
                         yield return def;
                     }
                 }
             }
+        }
+
+        private static void AddAndroidGene(GeneDef geneDef)
+        {
+            geneDef.ResolveDefNameHash();
+            Utils.allAndroidGenes.Add(geneDef);
         }
 
         private static GeneDef GetFromTemplate(AndroidGeneTemplateDef template, Def def, int displayOrderBase)

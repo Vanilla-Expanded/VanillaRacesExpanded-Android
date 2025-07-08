@@ -13,6 +13,10 @@ namespace VREAndroids
             if (pawn.IsAndroid())
             {
                 __result = Utils.SkinColorAndroidGenesInOrder.RandomElementByWeight((GeneDef x) => x.selectionWeight);
+                if (__result is null)
+                {
+                    Log.Error("Null gene getting skin gene for android");
+                }
                 return false;
             }
             return true;

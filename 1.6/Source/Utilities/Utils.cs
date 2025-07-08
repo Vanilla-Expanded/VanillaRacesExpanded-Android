@@ -64,7 +64,13 @@ namespace VREAndroids
 
         public static bool IsAndroidGene(this GeneDef geneDef)
         {
-            return allAndroidGenes.Contains(geneDef);
+            var result = allAndroidGenes.Contains(geneDef);
+            return result;
+        }
+
+        public static string ToName(this GeneDef geneDef)
+        {
+            return geneDef.defName + " - " + geneDef.GetHashCode();
         }
 
         public static bool CanBeRemovedFromAndroid(this GeneDef geneDef)
