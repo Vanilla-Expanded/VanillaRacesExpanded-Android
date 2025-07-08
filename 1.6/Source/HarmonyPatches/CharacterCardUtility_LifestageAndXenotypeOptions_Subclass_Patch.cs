@@ -14,7 +14,8 @@ namespace VREAndroids
         {
             foreach (var subclass in typeof(CharacterCardUtility).GetNestedTypes(AccessTools.all))
             {
-                var method = subclass.GetMethods(AccessTools.all).FirstOrDefault(x => x.Name.Contains("<LifestageAndXenotypeOptions>b__18"));
+
+                var method = subclass.GetMethods(AccessTools.all).FirstOrDefault(x => x.Name.Contains("<LifestageAndXenotypeOptions>b__22"));
                 if (method != null)
                 {
                     return method;
