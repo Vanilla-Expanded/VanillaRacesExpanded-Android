@@ -11,8 +11,16 @@ namespace VREAndroids
         public static MethodInfo targetMethod;
         public static bool Prepare()
         {
-            targetMethod = AccessTools.Method("VPEHemosage.AbilityExtension_OnlyNonHemogenicHumanlikes:ValidateTarget");
-            return targetMethod != null;
+            if (ModsConfig.IsActive("VanillaExpanded.VPE.Hemosage"))
+            {
+                targetMethod = AccessTools.Method("VPEHemosage.AbilityExtension_OnlyNonHemogenicHumanlikes:ValidateTarget");
+                if (targetMethod != null)
+                {
+                    return true;
+                }
+                Log.Error("[VREAndroids] Failed to patch VPEHemosage mod for AbilityExtension_OnlyNonHemogenicHumanlikes");
+            }
+            return false;
         }
         public static MethodBase TargetMethod()
         {

@@ -12,9 +12,18 @@ namespace VREAndroids
         public static MethodInfo targetMethod;
         public static bool Prepare()
         {
-            targetMethod = AccessTools.Method("VanillaRacesExpandedSanguophage.CompAbilityEffect_HeartCrush:Valid", new Type[] { typeof(LocalTargetInfo), typeof(bool)});
-            return targetMethod != null;
+            if (ModsConfig.IsActive("vanillaracesexpanded.sanguophage"))
+            {
+                targetMethod = AccessTools.Method("VanillaRacesExpandedSanguophage.CompAbilityEffect_HeartCrush:Valid", new Type[] { typeof(LocalTargetInfo), typeof(bool) });
+                if (targetMethod != null)
+                {
+                    return true;
+                }
+                Log.Error("[VREAndroids] Failed to patch VRE Sanguophage mod for CompAbilityEffect_HeartCrush");
+            }
+            return false;
         }
+
         public static MethodBase TargetMethod()
         {
             return targetMethod;

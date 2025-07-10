@@ -10,8 +10,16 @@ namespace VREAndroids
         public static MethodBase targetMethod;
         public static bool Prepare()
         {
-            targetMethod = AccessTools.Method("DeathRattle.PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch:Notify_CapacityLevelsDirty_Postfix");
-            return targetMethod != null;
+            if (ModsConfig.IsActive("Troopersmith1.DeathRattle"))
+            {
+                targetMethod = AccessTools.Method("DeathRattle.PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch:Postfix");
+                if (targetMethod != null)
+                {
+                    return true;
+                }
+                Log.Error("[VREAndroids] Failed to patch DeathRattle mod for PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch");
+            }
+            return false;
         }
 
         public static MethodBase TargetMethod() => targetMethod;

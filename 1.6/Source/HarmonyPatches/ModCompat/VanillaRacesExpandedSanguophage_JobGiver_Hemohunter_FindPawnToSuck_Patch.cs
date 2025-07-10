@@ -13,8 +13,16 @@ namespace VREAndroids
         public static MethodBase targetMethod;
         public static bool Prepare()
         {
-            targetMethod = AccessTools.Method("VanillaRacesExpandedSanguophage.JobGiver_Hemohunter:FindPawnToSuck");
-            return targetMethod != null;
+            if (ModsConfig.IsActive("vanillaracesexpanded.sanguophage"))
+            {
+                targetMethod = AccessTools.Method("VanillaRacesExpandedSanguophage.JobGiver_Hemohunter:FindPawnToSuck");
+                if (targetMethod != null)
+                {
+                    return true;
+                }
+                Log.Error("[VREAndroids] Failed to patch VRE Sanguophage mod for FindPawnToSuck");
+            }
+            return false;
         }
         public static MethodBase TargetMethod()
         {

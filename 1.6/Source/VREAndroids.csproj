@@ -221,7 +221,6 @@
     <Compile Include="HarmonyPatches\ThoughtWorker_NeedNeuralSupercharge_ShouldHaveThought_Patch.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_Pain_CurrentThoughtState_Patch.cs" />
     <Compile Include="HarmonyPatches\TraitSet_GainTrait_Patch.cs" />
-    <Compile Include="HarmonyPatches\ModCompat\VFEAncients_Pawn_PowerTracker_CanGetPowers_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\VSIE_SocialInteractionsManager_TryDevelopNewTrait_Patch.cs" />
     <Compile Include="HarmonyPatches\ModCompat\VanillaRacesExpandedSanguophage_JobGiver_Hemohunter_FindPawnToSuck_Patch.cs" />
     <Compile Include="HarmonyPatches\WealthWatcher_ForceRecount_Patch.cs" />

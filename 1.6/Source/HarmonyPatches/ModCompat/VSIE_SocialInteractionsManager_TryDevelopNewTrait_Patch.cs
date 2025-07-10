@@ -7,17 +7,25 @@ namespace VREAndroids
     [HarmonyPatch]
     public static class VSIE_SocialInteractionsManager_TryDevelopNewTrait_Patch
     {
-        public static MethodBase methodInfo;
+        public static MethodBase targetMethod;
 
         [HarmonyPrepare]
         public static bool Prepare()
         {
-            methodInfo = AccessTools.Method("VanillaSocialInteractionsExpanded.SocialInteractionsManager:TryDevelopNewTrait");
-            return methodInfo != null;
+            if (ModsConfig.IsActive("VanillaExpanded.VanillaSocialInteractionsExpanded"))
+            {
+                targetMethod = AccessTools.Method("VanillaSocialInteractionsExpanded.SocialInteractionsManager:TryDevelopNewTrait");
+                if (targetMethod != null)
+                {
+                    return true;
+                }
+                Log.Error("[VREAndroids] Failed to patch VanillaSocialInteractionsExpanded mod for TryDevelopNewTrait");
+            }
+            return false;
         }
 
         [HarmonyTargetMethod]
-        public static MethodBase TargetMethod() => methodInfo;
+        public static MethodBase TargetMethod() => targetMethod;
 
         [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(Pawn pawn)

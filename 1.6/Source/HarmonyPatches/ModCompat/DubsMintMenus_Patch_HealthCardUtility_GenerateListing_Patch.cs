@@ -12,8 +12,16 @@ namespace VREAndroids
 
         public static bool Prepare()
         {
-            targetMethod = AccessTools.Method("DubsMintMenus.Patch_HealthCardUtility:GenerateListing");
-            return targetMethod != null;
+            if (ModsConfig.IsActive("Dubwise.DubsMintMenus"))
+            {
+                targetMethod = AccessTools.Method("DubsMintMenus.Patch_HealthCardUtility:GenerateListing");
+                if (targetMethod != null)
+                {
+                    return true;
+                }
+                Log.Error("[VREAndroids] Failed to patch DubsMintMenus mod for Patch_HealthCardUtility:GenerateListing");
+            }
+            return false;
         }
         public static MethodBase TargetMethod()
         {
