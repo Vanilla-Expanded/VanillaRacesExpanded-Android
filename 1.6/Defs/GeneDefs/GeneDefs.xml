@@ -200,6 +200,7 @@
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
 		</statOffsets>
+		<immuneToToxGasExposure>true</immuneToToxGasExposure>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
