@@ -29,9 +29,9 @@ namespace VREAndroids
             return ingredientCountList;
         }
 
-        public void DoWork(Pawn crafter, out bool workDone)
+        public void DoWork(Pawn crafter, int delta, out bool workDone)
         {
-            var workAmount = crafter.GetStatValue(StatDefOf.WorkSpeedGlobal);
+            var workAmount = crafter.GetStatValue(StatDefOf.WorkSpeedGlobal) * delta;
             currentWorkAmountDone += workAmount;
             if (currentWorkAmountDone >= totalWorkAmount)
                 workDone = true;

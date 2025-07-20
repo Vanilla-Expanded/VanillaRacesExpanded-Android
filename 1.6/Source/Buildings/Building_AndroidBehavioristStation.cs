@@ -150,9 +150,9 @@ namespace VREAndroids
             return failReason is null;
         }
 
-        public void DoWork(Pawn crafter, out bool workDone)
+        public void DoWork(Pawn crafter, int delta, out bool workDone)
         {
-            var workAmount = crafter.GetStatValue(StatDefOf.ResearchSpeed);
+            var workAmount = crafter.GetStatValue(StatDefOf.ResearchSpeed) * delta;
             currentWorkAmountDone += workAmount;
             if (currentWorkAmountDone >= totalWorkAmount)
                 workDone = true;

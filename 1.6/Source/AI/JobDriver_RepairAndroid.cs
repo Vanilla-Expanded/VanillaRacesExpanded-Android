@@ -51,9 +51,9 @@ namespace VREAndroids
                 ticksToNextRepair = TicksPerHeal;
             });
             repairToil.handlingFacing = true;
-            repairToil.tickAction = delegate
+            repairToil.tickIntervalAction = delegate(int delta)
             {
-                ticksToNextRepair--;
+                ticksToNextRepair -= delta;
                 if (ticksToNextRepair <= 0)
                 {
                     RepairTick(Patient);
@@ -62,7 +62,7 @@ namespace VREAndroids
                 pawn.rotationTracker.FaceTarget(Patient);
                 if (pawn.skills != null)
                 {
-                    pawn.skills.Learn(SkillDefOf.Crafting, 0.05f);
+                    pawn.skills.Learn(SkillDefOf.Crafting, 0.05f * delta);
                 }
             };
 

@@ -63,34 +63,32 @@ namespace VREAndroids
                 yield return Toils_Haul.PlaceHauledThingInCell(TargetIndex.A, null, storageMode: false);
             }
             yield return gotoStation;
-            yield return new Toil
+            var toil = ToilMaker.MakeToil();
+            toil.initAction = () =>
             {
-                initAction = () =>
+                if (job.targetQueueB != null && job.placedThings != null)
                 {
-                    if (job.targetQueueB != null && job.placedThings != null)
-                    {
-                        Station.CreateUnfinishedAndroid(job.placedThings.Select(x => x.thing).ToList());
-                        pawn.Map.physicalInteractionReservationManager.ReleaseClaimedBy(pawn, job);
-                        job.placedThings = null;
-                    }
-                    job.SetTarget(TargetIndex.C, Station.unfinishedAndroid);
+                    Station.CreateUnfinishedAndroid(job.placedThings.Select(x => x.thing).ToList());
+                    pawn.Map.physicalInteractionReservationManager.ReleaseClaimedBy(pawn, job);
+                    job.placedThings = null;
                 }
+                job.SetTarget(TargetIndex.C, Station.unfinishedAndroid);
             };
+            yield return toil;
             yield return Toils_Reserve.Reserve(TargetIndex.C);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
-            var createAndroid = new Toil
+            var createAndroid = ToilMaker.MakeToil();
+            createAndroid.tickIntervalAction = delegate(int delta)
             {
-                tickAction = delegate
+                Station.DoWork(pawn, delta, out bool workDone);
+                if (workDone)
                 {
-                    Station.DoWork(pawn, out bool workDone);
-                    if (workDone)
-                    {
-                        Station.FinishAndroidProject();
-                        this.EndJobWith(JobCondition.Succeeded);
-                    }
-                },
-                defaultCompleteMode = ToilCompleteMode.Delay
-            }.WithEffect(() => VREA_DefOf.ButcherMechanoid, TargetIndex.C).WithProgressBar(TargetIndex.C, () => (Station.currentWorkAmountDone / Station.totalWorkAmount));
+                    Station.FinishAndroidProject();
+                    this.EndJobWith(JobCondition.Succeeded);
+                }
+            };
+            createAndroid.defaultCompleteMode = ToilCompleteMode.Delay;
+            createAndroid.WithEffect(() => VREA_DefOf.ButcherMechanoid, TargetIndex.C).WithProgressBar(TargetIndex.C, () => (Station.currentWorkAmountDone / Station.totalWorkAmount));
             createAndroid.defaultDuration = 5000;
             yield return createAndroid;
         }
@@ -112,7 +110,7 @@ namespace VREAndroids
 
         public static Toil PlaceHauledThingInCell(TargetIndex cellInd, Toil nextToilOnPlaceFailOrIncomplete, bool storageMode, bool tryStoreInSameStorageIfSpotCantHoldWholeStack = false)
         {
-            Toil toil = new Toil();
+            Toil toil = ToilMaker.MakeToil();
             toil.initAction = delegate
             {
                 Pawn actor = toil.actor;

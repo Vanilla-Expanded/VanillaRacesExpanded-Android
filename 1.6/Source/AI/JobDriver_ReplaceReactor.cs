@@ -23,16 +23,15 @@ namespace VREAndroids
             yield return Toils_General.Wait(120)
                 .WithProgressBarToilDelay(TargetIndex.A)
                 .WithEffect(() => VREA_DefOf.ButcherMechanoid, TargetIndex.A);
-            yield return new Toil
+            var toil = ToilMaker.MakeToil();
+            toil.initAction = delegate
             {
-                initAction = delegate
-                {
-                    var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_Reactor) as Hediff_AndroidReactor;
-                    hediff.Energy = Reactor.curEnergy;
-                    pawn.TrySpawnWaste(pawn.Position, pawn.Map);
-                    Reactor.Destroy();
-                },
+                var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_Reactor) as Hediff_AndroidReactor;
+                hediff.Energy = Reactor.curEnergy;
+                pawn.TrySpawnWaste(pawn.Position, pawn.Map);
+                Reactor.Destroy();
             };
+            yield return toil;
         }
     }
 }

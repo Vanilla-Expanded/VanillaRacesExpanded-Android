@@ -21,22 +21,21 @@ namespace VREAndroids
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             yield return Toils_Haul.StartCarryThing(TargetIndex.A);
             yield return Toils_General.Wait(120).WithProgressBarToilDelay(TargetIndex.A);
-            yield return new Toil
+            var toil = ToilMaker.MakeToil();
+            toil.initAction = delegate
             {
-                initAction = delegate
+                var neutroloss = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss);
+                if (neutroloss != null)
                 {
-                    var neutroloss = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss);
-                    if (neutroloss != null)
+                    pawn.carryTracker.CarriedThing.Destroy();
+                    neutroloss.Severity -= job.count / 100f;
+                    if (neutroloss.Severity <= 0.01f)
                     {
-                        pawn.carryTracker.CarriedThing.Destroy();
-                        neutroloss.Severity -= job.count / 100f;
-                        if (neutroloss.Severity <= 0.01f)
-                        {
-                            neutroloss.Severity = 0;
-                        }
+                        neutroloss.Severity = 0;
                     }
-                },
+                }
             };
+            yield return toil;
         }
     }
 }

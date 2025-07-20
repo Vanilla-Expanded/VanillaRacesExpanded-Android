@@ -44,7 +44,7 @@ namespace VREAndroids
         {
             base.MentalStateTick(delta);
             var memorySpace = this.pawn.needs.TryGetNeed<Need_MemorySpace>();
-            memorySpace.curLevelInt = Mathf.Min(1f, memorySpace.curLevelInt + (1f / (float)TicksToRecoverFromReformatting(pawn, null)));
+            memorySpace.curLevelInt = Mathf.Min(1f, memorySpace.curLevelInt + (1f / (float)TicksToRecoverFromReformatting(pawn, null) * delta));
             if (pawn.Spawned)
             {
                 if (moteCharging == null || moteCharging.Destroyed)

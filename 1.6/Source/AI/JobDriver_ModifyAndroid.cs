@@ -29,19 +29,18 @@ namespace VREAndroids
             });
             this.FailOnBurningImmobile(TargetIndex.A);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
-            yield return new Toil
+            var toil = ToilMaker.MakeToil();
+            toil.tickIntervalAction = delegate(int delta)
             {
-                tickAction = delegate
+                Station.DoWork(pawn, delta, out bool workDone);
+                if (workDone)
                 {
-                    Station.DoWork(pawn, out bool workDone);
-                    if (workDone)
-                    {
-                        Station.FinishAndroidProject();
-                        this.EndJobWith(JobCondition.Succeeded);
-                    }
-                },
-                defaultCompleteMode = ToilCompleteMode.Never
-            }.WithEffect(() => VREA_DefOf.VREA_ModifyingAndroidEffecter, TargetIndex.A).WithProgressBar(TargetIndex.A, () => (Station.currentWorkAmountDone / Station.totalWorkAmount));
+                    Station.FinishAndroidProject();
+                    this.EndJobWith(JobCondition.Succeeded);
+                }
+            };
+            toil.defaultCompleteMode = ToilCompleteMode.Never;
+            yield return toil.WithEffect(() => VREA_DefOf.VREA_ModifyingAndroidEffecter, TargetIndex.A).WithProgressBar(TargetIndex.A, () => (Station.currentWorkAmountDone / Station.totalWorkAmount));
         }
     }
 }

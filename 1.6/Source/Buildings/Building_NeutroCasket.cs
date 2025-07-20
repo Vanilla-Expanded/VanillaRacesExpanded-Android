@@ -30,10 +30,10 @@ namespace VREAndroids
             return sb.ToString().TrimEndNewlines();
         }
 
-        public override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
-            if (this.IsHashIntervalTick(60) && compPower.PowerOn)
+            base.TickInterval(delta);
+            if (this.IsHashIntervalTick(60, delta) && compPower.PowerOn)
             {
                 foreach (var occupant in CurOccupants)
                 {

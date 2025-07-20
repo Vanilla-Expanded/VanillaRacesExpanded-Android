@@ -67,10 +67,10 @@ namespace VREAndroids
 
         public const int AndroidReactorTickRate = 60;
 
-        public override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
-            if (pawn.IsHashIntervalTick(AndroidReactorTickRate))
+            base.TickInterval(delta);
+            if (pawn.IsHashIntervalTick(AndroidReactorTickRate, delta))
             {
                 var baseDrainSpeed = (1f / (GenDate.TicksPerYear * 2f)) * PowerEfficiencyDrainMultiplier;
                 baseDrainSpeed *= AndroidReactorTickRate;

@@ -24,10 +24,10 @@ namespace VREAndroids
             MeditationFocusTypeAvailabilityCache.ClearFor(pawn);
         }
 
-        public override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
-            if (pawn.IsHashIntervalTick(GenDate.TicksPerHour) && pawn.IsAwakened() is false 
+            base.TickInterval(delta);
+            if (pawn.IsHashIntervalTick(GenDate.TicksPerHour, delta) && pawn.IsAwakened() is false 
                 && pawn.HasActiveGene(VREA_DefOf.VREA_AntiAwakeningProtocols) is false && Rand.Chance(0.5f))
             {
                 if (pawn.needs.mood.CurLevel <= 0.05f)
