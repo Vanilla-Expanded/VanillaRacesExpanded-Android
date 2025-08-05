@@ -109,7 +109,7 @@
     <Compile Include="HarmonyPatches\Anomaly\QuestNode_Root_MysteriousCargo_ValidatePawn_Patch.cs" />
     <Compile Include="HarmonyPatches\Building_Bed_GetFloatMenuOptions_Patch.cs" />
     <Compile Include="CachedResult.cs" />
-    <Compile Include="HarmonyPatches\FloatMenuOptionProvider_CarryToBiosculpterPod_GetOptionsFor.cs" />
+    <Compile Include="HarmonyPatches\CompBiosculpterPod_FindPodFor_Patch.cs" />
     <Compile Include="HarmonyPatches\CompBiosculpterPod_CanAgeReverse_Patch.cs" />
     <Compile Include="HarmonyPatches\CompBiosculpterPod_CannotUseNowPawnReason_Patch.cs" />
     <Compile Include="HarmonyPatches\CompNeuralSupercharger_CanAutoUse_Patch.cs" />
