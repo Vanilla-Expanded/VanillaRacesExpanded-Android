@@ -1,8 +1,5 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
 using Verse;
 
 namespace VREAndroids
@@ -12,28 +9,45 @@ namespace VREAndroids
     {
         public CompRefuelable compRefuelable;
         public CompPowerTrader compPower;
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        private void Initialize()
         {
-            base.SpawnSetup(map, respawningAfterLoad);
             this.compRefuelable = base.GetComp<CompRefuelable>();
             this.compPower = base.GetComp<CompPowerTrader>();
             this.Medical = true;
         }
 
+        public override void PostMake()
+        {
+            base.PostMake();
+            Initialize();
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+                Initialize();
+        }
+
         public override string GetInspectString()
         {
-            this.Medical = false;
-            this.def.building.bed_humanlike = false;
-            var sb = new StringBuilder(base.GetInspectString() + "\n");
-            this.Medical = true;
-            this.def.building.bed_humanlike = true;
-            return sb.ToString().TrimEndNewlines();
+            try
+            {
+                this.Medical = false;
+                this.def.building.bed_humanlike = false;
+                return $"{base.GetInspectString()}\n".TrimEndNewlines();
+            }
+            finally
+            {
+                this.Medical = true;
+                this.def.building.bed_humanlike = true;
+            }
         }
 
         public override void TickInterval(int delta)
         {
             base.TickInterval(delta);
-            if (this.IsHashIntervalTick(60, delta) && compPower.PowerOn)
+            if (this.IsHashIntervalTick(60, delta) && (compPower == null || compPower.PowerOn))
             {
                 foreach (var occupant in CurOccupants)
                 {
