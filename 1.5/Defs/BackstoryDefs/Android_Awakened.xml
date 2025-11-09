@@ -370,7 +370,7 @@
 
 	<BackstoryDef ParentName="VREA_AndroidBackstoryBase">
 		<defName>PilotA17</defName>
-		<title>interpid pilot</title>
+		<title>intrepid pilot</title>
 		<titleShort>pilot</titleShort>
 		<titleFemale>pilot</titleFemale>
 		<titleShortFemale>pilot</titleShortFemale>
