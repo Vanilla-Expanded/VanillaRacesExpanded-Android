@@ -199,9 +199,8 @@
 			<Flammability>1.0</Flammability>
 			<Beauty>-2</Beauty>
 		</statBases>
-	
 		<costList>
-			<Steel>15</Steel>
+			<Silver>60</Silver>
 			<ComponentIndustrial>1</ComponentIndustrial>
 		</costList>
 		<comps>
@@ -210,7 +209,7 @@
 				<alwaysLinkToPipes>true</alwaysLinkToPipes>
 			</li>
 			<li Class="CompProperties_Flickable">
-				<commandTexture>Things/Item/Resource/Neutroamine</commandTexture>
+				<commandTexture>Things/Item/Resource/Neutroamine/Neutroamine_c</commandTexture>
 				<commandLabelKey>VREA_NeutroValve</commandLabelKey>
 				<commandDescKey>VREA_NeutroValveDesc</commandDescKey>
 			</li>
