@@ -171,6 +171,61 @@
 			<li>VREA_NeutroamineLogistics</li>
 		</researchPrerequisites>
 	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VREA_NeutroValve</defName>
+		<label>neutroamine valve</label>
+		<description>Switches neutroamine flow on/off.</description>
+		<thingClass>PipeSystem.Building_PipeValve</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Linked/NeutroValve/NeutroValve</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<allowWireConnection>false</allowWireConnection>
+		</building>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>120</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+	
+		<costList>
+			<Steel>15</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="PipeSystem.CompProperties_PipeValve">
+				<pipeNet>VREA_NeutroamineNet</pipeNet>
+				<alwaysLinkToPipes>true</alwaysLinkToPipes>
+			</li>
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Item/Resource/Neutroamine</commandTexture>
+				<commandLabelKey>VREA_NeutroValve</commandLabelKey>
+				<commandDescKey>VREA_NeutroValveDesc</commandDescKey>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>false</neverMultiSelect>
+		<tickerType>Normal</tickerType>
+		<designationCategory>VCHE_PipeNetworks</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VREA_NeutroamineLogistics</li>
+		</researchPrerequisites>
+	</ThingDef>
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>VREA_NeutroTank</defName>
 		<label>neutro tank</label>
