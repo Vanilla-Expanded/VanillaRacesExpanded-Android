@@ -10,7 +10,7 @@ namespace VREAndroids
         public static MethodBase targetMethod;
         public static bool Prepare()
         {
-            if (ModsConfig.IsActive("Troopersmith1.DeathRattle"))
+            if (ModLister.AnyModActiveNoSuffix(["Troopersmith1.DeathRattle"]))
             {
                 targetMethod = AccessTools.Method("DeathRattle.PawnCapacitiesHandler_Notify_CapacityLevelsDirty_Patch:Postfix");
                 if (targetMethod != null)

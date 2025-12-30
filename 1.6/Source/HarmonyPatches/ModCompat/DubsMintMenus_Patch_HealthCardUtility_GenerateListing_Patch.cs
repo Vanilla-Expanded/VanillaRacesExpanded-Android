@@ -12,7 +12,7 @@ namespace VREAndroids
 
         public static bool Prepare()
         {
-            if (ModsConfig.IsActive("Dubwise.DubsMintMenus"))
+            if (ModLister.AnyModActiveNoSuffix(["Dubwise.DubsMintMenus"]))
             {
                 targetMethod = AccessTools.Method("DubsMintMenus.Patch_HealthCardUtility:GenerateListing");
                 if (targetMethod != null)

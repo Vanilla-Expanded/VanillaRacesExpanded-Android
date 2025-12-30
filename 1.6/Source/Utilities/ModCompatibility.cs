@@ -8,9 +8,9 @@ namespace VREAndroids
     [StaticConstructorOnStartup]
     public static class ModCompatibility
     {
-        public static bool DubsMintMenusActive = ModsConfig.IsActive("Dubwise.DubsMintMenus");
-        public static bool SnapOutActive = ModsConfig.IsActive("weilbyte.snapout");
-        public static bool MSE2Active = ModsConfig.IsActive("MSE2.Core");
+        public static bool DubsMintMenusActive = ModLister.AnyModActiveNoSuffix(["Dubwise.DubsMintMenus"]);
+        public static bool SnapOutActive = ModLister.AnyModActiveNoSuffix(["weilbyte.snapout"]);
+        public static bool MSE2Active = ModLister.AnyModActiveNoSuffix(["MSE2.Core"]);
         public static Type ignoreSubPartsExtensionType;
         static ModCompatibility()
         {

@@ -12,7 +12,7 @@ namespace VREAndroids
         [HarmonyPrepare]
         public static bool Prepare()
         {
-            if (ModsConfig.IsActive("VanillaExpanded.VanillaSocialInteractionsExpanded"))
+            if (ModLister.AnyModActiveNoSuffix(["VanillaExpanded.VanillaSocialInteractionsExpanded"]))
             {
                 targetMethod = AccessTools.Method("VanillaSocialInteractionsExpanded.SocialInteractionsManager:TryDevelopNewTrait");
                 if (targetMethod != null)

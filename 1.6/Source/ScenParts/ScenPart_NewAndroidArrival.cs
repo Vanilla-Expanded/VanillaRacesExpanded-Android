@@ -10,7 +10,7 @@ namespace VREAndroids
     {
 
         int tickCounter = 0;
-        const int tickInterval = 600000; // 10 days
+        const int tickInterval = GenDate.TicksPerDay * 10; // 10 days
 
         public override void Tick()
         {

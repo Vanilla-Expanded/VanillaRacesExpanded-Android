@@ -11,7 +11,7 @@ namespace VREAndroids
         public static MethodInfo targetMethod;
         public static bool Prepare()
         {
-            if (ModsConfig.IsActive("VanillaExpanded.VPE.Hemosage"))
+            if (ModLister.AnyModActiveNoSuffix(["VanillaExpanded.VPE.Hemosage"]))
             {
                 targetMethod = AccessTools.Method("VPEHemosage.AbilityExtension_OnlyNonHemogenicHumanlikes:ValidateTarget");
                 if (targetMethod != null)

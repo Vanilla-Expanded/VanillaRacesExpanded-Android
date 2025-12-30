@@ -5,14 +5,18 @@ namespace VREAndroids
 {
     public class Gene_NeutroSynthesis : Gene
     {
-        public override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
-            var neutroloss = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss);
-            if (neutroloss != null)
+            base.TickInterval(delta);
+        
+            if (pawn.IsHashIntervalTick(60, delta))
             {
-                var refillRate = 0.05f / (float)GenDate.TicksPerDay;
-                neutroloss.Severity -= refillRate;
+                var neutroloss = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss);
+                if (neutroloss != null)
+                {
+                    var refillRate = 0.05f / GenDate.TicksPerDay * 60f;
+                    neutroloss.Severity -= refillRate;
+                }
             }
         }
     }

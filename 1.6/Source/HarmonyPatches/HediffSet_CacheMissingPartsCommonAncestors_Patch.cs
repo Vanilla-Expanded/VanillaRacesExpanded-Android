@@ -35,9 +35,7 @@ namespace VREAndroids
             while (__instance.missingPartsCommonAncestorsQueue.Count != 0)
             {
                 BodyPartRecord node = __instance.missingPartsCommonAncestorsQueue.Dequeue();
-                Hediff_MissingPart hediff_MissingPart = (from x in __instance.hediffs.OfType<Hediff_MissingPart>()
-                                                         where x.Part == node
-                                                         select x).FirstOrDefault();
+                Hediff_MissingPart hediff_MissingPart = __instance.GetFirstHediffMatchingPart<Hediff_MissingPart>(node);
                 if (hediff_MissingPart != null)
                 {
                     __instance.cachedMissingPartsCommonAncestors.Add(hediff_MissingPart);

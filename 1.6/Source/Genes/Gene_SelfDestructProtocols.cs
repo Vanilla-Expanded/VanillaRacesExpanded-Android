@@ -11,15 +11,15 @@ namespace VREAndroids
 
         public bool selfDestruct;
 
-        public override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
+            base.TickInterval(delta);
             if (selfDestruct)
             {
                 var reactor = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_Reactor) as Hediff_AndroidReactor;
                 if (reactor != null)
                 {
-                    reactor.Energy -= 1f / 600f;
+                    reactor.Energy -= 1f / 600f * delta;
                     if (reactor.Energy <= 0)
                     {
                         var map = pawn.MapHeld;

@@ -35,7 +35,7 @@ namespace VREAndroids
             tendToil.handlingFacing = true;
             tendToil.WithEffect(EffecterDefOf.MechRepairing, TargetIndex.A);
             tendToil.PlaySustainerOrSound(SoundDefOf.RepairMech_Touch);
-            tendToil.tickAction = delegate
+            tendToil.tickIntervalAction = delegate
             {
                 if (pawn != Patient)
                 {

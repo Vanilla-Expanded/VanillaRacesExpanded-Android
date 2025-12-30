@@ -13,7 +13,7 @@ namespace VREAndroids
         public static MethodBase targetMethod;
         public static bool Prepare()
         {
-            if (ModsConfig.IsActive("vanillaracesexpanded.sanguophage"))
+            if (ModLister.AnyModActiveNoSuffix(["vanillaracesexpanded.sanguophage"]))
             {
                 targetMethod = AccessTools.Method("VanillaRacesExpandedSanguophage.JobGiver_Hemohunter:FindPawnToSuck");
                 if (targetMethod != null)

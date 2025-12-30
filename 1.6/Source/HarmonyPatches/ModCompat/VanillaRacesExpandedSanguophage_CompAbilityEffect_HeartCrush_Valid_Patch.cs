@@ -12,7 +12,7 @@ namespace VREAndroids
         public static MethodInfo targetMethod;
         public static bool Prepare()
         {
-            if (ModsConfig.IsActive("vanillaracesexpanded.sanguophage"))
+            if (ModLister.AnyModActiveNoSuffix(["vanillaracesexpanded.sanguophage"]))
             {
                 targetMethod = AccessTools.Method("VanillaRacesExpandedSanguophage.CompAbilityEffect_HeartCrush:Valid", new Type[] { typeof(LocalTargetInfo), typeof(bool) });
                 if (targetMethod != null)

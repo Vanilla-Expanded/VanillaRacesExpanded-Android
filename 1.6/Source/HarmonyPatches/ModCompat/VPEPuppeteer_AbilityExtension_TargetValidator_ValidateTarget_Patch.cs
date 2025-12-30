@@ -11,7 +11,7 @@ namespace VREAndroids
         public static MethodInfo targetMethod;
         public static bool Prepare()
         {
-            if (ModsConfig.IsActive("VanillaExpanded.VPE.Puppeteer"))
+            if (ModLister.AnyModActiveNoSuffix(["VanillaExpanded.VPE.Puppeteer"]))
             {
                 targetMethod = AccessTools.Method("VPEPuppeteer.AbilityExtension_TargetValidator:ValidateTarget");
                 if (targetMethod != null)
