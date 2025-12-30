@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System;
 using System.Linq;
 using Verse;
 
@@ -18,7 +19,14 @@ namespace VREAndroids
                 if (hediffDef != null && this.pawn.health.hediffSet.GetNotMissingParts().Contains(bodyPart))
                 {
                     var hediff = HediffMaker.MakeHediff(hediffDef, pawn, bodyPart);
-                    pawn.health.AddHediff(hediff, bodyPart);
+                    try
+                    {
+                        pawn.health.hediffSet.AddDirect(hediff);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Message("[VREA] Error adding " + hediff + " to " + pawn + ", exception: " + ex.ToString());
+                    }
                 }
             }
             MeditationFocusTypeAvailabilityCache.ClearFor(pawn);
