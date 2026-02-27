@@ -2,6 +2,8 @@
 <LanguageData>
 	<VREA_ExtractNeutroamine>Extract 20 neutroamine</VREA_ExtractNeutroamine>
 	<VREA_ExtractNeutroamineDesc>Extract 20 neutroamine from the tank. A pawn will come to extract it.</VREA_ExtractNeutroamineDesc>
+	<VREA_NeutroValve>Switches neutroamine flow on/off.</VREA_NeutroValve>
+  	<VREA_NeutroValveDesc>Switches neutroamine flow on/off. A pawn will come open/close the valve.</VREA_NeutroValveDesc>
 	<VREA.FreeMemorySpace>Free memory space</VREA.FreeMemorySpace>
 	<VREA.AndroidStandIsOccupied>Android stand is occupied</VREA.AndroidStandIsOccupied>
 	<VREA.Artificial>Artificial {0}</VREA.Artificial>
